@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mutante radioactivo base_0: 5367674728223147671
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

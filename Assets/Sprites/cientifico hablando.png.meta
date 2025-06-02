@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cientifico hablando_0: 4203052810029652308
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

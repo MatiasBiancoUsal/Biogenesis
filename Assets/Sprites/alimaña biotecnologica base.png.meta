@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "alima\xF1a biotecnologica base_0": 295044924511345422
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

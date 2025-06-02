@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "ara\xF1a base_0": 9073217672650211209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

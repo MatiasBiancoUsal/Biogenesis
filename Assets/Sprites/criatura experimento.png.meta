@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      criatura experimento_0: 5235079183149304427
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
