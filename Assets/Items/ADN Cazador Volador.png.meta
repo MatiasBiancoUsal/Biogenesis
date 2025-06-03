@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 54eae2cceec89b644af6872c29ff12d0
+guid: e074d3676bb4c6147b6bf8a8aac1282f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6883386962697498214
-    second: ADN_0
-  - first:
-      213: -2315838137461488240
-    second: ADN_1
-  - first:
-      213: -4701519090311463940
-    second: ADN_2
-  - first:
-      213: 2591033628608299348
-    second: ADN_3
-  - first:
-      213: -1322609315701028252
-    second: ADN_4
+      213: 3241061950800773838
+    second: ADN Cazador Volador_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,95 +100,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ADN_0
+      name: ADN Cazador Volador_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 373
-        width: 197
-        height: 252
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 66ea32b09f3b68f50800000000000000
-      internalID: 6883386962697498214
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ADN_1
-      rect:
-        serializedVersion: 2
-        x: 322
-        y: 372
-        width: 201
-        height: 245
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0954e4bdb7d7cdfd0800000000000000
-      internalID: -2315838137461488240
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ADN_2
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 66
-        width: 136
-        height: 126
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cfb744d0c49d0ceb0800000000000000
-      internalID: -4701519090311463940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ADN_3
-      rect:
-        serializedVersion: 2
-        x: 155
-        y: 192
-        width: 102
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4510a4a7b5335f320800000000000000
-      internalID: 2591033628608299348
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ADN_4
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 50
+        x: 27
+        y: 12
         width: 168
         height: 240
       alignment: 0
@@ -210,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 46a8409b5d525ade0800000000000000
-      internalID: -1322609315701028252
+      spriteID: ec2c3802ca09afc20800000000000000
+      internalID: 3241061950800773838
       vertices: []
       indices: 
       edges: []
@@ -227,11 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ADN_0: 6883386962697498214
-      ADN_1: -2315838137461488240
-      ADN_2: -4701519090311463940
-      ADN_3: 2591033628608299348
-      ADN_4: -1322609315701028252
+      ADN Cazador Volador_0: 3241061950800773838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
