@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bioma Volcan Acido.unity
     guid: a2e955d7333ecb04cab10859e5299430
+  - enabled: 1
+    path: Assets/Scenes/Ajustes.unity
+    guid: 9d6217ed7e9cf8d4bad4d081955a43c9
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
