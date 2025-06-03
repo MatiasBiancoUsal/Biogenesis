@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 11daab8eaa629094bb47d0a679d3e3a3
+guid: e06fb452f2330054986705d746c85fe6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -958020518403513574
-    second: mapaa_0
+      213: -5860635122270118573
+    second: acido_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mapaa_0
+      name: acido_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3840
-        height: 2160
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a13e5011a6d64b2f0800000000000000
-      internalID: -958020518403513574
+      spriteID: 35d59e24867daaea0800000000000000
+      internalID: -5860635122270118573
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      mapaa_0: -958020518403513574
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
