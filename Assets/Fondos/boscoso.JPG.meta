@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boscoso_0: 4403900916562888314
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
