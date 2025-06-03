@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 68092be40c88ad0488fd7bc99e842b4c
+guid: 46185da992374eb49afc23af32b51406
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1846750185658187523
-    second: musica titulo_0
+      213: 1926352496804939565
+    second: biomas_0
   - first:
-      213: -8322201903766370537
-    second: musica titulo_1
+      213: -5564782578355005975
+    second: biomas_1
   - first:
-      213: 3703662597498658723
-    second: musica titulo_2
+      213: -5082707820972810371
+    second: biomas_2
   - first:
-      213: -2946510906973430292
-    second: musica titulo_3
+      213: -8266556524394231636
+    second: biomas_3
   - first:
-      213: 179581948234608626
-    second: musica titulo_4
+      213: -6779672818253062070
+    second: biomas_4
   - first:
-      213: 136239098954993419
-    second: musica titulo_5
+      213: 5846856851893290388
+    second: biomas_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,127 +115,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: musica titulo_0
+      name: biomas_0
       rect:
         serializedVersion: 2
-        x: 530
-        y: 425
-        width: 166
-        height: 222
+        x: 356
+        y: 1241
+        width: 649
+        height: 450
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df005fa9d760f56e0800000000000000
-      internalID: -1846750185658187523
+      spriteID: d27ce3cb367cbba10800000000000000
+      internalID: 1926352496804939565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: musica titulo_1
+      name: biomas_1
       rect:
         serializedVersion: 2
-        x: 717
-        y: 424
-        width: 132
-        height: 221
+        x: 1704
+        y: 1593
+        width: 595
+        height: 286
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7170de02679918c80800000000000000
-      internalID: -8322201903766370537
+      spriteID: 9e51edc7abbe5c2b0800000000000000
+      internalID: -5564782578355005975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: musica titulo_2
+      name: biomas_2
       rect:
         serializedVersion: 2
-        x: 869
-        y: 423
-        width: 131
-        height: 220
+        x: 2969
+        y: 1332
+        width: 582
+        height: 541
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3afdec3728d066330800000000000000
-      internalID: 3703662597498658723
+      spriteID: d7fd0d98a289679b0800000000000000
+      internalID: -5082707820972810371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: musica titulo_3
+      name: biomas_3
       rect:
         serializedVersion: 2
-        x: 1022
-        y: 426
-        width: 44
-        height: 217
+        x: 1618
+        y: 724
+        width: 752
+        height: 548
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cedd80ff0f3eb17d0800000000000000
-      internalID: -2946510906973430292
+      spriteID: ca84bcf93aa474d80800000000000000
+      internalID: -8266556524394231636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: musica titulo_4
+      name: biomas_4
       rect:
         serializedVersion: 2
-        x: 1082
-        y: 424
-        width: 143
-        height: 220
+        x: 504
+        y: 353
+        width: 582
+        height: 269
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ffa89894d00e7200800000000000000
-      internalID: 179581948234608626
+      spriteID: a40a7a6fd73c9e1a0800000000000000
+      internalID: -6779672818253062070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: musica titulo_5
+      name: biomas_5
       rect:
         serializedVersion: 2
-        x: 1240
-        y: 425
-        width: 155
-        height: 219
+        x: 2771
+        y: 411
+        width: 583
+        height: 212
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0f4bb91db404e100800000000000000
-      internalID: 136239098954993419
+      spriteID: 49588ad2455342150800000000000000
+      internalID: 5846856851893290388
       vertices: []
       indices: 
       edges: []
@@ -243,7 +243,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9d6f946675785d04fa84af3cb5d611b9
     internalID: 0
     vertices: []
     indices: 
@@ -251,12 +251,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      musica titulo_0: -1846750185658187523
-      musica titulo_1: -8322201903766370537
-      musica titulo_2: 3703662597498658723
-      musica titulo_3: -2946510906973430292
-      musica titulo_4: 179581948234608626
-      musica titulo_5: 136239098954993419
+      biomas_0: 1926352496804939565
+      biomas_1: -5564782578355005975
+      biomas_2: -5082707820972810371
+      biomas_3: -8266556524394231636
+      biomas_4: -6779672818253062070
+      biomas_5: 5846856851893290388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
