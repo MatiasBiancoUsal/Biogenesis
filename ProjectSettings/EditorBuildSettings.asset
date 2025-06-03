@@ -8,4 +8,26 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 00d81ae4367a1274fada004b3993baa0
+  - enabled: 1
+    path: Assets/Scenes/Escena Mapa.unity
+    guid: fd48f89810f5b5b4abf7dbd6f0c2765e
+  - enabled: 1
+    path: Assets/Scenes/Laboratorio.unity
+    guid: 1ce465f7fce98344d922d8bd04954581
+  - enabled: 1
+    path: Assets/Scenes/Laboratorio Abandonado.unity
+    guid: 49eda3ec5e7f35d4280ce36506c98f82
+  - enabled: 1
+    path: Assets/Scenes/Bioma boscoso.unity
+    guid: 1a9c787ce5c455a4d98436841c932465
+  - enabled: 1
+    path: Assets/Scenes/Bioma rocoso.unity
+    guid: 6fef1df7f6879e748ac1474c9bb6a964
+  - enabled: 1
+    path: Assets/Scenes/Bioma Volcan Acido.unity
+    guid: a2e955d7333ecb04cab10859e5299430
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
