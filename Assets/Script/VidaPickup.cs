@@ -10,7 +10,7 @@ public class VidaPickup : MonoBehaviour
         if (personaje != null)
         {
             personaje.RestaurarVida(cantidadVida);
-            Destroy(gameObject); // Destruye el objeto de vida tras usarlo
+            Destroy(gameObject); 
         }
     }
 }

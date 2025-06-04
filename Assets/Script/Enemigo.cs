@@ -3,8 +3,7 @@ using UnityEngine;
 public class Enemigo : MonoBehaviour
 {
     public int daño = 30;
-    public float intervaloDaño = 1f; // tiempo en segundos entre cada golpe
-
+    public float intervaloDaño = 1f; 
     private float tiempoSiguienteDaño = 0f;
 
     private void OnTriggerStay2D(Collider2D other)
