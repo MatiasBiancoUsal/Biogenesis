@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      acido piso_0: -1806376704980281375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

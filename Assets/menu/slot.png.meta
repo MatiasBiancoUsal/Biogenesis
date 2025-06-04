@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7e04344f5f7eac6448d0b5d3f4d16df5
+guid: 32d50a5591b934a4a9305624841446fe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2497025392584114712
-    second: Rocoso piso_0
+      213: -8358113870863188520
+    second: slot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,22 +100,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rocoso piso_0
+      name: slot_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 199
+        x: 503
+        y: 216
+        width: 270
+        height: 292
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8124b106d5737a220800000000000000
-      internalID: 2497025392584114712
+      spriteID: 8dd3fe6b7b3020c80800000000000000
+      internalID: -8358113870863188520
       vertices: []
       indices: 
       edges: []
@@ -123,7 +123,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cdd67560c345300419d22b07f3953d5b
     internalID: 0
     vertices: []
     indices: 
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rocoso piso_0: 2497025392584114712
+      slot_0: -8358113870863188520
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

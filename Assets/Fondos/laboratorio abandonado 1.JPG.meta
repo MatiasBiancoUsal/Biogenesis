@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      laboratorio abandonado 1_0: -4576613528740980347
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
