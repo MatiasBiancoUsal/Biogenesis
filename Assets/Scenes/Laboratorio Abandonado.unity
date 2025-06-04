@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 1062034116}
   - component: {fileID: 1062034119}
   - component: {fileID: 1062034120}
+  - component: {fileID: 1062034121}
   m_Layer: 0
   m_Name: "alima\xF1a biotecnologica base_0"
   m_TagString: rata
@@ -543,6 +544,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1062034121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062034115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c104dd9bb0ce1ce47acaf8ad6a9c283b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabADN: {fileID: 9206031163621183328, guid: cd7f73b91e7a4f044b69d84298f2392f, type: 3}
+  intervalo: 5
+  puntoGeneracion: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

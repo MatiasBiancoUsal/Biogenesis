@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &335943562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335943563}
+  m_Layer: 0
+  m_Name: PuntoGeneracion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &335943563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335943562}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.28, y: -3.08, z: 4210.547}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630677897
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1644563042}
   - component: {fileID: 1644563041}
+  - component: {fileID: 1644563043}
   m_Layer: 0
   m_Name: "ara\xF1a base_0"
   m_TagString: Untagged
@@ -291,12 +323,27 @@ Transform:
   m_GameObject: {fileID: 1644563040}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: -0.34, z: 0}
-  m_LocalScale: {x: 0.33249602, y: 0.33249602, z: 0.33249602}
+  m_LocalPosition: {x: 1.2, y: -2.01, z: 0}
+  m_LocalScale: {x: 0.20872709, y: 0.20872709, z: 0.20872709}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1644563043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644563040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ced80f14a442b2488435cb4326057af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabADN: {fileID: 395208717185439404, guid: 0cda020f62b152b43a0255140daaa302, type: 3}
+  intervalo: 5
+  puntoGeneracion: {fileID: 335943563}
 --- !u!1 &1959727138
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,3 +437,4 @@ SceneRoots:
   - {fileID: 630677900}
   - {fileID: 1959727140}
   - {fileID: 1644563042}
+  - {fileID: 335943563}
