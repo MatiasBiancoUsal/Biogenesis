@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
-using InvItem = Inventory.Item;
+using InvItem = GameInventory.Item;
 
 public class InventorySlot : MonoBehaviour
 {

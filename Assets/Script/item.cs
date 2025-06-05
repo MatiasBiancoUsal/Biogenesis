@@ -1,10 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using GameInventory;
 
-namespace Inventory
+namespace GameInventory
 {
-    public class Item
+    public class ItemCombiner : MonoBehaviour
+    {
+        public Item ADNCazadorvolador;
+        public Item ADNAlimañaBiotecnologica;
+        public Item ADNArañaMutante;
+        public Item ADNMutanteRadiactivo;
+        GameObject CriaturaExperimento;
+
+        [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
+
+        internal static class InventoryEvents
+        {
+            public static Action OnInventoryChanged = delegate { };
+        }
+        public class Item
     {
         public string itemName;
         public Sprite icon;
@@ -17,16 +33,6 @@ namespace Inventory
             this.quantity = qty;
         }
     }
-
-    [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
-
-    public class ItemCombiner : MonoBehaviour
-    {
-        public Item ADNCazadorvolador;
-        public Item ADNAlimañaBiotecnologica;
-        public Item ADNArañaMutante;
-        public Item ADNMutanteRadiactivo;
-        GameObject CriaturaExperimento;
 
         public void TryCombine()
         {
@@ -44,7 +50,7 @@ namespace Inventory
                 inventory.RemoveItem(ADNArañaMutante, 1);
                 inventory.RemoveItem(ADNMutanteRadiactivo, 1);
 
-                // Agrega Mob 1
+                // Agrega criatura experimento
                 inventory.AddItem(CriaturaExperimento);
 
                 Debug.Log("¡Has creado Criatura Experimento!");
@@ -54,7 +60,13 @@ namespace Inventory
                 Debug.Log("Faltan materiales para crear Criatura Experimento.");
             }
 
-            InventoryEvents.OnInventoryChanged?.Invoke();
+
+            InventoryEvents.OnInventoryChanged.Invoke();
         }
+    }
+
+    internal class InventoryEvents
+    {
+        public static object OnInventoryChanged { get; internal set; }
     }
 }

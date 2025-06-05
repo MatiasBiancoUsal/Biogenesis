@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Inventory;
+using GameInventory;
 
 public class InventorySlotUI : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class InventorySlotUI : MonoBehaviour
             if (i < Inventory.Instance.Items.Count)
             {
                 Item item = Inventory.Instance.Items[i];
-                slots[i].SetSlot(item, item.quantity);
+                slots[i].SetSlot(item);
             }
             else
             {

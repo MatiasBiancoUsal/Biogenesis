@@ -4,16 +4,23 @@ using UnityEngine;
 using static UnityEditor.Progress;
 namespace Game.InventorySystem
 {
-    public class Inventory : MonoBehaviour
+    public class GameInventory : MonoBehaviour
     {
-        public static Inventory Instance;
+        public static GameInventory Instance;
         public List<Item> Items = new List<Item>();
         public int maxSlots = 999;
 
-        void Awake()
+        private void Awake()
         {
-            if (Instance == null) Instance = this;
-            else Destroy(gameObject);
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public bool AddItem(Item newItem)
@@ -52,9 +59,23 @@ namespace Game.InventorySystem
             }
         }
 
-        public bool HasItem(Item item)
+        public class InventorySlot
         {
-            return Item.Any(i => i.item == item && i.amount > 0);
+            public Item item;
+            public int amount;
+
+            public InventorySlot(Item item, int amount)
+            {
+                this.item = item;
+                this.amount = amount;
+            }
         }
+        public List<InventorySlot> items = new List<InventorySlot>();
+
+        public InventorySlot GetItem(Item item)
+        {
+            return items.Find(i => i.item == item && i.amount > 0);
+        }
+
     }
 }
