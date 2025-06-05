@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8469123938126545186}
   - component: {fileID: 4652934068465172552}
   - component: {fileID: 6050516239601843603}
+  - component: {fileID: 8338639441581164242}
   m_Layer: 0
   m_Name: ADN Mutante radiactivo_0
   m_TagString: Untagged
@@ -146,3 +147,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602211a0098554848b2413910a2d9754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
+  icon: {fileID: 0}
+  quantity: 1
+--- !u!114 &8338639441581164242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7448859574841178860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9281cb3330f584fbaaf4d88a3f559f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cantidad: 1
+  textoCantidad: {fileID: 0}
+  ID: 0

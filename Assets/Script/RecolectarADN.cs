@@ -14,18 +14,4 @@ public class RecolectarADN : MonoBehaviour
         // Destruir el objeto recolectado
         Destroy(gameObject);
     }
-    private void OnMouseDown()
-    {
-        Item item = new Item(itemName, icon, quantity);
-
-        if (Inventory.Instance.AddItem(item))
-        {
-            FindObjectOfType<InventorySlotUI>().UpdateUI();
-            Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log("Inventario lleno");
-        }
-    }
 }
