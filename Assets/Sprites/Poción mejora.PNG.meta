@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Poci\xF3n mejora_0": -8179364617320376612
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

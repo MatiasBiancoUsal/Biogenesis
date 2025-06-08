@@ -13,5 +13,9 @@ public class RecolectarADN : MonoBehaviour
 
         // Destruir el objeto recolectado
         Destroy(gameObject);
+        InventarioManager.instancia.AñadirADN(itemName, icon);
+        Destroy(gameObject);
     }
+
+
 }
