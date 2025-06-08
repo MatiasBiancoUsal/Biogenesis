@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bd6e7bdf0832f1d48a1ba3ca25895f55
+guid: 8da3829a5f475d94e982a393cfb4f333
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1468256126872395714
-    second: boton salida_0
+      213: -8087204541898988581
+    second: IMG_2332_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boton salida_0
+      name: IMG_2332_0
       rect:
         serializedVersion: 2
-        x: 719
-        y: 811
-        width: 112
-        height: 110
+        x: 37
+        y: 100
+        width: 364
+        height: 356
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e30ea7ee4d4bf9be0800000000000000
-      internalID: -1468256126872395714
+      spriteID: bd36f26215a74cf80800000000000000
+      internalID: -8087204541898988581
       vertices: []
       indices: 
       edges: []
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boton salida_0: -1468256126872395714
+      IMG_2332_0: -8087204541898988581
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
