@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9657ae3feee7d014aa6107941170e9e2, type: 3}
+  m_Name: Vida A
+  m_EditorClassIdentifier: 
+  ID: 0
+  nombre: hojita
+  imagen: {fileID: -8087204541898988581, guid: 8da3829a5f475d94e982a393cfb4f333, type: 3}

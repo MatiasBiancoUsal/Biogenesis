@@ -781,8 +781,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -76.6, y: 52.661}
-  m_SizeDelta: {x: 23.067, y: 52.3894}
+  m_AnchoredPosition: {x: -135.45, y: 98.842}
+  m_SizeDelta: {x: 39.473, y: 89.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &530584671
 CanvasGroup:
@@ -847,6 +847,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabIngredienteUI: {fileID: 530584669}
+  item: {fileID: 0}
+  duplicar: 1
 --- !u!1 &563166347
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 214.6, y: 118.7}
+  m_AnchoredPosition: {x: 390.9, y: 218.1}
   m_SizeDelta: {x: 24.0343, y: 24.0343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &563166349
@@ -1121,8 +1123,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150.1, y: -59.1}
-  m_SizeDelta: {x: 44.5274, y: 38.9409}
+  m_AnchoredPosition: {x: -268.18802, y: -106.40703}
+  m_SizeDelta: {x: 76.197, y: 66.637}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &716698122
 CanvasGroup:
@@ -1187,6 +1189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabIngredienteUI: {fileID: 716698120}
+  item: {fileID: 0}
+  duplicar: 1
 --- !u!1 &724436123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,8 +1227,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -145.89998, y: 51}
-  m_SizeDelta: {x: 50.1696, y: 49.0669}
+  m_AnchoredPosition: {x: -256, y: 96}
+  m_SizeDelta: {x: 85.852, y: 83.965}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &724436125
 CanvasGroup:
@@ -1258,8 +1262,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8087204541898988581, guid: 8da3829a5f475d94e982a393cfb4f333, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1289,6 +1293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabIngredienteUI: {fileID: 724436123}
+  item: {fileID: 11400000, guid: f573d743505db7f46a4e31c071b86ae1, type: 2}
+  duplicar: 1
 --- !u!1 &824058941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,7 +1957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -2021,8 +2027,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 112.4879, y: -0.000022888}
-  m_SizeDelta: {x: 210.5762, y: 248}
+  m_AnchoredPosition: {x: 203.761, y: -0.30768}
+  m_SizeDelta: {x: 380.098, y: 448.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638610364
 MonoBehaviour:
@@ -2075,8 +2081,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientesEnZona: []
-  pocionVidaPrefab: {fileID: 3577975577442756757, guid: 94eff3aa20c0efd42919a48b581c49ee, type: 3}
-  pocionMejoraPrefab: {fileID: 8815221515953262091, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
+  pocionVidaPrefab: {fileID: 7984393118796925897, guid: 72828e9b194b2534e86fb623cce9a574, type: 3}
+  pocionMejoraPrefab: {fileID: 7984393118796925897, guid: 72828e9b194b2534e86fb623cce9a574, type: 3}
 --- !u!225 &1638610368
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2418,8 +2424,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72.529, y: -59.1}
-  m_SizeDelta: {x: 42.5255, y: 54.675}
+  m_AnchoredPosition: {x: -135.44601, y: -106.40703}
+  m_SizeDelta: {x: 72.771, y: 93.561}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1932020402
 CanvasGroup:
@@ -2484,6 +2490,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabIngredienteUI: {fileID: 1932020400}
+  item: {fileID: 0}
+  duplicar: 1
 --- !u!1 &1958060753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,12 +2554,12 @@ RectTransform:
   m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 563166348}
   - {fileID: 724436124}
   - {fileID: 530584670}
   - {fileID: 716698121}
   - {fileID: 1932020401}
   - {fileID: 1638610363}
+  - {fileID: 563166348}
   m_Father: {fileID: 1571361916}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
