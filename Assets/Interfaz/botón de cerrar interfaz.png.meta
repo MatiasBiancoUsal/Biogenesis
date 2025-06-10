@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "bot\xF3n de cerrar interfaz_0": 4968461203349477353
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
