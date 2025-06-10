@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6239663886827005547}
   - component: {fileID: 9128998269303637949}
   m_Layer: 0
-  m_Name: Vida
+  m_Name: pocionVidaPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

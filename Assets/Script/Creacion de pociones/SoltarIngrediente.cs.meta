@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 134825fd06f5af44da5f09809e00acc9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pocionVidaPrefab: {instanceID: 0}
+  - pocionMejoraPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
