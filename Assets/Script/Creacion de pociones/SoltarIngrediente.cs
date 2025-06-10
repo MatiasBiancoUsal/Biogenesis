@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class SoltarIngrediente : MonoBehaviour, IDropHandler
 {
-    public List<string> ingredientesEnZona = new List<string>();
+    public List<string> ingredientesEnZona;
 
     public GameObject pocionVidaPrefab;
     public GameObject pocionMejoraPrefab;
@@ -50,7 +50,7 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
     void CrearPocion(GameObject prefab)
     {
         GameObject nuevaPocion = Instantiate(prefab, transform); // Esto la pone como hija de ZonaDeFusion
-        //nuevaPocion.GetComponent<RectTransform>().anchoredPosition = Vector2.zero; // Centrarla si es UI
+        nuevaPocion.GetComponent<RectTransform>().anchoredPosition = Vector2.zero; // Centrarla si es UI
 
         // Si estás usando UI, esto es importante:
         nuevaPocion.transform.SetParent(transform, false); // false para mantener escala/posición del prefab
