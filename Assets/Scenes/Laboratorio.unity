@@ -308,7 +308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 156.1, y: 31}
+  m_AnchoredPosition: {x: 241.3, y: 83.4}
   m_SizeDelta: {x: 36.38, y: 35.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &254663858
@@ -327,8 +327,8 @@ MonoBehaviour:
   buttonImage: {fileID: 824058943}
   openSprite: {fileID: 6983125184316444689, guid: 5bbce98a0afd4224a8ca9e3c29e95c00, type: 3}
   closeSprite: {fileID: -1468256126872395714, guid: bd6e7bdf0832f1d48a1ba3ca25895f55, type: 3}
-  openPosition: {x: -394.66, y: -154.65}
-  closePosition: {x: -391.82, y: -151.99}
+  openPosition: {x: 156.1, y: 31}
+  closePosition: {x: 241.3, y: 83.4}
 --- !u!114 &254663859
 MonoBehaviour:
   m_ObjectHideFlags: 0
