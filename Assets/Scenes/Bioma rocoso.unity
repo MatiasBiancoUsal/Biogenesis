@@ -667,6 +667,7 @@ GameObject:
   - component: {fileID: 1644563045}
   - component: {fileID: 1644563044}
   - component: {fileID: 1644563047}
+  - component: {fileID: 1644563048}
   m_Layer: 0
   m_Name: "ara\xF1a base_0"
   m_TagString: Untagged
@@ -857,6 +858,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1644563048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644563040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a16cc3347d5ce4da838963b87d209c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  waitTime: 2
+  moveDistance: 3
 --- !u!1001 &1915794584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -871,11 +887,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6299341035721419253, guid: 56404a1f6a977ee499e73fbfd92bebc9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.59695005
+      value: -3.07
       objectReference: {fileID: 0}
     - target: {fileID: 6299341035721419253, guid: 56404a1f6a977ee499e73fbfd92bebc9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.439133
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6299341035721419253, guid: 56404a1f6a977ee499e73fbfd92bebc9, type: 3}
       propertyPath: m_LocalPosition.z
