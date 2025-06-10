@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - rata
   - slot
+  - Interactuable
   layers:
   - Default
   - TransparentFX
