@@ -526,6 +526,8 @@ GameObject:
   - component: {fileID: 1540938121}
   - component: {fileID: 1540938120}
   - component: {fileID: 1540938119}
+  - component: {fileID: 1540938122}
+  - component: {fileID: 1540938123}
   m_Layer: 0
   m_Name: mutante radioactivo base_0
   m_TagString: Criatura2
@@ -694,6 +696,43 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.5116762, y: 1.1118965}
   m_Radius: 7.772282
+--- !u!95 &1540938122
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540938115}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3adde6c41134a23478a68b26a96137bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1540938123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540938115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a16cc3347d5ce4da838963b87d209c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  waitTime: 2
+  moveDistance: 3
 --- !u!1 &1685386237 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3577975577442756757, guid: 94eff3aa20c0efd42919a48b581c49ee, type: 3}
@@ -1018,11 +1057,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6299341035721419253, guid: 56404a1f6a977ee499e73fbfd92bebc9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.71
+      value: -3.15
       objectReference: {fileID: 0}
     - target: {fileID: 6299341035721419253, guid: 56404a1f6a977ee499e73fbfd92bebc9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7
+      value: -1.57
       objectReference: {fileID: 0}
     - target: {fileID: 6299341035721419253, guid: 56404a1f6a977ee499e73fbfd92bebc9, type: 3}
       propertyPath: m_LocalPosition.z

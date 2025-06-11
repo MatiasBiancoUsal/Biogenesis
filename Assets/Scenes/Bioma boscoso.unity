@@ -164,11 +164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6299341035721419253, guid: 56404a1f6a977ee499e73fbfd92bebc9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.69
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 6299341035721419253, guid: 56404a1f6a977ee499e73fbfd92bebc9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.344777
+      value: -2.17
       objectReference: {fileID: 0}
     - target: {fileID: 6299341035721419253, guid: 56404a1f6a977ee499e73fbfd92bebc9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -222,6 +222,8 @@ GameObject:
   - component: {fileID: 614841327}
   - component: {fileID: 614841326}
   - component: {fileID: 614841329}
+  - component: {fileID: 614841331}
+  - component: {fileID: 614841330}
   m_Layer: 0
   m_Name: cazador volador base_0
   m_TagString: Criatura
@@ -307,7 +309,7 @@ Transform:
   m_GameObject: {fileID: 614841322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.88, y: -1.44, z: 0}
+  m_LocalPosition: {x: 4.88, y: -0.56, z: 0}
   m_LocalScale: {x: 0.17753835, y: 0.17753835, z: 0.17753835}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -408,6 +410,43 @@ MonoBehaviour:
   velocidadProyectil: 5
   intervaloDisparo: 2
   objetivo: {fileID: 0}
+--- !u!114 &614841330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614841322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a16cc3347d5ce4da838963b87d209c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  waitTime: 2
+  moveDistance: 3
+--- !u!95 &614841331
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614841322}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e82deca15eb853439b9ace60165e133, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &790475628
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,11 +704,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2116550146454570139, guid: 94eff3aa20c0efd42919a48b581c49ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2044468
+      value: -1.63
       objectReference: {fileID: 0}
     - target: {fileID: 2116550146454570139, guid: 94eff3aa20c0efd42919a48b581c49ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.0861578
+      value: -1.94
       objectReference: {fileID: 0}
     - target: {fileID: 2116550146454570139, guid: 94eff3aa20c0efd42919a48b581c49ee, type: 3}
       propertyPath: m_LocalPosition.z
