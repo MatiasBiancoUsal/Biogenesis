@@ -10,6 +10,14 @@ TagManager:
   - slot
   - Interactuable
   - ingrediente
+  - Criatura
+  - depredador
+  - ProyectilEnemigo
+  - Depredador
+  - PredatorSpawn
+  - Criatura1
+  - Criatura2
+  - Criatura3
   layers:
   - Default
   - TransparentFX
