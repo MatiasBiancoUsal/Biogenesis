@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Objetos : MonoBehaviour
 {
-    public Items item;
+    public ItemIngredientes itemIngrediente;
 
 
     void Start()
     {
-        if (item != null)
-            GetComponent<SpriteRenderer>().sprite = item.imagen;
+        if (itemIngrediente != null)
+            GetComponent<SpriteRenderer>().sprite = itemIngrediente.imagen;
     }
 
 

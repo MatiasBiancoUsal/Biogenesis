@@ -8,13 +8,13 @@ public class IngredienteUIArrastrable : MonoBehaviour, IPointerDownHandler
 {
     public GameObject prefabIngredienteUI; // Este será el duplicado
 
-    public Items item;
+    public ItemIngredientes itemIngrediente;
     public bool duplicar;
 
     void Start()
     {
-        if(item !=null)
-        GetComponent<Image>().sprite = item.imagen;
+        if(itemIngrediente !=null)
+        GetComponent<Image>().sprite = itemIngrediente.imagen;
     }
 
 
@@ -26,6 +26,7 @@ public class IngredienteUIArrastrable : MonoBehaviour, IPointerDownHandler
             GameObject clon = Instantiate(prefabIngredienteUI, transform.position, Quaternion.identity, transform.parent.parent); // asegúrate de que se coloque dentro del Canvas
             clon.name = prefabIngredienteUI.name;
             clon.AddComponent<ArrastrarUI>();
+            clon.GetComponent<IngredienteUIArrastrable>().duplicar = false; // ESTA LÍNEA es la clave
         }
 
     }

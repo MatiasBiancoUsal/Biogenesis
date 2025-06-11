@@ -847,7 +847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabIngredienteUI: {fileID: 530584669}
-  item: {fileID: 0}
+  itemIngrediente: {fileID: 0}
   duplicar: 1
 --- !u!1 &563166347
 GameObject:
@@ -1189,7 +1189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabIngredienteUI: {fileID: 716698120}
-  item: {fileID: 0}
+  itemIngrediente: {fileID: 0}
   duplicar: 1
 --- !u!1 &724436123
 GameObject:
@@ -1262,8 +1262,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -8087204541898988581, guid: 8da3829a5f475d94e982a393cfb4f333, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1293,7 +1293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabIngredienteUI: {fileID: 724436123}
-  item: {fileID: 11400000, guid: f573d743505db7f46a4e31c071b86ae1, type: 2}
+  itemIngrediente: {fileID: 0}
   duplicar: 1
 --- !u!1 &824058941
 GameObject:
@@ -2027,8 +2027,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 203.761, y: -0.30768}
-  m_SizeDelta: {x: 380.098, y: 448.62}
+  m_AnchoredPosition: {x: 206, y: 8}
+  m_SizeDelta: {x: 204.4095, y: 239.4999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638610364
 MonoBehaviour:
@@ -2043,7 +2043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7830189, g: 0.380429, b: 0.380429, a: 0.31764707}
+  m_Color: {r: 0.7830189, g: 0.380429, b: 0.380429, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2082,7 +2082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientesEnZona: []
   pocionVidaPrefab: {fileID: 7984393118796925897, guid: 72828e9b194b2534e86fb623cce9a574, type: 3}
-  pocionMejoraPrefab: {fileID: 7984393118796925897, guid: 72828e9b194b2534e86fb623cce9a574, type: 3}
+  pocionMejoraPrefab: {fileID: 7984393118796925897, guid: 84f5e426826ab5144b08f1ca99c65916, type: 3}
 --- !u!225 &1638610368
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2490,7 +2490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabIngredienteUI: {fileID: 1932020400}
-  item: {fileID: 0}
+  itemIngrediente: {fileID: 0}
   duplicar: 1
 --- !u!1 &1958060753
 GameObject:
@@ -2541,7 +2541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1962160725
 RectTransform:
   m_ObjectHideFlags: 0

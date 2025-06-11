@@ -418,7 +418,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      otroo_0: 8198910609515280186
+      otroo_1: 21213518696509102
+      otroo_10: -289398514447192460
+      otroo_11: 6383560923075787106
+      otroo_12: -8561367692639671868
+      otroo_2: 1804545650880868581
+      otroo_3: -1977599020127185690
+      otroo_4: 8745465677222220645
+      otroo_5: 1209686925576544895
+      otroo_6: 5293400168801966560
+      otroo_7: -9191510712090164866
+      otroo_8: -6480128387273802035
+      otroo_9: -2027722348251230321
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

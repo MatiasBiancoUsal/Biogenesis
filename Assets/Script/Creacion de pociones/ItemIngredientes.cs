@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "nuevo item",menuName = "Items")]
-public class Items : ScriptableObject
+[CreateAssetMenu(fileName = "nuevo ingrediente",menuName = "ItemsIngredientePocion")]
+public class ItemIngredientes : ScriptableObject
 {
     public int ID;
     public string nombre;
