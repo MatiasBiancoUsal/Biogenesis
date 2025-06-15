@@ -18,6 +18,7 @@ TagManager:
   - Criatura1
   - Criatura2
   - Criatura3
+  - Food
   layers:
   - Default
   - TransparentFX
