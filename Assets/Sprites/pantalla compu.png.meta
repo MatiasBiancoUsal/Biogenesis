@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: aa6eb7e3a1f926d4fb229fd36831c3f0
+guid: 4d46b42f9883e844789ec1ffbe389e4a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3381515634823390011
-    second: ADN Mutante radiactivo  (1)_0
+      213: 434755832218297818
+    second: pantalla compu_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ADN Mutante radiactivo  (1)_0
+      name: pantalla compu_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 3
-        width: 325
-        height: 326
+        x: 2828
+        y: 2142
+        width: 1062
+        height: 942
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5cc1ce732717211d0800000000000000
-      internalID: -3381515634823390011
+      spriteID: ad5a66f3020980600800000000000000
+      internalID: 434755832218297818
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      ADN Mutante radiactivo  (1)_0: -3381515634823390011
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

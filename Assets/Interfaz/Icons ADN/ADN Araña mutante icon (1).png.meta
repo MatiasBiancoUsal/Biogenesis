@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "ADN Ara\xF1a mutante icon (1)_0": -4929079326916904187
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
