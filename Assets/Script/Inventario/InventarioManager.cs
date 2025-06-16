@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InventarioManager : MonoBehaviour
 {
@@ -42,6 +43,12 @@ public class InventarioManager : MonoBehaviour
     {
         Instantiate(criaturaExperimentoPrefab, spawnPoint.position, spawnPoint.rotation);
         Debug.Log("¡Criatura experimento creada!");
+
+        // Guardar el estado para usarlo en otra escena
+        PlayerPrefs.SetInt("CriaturaDesbloqueada", 1);
+
+        // Cargar la escena donde aparecerá la criatura
+        SceneManager.LoadScene("SampleScene"); // Asegurate que el nombre sea exacto
     }
     private void RevisarADNCompletos()
     {

@@ -8,5 +8,6 @@ public class Slot
     public Image imagenSlot;
     public Sprite spriteActual;
     public int cantidad;
+    public Text cantidadTexto;
 }
 
