@@ -10,7 +10,7 @@ public class InventarioManager : MonoBehaviour
     public Transform spawnPoint; // Donde aparece la criatura
     public static InventarioManager instancia; // <--- ESTA ES LA LÍNEA CLAVE
 
-    private bool criaturaCreada = false;
+    public bool criaturaCreada = false;
 
     void Awake()
     {
@@ -25,7 +25,7 @@ public class InventarioManager : MonoBehaviour
         if (!criaturaCreada && TodosLosADNRecolectados())
         {
             CrearCriatura();
-            criaturaCreada = true;
+            CriaturaCreada.Instance.criaturaCreada = true;
         }
     }
 

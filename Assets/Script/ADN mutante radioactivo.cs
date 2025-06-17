@@ -8,7 +8,7 @@ public class ADNmutanteradioactivo : MonoBehaviour
     public float intervalo = 5f; // cada cuánto tiempo genera ADN
     public Transform puntoGeneracion; // opcional: para definir un lugar específico
 
-    private float tiempoSiguiente = 600f;
+    private float tiempoSiguiente = 120f;
 
     // Start is called before the first frame update
     void Start()
