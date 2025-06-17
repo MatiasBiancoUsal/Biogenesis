@@ -53,7 +53,7 @@ public class GlobalPredatorSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(10); // Cambiar a 300 para 5 min reales
+            yield return new WaitForSeconds(120); // Cambiar a 300 para 5 min reales
 
             randomScene = sceneNames[Random.Range(0, sceneNames.Length)];
             Debug.Log("Tu criatura está siendo atacada en " + randomScene);
