@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
-    public int vida = 100;
-    public int vidaMaxima = 100;
+    public int vida = 3;
+    public int vidaMaxima = 3;
 
     public void TomarDaño(int cantidad)
     {
@@ -11,6 +11,7 @@ public class Personaje : MonoBehaviour
         Debug.Log("Personaje recibió daño. Vida actual: " + vida);
         if (vida <= 0)
         {
+            vida = 0;
             Debug.Log("Personaje ha muerto");
             Destroy(gameObject);
         }
