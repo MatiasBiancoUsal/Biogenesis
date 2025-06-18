@@ -129,11 +129,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1735580313193139752, guid: 4d5210c8cc1defb4aa5a119619bb0478, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.42
+      value: -7.53
       objectReference: {fileID: 0}
     - target: {fileID: 1735580313193139752, guid: 4d5210c8cc1defb4aa5a119619bb0478, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7
+      value: -1.65
       objectReference: {fileID: 0}
     - target: {fileID: 1735580313193139752, guid: 4d5210c8cc1defb4aa5a119619bb0478, type: 3}
       propertyPath: m_LocalPosition.z
@@ -624,6 +624,51 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &656742397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 656742399}
+  - component: {fileID: 656742398}
+  m_Layer: 0
+  m_Name: ObservadorVida
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &656742398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656742397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77bc8566b77676948a06bda43f116676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personaje: {fileID: 1644563044}
+--- !u!4 &656742399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656742397}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.78886443, y: 0.7804994, z: 3.61416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1125,8 +1170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbbb69110572b0e4aa1ce35b9a816f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 3
-  vidaMaxima: 3
+  vida: 100
+  vidaMaxima: 100
 --- !u!50 &1644563045
 Rigidbody2D:
   serializedVersion: 4
@@ -1348,7 +1393,7 @@ MonoBehaviour:
   m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1888928524
@@ -1914,3 +1959,4 @@ SceneRoots:
   - {fileID: 2055354204}
   - {fileID: 2065092263}
   - {fileID: 1689249552}
+  - {fileID: 656742399}

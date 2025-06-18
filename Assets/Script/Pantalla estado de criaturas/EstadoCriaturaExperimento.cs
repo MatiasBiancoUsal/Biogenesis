@@ -17,6 +17,10 @@ public class EstadoCriaturaExperimento : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         sr.enabled = false; // Oculta el sprite al principio
+
+        imgNombre.SetActive(false); // Oculta el nombre también al principio
+        barraHP.SetActive(false);   // Oculta barra de vida al principio
+        barraComida.SetActive(false); // Oculta barra de comida al principio
     }
 
     void Update()

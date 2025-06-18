@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
-    public int vida = 3;
-    public int vidaMaxima = 3;
+    public int vida = 100;
+    public int vidaMaxima = 100;
 
     public void TomarDaño(int cantidad)
     {
