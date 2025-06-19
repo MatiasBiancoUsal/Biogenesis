@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5513869575703769995}
   - component: {fileID: 6917382989164496943}
   - component: {fileID: -2873905923312669659}
-  - component: {fileID: 4200675794699883366}
+  - component: {fileID: 4451026916311715878}
   m_Layer: 0
   m_Name: "ADN Alima\xF1a biotecnologica"
   m_TagString: Untagged
@@ -150,7 +150,7 @@ MonoBehaviour:
   itemName: 
   icon: {fileID: 0}
   quantity: 1
---- !u!114 &4200675794699883366
+--- !u!114 &4451026916311715878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,9 +159,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9206031163621183328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd9281cb3330f584fbaaf4d88a3f559f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d48892ba9606c341a0ae8e7c15c05f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantidad: 1
-  textoCantidad: {fileID: 0}
-  ID: 0
+  nombreADN: "Alima\xF1a"

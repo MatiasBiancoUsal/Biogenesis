@@ -7,13 +7,12 @@ public class ResumenADNUI : MonoBehaviour
 
     void Update()
     {
-        if (InventarioManager.instancia == null || InventarioManager.instancia.slots == null)
+        if (InventarioGlobal.Instance == null)
             return;
 
-        for (int i = 0; i < textosCantidad.Length; i++)
-        {
-            int cantidad = InventarioManager.instancia.slots[i].cantidad;
-            textosCantidad[i].text = cantidad.ToString();
-        }
+        textosCantidad[0].text = InventarioGlobal.Instance.ObtenerCantidad("Alimaña").ToString();
+        textosCantidad[1].text = InventarioGlobal.Instance.ObtenerCantidad("Araña").ToString();
+        textosCantidad[2].text = InventarioGlobal.Instance.ObtenerCantidad("Cazador").ToString();
+        textosCantidad[3].text = InventarioGlobal.Instance.ObtenerCantidad("Mutante").ToString();
     }
 }
