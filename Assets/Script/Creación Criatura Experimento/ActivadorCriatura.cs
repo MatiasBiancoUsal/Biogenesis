@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class ActivadorCriatura : MonoBehaviour
 {
-    public GameObject criaturaExperimento;
+    public InventarioManager InventarioManager; // Lo arrastrás desde el inspector
 
-    void Awake()
-    {
-        if (criaturaExperimento != null)
-            criaturaExperimento.SetActive(false); // Por si quedó activa en escena
-    }
-
+    private SpriteRenderer sr;
     void Start()
     {
-        if (PlayerPrefs.GetInt("CriaturaDesbloqueada", 0) == 1)
+        sr = GetComponent<SpriteRenderer>();
+        sr.enabled = false; // Oculta el sprite al principio
+    }
+
+    void Update()
+    {
+        if (CriaturaCreada.Instance != null && CriaturaCreada.Instance.criaturaCreada)
         {
-            criaturaExperimento.SetActive(true);
-            Debug.Log("¡Criatura experimento activada!");
+            sr.enabled = true; // Muestra el sprite cuando la criatura fue creada
         }
     }
 }

@@ -83,7 +83,8 @@ public class InventarioManager : MonoBehaviour
         Debug.Log("¡Criatura experimento creada!");
 
         // Guardar el estado para usarlo en otra escena
-        PlayerPrefs.SetInt("CriaturaDesbloqueada", 1);
+        CriaturaCreada.Instance.criaturaCreada = true;
+        criaturaCreada = true;
 
         // Cargar la escena donde aparecerá la criatura
         //SceneManager.LoadScene("SampleScene"); // Asegurate que el nombre sea exacto
