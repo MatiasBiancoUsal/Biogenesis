@@ -13,6 +13,6 @@ public class UIPersistente : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        
+
     }
 }
