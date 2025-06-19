@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1323001727796540904}
   - component: {fileID: 7630625839961437439}
   - component: {fileID: 2149772328555027324}
-  - component: {fileID: 6527893348478728328}
   m_Layer: 0
   m_Name: ADN Cazador Volador_0
   m_TagString: Untagged
@@ -147,19 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602211a0098554848b2413910a2d9754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: ADN Cazador Volador
   icon: {fileID: 0}
   quantity: 1
---- !u!114 &6527893348478728328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9044602077351973406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d48892ba9606c341a0ae8e7c15c05f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nombreADN: Cazador

@@ -20,6 +20,44 @@ public class InventarioManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    void Start()
+    {
+        SincronizarInventario();
+    }
+
+    //
+
+    void SincronizarInventario()
+    {
+        foreach (Slot slot in slots)
+        {
+            // Buscamos en el InventarioGlobal si existe ese ADN recolectado
+            InventarioGlobal.ADNItem item = InventarioGlobal.Instance.itemsADN.Find(i => i.nombre == slot.nombreADN);
+            if (item != null)
+            {
+                slot.cantidad = item.cantidad;
+
+                if (slot.cantidad > 0 && slot.spriteActual != null)
+                {
+                    slot.imagenSlot.sprite = slot.spriteActual;
+                    slot.imagenSlot.enabled = true;
+                }
+                else
+                {
+                    slot.imagenSlot.enabled = false;
+                }
+
+                //ACTUALIZAR EL TEXTO CON LA CANTIDAD
+                if (slot.cantidadTexto != null)
+                {
+                    slot.cantidadTexto.text = slot.cantidad.ToString();
+                }
+            }
+        }
+    }
+
+    //
+
     void Update()
     {
         if (!criaturaCreada && TodosLosADNRecolectados())
@@ -41,14 +79,14 @@ public class InventarioManager : MonoBehaviour
 
     void CrearCriatura()
     {
-        Instantiate(criaturaExperimentoPrefab, spawnPoint.position, spawnPoint.rotation);
+        //Instantiate(criaturaExperimentoPrefab, spawnPoint.position, spawnPoint.rotation);
         Debug.Log("¡Criatura experimento creada!");
 
         // Guardar el estado para usarlo en otra escena
         PlayerPrefs.SetInt("CriaturaDesbloqueada", 1);
 
         // Cargar la escena donde aparecerá la criatura
-        SceneManager.LoadScene("SampleScene"); // Asegurate que el nombre sea exacto
+        //SceneManager.LoadScene("SampleScene"); // Asegurate que el nombre sea exacto
     }
     private void RevisarADNCompletos()
     {
@@ -85,13 +123,15 @@ public class InventarioManager : MonoBehaviour
             if (slot.nombreADN == nombreADN)
             {
                 slot.cantidad++;
+                Debug.Log($"Añadido {nombreADN}: cantidad ahora {slot.cantidad}");
+
                 slot.spriteActual = icono;
-                ActualizarSlotVisual(slot);
+                ActualizarSlotVisual(slot); // ESTA FUNCIÓN DEBE LLAMARSE AQUÍ
                 break;
             }
         }
 
-        RevisarADNCompletos(); // Revisión automática después de cada recolección
+        RevisarADNCompletos();
     }
 
     private void ActualizarSlotVisual(Slot slot)
@@ -104,6 +144,12 @@ public class InventarioManager : MonoBehaviour
         else
         {
             slot.imagenSlot.enabled = false;
+        }
+
+        //ACTUALIZAR EL TEXTO SIEMPRE QUE CAMBIE LA CANTIDAD
+        if (slot.cantidadTexto != null)
+        {
+            slot.cantidadTexto.text = slot.cantidad.ToString();
         }
     }
 

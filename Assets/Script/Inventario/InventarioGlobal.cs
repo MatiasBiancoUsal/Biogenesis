@@ -26,13 +26,12 @@ public class InventarioGlobal : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // Inicializamos si está vacío
         if (itemsADN.Count == 0)
         {
-            itemsADN.Add(new ADNItem { nombre = "Alimaña", cantidad = 0 });
-            itemsADN.Add(new ADNItem { nombre = "Araña", cantidad = 0 });
-            itemsADN.Add(new ADNItem { nombre = "Cazador", cantidad = 0 });
-            itemsADN.Add(new ADNItem { nombre = "Mutante", cantidad = 0 });
+            itemsADN.Add(new ADNItem { nombre = "ADN Cazador Volador", cantidad = 0 });
+            itemsADN.Add(new ADNItem { nombre = "ADN Mutante Radiactivo", cantidad = 0 });
+            itemsADN.Add(new ADNItem { nombre = "ADN Alimaña Biotecnologica", cantidad = 0 });
+            itemsADN.Add(new ADNItem { nombre = "ADN Araña Mutante", cantidad = 0 });
         }
     }
 
@@ -42,7 +41,11 @@ public class InventarioGlobal : MonoBehaviour
         if (item != null)
         {
             item.cantidad += cantidad;
-            Debug.Log("Agregado ADN: " + nombre + " x" + cantidad);
+            Debug.Log($"Agregado ADN: {nombre} x{cantidad}. Total: {item.cantidad}");
+        }
+        else
+        {
+            Debug.LogWarning($"No se encontró el ADN '{nombre}' en InventarioGlobal.");
         }
     }
 
