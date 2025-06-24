@@ -19,6 +19,7 @@ TagManager:
   - Criatura2
   - Criatura3
   - Food
+  - ParasiteSpawn
   layers:
   - Default
   - TransparentFX

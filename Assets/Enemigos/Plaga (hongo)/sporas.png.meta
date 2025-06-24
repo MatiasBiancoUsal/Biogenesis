@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 340ea5016a6f1534e8dc4802f600128e
+guid: 72a3d2ff75710a84cbf86e3beb0db5c2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6590181751598056790
-    second: BIOGENESIS- BIBLIA DE ARTE - ALI.PDF (3)_0
+      213: -353335907000512717
+    second: sporas_0
+  - first:
+      213: 6489421124754547806
+    second: sporas_1
+  - first:
+      213: -7218700196603180855
+    second: sporas_2
+  - first:
+      213: 599487007962516123
+    second: sporas_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,22 +109,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BIOGENESIS- BIBLIA DE ARTE - ALI.PDF (3)_0
+      name: sporas_0
       rect:
         serializedVersion: 2
-        x: 620
-        y: 68
-        width: 730
-        height: 986
+        x: 244
+        y: 339
+        width: 401
+        height: 387
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 65583450367057b50800000000000000
-      internalID: 6590181751598056790
+      spriteID: 9582c57f7a05c5a4c9a37d9f45c40133
+      internalID: 1626335290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sporas_1
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 348
+        width: 405
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c85191199c133204c8e0df0e0aa31b05
+      internalID: -866505959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sporas_2
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 592
+        width: 185
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d5589632645814cb199dc39c45de30
+      internalID: 2061560331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sporas_3
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 357
+        width: 186
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79cd5e334426f32448c201d8f6662e36
+      internalID: -1931286380
       vertices: []
       indices: 
       edges: []
@@ -123,7 +195,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a22004a887d6c5948a945be49b3077c0
     internalID: 0
     vertices: []
     indices: 
@@ -131,7 +203,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BIOGENESIS- BIBLIA DE ARTE - ALI.PDF (3)_0: 6590181751598056790
+      sporas_0: 1626335290
+      sporas_1: -866505959
+      sporas_2: 2061560331
+      sporas_3: -1931286380
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
