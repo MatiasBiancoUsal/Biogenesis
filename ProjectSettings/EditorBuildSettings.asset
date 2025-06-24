@@ -35,5 +35,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PantallaCriaturas.unity
     guid: df5327311914a184e97c6473e4116196
+  - enabled: 1
+    path: Assets/Scenes/MiniJuego.unity
+    guid: 4fdf4d4ffa2d02d479c4752c7703783d
+  - enabled: 1
+    path: Assets/Scenes/cocina.unity
+    guid: 737a04091bd38fd4baa253027a330c2b
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
