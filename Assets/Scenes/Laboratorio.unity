@@ -3235,6 +3235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d187177b9025043a8941e9e18322b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIadn: {fileID: 2083173734}
+  nombresEscenas:
+  - PantallaCriaturas
 --- !u!1 &1571361915
 GameObject:
   m_ObjectHideFlags: 0
