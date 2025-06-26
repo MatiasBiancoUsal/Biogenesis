@@ -8,9 +8,10 @@ public class ataqueparásito : MonoBehaviour
     {
         Scene escenaActual = SceneManager.GetActiveScene();
 
-        if (GlobalParasiteSpawner.instance != null && GlobalParasiteSpawner.instance.sceneNames != null)
+        if (GlobalParasiteSpawner.instance != null)
         {
-            if (GlobalParasiteSpawner.instance.sceneNames.Contains(escenaActual.name))
+            // SOLO si esta es la escena seleccionada para el ataque
+            if (GlobalParasiteSpawner.instance.randomScene == escenaActual.name)
             {
                 GlobalParasiteSpawner.instance.SpawnearParásito();
             }

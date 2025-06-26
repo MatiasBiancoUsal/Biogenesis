@@ -11,6 +11,7 @@ public class ParasitoHongo : MonoBehaviour
 
     void Start()
     {
+
         animator = GetComponent<Animator>();
         DetectarObjetivo();
         StartCoroutine(Comportamiento());

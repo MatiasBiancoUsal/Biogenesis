@@ -11,7 +11,7 @@ public class GlobalParasiteSpawner : MonoBehaviour
 
     public static GlobalParasiteSpawner instance;
     private GameObject currentParasite;
-    private string randomScene;
+    public string randomScene;
 
     void Awake()
     {
