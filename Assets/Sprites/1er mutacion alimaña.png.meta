@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 052cb1220486e2340b7b2d77fd9e3fed
+guid: a5a5a0f7269e5e84c8d2009d6d3a387c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5251744956290624300
-    second: x_0
+      213: -1828133790444089473
+    second: "1er mutacion alima\xF1a_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: x_0
+      name: "1er mutacion alima\xF1a_0"
       rect:
         serializedVersion: 2
-        x: 34
-        y: 66
-        width: 398
-        height: 388
+        x: 3
+        y: 64
+        width: 754
+        height: 604
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c2be6aa7632f1e840800000000000000
-      internalID: 5251744956290624300
+      spriteID: f7f01b2e00a21a6e0800000000000000
+      internalID: -1828133790444089473
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      x_0: 5251744956290624300
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
