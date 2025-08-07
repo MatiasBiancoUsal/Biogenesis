@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 346abda833d3de94da2620c4b61f0f4e
+guid: c54068e5a6d6329488c3f31e70b1f053
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8328800642438625194
-    second: clickeable_0
+      213: 1488534826780693463
+    second: 1er mutacion mutante_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clickeable_0
+      name: 1er mutacion mutante_0
       rect:
         serializedVersion: 2
-        x: 143
-        y: 86
-        width: 933
-        height: 1174
+        x: 0
+        y: 53
+        width: 551
+        height: 446
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aa779917e08d59370800000000000000
-      internalID: 8328800642438625194
+      spriteID: 7d39f02d98658a410800000000000000
+      internalID: 1488534826780693463
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      clickeable_0: 8328800642438625194
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
