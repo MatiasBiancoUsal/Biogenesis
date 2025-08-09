@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      final mutacion cazador volador_0: 1038470393782912978
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

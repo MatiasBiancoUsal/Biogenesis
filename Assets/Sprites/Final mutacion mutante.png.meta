@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Final mutacion mutante_0: 1852479368436112148
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
