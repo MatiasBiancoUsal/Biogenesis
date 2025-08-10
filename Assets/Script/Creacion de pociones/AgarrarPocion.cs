@@ -8,6 +8,9 @@ public class AgarrarPocion : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private RectTransform rectTransform;
     private Canvas canvas;
 
+    // Prefab original que se va a guardar en el maletín
+    public GameObject prefabParaMaletin;
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -29,7 +32,13 @@ public class AgarrarPocion : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        // Al soltar el clic, hacer desaparecer el objeto
+        if (prefabParaMaletin != null && MaletinManager.instancia != null)
+        {
+            MaletinManager.instancia.GuardarPocion(prefabParaMaletin);
+        }
+
+        // Ocultar la poción de la mesa
         gameObject.SetActive(false);
     }
+
 }

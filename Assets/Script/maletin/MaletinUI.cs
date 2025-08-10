@@ -5,9 +5,13 @@ using UnityEngine.UI;
 
 public class MaletinUI : MonoBehaviour
 {
-    public GameObject maletinPanel; // Tu panel del maletín
-    public Transform panelPociones; // Donde van los iconos
-    public GameObject prefabIcono;  // Prefab del icono de poción
+    public GameObject maletinPanel; // Panel del maletín
+    public Transform panelPocionesVida;    // Donde van las pociones de vida
+    public Transform panelPocionesMejora;  // Donde van las pociones de mejora
+    public GameObject prefabIconoVida;
+    public GameObject prefabIconoMejora;
+
+    public Transform contenedor;
 
     public void ToggleMaletinInventory()
     {
@@ -21,19 +25,66 @@ public class MaletinUI : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        var m = MaletinManager.instancia;
+
+        foreach (Transform hijo in contenedor)
+            Destroy(hijo.gameObject);
+
+        if (m.tienePocionVida() && m.pocionVida != null)
+            Instantiate(m.pocionVida, contenedor);
+
+        if (m.tienePocionMejora() && m.pocionMejora != null)
+            Instantiate(m.pocionMejora, contenedor);
+    }
+
     void ActualizarUI()
     {
-        // Limpiar lo que hubiera antes
-        foreach (Transform hijo in panelPociones)
+        // Limpiar ambos paneles
+        foreach (Transform hijo in panelPocionesVida)
+        {
+            Destroy(hijo.gameObject);
+        }
+        foreach (Transform hijo in panelPocionesMejora)
         {
             Destroy(hijo.gameObject);
         }
 
-        // Mostrar todas las pociones guardadas en el MaletinManager
-        foreach (var pocion in MaletinManager.instancia.pociones)
+        // Mostrar solo las pociones que realmente están en el maletín
+        foreach (var pocion in MaletinManager.instancia.ObtenerPociones())
         {
-            GameObject nuevaPocionUI = Instantiate(prefabIcono, panelPociones);
-            nuevaPocionUI.GetComponent<Image>().sprite = pocion.GetComponent<SpriteRenderer>().sprite;
+            GameObject nuevaPocionUI = null;
+
+            if (pocion.CompareTag("PocionVida"))
+            {
+                nuevaPocionUI = Instantiate(prefabIconoVida, panelPocionesVida);
+            }
+            else if (pocion.CompareTag("PocionMejora"))
+            {
+                nuevaPocionUI = Instantiate(prefabIconoMejora, panelPocionesMejora);
+            }
+
+            if (nuevaPocionUI != null)
+            {
+                Image img = nuevaPocionUI.GetComponent<Image>();
+
+                // Primero probamos si la poción original es UI
+                Image imgOriginal = pocion.GetComponent<Image>();
+                if (imgOriginal != null)
+                {
+                    img.sprite = imgOriginal.sprite;
+                }
+                else
+                {
+                    // Si no es UI, probamos si es un objeto del mundo con SpriteRenderer
+                    SpriteRenderer sr = pocion.GetComponent<SpriteRenderer>();
+                    if (sr != null)
+                    {
+                        img.sprite = sr.sprite;
+                    }
+                }
+            }
         }
     }
 }

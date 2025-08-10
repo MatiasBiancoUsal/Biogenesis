@@ -12,6 +12,9 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
     public GameObject pocionVidaPrefab;
     public GameObject pocionMejoraPrefab;
 
+    public GameObject prefabPocionVida;
+    public GameObject prefabPocionMejora;
+
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("Algo fue soltado en la zona"); // Ver si llega hasta acá
@@ -73,6 +76,16 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
 
         // Si estás usando UI, esto es importante:
         nuevaPocion.transform.SetParent(transform, false); // false para mantener escala/posición del prefab
+
+        // Asignar el prefab para maletín desde aquí
+        var agarrarPocion = nuevaPocion.GetComponent<AgarrarPocion>();
+        if (agarrarPocion != null)
+        {
+            if (prefab == prefabPocionVida)
+                agarrarPocion.prefabParaMaletin = prefabPocionVida;
+            else if (prefab == prefabPocionMejora)
+                agarrarPocion.prefabParaMaletin = prefabPocionMejora;
+        }
 
         Debug.Log("Poción creada correctamente.");
 
