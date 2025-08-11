@@ -891,6 +891,7 @@ GameObject:
   - component: {fileID: 1062034126}
   - component: {fileID: 1062034127}
   - component: {fileID: 1062034128}
+  - component: {fileID: 1062034129}
   m_Layer: 0
   m_Name: "alima\xF1a biotecnologica base_0"
   m_TagString: Criatura3
@@ -1110,6 +1111,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hungerBar: {fileID: 34772536}
+--- !u!114 &1062034129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062034115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c982d5cd4a7d02c4eba10acd8bcf9e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteMutado1: {fileID: -1828133790444089473, guid: a5a5a0f7269e5e84c8d2009d6d3a387c, type: 3}
+  spriteMutadoFinal: {fileID: 6454079490188594633, guid: dc1a6c85b653a7c4183d315adfc57dd0, type: 3}
+  pocionesNecesariasPrimeraMutacion: 3
+  pocionesNecesariasMutacionFinal: 6
 --- !u!1 &1288100087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1517,10 @@ PrefabInstance:
     - target: {fileID: 337998150222309704, guid: 648a74e870b837f46aa374fae0516bb8, type: 3}
       propertyPath: m_Name
       value: "Canvas Malet\xEDn"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569838838015797352, guid: 648a74e870b837f46aa374fae0516bb8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.5999756
       objectReference: {fileID: 0}
     - target: {fileID: 4222681508466809611, guid: 648a74e870b837f46aa374fae0516bb8, type: 3}
       propertyPath: m_Pivot.x
