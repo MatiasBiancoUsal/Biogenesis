@@ -1961,6 +1961,10 @@ PrefabInstance:
       propertyPath: hungerBar
       value: 
       objectReference: {fileID: 2018081640}
+    - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: spriteMutadoFinal
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6493893972074452375, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: m_Name
       value: cazador volador base_0
