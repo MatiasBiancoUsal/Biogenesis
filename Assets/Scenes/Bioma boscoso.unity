@@ -1964,7 +1964,7 @@ PrefabInstance:
     - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: spriteMutadoFinal
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1038470393782912978, guid: c52531b191f0a9542a52530d8413b42b, type: 3}
     - target: {fileID: 6493893972074452375, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: m_Name
       value: cazador volador base_0

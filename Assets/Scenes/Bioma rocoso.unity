@@ -1501,7 +1501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteMutado1: {fileID: 2228574760120653458, guid: a8e95b0da0277424b801b1114990c091, type: 3}
-  spriteMutadoFinal: {fileID: 0}
+  spriteMutadoFinal: {fileID: 7612902305591025769, guid: 677628dd667d10a46a180e6a43622a61, type: 3}
   pocionesNecesariasPrimeraMutacion: 3
   pocionesNecesariasMutacionFinal: 6
 --- !u!1 &1689249550
