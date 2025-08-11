@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MutacionCazador : MonoBehaviour
+public class MutacionCazador : MonoBehaviour, IMutable
 {
     public Sprite spriteMutado1;
     public Sprite spriteMutadoFinal;
@@ -43,16 +43,20 @@ public class MutacionCazador : MonoBehaviour
     {
         yaMutóPrimera = true;
 
-        Animator animator = GetComponent<Animator>();
-        if (animator != null)
-            animator.enabled = false;
+        // Resetear contador para la mutación final
+        pocionesRecibidas = 0;
 
         if (spriteRenderer != null && spriteMutado1 != null)
         {
             spriteRenderer.sprite = spriteMutado1;
-            AjustarEscalaPorTamañoSprite(); // 👈 escalar automáticamente
-            Debug.Log("🐛 Sprite mutado asignado.");
+            AjustarEscalaPorTamañoSprite();
+            Debug.Log("🐛 Mutación 1 activada.");
         }
+
+        // Desactivar animador si está
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+            animator.enabled = false;
     }
 
     void MutarFinal()
