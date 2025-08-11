@@ -10,7 +10,7 @@ public class CriaturaDispara : MonoBehaviour
     public float intervaloDisparo = 1.5f;
     public GameObject objetivo; // Depredador
 
-    private bool disparando = false;
+    //private bool disparando = false;
 
 
     // Start is called before the first frame update
