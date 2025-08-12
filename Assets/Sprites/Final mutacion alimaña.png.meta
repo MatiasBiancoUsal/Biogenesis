@@ -178,7 +178,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Final mutacion alima\xF1a_0": 6454079490188594633
+      "Final mutacion alima\xF1a_1": 5702335764192993235
+      "Final mutacion alima\xF1a_2": -7679745334792847039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
