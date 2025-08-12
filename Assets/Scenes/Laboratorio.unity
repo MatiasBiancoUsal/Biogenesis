@@ -383,7 +383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 241.3, y: 83.4}
+  m_AnchoredPosition: {x: 157.8, y: 34.1}
   m_SizeDelta: {x: 36.38, y: 35.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &254663858
@@ -807,6 +807,7 @@ GameObject:
   - component: {fileID: 373122254}
   - component: {fileID: 373122256}
   - component: {fileID: 373122257}
+  - component: {fileID: 373122258}
   m_Layer: 0
   m_Name: PuertaCocina
   m_TagString: Untagged
@@ -942,6 +943,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IrAEscena: cocina
+--- !u!114 &373122258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373122253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa494c8f63b6452459adeed434e05ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gris: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blanco: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &377262585
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,6 +3112,7 @@ GameObject:
   - component: {fileID: 1240282099}
   - component: {fileID: 1240282098}
   - component: {fileID: 1240282097}
+  - component: {fileID: 1240282101}
   m_Layer: 0
   m_Name: Boton de abrir pociones
   m_TagString: Interactuable
@@ -3274,6 +3290,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1240282101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240282096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa494c8f63b6452459adeed434e05ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gris: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blanco: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1261606677
 GameObject:
   m_ObjectHideFlags: 0
@@ -3361,6 +3391,7 @@ GameObject:
   - component: {fileID: 1403671116}
   - component: {fileID: 1403671118}
   - component: {fileID: 1403671119}
+  - component: {fileID: 1403671120}
   m_Layer: 0
   m_Name: pantalla compu_0
   m_TagString: Untagged
@@ -3496,6 +3527,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IrAEscena: PantallaCriaturas
+--- !u!114 &1403671120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403671115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa494c8f63b6452459adeed434e05ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gris: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blanco: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1416975954
 GameObject:
   m_ObjectHideFlags: 0
@@ -3559,7 +3604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1447654662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3975,6 +4020,7 @@ MonoBehaviour:
   pocionMejoraPrefab: {fileID: 7984393118796925897, guid: 84f5e426826ab5144b08f1ca99c65916, type: 3}
   prefabPocionVida: {fileID: 7984393118796925897, guid: 72828e9b194b2534e86fb623cce9a574, type: 3}
   prefabPocionMejora: {fileID: 7984393118796925897, guid: 84f5e426826ab5144b08f1ca99c65916, type: 3}
+  cooldownSegundos: 10
 --- !u!225 &1638610368
 CanvasGroup:
   m_ObjectHideFlags: 0
