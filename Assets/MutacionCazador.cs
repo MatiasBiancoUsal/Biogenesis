@@ -2,38 +2,100 @@
 
 public class MutacionCazador : MonoBehaviour, IMutable
 {
+    [Header("Sprites de mutación")]
+    public Sprite spriteOriginal;
     public Sprite spriteMutado1;
     public Sprite spriteMutadoFinal;
-    private SpriteRenderer spriteRenderer;
-    private Vector3 escalaOriginal;
 
-
+    [Header("Conteo de pociones")]
     public int pocionesNecesariasPrimeraMutacion = 3;
     public int pocionesNecesariasMutacionFinal = 6;
 
-    private int pocionesRecibidas = 0;
-    private bool yaMutóPrimera = false;
-    private bool yaMutóFinal = false;
+    [Header("Referencia")]
+    public float pixelsPorUnidad = 100f;
+    public Vector2 tamañoOriginalPixels = new Vector2(1872, 1502);
 
-    // ✅ Ponelo acá:
-    private Vector2 tamañoOriginalPixels = new Vector2(1872, 1502); // el tamaño del sprite original en píxeles
+    [Header("Debug / Testing")]
+    public bool forzarReinicio = false;
+    [SerializeField]
+    private int pocionesRecibidas = 0;
+
+    private SpriteRenderer spriteRenderer;
+    private static Vector3 escalaOriginalGuardada; // 🔹 Se mantiene entre escenas
+    private static bool escalaInicialDefinida = false;
+
+    private bool yaMutoPrimera = false;
+    private bool yaMutoFinal = false;
+
+    private const string PREF_POCIONES = "PocionesCazador";
+    private const string PREF_MUTA1 = "MutoPrimera";
+    private const string PREF_MUTAF = "MutoFinal";
 
     void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        escalaOriginal = transform.localScale;
+
+        // Guardar escala inicial solo una vez
+        if (!escalaInicialDefinida)
+        {
+            escalaOriginalGuardada = transform.localScale;
+            escalaInicialDefinida = true;
+        }
+
+        // 🔄 Si se activa desde el Inspector, reinicia estado
+        if (forzarReinicio)
+        {
+            PlayerPrefs.DeleteKey(PREF_POCIONES);
+            PlayerPrefs.DeleteKey(PREF_MUTA1);
+            PlayerPrefs.DeleteKey(PREF_MUTAF);
+            PlayerPrefs.Save();
+
+            pocionesRecibidas = 0;
+            yaMutoPrimera = false;
+            yaMutoFinal = false;
+
+            if (spriteRenderer != null && spriteOriginal != null)
+            {
+                spriteRenderer.sprite = spriteOriginal;
+                transform.localScale = escalaOriginalGuardada;
+                RehacerCollider();
+            }
+
+            Debug.Log("🔄 Estado reiniciado para pruebas.");
+            return;
+        }
+
+        // 🧩 Cargar datos guardados
+        if (PlayerPrefs.HasKey(PREF_POCIONES))
+        {
+            pocionesRecibidas = PlayerPrefs.GetInt(PREF_POCIONES, 0);
+            yaMutoPrimera = PlayerPrefs.GetInt(PREF_MUTA1, 0) == 1;
+            yaMutoFinal = PlayerPrefs.GetInt(PREF_MUTAF, 0) == 1;
+
+            // Restaurar mutación visualmente
+            if (yaMutoFinal)
+            {
+                AplicarMutacionVisual(spriteMutadoFinal);
+            }
+            else if (yaMutoPrimera)
+            {
+                AplicarMutacionVisual(spriteMutado1);
+            }
+        }
     }
 
     public void RecibirPocion()
     {
         pocionesRecibidas++;
+        GuardarEstado();
+
         Debug.Log("Cazador recibió poción. Total: " + pocionesRecibidas);
 
-        if (pocionesRecibidas >= pocionesNecesariasMutacionFinal && !yaMutóFinal)
+        if (pocionesRecibidas >= pocionesNecesariasMutacionFinal && !yaMutoFinal)
         {
             MutarFinal();
         }
-        else if (pocionesRecibidas >= pocionesNecesariasPrimeraMutacion && !yaMutóPrimera)
+        else if (pocionesRecibidas >= pocionesNecesariasPrimeraMutacion && !yaMutoPrimera)
         {
             MutarPrimera();
         }
@@ -41,63 +103,98 @@ public class MutacionCazador : MonoBehaviour, IMutable
 
     void MutarPrimera()
     {
-        yaMutóPrimera = true;
+        yaMutoPrimera = true;
+        pocionesRecibidas = 0; // Resetea para mutación final
+        GuardarEstado();
 
-        // Resetear contador para la mutación final
-        pocionesRecibidas = 0;
-
-        if (spriteRenderer != null && spriteMutado1 != null)
-        {
-            spriteRenderer.sprite = spriteMutado1;
-            AjustarEscalaPorTamañoSprite();
-            Debug.Log("🐛 Mutación 1 activada.");
-        }
-
-        // Desactivar animador si está
-        Animator animator = GetComponent<Animator>();
-        if (animator != null)
-            animator.enabled = false;
+        AplicarMutacionVisual(spriteMutado1);
+        Debug.Log("🐛 Mutación 1 activada.");
     }
 
     void MutarFinal()
     {
-        yaMutóFinal = true;
+        yaMutoFinal = true;
+        GuardarEstado();
 
-        // Si tenés un sprite final, activalo así:
-        if (spriteRenderer != null && spriteMutadoFinal != null)
+        AplicarMutacionVisual(spriteMutadoFinal);
+        Debug.Log("🧬 Mutación final activada.");
+    }
+
+    void AplicarMutacionVisual(Sprite nuevoSprite)
+    {
+        if (spriteRenderer != null && nuevoSprite != null)
         {
-            spriteRenderer.sprite = spriteMutadoFinal;
-            AjustarEscalaPorTamañoSprite(); // También escalá si es otro sprite
-            Debug.Log("🧬 Mutación final activada.");
-        }
+            spriteRenderer.sprite = nuevoSprite;
+            AjustarEscalaPorTamañoSprite();
+            RehacerCollider();
 
-        // Desactivamos Animator también, si hace falta
-        Animator animator = GetComponent<Animator>();
-        if (animator != null)
-            animator.enabled = false;
+            Animator anim = GetComponent<Animator>();
+            if (anim != null) anim.enabled = false;
+        }
     }
 
     void AjustarEscalaPorTamañoSprite()
     {
-        if (spriteRenderer == null || spriteRenderer.sprite == null)
-            return;
+        if (spriteRenderer == null || spriteRenderer.sprite == null) return;
 
-        // Tamaño en unidades del nuevo sprite
-        Vector2 tamañoNuevo = spriteRenderer.sprite.bounds.size;
+        Vector2 tamañoOriginalU = tamañoOriginalPixels / pixelsPorUnidad;
+        Vector2 tamañoNuevoU = spriteRenderer.sprite.bounds.size;
 
-        // Tamaño del sprite original en unidades (basado en PPU 100)
-        Vector2 tamañoOriginal = new Vector2(1872f / 100f, 1502f / 100f);
+        float factorX = tamañoOriginalU.x / Mathf.Max(tamañoNuevoU.x, 0.0001f);
+        float factorY = tamañoOriginalU.y / Mathf.Max(tamañoNuevoU.y, 0.0001f);
+        float factorUniforme = Mathf.Min(factorX, factorY);
 
-        float factorX = tamañoOriginal.x / tamañoNuevo.x;
-        float factorY = tamañoOriginal.y / tamañoNuevo.y;
-
-        float escalaUniforme = Mathf.Min(factorX, factorY);
-
-        // ✅ Aplicamos el nuevo tamaño relativo a la escala original
-        transform.localScale = escalaOriginal * escalaUniforme;
-
-        Debug.Log($"🔧 Escala ajustada: {transform.localScale}");
+        transform.localScale = escalaOriginalGuardada * factorUniforme;
     }
 
-    // (Opcional) MutarFinal, si querés hacer otra mutación más adelante
+    void RehacerCollider()
+    {
+        // CircleCollider2D
+        CircleCollider2D circle = GetComponent<CircleCollider2D>();
+        if (circle != null)
+        {
+            bool trig = circle.isTrigger;
+            PhysicsMaterial2D mat = circle.sharedMaterial;
+            Destroy(circle);
+            circle = gameObject.AddComponent<CircleCollider2D>();
+            circle.isTrigger = trig;
+            circle.sharedMaterial = mat;
+            Vector2 size = spriteRenderer.sprite.bounds.size;
+            circle.radius = Mathf.Max(size.x, size.y) * 0.5f;
+        }
+
+        // BoxCollider2D
+        BoxCollider2D box = GetComponent<BoxCollider2D>();
+        if (box != null)
+        {
+            bool trig = box.isTrigger;
+            PhysicsMaterial2D mat = box.sharedMaterial;
+            Destroy(box);
+            box = gameObject.AddComponent<BoxCollider2D>();
+            box.isTrigger = trig;
+            box.sharedMaterial = mat;
+            box.size = spriteRenderer.sprite.bounds.size;
+            box.offset = Vector2.zero;
+        }
+
+        // PolygonCollider2D
+        PolygonCollider2D poly = GetComponent<PolygonCollider2D>();
+        if (poly != null)
+        {
+            bool trig = poly.isTrigger;
+            PhysicsMaterial2D mat = poly.sharedMaterial;
+            Destroy(poly);
+            poly = gameObject.AddComponent<PolygonCollider2D>();
+            poly.isTrigger = trig;
+            poly.sharedMaterial = mat;
+        }
+    }
+
+    void GuardarEstado()
+    {
+        PlayerPrefs.SetInt(PREF_POCIONES, pocionesRecibidas);
+        PlayerPrefs.SetInt(PREF_MUTA1, yaMutoPrimera ? 1 : 0);
+        PlayerPrefs.SetInt(PREF_MUTAF, yaMutoFinal ? 1 : 0);
+        PlayerPrefs.Save();
+    }
 }

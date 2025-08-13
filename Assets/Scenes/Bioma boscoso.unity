@@ -2564,6 +2564,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2018081640}
     - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: forzarReinicio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: spriteOriginal
+      value: 
+      objectReference: {fileID: 350485605838658583, guid: 63331e6f3f2be4a448ffc67e846bc3e4, type: 3}
+    - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: spriteMutadoFinal
       value: 
       objectReference: {fileID: 1038470393782912978, guid: c52531b191f0a9542a52530d8413b42b, type: 3}
