@@ -3962,7 +3962,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 206, y: 8}
+  m_AnchoredPosition: {x: 206, y: 18.233}
   m_SizeDelta: {x: 204.4095, y: 239.4999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638610364
@@ -4020,7 +4020,10 @@ MonoBehaviour:
   pocionMejoraPrefab: {fileID: 7984393118796925897, guid: 84f5e426826ab5144b08f1ca99c65916, type: 3}
   prefabPocionVida: {fileID: 7984393118796925897, guid: 72828e9b194b2534e86fb623cce9a574, type: 3}
   prefabPocionMejora: {fileID: 7984393118796925897, guid: 84f5e426826ab5144b08f1ca99c65916, type: 3}
-  cooldownSegundos: 10
+  cooldownVida: 10
+  cooldownMejora: 10
+  panelIngredientesTransform: {fileID: 1962160725}
+  panelIngredientes: {fileID: 1962160725}
 --- !u!225 &1638610368
 CanvasGroup:
   m_ObjectHideFlags: 0

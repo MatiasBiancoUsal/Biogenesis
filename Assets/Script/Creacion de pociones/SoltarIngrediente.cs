@@ -251,18 +251,21 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
 
         foreach (Transform t in panelIngredientes)
         {
-            if (tipo == TipoPocion.Vida && (t.name.Contains("VidaA") || t.name.Contains("VidaB")))
-            {
-                var cg = t.GetComponent<CanvasGroup>() ?? t.gameObject.AddComponent<CanvasGroup>();
-                cg.blocksRaycasts = false;
-                cg.interactable = false;
-            }
+            bool esVida = tipo == TipoPocion.Vida && (t.name.Contains("VidaA") || t.name.Contains("VidaB"));
+            bool esMejora = tipo == TipoPocion.Mejora && (t.name.Contains("MejoraA") || t.name.Contains("MejoraB"));
 
-            if (tipo == TipoPocion.Mejora && (t.name.Contains("MejoraA") || t.name.Contains("MejoraB")))
+            if (esVida || esMejora)
             {
                 var cg = t.GetComponent<CanvasGroup>() ?? t.gameObject.AddComponent<CanvasGroup>();
                 cg.blocksRaycasts = false;
                 cg.interactable = false;
+
+                // Oscurecer el color
+                var img = t.GetComponent<UnityEngine.UI.Image>();
+                if (img != null)
+                {
+                    img.color = new Color(0.5f, 0.5f, 0.5f, img.color.a); // gris oscuro
+                }
             }
         }
     }
@@ -278,7 +281,10 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
 
         foreach (Transform t in panelIngredientes)
         {
-            if (tipo == TipoPocion.Vida && (t.name.Contains("VidaA") || t.name.Contains("VidaB")))
+            bool esVida = tipo == TipoPocion.Vida && (t.name.Contains("VidaA") || t.name.Contains("VidaB"));
+            bool esMejora = tipo == TipoPocion.Mejora && (t.name.Contains("MejoraA") || t.name.Contains("MejoraB"));
+
+            if (esVida || esMejora)
             {
                 var cg = t.GetComponent<CanvasGroup>();
                 if (cg != null)
@@ -286,15 +292,12 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
                     cg.blocksRaycasts = true;
                     cg.interactable = true;
                 }
-            }
 
-            if (tipo == TipoPocion.Mejora && (t.name.Contains("MejoraA") || t.name.Contains("MejoraB")))
-            {
-                var cg = t.GetComponent<CanvasGroup>();
-                if (cg != null)
+                // Restaurar el color original
+                var img = t.GetComponent<UnityEngine.UI.Image>();
+                if (img != null)
                 {
-                    cg.blocksRaycasts = true;
-                    cg.interactable = true;
+                    img.color = new Color(1f, 1f, 1f, img.color.a); // blanco normal
                 }
             }
         }
