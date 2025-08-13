@@ -16,28 +16,68 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
     public GameObject prefabPocionMejora;
 
     // Script Lucy
-    public float cooldownSegundos = 10f; 
-    private bool enCooldown = false;
-    private float cooldownEndTime = 10f;
+    public float cooldownVida = 10f;
+    public float cooldownMejora = 10f;
+
+    private static float tiempoRestanteVida = 0f;
+    private static float tiempoRestanteMejora = 0f;
     //
 
+    // Script Lucy
+    
+    private float contadorLogVida = 0f;
+    private float contadorLogMejora = 0f;
+
+    void Update()
+    {
+        // Reducir los timers globales
+        if (tiempoRestanteVida > 0)
+        {
+            tiempoRestanteVida -= Time.deltaTime;
+            contadorLogVida += Time.deltaTime;
+            if (contadorLogVida >= 1f)
+            {
+                Debug.Log("Cooldown VIDA: " + Mathf.Ceil(tiempoRestanteVida) + "s");
+                contadorLogVida = 0f;
+            }
+        }
+
+        if (tiempoRestanteMejora > 0)
+        {
+            tiempoRestanteMejora -= Time.deltaTime;
+            contadorLogMejora += Time.deltaTime;
+            if (contadorLogMejora >= 1f)
+            {
+                Debug.Log("Cooldown MEJORA: " + Mathf.Ceil(tiempoRestanteMejora) + "s");
+                contadorLogMejora = 0f;
+            }
+        }
+    }
+
+    //
     public void OnDrop(PointerEventData eventData)
     {
-        // Script Lucy
-        if (enCooldown)
-        {
-            float restante = Mathf.Max(0f, cooldownEndTime - Time.time);
-            Debug.Log($"Debes esperar {restante:F1}s antes de crear otra poción.");
-            return;
-        }
-        //
-
         Debug.Log("Algo fue soltado en la zona"); // Ver si llega hasta acá
 
         GameObject objetoArrastrado = eventData.pointerDrag;
 
         if (objetoArrastrado != null)
         {
+            // Script Lucy
+            bool esVida = objetoArrastrado.name.Contains("VidaA") || objetoArrastrado.name.Contains("VidaB");
+            bool esMejora = objetoArrastrado.name.Contains("MejoraA") || objetoArrastrado.name.Contains("MejoraB");
+
+            if (esVida && EstaEnCooldown(TipoPocion.Vida))
+            {
+                Debug.Log("No puedes usar ingredientes de VIDA, cooldown activo.");
+                return; // bloquea el drop
+            }
+            if (esMejora && EstaEnCooldown(TipoPocion.Mejora))
+            {
+                Debug.Log("No puedes usar ingredientes de MEJORA, cooldown activo.");
+                return; // bloquea el drop
+            }
+            //
             Debug.Log("Se soltó: " + objetoArrastrado.name);
 
             ingredientesEnZona.Add(objetoArrastrado.name);
@@ -57,18 +97,31 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
 
         if (combinacionVida)
         {
-            Debug.Log("¡Combinación de VIDA detectada!");
-            CrearPocion(pocionVidaPrefab);
+            if (!EstaEnCooldown(TipoPocion.Vida))
+            {
+                Debug.Log("¡Combinación de VIDA detectada!");
+                IniciarCooldown(TipoPocion.Vida); // Activar cooldown
+                CrearPocion(pocionVidaPrefab);
+            }
+            else
+            {
+                Debug.Log("Poción de VIDA en cooldown.");
+            }
             return;
-
-            
-            //// Evitar seguir revisando si ya se creó una poción
         }
 
         if (combinacionMejora)
         {
-            Debug.Log("¡Combinación de MEJORA detectada!");
-            CrearPocion(pocionMejoraPrefab);
+            if (!EstaEnCooldown(TipoPocion.Mejora))
+            {
+                Debug.Log("¡Combinación de MEJORA detectada!");
+                IniciarCooldown(TipoPocion.Mejora); // Activar cooldown
+                CrearPocion(pocionMejoraPrefab);
+            }
+            else
+            {
+                Debug.Log("Poción de MEJORA en cooldown.");
+            }
             return;
 
         }
@@ -85,11 +138,7 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
             ingredientesUI.Clear();
             ingredientesEnZona.Clear();
 
-           
         }
-        
-
-
     }
 
     void CrearPocion(GameObject prefab)
@@ -121,29 +170,33 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
         // Limpiar las listas
         ingredientesUI.Clear();
         ingredientesEnZona.Clear();
-
-        // Script Lucy
-        if (!enCooldown)
-            StartCoroutine(IniciarCooldown());
-        //
     }
 
     // Script Lucy
-    IEnumerator IniciarCooldown()
+    public enum TipoPocion { Vida, Mejora }
+
+    public bool EstaEnCooldown(TipoPocion tipo)
     {
-        enCooldown = true;
-        cooldownEndTime = Time.time + cooldownSegundos;
-        // si querés ver logs cada segundo:
-        float restante = cooldownSegundos;
-        while (restante > 0f)
-        {
-            Debug.Log($"Cooldown: {restante:F1}s");
-            yield return new WaitForSeconds(1f);
-            restante -= 1f;
-        }
-        enCooldown = false;
-        Debug.Log("Ya puedes crear otra poción.");
+        if (tipo == TipoPocion.Vida)
+            return tiempoRestanteVida > 0;
+        else
+            return tiempoRestanteMejora > 0;
     }
+
+    public void IniciarCooldown(TipoPocion tipo)
+    {
+        if (tipo == TipoPocion.Vida)
+        {
+            tiempoRestanteVida = cooldownVida;
+            
+        }
+        else
+        {
+            tiempoRestanteMejora = cooldownMejora;
+          
+        }
+    }
+    //
 
     // Helper para sacar "(Clone)" y espacios
     string GetBaseName(string name)
