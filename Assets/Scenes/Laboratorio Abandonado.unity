@@ -1453,10 +1453,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c982d5cd4a7d02c4eba10acd8bcf9e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteOriginal: {fileID: 295044924511345422, guid: 539dd083327fd934393e10edd49f45a5, type: 3}
   spriteMutado1: {fileID: -1828133790444089473, guid: a5a5a0f7269e5e84c8d2009d6d3a387c, type: 3}
   spriteMutadoFinal: {fileID: 6454079490188594633, guid: dc1a6c85b653a7c4183d315adfc57dd0, type: 3}
   pocionesNecesariasPrimeraMutacion: 3
   pocionesNecesariasMutacionFinal: 6
+  pixelsPorUnidad: 100
+  "tama\xF1oOriginalPixels": {x: 1642, y: 1316}
+  forzarReinicio: 0
+  pocionesRecibidas: 0
 --- !u!1001 &1074090793
 PrefabInstance:
   m_ObjectHideFlags: 0
