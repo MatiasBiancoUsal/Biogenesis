@@ -2040,10 +2040,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7042a7e558ff564d8c845bba5dc3a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteOriginal: {fileID: 5367674728223147671, guid: 3dd815f70f5757f4ba40ebb013a673eb, type: 3}
   spriteMutado1: {fileID: 1488534826780693463, guid: c54068e5a6d6329488c3f31e70b1f053, type: 3}
   spriteMutadoFinal: {fileID: 1852479368436112148, guid: ac3851f54bc0a4b4eade4cc1b8c258ab, type: 3}
   pocionesNecesariasPrimeraMutacion: 3
   pocionesNecesariasMutacionFinal: 6
+  pixelsPorUnidad: 100
+  "tama\xF1oOriginalPixels": {x: 1678, y: 1356}
+  forzarReinicio: 0
+  pocionesRecibidas: 0
 --- !u!1001 &1574493313
 PrefabInstance:
   m_ObjectHideFlags: 0
