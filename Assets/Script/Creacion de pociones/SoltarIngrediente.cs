@@ -24,9 +24,38 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
     //
 
     // Script Lucy
-    
+
     private float contadorLogVida = 0f;
     private float contadorLogMejora = 0f;
+
+    void Awake()
+    {
+        // Recuperar cooldowns guardados
+        tiempoRestanteVida = PlayerPrefs.GetFloat("CooldownVida", 0f);
+        tiempoRestanteMejora = PlayerPrefs.GetFloat("CooldownMejora", 0f);
+    }
+
+    void OnDestroy()
+    {
+        // Guardar cooldowns actuales
+        PlayerPrefs.SetFloat("CooldownVida", tiempoRestanteVida);
+        PlayerPrefs.SetFloat("CooldownMejora", tiempoRestanteMejora);
+        PlayerPrefs.Save();
+    }
+
+    void Start()
+    {
+        // Si al entrar hay cooldown activo, bloquear inmediatamente
+        if (tiempoRestanteVida > 0)
+        {
+            BloquearIngredientes(TipoPocion.Vida);
+        }
+
+        if (tiempoRestanteMejora > 0)
+        {
+            BloquearIngredientes(TipoPocion.Mejora);
+        }
+    }
 
     void Update()
     {
@@ -40,6 +69,12 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
                 Debug.Log("Cooldown VIDA: " + Mathf.Ceil(tiempoRestanteVida) + "s");
                 contadorLogVida = 0f;
             }
+
+            // Cuando el cooldown termina, desbloquear ingredientes de VIDA
+            if (tiempoRestanteVida <= 0)
+            {
+                DesbloquearIngredientes(TipoPocion.Vida);
+            }
         }
 
         if (tiempoRestanteMejora > 0)
@@ -50,6 +85,12 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
             {
                 Debug.Log("Cooldown MEJORA: " + Mathf.Ceil(tiempoRestanteMejora) + "s");
                 contadorLogMejora = 0f;
+            }
+
+            // Cuando el cooldown termina, desbloquear ingredientes de MEJORA
+            if (tiempoRestanteMejora <= 0)
+            {
+                DesbloquearIngredientes(TipoPocion.Mejora);
             }
         }
     }
@@ -188,12 +229,74 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
         if (tipo == TipoPocion.Vida)
         {
             tiempoRestanteVida = cooldownVida;
-            
+            BloquearIngredientes(tipo);
         }
         else
         {
             tiempoRestanteMejora = cooldownMejora;
-          
+            BloquearIngredientes(tipo);
+        }
+    }
+
+
+    [SerializeField] private Transform panelIngredientesTransform;
+
+    private void BloquearIngredientes(TipoPocion tipo)
+    {
+        if (panelIngredientes == null)
+        {
+            Debug.LogError("Panel de ingredientes no asignado en el inspector.");
+            return;
+        }
+
+        foreach (Transform t in panelIngredientes)
+        {
+            if (tipo == TipoPocion.Vida && (t.name.Contains("VidaA") || t.name.Contains("VidaB")))
+            {
+                var cg = t.GetComponent<CanvasGroup>() ?? t.gameObject.AddComponent<CanvasGroup>();
+                cg.blocksRaycasts = false;
+                cg.interactable = false;
+            }
+
+            if (tipo == TipoPocion.Mejora && (t.name.Contains("MejoraA") || t.name.Contains("MejoraB")))
+            {
+                var cg = t.GetComponent<CanvasGroup>() ?? t.gameObject.AddComponent<CanvasGroup>();
+                cg.blocksRaycasts = false;
+                cg.interactable = false;
+            }
+        }
+    }
+
+    [SerializeField] private Transform panelIngredientes; // arrastra el panel en el inspector
+    private void DesbloquearIngredientes(TipoPocion tipo)
+    {
+        if (panelIngredientes == null)
+        {
+            Debug.LogError("Panel de ingredientes no asignado en el inspector.");
+            return;
+        }
+
+        foreach (Transform t in panelIngredientes)
+        {
+            if (tipo == TipoPocion.Vida && (t.name.Contains("VidaA") || t.name.Contains("VidaB")))
+            {
+                var cg = t.GetComponent<CanvasGroup>();
+                if (cg != null)
+                {
+                    cg.blocksRaycasts = true;
+                    cg.interactable = true;
+                }
+            }
+
+            if (tipo == TipoPocion.Mejora && (t.name.Contains("MejoraA") || t.name.Contains("MejoraB")))
+            {
+                var cg = t.GetComponent<CanvasGroup>();
+                if (cg != null)
+                {
+                    cg.blocksRaycasts = true;
+                    cg.interactable = true;
+                }
+            }
         }
     }
     //
