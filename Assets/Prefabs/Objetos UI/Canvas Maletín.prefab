@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4493711080749127564}
   m_Layer: 5
   m_Name: "Canvas Malet\xEDn"
-  m_TagString: Untagged
+  m_TagString: MaletinCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +232,6 @@ MonoBehaviour:
   panelPocionesMejora: {fileID: 8488831401575894236}
   prefabIconoVida: {fileID: 7984393118796925897, guid: 72828e9b194b2534e86fb623cce9a574, type: 3}
   prefabIconoMejora: {fileID: 7984393118796925897, guid: 84f5e426826ab5144b08f1ca99c65916, type: 3}
-  contenedor: {fileID: 0}
 --- !u!1 &6560150355194994715
 GameObject:
   m_ObjectHideFlags: 0

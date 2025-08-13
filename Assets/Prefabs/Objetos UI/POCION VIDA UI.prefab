@@ -117,4 +117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcf5e2c3f568b240a4317c14727a5d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabPocion: {fileID: 0}
+  prefabParaMaletin: {fileID: 7984393118796925897}
+  prefabMundo2D: {fileID: 3577975577442756757, guid: 94eff3aa20c0efd42919a48b581c49ee, type: 3}
+  tipo: 0
+  autoDetectarModo: 1
+  modo: 0
+  zMundo: 0

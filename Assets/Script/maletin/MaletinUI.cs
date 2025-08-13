@@ -11,7 +11,7 @@ public class MaletinUI : MonoBehaviour
     public GameObject prefabIconoVida;
     public GameObject prefabIconoMejora;
 
-    public Transform contenedor;
+    
 
     public void ToggleMaletinInventory()
     {
@@ -27,20 +27,14 @@ public class MaletinUI : MonoBehaviour
 
     private void OnEnable()
     {
-        var m = MaletinManager.instancia;
-
-        foreach (Transform hijo in contenedor)
-            Destroy(hijo.gameObject);
-
-        if (m.tienePocionVida() && m.pocionVida != null)
-            Instantiate(m.pocionVida, contenedor);
-
-        if (m.tienePocionMejora() && m.pocionMejora != null)
-            Instantiate(m.pocionMejora, contenedor);
+        ActualizarUI();
     }
 
     void ActualizarUI()
     {
+        if (MaletinManager.instancia == null)
+            return; // No hay maletín cargado, no hacemos nada
+
         // Limpiar ambos paneles
         foreach (Transform hijo in panelPocionesVida)
         {

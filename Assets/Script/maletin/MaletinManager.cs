@@ -49,6 +49,20 @@ public class MaletinManager : MonoBehaviour
         }
     }
 
+    // SOO
+    public void QuitarPocion(GameObject prefabPocion)
+    {
+        if (prefabPocion.CompareTag("PocionVida"))
+        {
+            pocionVida = null;
+        }
+        else if (prefabPocion.CompareTag("PocionMejora"))
+        {
+            pocionMejora = null;
+        }
+    }
+    // SOO
+
     public List<GameObject> ObtenerPociones()
     {
         var lista = new List<GameObject>();
