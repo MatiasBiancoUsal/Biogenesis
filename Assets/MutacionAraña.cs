@@ -24,8 +24,8 @@ public class MutacionAraña : MonoBehaviour, IMutable
     private static Vector3 escalaOriginalGuardada;
     private static bool escalaInicialDefinida = false;
 
-    private bool yaMutóPrimera = false;
-    private bool yaMutóFinal = false;
+    public bool yaMutóPrimera = false;
+    public bool yaMutóFinal = false;
 
     private const string PREF_POCIONES = "PocionesAraña";
     private const string PREF_MUTA1 = "ArañaMutada1";
