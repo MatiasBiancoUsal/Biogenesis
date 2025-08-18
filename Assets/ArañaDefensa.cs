@@ -11,21 +11,23 @@ public class ArañaDefensa : MonoBehaviour
 
     private bool disparando = false;
 
+
+
     void Update()
     {
-        GameObject enemigo = DetectarDepredador();
+        GameObject enemigo = DetectarEnemigo();
         if (enemigo != null && !disparando)
         {
             StartCoroutine(DispararRoutine(enemigo.transform));
         }
     }
 
-    GameObject DetectarDepredador()
+    GameObject DetectarEnemigo()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, rangoDeteccion);
         foreach (var hit in hits)
         {
-            if (hit.CompareTag("depredador")) // 👈 importante: el tag debe estar en minúsculas como lo tenés
+            if (hit.CompareTag("depredador") || hit.CompareTag("Parasito")) // ✅ Ahora detecta los dos
             {
                 return hit.gameObject;
             }
@@ -49,10 +51,12 @@ public class ArañaDefensa : MonoBehaviour
         if (proyectilPrefab != null && puntoDisparo != null)
         {
             GameObject proyectil = Instantiate(proyectilPrefab, puntoDisparo.position, Quaternion.identity);
-            proyectil.tag = "ProyectilEnemigo"; // 👈 para que el depredador lo detecte
+            proyectil.tag = "ProyectilEnemigo";
 
             Vector2 direccion = (objetivo.position - puntoDisparo.position).normalized;
             proyectil.GetComponent<ProyectilTelaraña>().direccion = direccion;
+
+            
         }
     }
 
