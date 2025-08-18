@@ -80,16 +80,9 @@ public class DepredadorAnimTest : MonoBehaviour
     }
 
     // 💥 Recibir daño al ser golpeado por proyectil enemigo
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("ProyectilEnemigo"))
-        {
-            Destroy(collision.gameObject); // destruye el proyectil enemigo
-            RecibirDaño();
-        }
-    }
+    
 
-    void RecibirDaño()
+    public void RecibirDaño()
     {
         vida--;
         StartCoroutine(FlashRojo());

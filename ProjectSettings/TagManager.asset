@@ -23,6 +23,7 @@ TagManager:
   - PocionVida
   - PocionMejora
   - MaletinCanvas
+  - Parasito
   layers:
   - Default
   - TransparentFX

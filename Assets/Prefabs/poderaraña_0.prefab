@@ -102,8 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 5
-  direccion: {x: 1, y: 0}
   "da\xF1o": 1
+  direccion: {x: 1, y: 0}
   tiempoVida: 3
 --- !u!58 &-4295935144141497596
 CircleCollider2D:

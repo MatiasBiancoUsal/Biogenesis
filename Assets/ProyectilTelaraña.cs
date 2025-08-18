@@ -19,15 +19,24 @@ public class ProyectilTelaraña : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("depredador"))
+        // Depredador
+        var dep = collision.GetComponent<DepredadorAnimTest>();
+        if (dep != null)
         {
-            DepredadorAnimTest dep = collision.GetComponent<DepredadorAnimTest>();
-            if (dep != null)
-            {
-                dep.SendMessage("RecibirDaño", SendMessageOptions.DontRequireReceiver);
-            }
-
+            dep.RecibirDaño();
             Destroy(gameObject);
+            return;
         }
+
+        // Hongo parásito
+        var hongo = collision.GetComponent<ParasitoHongo>();
+        if (hongo != null)
+        {
+            hongo.RecibirDaño();
+            Destroy(gameObject);
+            return;
+        }
+
+        // En el futuro podés agregar más enemigos acá
     }
 }

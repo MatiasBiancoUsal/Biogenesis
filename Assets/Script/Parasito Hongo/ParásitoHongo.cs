@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class ParasitoHongo : MonoBehaviour
@@ -9,14 +9,25 @@ public class ParasitoHongo : MonoBehaviour
     private Animator animator;
     private GameObject objetivo;
 
+    public int vida = 3;
+    public Color colorDaño = Color.red;
+    private Color colorOriginal;
+    private SpriteRenderer spriteRenderer;
+    public float tiempoDaño = 0.2f;
+
+    void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        colorOriginal = spriteRenderer.color;
+    }
+
     void Start()
     {
-
         animator = GetComponent<Animator>();
         DetectarObjetivo();
         StartCoroutine(Comportamiento());
 
-        //  Destruye el hongo a los 30 segundos
+        // Destruye el hongo a los 30 segundos
         Destroy(gameObject, 30f);
     }
 
@@ -43,16 +54,13 @@ public class ParasitoHongo : MonoBehaviour
     void LanzarBola()
     {
         GameObject bola = Instantiate(bolaPrefab, puntoDisparo.position, Quaternion.identity);
-    Rigidbody2D rb = bola.GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = bola.GetComponent<Rigidbody2D>();
 
-    // Direcci�n aleatoria hacia la derecha
-    Vector2 direccion = new Vector2(Random.Range(0.3f, 1f), Random.Range(-1f, 1f)).normalized;
-    rb.velocity = direccion * 1.2f;
+        Vector2 direccion = new Vector2(Random.Range(0.3f, 1f), Random.Range(-1f, 1f)).normalized;
+        rb.velocity = direccion * 1.2f;
 
-    // Tama�o aleatorio entre 0.15 y 0.31
-    float escala = Random.Range(0.15f, 0.31f);
-    bola.transform.localScale = new Vector3(escala, escala, 1f);
-       
+        float escala = Random.Range(0.15f, 0.31f);
+        bola.transform.localScale = new Vector3(escala, escala, 1f);
     }
 
     void DetectarObjetivo()
@@ -62,5 +70,30 @@ public class ParasitoHongo : MonoBehaviour
         {
             objetivo = encontrado;
         }
+    }
+
+    public void RecibirDaño()
+    {
+        vida--;
+        Debug.Log("☠️ Hongo recibió daño. Vida restante: " + vida);
+        StartCoroutine(FlashRojo());
+
+        if (vida <= 0)
+        {
+            Morir();
+        }
+    }
+
+    IEnumerator FlashRojo()
+    {
+        spriteRenderer.color = colorDaño;
+        yield return new WaitForSeconds(tiempoDaño);
+        spriteRenderer.color = colorOriginal;
+    }
+
+    void Morir()
+    {
+        // Podés poner animación, partículas, sonido, etc.
+        Destroy(gameObject);
     }
 }
