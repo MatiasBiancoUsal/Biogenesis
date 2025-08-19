@@ -878,7 +878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1569838838015797352, guid: 648a74e870b837f46aa374fae0516bb8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.5999756
+      value: -3.5999908
       objectReference: {fileID: 0}
     - target: {fileID: 4222681508466809611, guid: 648a74e870b837f46aa374fae0516bb8, type: 3}
       propertyPath: m_Pivot.x
@@ -1810,6 +1810,7 @@ GameObject:
   - component: {fileID: 1540938123}
   - component: {fileID: 1540938124}
   - component: {fileID: 1540938125}
+  - component: {fileID: 1540938126}
   m_Layer: 0
   m_Name: mutante radioactivo base_0
   m_TagString: Criatura2
@@ -2049,6 +2050,29 @@ MonoBehaviour:
   "tama\xF1oOriginalPixels": {x: 1678, y: 1356}
   forzarReinicio: 0
   pocionesRecibidas: 0
+--- !u!114 &1540938126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540938115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3262f02e3ac6a54193db1782473e751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 0}
+  frameRate: 0.1
+  idleFrames:
+  - {fileID: 1709475204, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
+  - {fileID: 2049884772, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
+  - {fileID: 656181147, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
+  runFrames:
+  - {fileID: 1709475204, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
+  - {fileID: -1550402147, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
+  - {fileID: 191978041, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
+  playIdleOnStart: 1
 --- !u!1001 &1574493313
 PrefabInstance:
   m_ObjectHideFlags: 0
