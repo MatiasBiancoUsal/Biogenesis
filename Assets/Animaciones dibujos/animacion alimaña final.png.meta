@@ -1,0 +1,594 @@
+fileFormatVersion: 2
+guid: 1b1d7d77269511342b096bf7c6aa3c2a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4320762619051861016
+    second: "animacion alima\xF1a final_0"
+  - first:
+      213: 3388195389006923539
+    second: "animacion alima\xF1a final_1"
+  - first:
+      213: 7102410886843561883
+    second: "animacion alima\xF1a final_2"
+  - first:
+      213: -4610544445472267553
+    second: "animacion alima\xF1a final_3"
+  - first:
+      213: 4045933392522675626
+    second: "animacion alima\xF1a final_4"
+  - first:
+      213: -4077885911371571380
+    second: "animacion alima\xF1a final_5"
+  - first:
+      213: -4281775905433678481
+    second: "animacion alima\xF1a final_6"
+  - first:
+      213: 3686279226186760801
+    second: "animacion alima\xF1a final_7"
+  - first:
+      213: -4463667481640366328
+    second: "animacion alima\xF1a final_8"
+  - first:
+      213: -4814390174715779219
+    second: "animacion alima\xF1a final_9"
+  - first:
+      213: -4190340848635897470
+    second: "animacion alima\xF1a final_10"
+  - first:
+      213: -166192358056242661
+    second: "animacion alima\xF1a final_11"
+  - first:
+      213: -3784927106073446511
+    second: "animacion alima\xF1a final_12"
+  - first:
+      213: -7066093186808148924
+    second: "animacion alima\xF1a final_13"
+  - first:
+      213: -4405003991872121032
+    second: "animacion alima\xF1a final_14"
+  - first:
+      213: -7931305411071915390
+    second: "animacion alima\xF1a final_15"
+  - first:
+      213: 3023751276817757524
+    second: "animacion alima\xF1a final_16"
+  - first:
+      213: -1038632573752103760
+    second: "animacion alima\xF1a final_17"
+  - first:
+      213: 4472115866504900207
+    second: "animacion alima\xF1a final_18"
+  - first:
+      213: 8755704657324245543
+    second: "animacion alima\xF1a final_19"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_0"
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 3957
+        width: 3135
+        height: 2540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eb90a45a419904c0800000000000000
+      internalID: -4320762619051861016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_1"
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 6220
+        width: 118
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 317cf5f31c9450f20800000000000000
+      internalID: 3388195389006923539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_2"
+      rect:
+        serializedVersion: 2
+        x: 2708
+        y: 6407
+        width: 344
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b977d274215d09260800000000000000
+      internalID: 7102410886843561883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_3"
+      rect:
+        serializedVersion: 2
+        x: 3422
+        y: 3957
+        width: 3152
+        height: 2515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2a97a214e0400c0800000000000000
+      internalID: -4610544445472267553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_4"
+      rect:
+        serializedVersion: 2
+        x: 6014
+        y: 6220
+        width: 119
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa58436fbfa062830800000000000000
+      internalID: 4045933392522675626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_5"
+      rect:
+        serializedVersion: 2
+        x: 6131
+        y: 6407
+        width: 343
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4f90228e507867c0800000000000000
+      internalID: -4077885911371571380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_6"
+      rect:
+        serializedVersion: 2
+        x: 2350
+        y: 2749
+        width: 60
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6d8cc4ff731494c0800000000000000
+      internalID: -4281775905433678481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_7"
+      rect:
+        serializedVersion: 2
+        x: 2683
+        y: 3087
+        width: 60
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16283cbec6b482330800000000000000
+      internalID: 3686279226186760801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_8"
+      rect:
+        serializedVersion: 2
+        x: 6270
+        y: 2749
+        width: 61
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80f0d51331edd02c0800000000000000
+      internalID: -4463667481640366328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_9"
+      rect:
+        serializedVersion: 2
+        x: 6604
+        y: 3087
+        width: 60
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d676fe1d4a9df2db0800000000000000
+      internalID: -4814390174715779219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_10"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 399
+        width: 3460
+        height: 2211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2899f35133be8d5c0800000000000000
+      internalID: -4190340848635897470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_11"
+      rect:
+        serializedVersion: 2
+        x: 3954
+        y: 445
+        width: 3389
+        height: 2131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b125cad4ee091bdf0800000000000000
+      internalID: -166192358056242661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_12"
+      rect:
+        serializedVersion: 2
+        x: 5295
+        y: 437
+        width: 32
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197beb5b9dc397bc0800000000000000
+      internalID: -3784927106073446511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_13"
+      rect:
+        serializedVersion: 2
+        x: 4975
+        y: 416
+        width: 6
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c0e723fa130fd90800000000000000
+      internalID: -7066093186808148924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_14"
+      rect:
+        serializedVersion: 2
+        x: 5275
+        y: 420
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 837d84645384ed2c0800000000000000
+      internalID: -4405003991872121032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_15"
+      rect:
+        serializedVersion: 2
+        x: 5250
+        y: 404
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28accef10c75ee190800000000000000
+      internalID: -7931305411071915390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_16"
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 391
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4553bd704c586f920800000000000000
+      internalID: 3023751276817757524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_17"
+      rect:
+        serializedVersion: 2
+        x: 5233
+        y: 391
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bc2b555d290691f0800000000000000
+      internalID: -1038632573752103760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_18"
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 316
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6ea961bfa5201e30800000000000000
+      internalID: 4472115866504900207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "animacion alima\xF1a final_19"
+      rect:
+        serializedVersion: 2
+        x: 5383
+        y: 316
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7228b020ff2828970800000000000000
+      internalID: 8755704657324245543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
