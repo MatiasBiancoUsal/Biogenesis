@@ -1222,6 +1222,7 @@ GameObject:
   - component: {fileID: 1062034127}
   - component: {fileID: 1062034128}
   - component: {fileID: 1062034129}
+  - component: {fileID: 1062034130}
   m_Layer: 0
   m_Name: "alima\xF1a biotecnologica base_0"
   m_TagString: Criatura3
@@ -1460,8 +1461,30 @@ MonoBehaviour:
   pocionesNecesariasMutacionFinal: 6
   pixelsPorUnidad: 100
   "tama\xF1oOriginalPixels": {x: 1642, y: 1316}
-  forzarReinicio: 0
+  forzarReinicio: 1
   pocionesRecibidas: 0
+--- !u!114 &1062034130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062034115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3262f02e3ac6a54193db1782473e751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 0}
+  frameRate: 0.1
+  idleFrames:
+  - {fileID: -8203100063809332027, guid: c321ac731bbb4b149a3ed166480f3605, type: 3}
+  - {fileID: -2713741601013328576, guid: c321ac731bbb4b149a3ed166480f3605, type: 3}
+  - {fileID: 8704287592013692927, guid: c321ac731bbb4b149a3ed166480f3605, type: 3}
+  runFrames:
+  - {fileID: 8349103997552284768, guid: c321ac731bbb4b149a3ed166480f3605, type: 3}
+  - {fileID: -4300397479692947184, guid: c321ac731bbb4b149a3ed166480f3605, type: 3}
+  playIdleOnStart: 1
 --- !u!1001 &1074090793
 PrefabInstance:
   m_ObjectHideFlags: 0
