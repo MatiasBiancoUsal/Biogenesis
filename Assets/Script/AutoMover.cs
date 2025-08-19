@@ -6,14 +6,14 @@ public class AutoMover : MonoBehaviour
     public float waitTime = 2f;
     public float moveDistance = 3f; // Distancia que se mueve a la izquierda
 
-    private Animator animator;
-    private Vector3 startPos;
-    private Vector3 targetPos;
-    private bool isWaiting = true;
-    private bool goingLeft = true;
-    private float timer;
+    protected Animator animator;
+    protected Vector3 startPos;
+    protected Vector3 targetPos;
+    protected bool isWaiting = true;
+    protected bool goingLeft = true;
+    protected float timer;
 
-    void Start()
+    protected virtual void Start()
     {
         animator = GetComponent<Animator>();
         startPos = transform.position;
@@ -22,7 +22,7 @@ public class AutoMover : MonoBehaviour
         animator.Play("idle");
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (isWaiting)
         {
@@ -58,7 +58,7 @@ public class AutoMover : MonoBehaviour
         }
     }
 
-    void FaceDirection(Vector2 dir)
+    protected virtual void FaceDirection(Vector2 dir)
     {
         Vector3 scale = transform.localScale;
         if (dir.x < 0)
