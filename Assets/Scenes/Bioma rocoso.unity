@@ -987,6 +987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: depredador
       objectReference: {fileID: 0}
+    - target: {fileID: 8585692173385415511, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: vida
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1768,10 +1772,10 @@ GameObject:
   - component: {fileID: 1644563045}
   - component: {fileID: 1644563044}
   - component: {fileID: 1644563047}
-  - component: {fileID: 1644563048}
   - component: {fileID: 1644563049}
   - component: {fileID: 1644563050}
   - component: {fileID: 1644563051}
+  - component: {fileID: 1644563052}
   m_Layer: 0
   m_Name: "ara\xF1a base_0"
   m_TagString: Criatura1
@@ -1963,21 +1967,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1644563048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644563040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7a16cc3347d5ce4da838963b87d209c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  waitTime: 2
-  moveDistance: 3
 --- !u!114 &1644563049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2014,6 +2003,8 @@ MonoBehaviour:
   pocionesRecibidas: 0
   "yaMut\xF3Primera": 0
   "yaMut\xF3Final": 0
+  controladorMutacion1: {fileID: 22100000, guid: 066c65824c6cfae41bbcfc1066b4af0b, type: 2}
+  anim: {fileID: 0}
 --- !u!114 &1644563051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2030,6 +2021,22 @@ MonoBehaviour:
   puntoDisparo: {fileID: 555666703}
   intervaloDisparo: 2
   rangoDeteccion: 15
+--- !u!114 &1644563052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644563040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ec25a2faf6fb1f48a01562b6f88dae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  waitTime: 2
+  moveDistance: 3
+  quieto: 0
 --- !u!1001 &1675701330
 PrefabInstance:
   m_ObjectHideFlags: 0
