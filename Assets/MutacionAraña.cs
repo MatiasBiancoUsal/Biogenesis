@@ -27,6 +27,10 @@ public class MutacionAraña : MonoBehaviour, IMutable
     public bool yaMutóPrimera = false;
     public bool yaMutóFinal = false;
 
+    public AnimatorOverrideController controladorMutacion1;
+    public Animator anim;
+
+
     private const string PREF_POCIONES = "PocionesAraña";
     private const string PREF_MUTA1 = "ArañaMutada1";
     private const string PREF_MUTAF = "ArañaMutadaFinal";
@@ -34,7 +38,7 @@ public class MutacionAraña : MonoBehaviour, IMutable
     void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-
+        anim = GetComponent<Animator>();
         if (!escalaInicialDefinida)
         {
             escalaOriginalGuardada = transform.localScale;
@@ -79,6 +83,12 @@ public class MutacionAraña : MonoBehaviour, IMutable
                 AplicarMutacionVisual(spriteMutado1);
             }
         }
+    }
+
+    public void Update()
+    {
+        //if (yaMutóPrimera && !yaMutóFinal)
+        //    anim.runtimeAnimatorController = controladorMutacion1;
     }
 
     public void RecibirPocion()

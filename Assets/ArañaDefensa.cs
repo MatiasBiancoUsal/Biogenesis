@@ -25,13 +25,17 @@ public class ArañaDefensa : MonoBehaviour
     GameObject DetectarEnemigo()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, rangoDeteccion);
+        DerivadoAutoMover movimiento = GetComponent<DerivadoAutoMover>();
         foreach (var hit in hits)
         {
             if (hit.CompareTag("depredador") || hit.CompareTag("Parasito")) // ✅ Ahora detecta los dos
             {
+               
+                movimiento.quieto = true;
                 return hit.gameObject;
             }
         }
+        movimiento.quieto = false;
         return null;
     }
 
