@@ -346,7 +346,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animacion mutante final_0: -924634012518226362
+      animacion mutante final_1: -6957412309647830213
+      animacion mutante final_2: -705589966222748625
+      animacion mutante final_3: -3993562878229913695
+      animacion mutante final_4: 6477432212326892681
+      animacion mutante final_5: 7632990366674176948
+      animacion mutante final_6: 776128138649642650
+      animacion mutante final_7: 513156311228297942
+      animacion mutante final_8: -8770273689431958372
+      animacion mutante final_9: 6090423698335188638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

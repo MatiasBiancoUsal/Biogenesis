@@ -202,7 +202,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animacion cazador final_0: 4505668846558130510
+      animacion cazador final_1: 524276649732408904
+      animacion cazador final_2: 3704963308972222993
+      animacion cazador final_3: 8945779380975484589
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

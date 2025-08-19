@@ -202,7 +202,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "animacion ara\xF1a final_0": 2751485204412801430
+      "animacion ara\xF1a final_1": 7715632004244938845
+      "animacion ara\xF1a final_2": 8833338798043454595
+      "animacion ara\xF1a final_3": 5877104079173583846
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
