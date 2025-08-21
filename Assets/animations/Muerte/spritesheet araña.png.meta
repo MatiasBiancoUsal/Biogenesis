@@ -88,7 +88,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -126,7 +126,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -538,7 +538,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "spritesheet ara\xF1a_0": 7140644484636651454
+      "spritesheet ara\xF1a_1": -4580308621893907285
+      "spritesheet ara\xF1a_10": 4657211100110186868
+      "spritesheet ara\xF1a_11": 1731871075311506468
+      "spritesheet ara\xF1a_12": 2526461218747433852
+      "spritesheet ara\xF1a_13": 7405977768948797036
+      "spritesheet ara\xF1a_14": -5946971881344702149
+      "spritesheet ara\xF1a_15": 4324054350657815786
+      "spritesheet ara\xF1a_16": 4713329508352372558
+      "spritesheet ara\xF1a_17": -6931221896268203539
+      "spritesheet ara\xF1a_2": 4667033582596471191
+      "spritesheet ara\xF1a_3": 153805918426457075
+      "spritesheet ara\xF1a_4": 2624656060318080879
+      "spritesheet ara\xF1a_5": -4802939069221116672
+      "spritesheet ara\xF1a_6": -2277500190976880987
+      "spritesheet ara\xF1a_7": -6449626385800704356
+      "spritesheet ara\xF1a_8": 2067729118293357509
+      "spritesheet ara\xF1a_9": 9150126659281436015
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -118,7 +118,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -156,7 +156,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -778,7 +778,35 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "alima\xF1a_0": -4122386878761851746
+      "alima\xF1a_1": -3817872554939832657
+      "alima\xF1a_10": -2439127826398866616
+      "alima\xF1a_11": 2670346658323137209
+      "alima\xF1a_12": 8332091719765033404
+      "alima\xF1a_13": 4994472196572522512
+      "alima\xF1a_14": 5736965825944845149
+      "alima\xF1a_15": -3758150107003105780
+      "alima\xF1a_16": -723952289345500735
+      "alima\xF1a_17": -8085027379695025387
+      "alima\xF1a_18": 434483243021275797
+      "alima\xF1a_19": -4545286175333935171
+      "alima\xF1a_2": -109564130484518980
+      "alima\xF1a_20": -5873686414166507042
+      "alima\xF1a_21": -1414047517755645389
+      "alima\xF1a_22": -1803330345362602961
+      "alima\xF1a_23": 7404615536370606836
+      "alima\xF1a_24": 376076343599848405
+      "alima\xF1a_25": 4462003484906515000
+      "alima\xF1a_26": -8142516980226903407
+      "alima\xF1a_27": -4953517522434694394
+      "alima\xF1a_3": -8247541415782899792
+      "alima\xF1a_4": 1096321825013125222
+      "alima\xF1a_5": -6193764546648439450
+      "alima\xF1a_6": 8453453914964579465
+      "alima\xF1a_7": -7699749393494265039
+      "alima\xF1a_8": -1687249688931673844
+      "alima\xF1a_9": -1738338712757952126
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

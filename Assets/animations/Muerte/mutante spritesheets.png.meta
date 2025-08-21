@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -250,7 +250,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mutante spritesheets_0: 4331722181044141955
+      mutante spritesheets_1: 3586077014855288627
+      mutante spritesheets_2: -3737291253693368559
+      mutante spritesheets_3: -2375491958490094000
+      mutante spritesheets_4: -380521257162750984
+      mutante spritesheets_5: -2483721906049791082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
