@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 416b8de8a0022d943a5069f53673cccf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5964109103134299522
+    second: spritesheet radiactivo_0
+  - first:
+      213: -3733587304531671522
+    second: spritesheet radiactivo_1
+  - first:
+      213: -7306042288234004950
+    second: spritesheet radiactivo_2
+  - first:
+      213: 130319848793145474
+    second: spritesheet radiactivo_3
+  - first:
+      213: 2659673097223362935
+    second: spritesheet radiactivo_4
+  - first:
+      213: 8500491617584045853
+    second: spritesheet radiactivo_5
+  - first:
+      213: 3634585770954728661
+    second: spritesheet radiactivo_6
+  - first:
+      213: 6212488303209533481
+    second: spritesheet radiactivo_7
+  - first:
+      213: -1201843702065883761
+    second: spritesheet radiactivo_8
+  - first:
+      213: -6918939798863989781
+    second: spritesheet radiactivo_9
+  - first:
+      213: -1538329200312316060
+    second: spritesheet radiactivo_10
+  - first:
+      213: 7258625791063898585
+    second: spritesheet radiactivo_11
+  - first:
+      213: 7554380435338449836
+    second: spritesheet radiactivo_12
+  - first:
+      213: -9088692540821448648
+    second: spritesheet radiactivo_13
+  - first:
+      213: -4681080388377872554
+    second: spritesheet radiactivo_14
+  - first:
+      213: -7603567099665152286
+    second: spritesheet radiactivo_15
+  - first:
+      213: -5840304207210558854
+    second: spritesheet radiactivo_16
+  - first:
+      213: -7435327808163214093
+    second: spritesheet radiactivo_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet radiactivo_0
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 3301
+        width: 585
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2855efd41a5c4c250800000000000000
+      internalID: 5964109103134299522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_1
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 3293
+        width: 585
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e164b7fb022af2cc0800000000000000
+      internalID: -3733587304531671522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_2
+      rect:
+        serializedVersion: 2
+        x: 1961
+        y: 3302
+        width: 585
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2e74d77f39bb9a90800000000000000
+      internalID: -7306042288234004950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_3
+      rect:
+        serializedVersion: 2
+        x: 2792
+        y: 3301
+        width: 593
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2808f76463dfec100800000000000000
+      internalID: 130319848793145474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_4
+      rect:
+        serializedVersion: 2
+        x: 3534
+        y: 3299
+        width: 600
+        height: 587
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77959a2279e09e420800000000000000
+      internalID: 2659673097223362935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_5
+      rect:
+        serializedVersion: 2
+        x: 4283
+        y: 3293
+        width: 600
+        height: 461
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1f5842b610d7f570800000000000000
+      internalID: 8500491617584045853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_6
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 2428
+        width: 552
+        height: 446
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d422777084a07230800000000000000
+      internalID: 3634585770954728661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_7
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 2420
+        width: 552
+        height: 446
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 920d2145231373650800000000000000
+      internalID: 6212488303209533481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_8
+      rect:
+        serializedVersion: 2
+        x: 1972
+        y: 2429
+        width: 574
+        height: 446
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8592d64581325fe0800000000000000
+      internalID: -1201843702065883761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_9
+      rect:
+        serializedVersion: 2
+        x: 2792
+        y: 2428
+        width: 593
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3366a39ecfaff90800000000000000
+      internalID: -6918939798863989781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_10
+      rect:
+        serializedVersion: 2
+        x: 3541
+        y: 2413
+        width: 593
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f06c32eb1c6aae0800000000000000
+      internalID: -1538329200312316060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_11
+      rect:
+        serializedVersion: 2
+        x: 4380
+        y: 2428
+        width: 552
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d93ad9f2b1dbb460800000000000000
+      internalID: 7258625791063898585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_12
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1548
+        width: 536
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca3528a2bfc86d860800000000000000
+      internalID: 7554380435338449836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_13
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 1548
+        width: 536
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 838589fb94a7ed180800000000000000
+      internalID: -9088692540821448648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_14
+      rect:
+        serializedVersion: 2
+        x: 1986
+        y: 1541
+        width: 655
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65770bd2036790fb0800000000000000
+      internalID: -4681080388377872554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_15
+      rect:
+        serializedVersion: 2
+        x: 2792
+        y: 1548
+        width: 593
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e68c9e1204ba7690800000000000000
+      internalID: -7603567099665152286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_16
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1541
+        width: 593
+        height: 592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7acefc444213fea0800000000000000
+      internalID: -5840304207210558854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet radiactivo_17
+      rect:
+        serializedVersion: 2
+        x: 4380
+        y: 1541
+        width: 492
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fc09d5a0c860d890800000000000000
+      internalID: -7435327808163214093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

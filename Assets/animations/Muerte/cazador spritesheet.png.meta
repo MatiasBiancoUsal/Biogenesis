@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: f14609344fe97344f9fe3f63b1722ef6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8619111222491440242
+    second: cazador spritesheet_0
+  - first:
+      213: -3325447561372011510
+    second: cazador spritesheet_1
+  - first:
+      213: -5583408528851217688
+    second: cazador spritesheet_2
+  - first:
+      213: 5127019958360955967
+    second: cazador spritesheet_3
+  - first:
+      213: -5037176959644727553
+    second: cazador spritesheet_4
+  - first:
+      213: -2982834817814251263
+    second: cazador spritesheet_5
+  - first:
+      213: 1272803075657327143
+    second: cazador spritesheet_6
+  - first:
+      213: 2476440062846758651
+    second: cazador spritesheet_7
+  - first:
+      213: 6792547139605723940
+    second: cazador spritesheet_8
+  - first:
+      213: 6409554307097213698
+    second: cazador spritesheet_9
+  - first:
+      213: -1997328129909262184
+    second: cazador spritesheet_10
+  - first:
+      213: -7504092410368554701
+    second: cazador spritesheet_11
+  - first:
+      213: 1079135861894157689
+    second: cazador spritesheet_12
+  - first:
+      213: -3387894745472125200
+    second: cazador spritesheet_13
+  - first:
+      213: -358780855566795147
+    second: cazador spritesheet_14
+  - first:
+      213: -8506050650925630289
+    second: cazador spritesheet_15
+  - first:
+      213: 3608732168732205861
+    second: cazador spritesheet_16
+  - first:
+      213: 5347395701463003759
+    second: cazador spritesheet_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cazador spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 3302
+        width: 507
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2746f28adfb3d9770800000000000000
+      internalID: 8619111222491440242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 3295
+        width: 507
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a047b39df03a9d1d0800000000000000
+      internalID: -3325447561372011510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1972
+        y: 3302
+        width: 574
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e2dfe1768fb382b0800000000000000
+      internalID: -5583408528851217688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 2792
+        y: 3301
+        width: 593
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c517eec75d62740800000000000000
+      internalID: 5127019958360955967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 3541
+        y: 3301
+        width: 593
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff608994e3a581ab0800000000000000
+      internalID: -5037176959644727553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 4290
+        y: 3301
+        width: 492
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 109b3847987da96d0800000000000000
+      internalID: -2982834817814251263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 2429
+        width: 481
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 722649957a7e9a110800000000000000
+      internalID: 1272803075657327143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 2428
+        width: 481
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfee68dcd151e5220800000000000000
+      internalID: 2476440062846758651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 1972
+        y: 2436
+        width: 574
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42b7b4092a9f34e50800000000000000
+      internalID: 6792547139605723940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 2792
+        y: 2428
+        width: 593
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20bba1bdeaf43f850800000000000000
+      internalID: 6409554307097213698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 3541
+        y: 2413
+        width: 593
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 898fcdce5a01844e0800000000000000
+      internalID: -1997328129909262184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 4290
+        y: 2429
+        width: 507
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339074e06bb1cd790800000000000000
+      internalID: -7504092410368554701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1548
+        width: 497
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9751690595cd9fe00800000000000000
+      internalID: 1079135861894157689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 1548
+        width: 497
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f6b8b7cda7cbf0d0800000000000000
+      internalID: -3387894745472125200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 2067
+        y: 1548
+        width: 574
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57efab776ba550bf0800000000000000
+      internalID: -358780855566795147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 2792
+        y: 1548
+        width: 593
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: facf81effff64f980800000000000000
+      internalID: -8506050650925630289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 1548
+        width: 593
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 523eece99cac41230800000000000000
+      internalID: 3608732168732205861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 4344
+        y: 1556
+        width: 498
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f62372b0f04c53a40800000000000000
+      internalID: 5347395701463003759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
