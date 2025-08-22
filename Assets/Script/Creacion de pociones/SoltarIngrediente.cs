@@ -170,49 +170,58 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
         // Si no hay combinación válida, limpiar los ingredientes (destruirlos)
         if (ingredientesEnZona.Count > 1)
         {
+
             Debug.Log("Ingredientes no compatibles, eliminándolos.");
             foreach (GameObject ingrediente in ingredientesUI)
             {
+                //  AGREGAR ESTO ANTES DEL Destroy
+                IngredienteUIArrastrable.clonesActivos.Remove(
+                    ingrediente.name.Replace("(Clone)", "").Trim()
+                );
+
                 Destroy(ingrediente);
             }
 
             ingredientesUI.Clear();
             ingredientesEnZona.Clear();
+        }
 
+
+        void CrearPocion(GameObject prefab)
+        {
+            GameObject nuevaPocion = Instantiate(prefab, transform); // Esto la pone como hija de ZonaDeFusion
+            nuevaPocion.GetComponent<RectTransform>().anchoredPosition = Vector2.zero; // Centrarla si es UI
+
+            // Si estás usando UI, esto es importante:
+            nuevaPocion.transform.SetParent(transform, false); // false para mantener escala/posición del prefab
+
+            // Asignar el prefab para maletín desde aquí
+            var agarrarPocion = nuevaPocion.GetComponent<AgarrarPocion>();
+            if (agarrarPocion != null)
+            {
+                if (prefab == prefabPocionVida)
+                    agarrarPocion.prefabParaMaletin = prefabPocionVida;
+                else if (prefab == prefabPocionMejora)
+                    agarrarPocion.prefabParaMaletin = prefabPocionMejora;
+            }
+
+            Debug.Log("Poción creada correctamente.");
+
+            // Eliminar visualmente los ingredientes usados
+            foreach (GameObject ingrediente in ingredientesUI)
+            {
+                IngredienteUIArrastrable.clonesActivos.Remove(
+                    ingrediente.name.Replace("(Clone)", "").Trim()
+                );
+
+                Destroy(ingrediente);
+            }
+
+            ingredientesUI.Clear();
+            ingredientesEnZona.Clear();
         }
     }
-
-    void CrearPocion(GameObject prefab)
-    {
-        GameObject nuevaPocion = Instantiate(prefab, transform); // Esto la pone como hija de ZonaDeFusion
-        nuevaPocion.GetComponent<RectTransform>().anchoredPosition = Vector2.zero; // Centrarla si es UI
-
-        // Si estás usando UI, esto es importante:
-        nuevaPocion.transform.SetParent(transform, false); // false para mantener escala/posición del prefab
-
-        // Asignar el prefab para maletín desde aquí
-        var agarrarPocion = nuevaPocion.GetComponent<AgarrarPocion>();
-        if (agarrarPocion != null)
-        {
-            if (prefab == prefabPocionVida)
-                agarrarPocion.prefabParaMaletin = prefabPocionVida;
-            else if (prefab == prefabPocionMejora)
-                agarrarPocion.prefabParaMaletin = prefabPocionMejora;
-        }
-
-        Debug.Log("Poción creada correctamente.");
-
-        // Eliminar visualmente los ingredientes usados
-        foreach (GameObject ingrediente in ingredientesUI)
-        {
-            Destroy(ingrediente);
-        }
-
-        // Limpiar las listas
-        ingredientesUI.Clear();
-        ingredientesEnZona.Clear();
-    }
-
+        
     // Script Lucy
     public enum TipoPocion { Vida, Mejora }
 
@@ -237,7 +246,6 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
             BloquearIngredientes(tipo);
         }
     }
-
 
     [SerializeField] private Transform panelIngredientesTransform;
 
