@@ -1478,12 +1478,12 @@ MonoBehaviour:
   targetRenderer: {fileID: 0}
   frameRate: 0.1
   idleFrames:
-  - {fileID: -8203100063809332027, guid: c321ac731bbb4b149a3ed166480f3605, type: 3}
-  - {fileID: -2713741601013328576, guid: c321ac731bbb4b149a3ed166480f3605, type: 3}
-  - {fileID: 8704287592013692927, guid: c321ac731bbb4b149a3ed166480f3605, type: 3}
+  - {fileID: -1780886397, guid: f720b9ba76d2bd6448c541cf60714eaa, type: 3}
+  - {fileID: 312454280, guid: f720b9ba76d2bd6448c541cf60714eaa, type: 3}
+  - {fileID: -1528673782, guid: f720b9ba76d2bd6448c541cf60714eaa, type: 3}
   runFrames:
-  - {fileID: 8349103997552284768, guid: c321ac731bbb4b149a3ed166480f3605, type: 3}
-  - {fileID: -4300397479692947184, guid: c321ac731bbb4b149a3ed166480f3605, type: 3}
+  - {fileID: -1098422877, guid: 3eb03a62919f97c498e49f5e36ed975e, type: 3}
+  - {fileID: 320111824, guid: 3eb03a62919f97c498e49f5e36ed975e, type: 3}
   playIdleOnStart: 1
 --- !u!1001 &1074090793
 PrefabInstance:
