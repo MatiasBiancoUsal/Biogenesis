@@ -33,7 +33,14 @@ public class BandejaUI : MonoBehaviour
 
     public void ActualizarUI()
     {
-        if (slots == null || inventario == null) return;
+        if (slots == null || inventario == null)
+        {
+            Debug.LogWarning("Slots o inventario son null en ActualizarUI");
+            return;
+        }
+
+
+        Debug.Log(">> Actualizando UI, comidas en inventario: " + inventario.comidas.Count);
 
         for (int i = 0; i < slots.Length; i++)
         {
@@ -41,12 +48,15 @@ public class BandejaUI : MonoBehaviour
             {
                 slots[i].sprite = inventario.comidas[i];
                 slots[i].enabled = true;
+                Debug.Log($"Slot {i} actualizado con sprite: {inventario.comidas[i].name}");
             }
             else
             {
                 slots[i].sprite = null;
                 slots[i].enabled = false;
+                Debug.Log($"Slot {i} vacío");
             }
         }
+
     }
 }
