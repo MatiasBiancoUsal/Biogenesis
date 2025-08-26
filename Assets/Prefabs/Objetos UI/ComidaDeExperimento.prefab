@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4094545689184691836}
   - component: {fileID: 6954871847620870990}
   - component: {fileID: 7083576674619270983}
+  - component: {fileID: 7811123387010554309}
   m_Layer: 5
   m_Name: ComidaDeExperimento
   m_TagString: Untagged
@@ -75,3 +76,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7811123387010554309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870724441767016839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc23b14fdc9d0084db335325f7d63154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comida2DPrefab: {fileID: 4428317040068590896, guid: ced1d835c42059c41bc7ada28ffcd242, type: 3}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6378783179326713394}
   - component: {fileID: 5128428633313336684}
   - component: {fileID: 6272341145023369511}
+  - component: {fileID: 2732264875628222884}
   m_Layer: 5
   m_Name: ComidaDeRata
   m_TagString: Untagged
@@ -75,3 +76,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2732264875628222884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6249238680025303656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc23b14fdc9d0084db335325f7d63154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comida2DPrefab: {fileID: 5191297449578529010, guid: 4e02ae12970ade94a80330280f2c7bbf, type: 3}

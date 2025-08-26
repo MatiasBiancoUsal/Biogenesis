@@ -1811,6 +1811,7 @@ GameObject:
   - component: {fileID: 1540938124}
   - component: {fileID: 1540938125}
   - component: {fileID: 1540938126}
+  - component: {fileID: 1540938127}
   m_Layer: 0
   m_Name: mutante radioactivo base_0
   m_TagString: Criatura2
@@ -2073,6 +2074,19 @@ MonoBehaviour:
   - {fileID: -1550402147, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
   - {fileID: 191978041, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
   playIdleOnStart: 1
+--- !u!114 &1540938127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540938115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7be9e29afbf5a84eb9bc033232eb829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comidaAceptada: {fileID: 1806996119208087395, guid: 131657bf575391a4a8804ee243e36afc, type: 3}
 --- !u!1001 &1574493313
 PrefabInstance:
   m_ObjectHideFlags: 0
