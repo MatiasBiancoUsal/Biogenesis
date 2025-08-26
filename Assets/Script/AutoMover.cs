@@ -30,6 +30,8 @@ public class AutoMover : MonoBehaviour
         if (quieto) //  Si está quieto, no se mueve, prueba ataque alimaña
         {
             animator.Play("idle");
+            SpriteAnimator spa = GetComponent<SpriteAnimator>();
+            spa.currentState = "Idle";
             return;
         }
 
@@ -40,7 +42,8 @@ public class AutoMover : MonoBehaviour
             {
                 isWaiting = false;
                 animator.Play("run");
-
+                SpriteAnimator spa = GetComponent<SpriteAnimator>();
+                spa.currentState = "Run";
                 // Voltear en la dirección correcta
                 FaceDirection(goingLeft ? Vector2.left : Vector2.right);
             }
@@ -56,6 +59,8 @@ public class AutoMover : MonoBehaviour
                 isWaiting = true;
                 timer = waitTime;
                 animator.Play("idle");
+                SpriteAnimator spa = GetComponent<SpriteAnimator>();
+                spa.currentState = "Idle";
             }
             else if (!goingLeft && transform.position.x >= startPos.x)
             {
@@ -63,6 +68,8 @@ public class AutoMover : MonoBehaviour
                 isWaiting = true;
                 timer = waitTime;
                 animator.Play("idle");
+                SpriteAnimator spa = GetComponent<SpriteAnimator>();
+                spa.currentState = "Idle";
             }
         }
     }

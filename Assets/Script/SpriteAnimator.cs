@@ -21,7 +21,7 @@ public class SpriteAnimator : MonoBehaviour
     private Sprite[] currentFrames;
     private int frameIndex;
     private float timer;
-    private string currentState = "";
+    public string currentState = "";
 
     public SpriteRenderer SpriteRenderer => sr; // para que otros scripts puedan usarlo
 
@@ -52,6 +52,12 @@ public class SpriteAnimator : MonoBehaviour
             frameIndex = (frameIndex + 1) % currentFrames.Length;
             sr.sprite = currentFrames[frameIndex];
         }
+
+        if (currentState == "Idle" && idleFrames != null && idleFrames.Length > 0)
+            PlayIdle();
+        else if (currentState == "Run" && runFrames != null && runFrames.Length > 0)
+            PlayRun();
+
     }
 
     // Cambia los arrays que se usarán como clips de Idle/Run
@@ -60,11 +66,13 @@ public class SpriteAnimator : MonoBehaviour
         idleFrames = newIdle;
         runFrames = newRun;
 
+
+
         // refrescá si estás en ese estado
-        if (currentState == "Idle" && idleFrames != null && idleFrames.Length > 0)
-            PlayIdle();
-        else if (currentState == "Run" && runFrames != null && runFrames.Length > 0)
-            PlayRun();
+        //if (currentState == "Idle" && idleFrames != null && idleFrames.Length > 0)
+            //PlayIdle();
+        //else if (currentState == "Run" && runFrames != null && runFrames.Length > 0)
+            //PlayRun();
     }
 
     public void PlayIdle()
@@ -79,7 +87,7 @@ public class SpriteAnimator : MonoBehaviour
 
     public void PlayRun()
     {
-        if (runFrames == null || runFrames.Length == 0) return;
+        //if (runFrames == null || runFrames.Length == 0) return;
         currentFrames = runFrames;
         currentState = "Run";
         frameIndex = 0;
