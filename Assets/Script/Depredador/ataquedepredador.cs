@@ -10,10 +10,10 @@ public class ataquedepredador : MonoBehaviour
     {
         Scene EscenaActual = SceneManager.GetActiveScene();
 
-        if(GlobalPredatorSpawner.instance.randomScene == EscenaActual.name)
-        {
-            GlobalPredatorSpawner.instance.SpawnearBicho();
-        }
+        //if(GlobalPredatorSpawner.instance.randomScene == EscenaActual.name)
+        //{
+          //  GlobalPredatorSpawner.instance.SpawnearBicho();
+        //}
     }
 
     // Update is called once per frame

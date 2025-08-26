@@ -913,6 +913,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comidaAceptada: {fileID: 7491189429970011940, guid: b5b6c4e5d0493f54da011858b4e1ccef, type: 3}
+--- !u!114 &1064086133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064086130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9bbfd2ad103f534cb45233988024d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intervaloAtaque: 1.5
+  rangoDeteccion: 4.4
+  "da\xF1o": 10
 --- !u!1001 &1166376738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2674,6 +2689,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6493893972074452375, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1064086132}
+    - targetCorrespondingSourceObject: {fileID: 6493893972074452375, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1064086133}
   m_SourcePrefab: {fileID: 100100000, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
