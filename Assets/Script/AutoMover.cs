@@ -13,6 +13,9 @@ public class AutoMover : MonoBehaviour
     protected bool goingLeft = true;
     protected float timer;
 
+
+    [HideInInspector] public bool quieto = false; //  Nueva variable, prueba ataque alimaña
+
     protected virtual void Start()
     {
         animator = GetComponent<Animator>();
@@ -24,6 +27,12 @@ public class AutoMover : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (quieto) //  Si está quieto, no se mueve, prueba ataque alimaña
+        {
+            animator.Play("idle");
+            return;
+        }
+
         if (isWaiting)
         {
             timer -= Time.deltaTime;

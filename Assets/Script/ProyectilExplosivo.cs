@@ -22,12 +22,15 @@ public class ProyectilExplosivo : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Depredador
-        var dep = collision.GetComponent<DepredadorAnimTest>();
-        if (dep != null)
+        if (collision.CompareTag("depredador"))
         {
-            dep.RecibirDaño();
-            Destroy(gameObject);
-            return;
+            DepredadorAnimTest depredador = collision.GetComponent<DepredadorAnimTest>();
+            if (depredador != null)
+            {
+                depredador.RecibirDaño();
+            }
+
+            Destroy(gameObject); // Se destruye el proyectil tras golpear
         }
 
         // Hongo parásito
@@ -42,4 +45,3 @@ public class ProyectilExplosivo : MonoBehaviour
         // En el futuro podés agregar más enemigos acá
     }
 }
-
