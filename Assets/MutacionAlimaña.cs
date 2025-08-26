@@ -31,6 +31,21 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
     private const string PREF_MUTA1 = "AlimañaMutada1";
     private const string PREF_MUTAF = "AlimañaMutadaFinal";
 
+    //script lucy
+    [Header("Daño por mutación")]
+    public float multiplicadorDañoPrimera = 1.5f;
+    public float multiplicadorDañoFinal = 2.5f;
+
+    public float ObtenerMultiplicadorDaño()
+    {
+        if (yaMutóFinal)
+            return multiplicadorDañoFinal;
+        else if (yaMutóPrimera)
+            return multiplicadorDañoPrimera;
+        else
+            return 1f; 
+    }
+    /////////////
     void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();

@@ -58,7 +58,15 @@ public class AlimañaDefensa : MonoBehaviour
 
             Vector2 direccion = (objetivo.position - puntoDisparo.position).normalized;
             proyectil.GetComponent<ProyectilExplosivo>().direccion = direccion;
+            var scriptProyectil = proyectil.GetComponent<ProyectilExplosivo>();
+            scriptProyectil.direccion = direccion;
 
+            // Buscamos si hay MutacionAlimaña en este mismo GameObject
+            MutacionAlimaña mutacion = GetComponent<MutacionAlimaña>();
+            if (mutacion != null)
+            {
+                scriptProyectil.daño = Mathf.RoundToInt(scriptProyectil.daño * mutacion.ObtenerMultiplicadorDaño());
+            }
 
         }
     }
