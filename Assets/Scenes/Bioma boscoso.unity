@@ -2616,9 +2616,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3685804006201741725, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: comidaEsp
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685804006201741725, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: hungerBar
       value: 
       objectReference: {fileID: 2018081640}
+    - target: {fileID: 3685804006201741725, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: ComidaAceptada
+      value: Comidacazador
+      objectReference: {fileID: 0}
     - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: forzarReinicio
       value: 1

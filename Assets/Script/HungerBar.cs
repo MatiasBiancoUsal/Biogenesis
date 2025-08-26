@@ -17,12 +17,12 @@ public class HungerBar : MonoBehaviour
     public void Feed(float amount)
     {
         hungerValue += amount;
-        hungerValue = Mathf.Clamp01(hungerValue);
+        //hungerValue = Mathf.Clamp01(hungerValue);
         UpdateHungerUI();
     }
 
     void UpdateHungerUI()
     {
-        hungerFill.fillAmount = hungerValue;
+        hungerFill.fillAmount = hungerValue/1;
     }
 }
