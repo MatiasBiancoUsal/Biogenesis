@@ -1589,7 +1589,6 @@ MonoBehaviour:
   - {fileID: -1098422877, guid: 3eb03a62919f97c498e49f5e36ed975e, type: 3}
   - {fileID: 320111824, guid: 3eb03a62919f97c498e49f5e36ed975e, type: 3}
   playIdleOnStart: 1
-  currentState: 
 --- !u!114 &1062034131
 MonoBehaviour:
   m_ObjectHideFlags: 0
