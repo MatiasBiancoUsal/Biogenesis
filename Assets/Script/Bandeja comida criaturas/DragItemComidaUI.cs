@@ -53,26 +53,33 @@ public class DragItemComidaUI : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                 // Validamos si esta criatura acepta este tipo de comida
                 if (criatura.comidaAceptada == comida2DPrefab)
                 {
-                    // Instancia rápida del prefab (opcional: sirve para animaciones)
+                    // Instancia rápida del prefab (opcional: sirve para animaciones visuales)
                     GameObject comida = Instantiate(comida2DPrefab, mouseWorldPos2D, Quaternion.identity);
+                    Destroy(comida, 0.1f); // lo destruimos enseguida
 
-                    // Destruir al instante (no queda en escena)
-                    Destroy(comida);
+                    // Buscar la barra de hambre en la criatura y alimentarla
+                    HungerBar hungerBar = criatura.GetComponent<CreatureEat>()?.hungerBar;
+                    if (hungerBar != null)
+                    {
+                        hungerBar.Feed(0.2f); // Ajustá el valor según cuánto debe llenar
+                        Debug.Log($"{criatura.name} comió y se alimentó!");
+                    }
 
                     // Eliminar el icono de la bandeja (consumir comida)
                     Destroy(gameObject);
 
-                    Debug.Log(criatura.name + " comió su comida!");
+                    // Avisar al BandejaManager que se liberó un espacio
+                    BandejaManager bandejaManager = FindFirstObjectByType<BandejaManager>();
+                    if (bandejaManager != null)
+                    {
+                        bandejaManager.QuitarComida();
+                    }
                 }
                 else
                 {
                     Debug.Log(criatura.name + " no acepta esta comida.");
                     rectTransform.position = startPos; // vuelve a la bandeja
                 }
-            }
-            else
-            {
-                rectTransform.position = startPos;
             }
         }
         else

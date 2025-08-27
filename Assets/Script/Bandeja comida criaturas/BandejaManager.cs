@@ -38,4 +38,10 @@ public class BandejaManager : MonoBehaviour
         Instantiate(comidaPrefabs[index], content);
         comidasActuales++;
     }
+
+    public void QuitarComida()
+    {
+        if (comidasActuales > 0)
+            comidasActuales--;
+    }
 }
