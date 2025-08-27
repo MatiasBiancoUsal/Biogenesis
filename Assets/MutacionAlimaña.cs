@@ -130,6 +130,9 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
 
         AplicarMutacionVisual(spriteMutadoFinal);
         Debug.Log("🧬 Alimaña alcanzó su mutación final.");
+
+        //para final del juego
+        GameManager.Instance.NotificarCriaturaMutadaFinal();
     }
 
     void AplicarMutacionVisual(Sprite nuevoSprite)

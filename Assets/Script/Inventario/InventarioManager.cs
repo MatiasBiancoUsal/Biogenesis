@@ -88,6 +88,8 @@ public class InventarioManager : MonoBehaviour
 
         // Cargar la escena donde aparecerá la criatura
         //SceneManager.LoadScene("SampleScene"); // Asegurate que el nombre sea exacto
+
+        GameManager.Instance.NotificarExperimentoCreado();
     }
     private void RevisarADNCompletos()
     {

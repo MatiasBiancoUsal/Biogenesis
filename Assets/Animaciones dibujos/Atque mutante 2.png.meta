@@ -178,7 +178,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Atque mutante 2_0: -5262060898029734774
+      Atque mutante 2_1: 8327720888703776408
+      Atque mutante 2_2: 4507649135149604770
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

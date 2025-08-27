@@ -3824,6 +3824,8 @@ MonoBehaviour:
   nombresEscenas:
   - PantallaCriaturas
   - MiniJuego
+  - EscenaFinalDelJuego
+  - Menu
 --- !u!1 &1571361915
 GameObject:
   m_ObjectHideFlags: 0

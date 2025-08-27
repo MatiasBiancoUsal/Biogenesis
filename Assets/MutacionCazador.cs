@@ -118,6 +118,9 @@ public class MutacionCazador : MonoBehaviour, IMutable
 
         AplicarMutacionVisual(spriteMutadoFinal);
         Debug.Log("🧬 Mutación final activada.");
+
+        //para final del juego
+        GameManager.Instance.NotificarCriaturaMutadaFinal();
     }
 
     void AplicarMutacionVisual(Sprite nuevoSprite)

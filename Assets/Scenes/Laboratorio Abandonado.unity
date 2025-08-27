@@ -1543,7 +1543,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hungerBar: {fileID: 34772536}
   comidaEsp: {fileID: 0}
-  ComidaAceptada: 
 --- !u!114 &1062034129
 MonoBehaviour:
   m_ObjectHideFlags: 0

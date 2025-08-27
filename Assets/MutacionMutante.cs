@@ -115,6 +115,9 @@ public class MutacionMutante : MonoBehaviour, IMutable
 
         AplicarMutacionVisual(spriteMutadoFinal);
         Debug.Log("💥 Mutante alcanzó su mutación final.");
+
+        //para final del juego
+        GameManager.Instance.NotificarCriaturaMutadaFinal();
     }
 
     void AplicarMutacionVisual(Sprite nuevoSprite)

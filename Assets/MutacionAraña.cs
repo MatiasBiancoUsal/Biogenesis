@@ -125,6 +125,9 @@ public class MutacionAraña : MonoBehaviour, IMutable
 
         AplicarMutacionVisual(spriteMutadoFinal);
         Debug.Log("🧬 Araña alcanzó su mutación final.");
+
+        //para final del juego
+        GameManager.Instance.NotificarCriaturaMutadaFinal();
     }
 
     void AplicarMutacionVisual(Sprite nuevoSprite)
