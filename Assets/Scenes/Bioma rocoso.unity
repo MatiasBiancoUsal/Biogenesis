@@ -327,37 +327,11 @@ MonoBehaviour:
   hungerFill: {fileID: 579726449}
   hungerValue: 1
   hungerDecreaseRate: 0.01
---- !u!1 &335943562
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 335943563}
-  m_Layer: 0
-  m_Name: PuntoGeneracion
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &335943563
+--- !u!4 &335943563 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
+  m_PrefabInstance: {fileID: 3068557177326733708}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335943562}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.28, y: -3.08, z: 4210.547}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &338304359 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8815221515953262091, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
@@ -1981,6 +1955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hungerBar: {fileID: 233264858}
+  comidaEsp: {fileID: 0}
 --- !u!114 &1644563050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2037,6 +2012,7 @@ MonoBehaviour:
   speed: 2
   waitTime: 2
   moveDistance: 3
+  quieto: 0
   quieto: 0
 --- !u!114 &1644563053
 MonoBehaviour:
@@ -2900,6 +2876,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 634375756}
   m_SourcePrefab: {fileID: 100100000, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
+--- !u!1001 &3068557177326733708
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 776125360252032561, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
+      propertyPath: m_Name
+      value: PuntoGeneracion
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4210.547
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
 --- !u!1001 &5528709683520845728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2965,7 +2998,7 @@ SceneRoots:
   - {fileID: 1959727140}
   - {fileID: 1644563042}
   - {fileID: 1453749943}
-  - {fileID: 335943563}
+  - {fileID: 3068557177326733708}
   - {fileID: 613753743}
   - {fileID: 1309862495}
   - {fileID: 624905369}
