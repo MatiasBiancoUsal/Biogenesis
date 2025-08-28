@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 319003656}
   - component: {fileID: 319003657}
   - component: {fileID: 319003658}
+  - component: {fileID: 319003659}
   m_Layer: 0
   m_Name: criatura experimento_0
   m_TagString: Untagged
@@ -615,6 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hungerBar: {fileID: 418388669}
+  comidaEsp: {fileID: 0}
 --- !u!114 &319003657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,6 +643,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comidaAceptada: {fileID: 4428317040068590896, guid: ced1d835c42059c41bc7ada28ffcd242, type: 3}
+--- !u!114 &319003659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319003650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43ae03051b54c74c89759e1a0fec586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intervaloAtaque: 1.5
+  rangoDeteccion: 4.5
+  "da\xF1o": 10
 --- !u!1 &373466726
 GameObject:
   m_ObjectHideFlags: 0

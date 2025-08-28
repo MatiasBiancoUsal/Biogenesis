@@ -136,36 +136,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cazador volador ataque 3_0
+      name: 8
       rect:
         serializedVersion: 2
-        x: 199
-        y: 11111
-        width: 135
-        height: 124
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dfdf542bbc0029c50800000000000000
-      internalID: 6670394872958418429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cazador volador ataque 3_1
-      rect:
-        serializedVersion: 2
-        x: 208
+        x: 0
         y: 11048
-        width: 1790
+        width: 2048
         height: 1433
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,36 +157,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cazador volador ataque 3_2
+      name: 7
       rect:
         serializedVersion: 2
-        x: 160
-        y: 9616
-        width: 215
-        height: 335
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5921f77978abcfb60800000000000000
-      internalID: 7781299347714413205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cazador volador ataque 3_3
-      rect:
-        serializedVersion: 2
-        x: 198
+        x: 0
         y: 9424
-        width: 1790
+        width: 2048
         height: 1433
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,36 +178,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cazador volador ataque 3_4
+      name: 6
       rect:
         serializedVersion: 2
-        x: 61
-        y: 8075
-        width: 165
-        height: 490
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1e39ca03fe7201dd0800000000000000
-      internalID: -2517468283432823839
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cazador volador ataque 3_5
-      rect:
-        serializedVersion: 2
-        x: 175
-        y: 7835
-        width: 1790
+        x: 0
+        y: 7839
+        width: 2048
         height: 1433
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,36 +199,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cazador volador ataque 3_6
+      name: 5
       rect:
         serializedVersion: 2
-        x: 19
-        y: 6825
-        width: 119
-        height: 379
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: faecb084865ecbc30800000000000000
-      internalID: 4376625173945372335
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cazador volador ataque 3_7
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 6370
-        width: 1790
+        x: 0
+        y: 6409
+        width: 2048
         height: 1433
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -304,36 +220,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cazador volador ataque 3_8
+      name: 4
       rect:
         serializedVersion: 2
-        x: 86
-        y: 5448
-        width: 113
-        height: 140
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c7e9533ceb6409700800000000000000
-      internalID: 545013340044631676
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cazador volador ataque 3_9
-      rect:
-        serializedVersion: 2
-        x: 207
+        x: 0
         y: 4717
-        width: 1790
+        width: 2048
         height: 1433
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -346,15 +241,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cazador volador ataque 3_10
+      name: 3
       rect:
         serializedVersion: 2
-        x: 193
+        x: 0
         y: 3222
-        width: 1790
+        width: 2048
         height: 1433
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -367,15 +262,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cazador volador ataque 3_11
+      name: 2
       rect:
         serializedVersion: 2
-        x: 155
+        x: 0
         y: 1702
-        width: 1790
+        width: 2048
         height: 1433
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -388,15 +283,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cazador volador ataque 3_12
+      name: 1
       rect:
         serializedVersion: 2
-        x: 181
+        x: 0
         y: 115
-        width: 1790
+        width: 2048
         height: 1433
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -411,7 +306,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7e9dbe9083c9da64caa5e23745ccc988
     internalID: 0
     vertices: []
     indices: 
@@ -419,19 +314,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      1: -2623845925632952267
+      2: -3649423758795625775
+      3: 2312283087741277473
+      4: -276003225450378030
+      5: -1058316131292265287
+      6: -4842522257053796047
+      7: -8081502262501377017
+      8: 3002126775263546222
       cazador volador ataque 3_0: 6670394872958418429
-      cazador volador ataque 3_1: 3002126775263546222
-      cazador volador ataque 3_10: 2312283087741277473
-      cazador volador ataque 3_11: -3649423758795625775
-      cazador volador ataque 3_12: -2623845925632952267
       cazador volador ataque 3_2: 7781299347714413205
-      cazador volador ataque 3_3: -8081502262501377017
       cazador volador ataque 3_4: -2517468283432823839
-      cazador volador ataque 3_5: -4842522257053796047
       cazador volador ataque 3_6: 4376625173945372335
-      cazador volador ataque 3_7: -1058316131292265287
       cazador volador ataque 3_8: 545013340044631676
-      cazador volador ataque 3_9: -276003225450378030
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

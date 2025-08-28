@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CazadorDefensa : MonoBehaviour
+public class criaturadefensa : MonoBehaviour
 {
+
     [Header("Ataque")]
     public float intervaloAtaque = 1.5f;
     public float rangoDeteccion = 2f; // Rango cuerpo a cuerpo
@@ -12,38 +13,30 @@ public class CazadorDefensa : MonoBehaviour
     private bool atacando = false;
     private Animator anim;
 
-    
-    public enum EstadoMutacion { Normal, Primera, Final }
-    public EstadoMutacion estado = EstadoMutacion.Normal;
-
     void Start()
     {
         anim = GetComponent<Animator>();
-        // Iniciar ciclo de animaciones
-        StartCoroutine(CicloAnimaciones());
     }
 
     void Update()
     {
-        GameObject enemigo = DetectarEnemigo();
-        if (enemigo != null && !atacando)
+        GameObject criatura = DetectarCriatura();
+        if (criatura != null && !atacando)
         {
-            Debug.Log($"[Cazador] Enemigo detectado: {enemigo.name}, comenzando ataque.");
-            StartCoroutine(AtacarRoutine(enemigo.transform));
+            StartCoroutine(AtacarRoutine(criatura.transform));
         }
     }
 
     // --------------------
-    // Detección de enemigos
+    // Detección de la criatura experimento
     // --------------------
-    GameObject DetectarEnemigo()
+    GameObject DetectarCriatura()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, rangoDeteccion);
         foreach (var hit in hits)
         {
-            if (hit.CompareTag("depredador") || hit.CompareTag("Parasito"))
+            if (hit.CompareTag("CriaturaExperimento"))
             {
-                Debug.Log($"[Cazador] Detectado enemigo en rango: {hit.name}");
                 return hit.gameObject;
             }
         }
@@ -62,23 +55,13 @@ public class CazadorDefensa : MonoBehaviour
             yield return new WaitForSeconds(intervaloAtaque);
         }
         atacando = false;
-        Debug.Log("[Cazador] Dejó de atacar (objetivo perdido).");
     }
 
     // --------------------
-    // Método de ataque
+    // Aplicar daño
     // --------------------
     void Atacar(Transform objetivo)
     {
-        // Animación según mutación
-        switch (estado)
-        {
-            case EstadoMutacion.Normal: anim.SetTrigger("Atacar1"); break;
-            case EstadoMutacion.Primera: anim.SetTrigger("Atacar2"); break;
-            case EstadoMutacion.Final: anim.SetTrigger("Atacar3"); break;
-        }
-
-        // Aplicar daño al objetivo si tiene script de vida
         var criatura = objetivo.GetComponent<DepredadorAnimTest>();
         if (criatura != null)
         {
@@ -88,22 +71,7 @@ public class CazadorDefensa : MonoBehaviour
     }
 
     // --------------------
-    // Ciclo de animaciones básicas (Idle/Disparar)
-    // --------------------
-    IEnumerator CicloAnimaciones()
-    {
-        while (true)
-        {
-            anim.SetTrigger("Idle");
-            yield return new WaitForSeconds(2f);
-
-            anim.SetTrigger("Disparar");
-            yield return new WaitForSeconds(1.5f);
-        }
-    }
-
-    // --------------------
-    // Visualizar rango de detección en el editor
+    // Visualizar rango de detección
     // --------------------
     void OnDrawGizmosSelected()
     {
@@ -111,3 +79,4 @@ public class CazadorDefensa : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, rangoDeteccion);
     }
 }
+

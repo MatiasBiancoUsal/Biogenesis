@@ -136,36 +136,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: criatura experimento ataque_0
+      name: 8
       rect:
         serializedVersion: 2
-        x: 271
-        y: 10930
-        width: 135
-        height: 124
+        x: 0
+        y: 10938
+        width: 2048
+        height: 1438
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7001091ff2521fa60800000000000000
-      internalID: 7705981325254070279
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: criatura experimento ataque_1
-      rect:
-        serializedVersion: 2
-        x: 301
-        y: 11008
-        width: 1651
-        height: 1354
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,36 +157,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: criatura experimento ataque_2
+      name: 7
       rect:
         serializedVersion: 2
-        x: 232
-        y: 9435
-        width: 215
-        height: 335
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0bdc63971ff595ba0800000000000000
-      internalID: -6099738729571234384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: criatura experimento ataque_3
-      rect:
-        serializedVersion: 2
-        x: 380
-        y: 9489
-        width: 1651
+        x: 17
+        y: 9480
+        width: 2031
         height: 1354
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,36 +178,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: criatura experimento ataque_4
+      name: 6
       rect:
         serializedVersion: 2
-        x: 133
-        y: 7894
-        width: 165
-        height: 490
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1ec76ee6ce7f1fb90800000000000000
-      internalID: -7209708933598511903
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: criatura experimento ataque_5
-      rect:
-        serializedVersion: 2
-        x: 309
+        x: 13
         y: 7911
-        width: 1651
+        width: 2035
         height: 1354
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,36 +199,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: criatura experimento ataque_6
+      name: 5
       rect:
         serializedVersion: 2
-        x: 100
-        y: 6559
-        width: 119
-        height: 379
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 30228a87f52227970800000000000000
-      internalID: 8751094819375817219
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: criatura experimento ataque_7
-      rect:
-        serializedVersion: 2
-        x: 209
-        y: 6374
-        width: 1714
+        x: 0
+        y: 6370
+        width: 2048
         height: 1340
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -304,36 +220,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: criatura experimento ataque_8
+      name: 4
       rect:
         serializedVersion: 2
-        x: 158
-        y: 5267
-        width: 116
-        height: 142
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 146e80de3d9943050800000000000000
-      internalID: 5779413357317121601
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: criatura experimento ataque_9
-      rect:
-        serializedVersion: 2
-        x: 257
-        y: 4772
-        width: 1670
+        x: 0
+        y: 4728
+        width: 2048
         height: 1340
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -346,15 +241,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: criatura experimento ataque_10
+      name: 3
       rect:
         serializedVersion: 2
-        x: 300
+        x: 0
         y: 3200
-        width: 1670
+        width: 2048
         height: 1340
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -367,15 +262,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: criatura experimento ataque_11
+      name: 2
       rect:
         serializedVersion: 2
-        x: 234
+        x: 0
         y: 1725
-        width: 1716
+        width: 2048
         height: 1340
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -388,15 +283,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: criatura experimento ataque_12
+      name: 1
       rect:
         serializedVersion: 2
-        x: 265
+        x: 0
         y: 234
-        width: 1651
+        width: 2048
         height: 1354
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -411,7 +306,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 95873ebb1b7e1a74c8d2a22a8bc2ef44
     internalID: 0
     vertices: []
     indices: 
@@ -419,19 +314,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      1: 9077768711889749593
+      2: 434738171612341499
+      3: 237873721796548655
+      4: 8468964111062064325
+      5: 5203835263722467599
+      6: -7706116643582850132
+      7: -7335395768331430799
+      8: -7938225943273610778
       criatura experimento ataque_0: 7705981325254070279
-      criatura experimento ataque_1: -7938225943273610778
-      criatura experimento ataque_10: 237873721796548655
-      criatura experimento ataque_11: 434738171612341499
-      criatura experimento ataque_12: 9077768711889749593
       criatura experimento ataque_2: -6099738729571234384
-      criatura experimento ataque_3: -7335395768331430799
       criatura experimento ataque_4: -7209708933598511903
-      criatura experimento ataque_5: -7706116643582850132
       criatura experimento ataque_6: 8751094819375817219
-      criatura experimento ataque_7: 5203835263722467599
       criatura experimento ataque_8: 5779413357317121601
-      criatura experimento ataque_9: 8468964111062064325
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

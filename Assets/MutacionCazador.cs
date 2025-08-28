@@ -31,6 +31,38 @@ public class MutacionCazador : MonoBehaviour, IMutable
     private const string PREF_MUTA1 = "MutoPrimera";
     private const string PREF_MUTAF = "MutoFinal";
 
+    //script lucy
+    [Header("Daño por mutación")]
+    public float multiplicadorDañoPrimera = 1.5f;
+    public float multiplicadorDañoFinal = 2.5f;
+
+    public float ObtenerMultiplicadorDaño()
+    {
+        if (yaMutoFinal)
+            return multiplicadorDañoFinal;
+        else if (yaMutoPrimera)
+            return multiplicadorDañoPrimera;
+        else
+            return 1f;
+    }
+
+    public EstadoMutacion ObtenerEstadoMutacion()
+    {
+        if (yaMutoFinal) return EstadoMutacion.Final;
+        if (yaMutoPrimera) return EstadoMutacion.Primera;
+        return EstadoMutacion.Normal;
+    }
+
+    public enum EstadoMutacion
+    {
+        Normal,
+        Primera,
+        Final
+    }
+
+   
+   //////////////
+  
     void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
