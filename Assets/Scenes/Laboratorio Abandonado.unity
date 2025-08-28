@@ -1563,7 +1563,7 @@ MonoBehaviour:
   pocionesNecesariasMutacionFinal: 6
   pixelsPorUnidad: 100
   "tama\xF1oOriginalPixels": {x: 1642, y: 1316}
-  forzarReinicio: 1
+  forzarReinicio: 0
   pocionesRecibidas: 0
   "multiplicadorDa\xF1oPrimera": 1.5
   "multiplicadorDa\xF1oFinal": 2.5

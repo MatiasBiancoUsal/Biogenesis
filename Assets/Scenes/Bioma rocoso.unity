@@ -1857,6 +1857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 100
   vidaMaxima: 100
+  mutacionActual: 0
 --- !u!50 &1644563045
 Rigidbody2D:
   serializedVersion: 4
@@ -1975,7 +1976,7 @@ MonoBehaviour:
   pocionesNecesariasMutacionFinal: 6
   pixelsPorUnidad: 100
   "tama\xF1oOriginalPixels": {x: 1650, y: 1654}
-  forzarReinicio: 1
+  forzarReinicio: 0
   pocionesRecibidas: 0
   "yaMut\xF3Primera": 0
   "yaMut\xF3Final": 0

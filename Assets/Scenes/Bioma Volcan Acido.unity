@@ -1901,6 +1901,7 @@ GameObject:
   - component: {fileID: 1540938126}
   - component: {fileID: 1540938127}
   - component: {fileID: 1540938128}
+  - component: {fileID: 1540938129}
   m_Layer: 0
   m_Name: mutante radioactivo base_0
   m_TagString: Criatura2
@@ -2007,6 +2008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 100
   vidaMaxima: 100
+  mutacionActual: 0
 --- !u!50 &1540938120
 Rigidbody2D:
   serializedVersion: 4
@@ -2141,7 +2143,7 @@ MonoBehaviour:
   pocionesNecesariasMutacionFinal: 6
   pixelsPorUnidad: 100
   "tama\xF1oOriginalPixels": {x: 1678, y: 1356}
-  forzarReinicio: 1
+  forzarReinicio: 0
   pocionesRecibidas: 0
 --- !u!114 &1540938126
 MonoBehaviour:
@@ -2195,6 +2197,20 @@ MonoBehaviour:
   firePoint: {fileID: 121078917}
   attackCooldown: 1
   rango: 12.67
+  animator: {fileID: 0}
+  currentTarget: {fileID: 0}
+--- !u!114 &1540938129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540938115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 545380bba7136e94fbd636f5e19273bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1574493313
 PrefabInstance:
   m_ObjectHideFlags: 0

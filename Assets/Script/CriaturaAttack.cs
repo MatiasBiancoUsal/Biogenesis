@@ -3,42 +3,70 @@ using UnityEngine;
 public class CriaturaAttack : MonoBehaviour
 {
     [Header("Ataque")]
-    public GameObject proyectilPrefab;   // Prefab del proyectil
-    public Transform firePoint;          // Origen del disparo
-    public float attackCooldown = 1f;    // Tiempo entre disparos
-    public float rango = 6f;             // Rango de ataque configurable
+    public GameObject proyectilPrefab;
+    public Transform firePoint;
+    public float attackCooldown = 1f;
+    public float rango = 6f;             // Rango configurable
+
+    [Header("Animación")]
+    public Animator animator;            // referencia al Animator
+
+    [HideInInspector] public Transform currentTarget;
 
     private float cooldownTimer = 0f;
-    private Transform currentTarget;
 
     void Update()
     {
         cooldownTimer -= Time.deltaTime;
 
-        // Buscar enemigo más cercano dentro del rango
+        // Detectar enemigo más cercano dentro del rango
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, rango);
         currentTarget = null;
 
         foreach (var hit in hits)
         {
-            if (hit.CompareTag("depredador"))  // CORREGIDO a minúscula
+            if (hit.CompareTag("depredador"))
             {
                 currentTarget = hit.transform;
                 break;
             }
         }
 
-        // Si hay enemigo y pasó el cooldown, disparar
-        if (currentTarget != null && cooldownTimer <= 0f)
+        if (currentTarget != null)
         {
-            Shoot();
-            cooldownTimer = attackCooldown;
+            // Atacar si el cooldown terminó
+            if (cooldownTimer <= 0f)
+            {
+                Attack();
+                cooldownTimer = attackCooldown;
+            }
         }
+        else
+        {
+            // Si no hay enemigos  Idle
+            if (animator != null)
+            {
+                animator.ResetTrigger("ataque1");
+                animator.SetTrigger("Idle");
+            }
+        }
+    }
+
+    void Attack()
+    {
+        if (animator != null)
+        {
+            animator.ResetTrigger("Idle");
+            animator.SetTrigger("ataque1"); //  activa la animación de ataque
+        }
+
+        // Disparo sincronizado con la animación
+        Invoke(nameof(Shoot), 0.3f); //  ajusta este delay al momento exacto del ataque
     }
 
     void Shoot()
     {
-        if (proyectilPrefab == null || firePoint == null) return;
+        if (proyectilPrefab == null || firePoint == null || currentTarget == null) return;
 
         GameObject proj = Instantiate(proyectilPrefab, firePoint.position, Quaternion.identity);
         ProyectilCriatura p = proj.GetComponent<ProyectilCriatura>();
@@ -46,10 +74,10 @@ public class CriaturaAttack : MonoBehaviour
         {
             Vector2 dir = (currentTarget.position - firePoint.position).normalized;
             p.SetDirection(dir);
+
         }
     }
 
-    // Visualizar rango en la escena
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

@@ -928,6 +928,7 @@ MonoBehaviour:
   intervaloAtaque: 1.5
   rangoDeteccion: 4.4
   "da\xF1o": 10
+  estado: 0
 --- !u!1001 &1166376738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2629,7 +2630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: forzarReinicio
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: spriteOriginal
