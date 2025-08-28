@@ -8,6 +8,8 @@ public class Personaje : MonoBehaviour
     // Script lucy
     private Animator animator;
     private bool estaMuerto = false;
+    public enum TipoMutacion { Mutacion1, Mutacion2, Mutacion3 }
+    public TipoMutacion mutacionActual;
 
     void Start()
     {
@@ -46,9 +48,19 @@ public class Personaje : MonoBehaviour
     {
         estaMuerto = true;
         Debug.Log("Personaje ha muerto");
-        animator.SetTrigger("muerte"); // Dispara la animación de muerte
+        switch (mutacionActual)
+        {
+            case TipoMutacion.Mutacion1:
+                animator.SetTrigger("muerte1");
+                break;
+            case TipoMutacion.Mutacion2:
+                animator.SetTrigger("muerte2");
+                break;
+            case TipoMutacion.Mutacion3:
+                animator.SetTrigger("muerte3");
+                break;
+        }
     }
-
 }
 
 

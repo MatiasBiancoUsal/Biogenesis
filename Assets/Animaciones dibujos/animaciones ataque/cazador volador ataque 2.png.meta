@@ -1,0 +1,464 @@
+fileFormatVersion: 2
+guid: 5e65719a6c35c164f9ae7276f81e997a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1955659308372899792
+    second: cazador volador ataque 2_0
+  - first:
+      213: 5367441460361842577
+    second: cazador volador ataque 2_1
+  - first:
+      213: -7047885241980274367
+    second: cazador volador ataque 2_2
+  - first:
+      213: 1772493899771493338
+    second: cazador volador ataque 2_3
+  - first:
+      213: 1051795782162465968
+    second: cazador volador ataque 2_4
+  - first:
+      213: -2971426061121419055
+    second: cazador volador ataque 2_5
+  - first:
+      213: 790568321175211898
+    second: cazador volador ataque 2_6
+  - first:
+      213: 1182363887236980576
+    second: cazador volador ataque 2_7
+  - first:
+      213: 8324056980717251851
+    second: cazador volador ataque 2_8
+  - first:
+      213: 4480424023491422619
+    second: cazador volador ataque 2_9
+  - first:
+      213: -3741113361019243223
+    second: cazador volador ataque 2_10
+  - first:
+      213: 1981920699539941107
+    second: cazador volador ataque 2_11
+  - first:
+      213: -8367985036617923360
+    second: cazador volador ataque 2_12
+  - first:
+      213: -8260538115299891589
+    second: cazador volador ataque 2_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cazador volador ataque 2_0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 11051
+        width: 135
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0384fb6783a1cd4e0800000000000000
+      internalID: -1955659308372899792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_1
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 10965
+        width: 1707
+        height: 1364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19f429df19bfc7a40800000000000000
+      internalID: 5367441460361842577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_2
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 9556
+        width: 215
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1493c06b6b1e03e90800000000000000
+      internalID: -7047885241980274367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_3
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 9421
+        width: 1705
+        height: 1364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb3d6e8fc9299810800000000000000
+      internalID: 1772493899771493338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_4
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 8015
+        width: 165
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b44c04f0bab89e00800000000000000
+      internalID: 1051795782162465968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_5
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 7858
+        width: 1705
+        height: 1364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d8058e9dbf53c6d0800000000000000
+      internalID: -2971426061121419055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_6
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 6680
+        width: 119
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f435213b9a8fa00800000000000000
+      internalID: 790568321175211898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_7
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 6362
+        width: 1713
+        height: 1364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f9206e0b9986010800000000000000
+      internalID: 1182363887236980576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_8
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 4733
+        width: 1807
+        height: 1364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0d23c1a8bdf48370800000000000000
+      internalID: 8324056980717251851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_9
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 4696
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b99255b39e9ad2e30800000000000000
+      internalID: 4480424023491422619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_10
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 3239
+        width: 1759
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 925fafb2835e41cc0800000000000000
+      internalID: -3741113361019243223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_11
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 3140
+        width: 22
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f662152062318b10800000000000000
+      internalID: 1981920699539941107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_12
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 1710
+        width: 1713
+        height: 1364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e4ca96d1f1fedb80800000000000000
+      internalID: -8367985036617923360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 2_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 162
+        width: 1705
+        height: 1364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b76a9ffa95cac5d80800000000000000
+      internalID: -8260538115299891589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      cazador volador ataque 2_0: -1955659308372899792
+      cazador volador ataque 2_1: 5367441460361842577
+      cazador volador ataque 2_10: -3741113361019243223
+      cazador volador ataque 2_11: 1981920699539941107
+      cazador volador ataque 2_12: -8367985036617923360
+      cazador volador ataque 2_13: -8260538115299891589
+      cazador volador ataque 2_2: -7047885241980274367
+      cazador volador ataque 2_3: 1772493899771493338
+      cazador volador ataque 2_4: 1051795782162465968
+      cazador volador ataque 2_5: -2971426061121419055
+      cazador volador ataque 2_6: 790568321175211898
+      cazador volador ataque 2_7: 1182363887236980576
+      cazador volador ataque 2_8: 8324056980717251851
+      cazador volador ataque 2_9: 4480424023491422619
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

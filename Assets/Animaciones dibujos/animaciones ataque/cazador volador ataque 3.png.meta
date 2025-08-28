@@ -1,0 +1,439 @@
+fileFormatVersion: 2
+guid: a39ff57efd782ab4ea0a50abb87ce7d4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6670394872958418429
+    second: cazador volador ataque 3_0
+  - first:
+      213: 3002126775263546222
+    second: cazador volador ataque 3_1
+  - first:
+      213: 7781299347714413205
+    second: cazador volador ataque 3_2
+  - first:
+      213: -8081502262501377017
+    second: cazador volador ataque 3_3
+  - first:
+      213: -2517468283432823839
+    second: cazador volador ataque 3_4
+  - first:
+      213: -4842522257053796047
+    second: cazador volador ataque 3_5
+  - first:
+      213: 4376625173945372335
+    second: cazador volador ataque 3_6
+  - first:
+      213: -1058316131292265287
+    second: cazador volador ataque 3_7
+  - first:
+      213: 545013340044631676
+    second: cazador volador ataque 3_8
+  - first:
+      213: -276003225450378030
+    second: cazador volador ataque 3_9
+  - first:
+      213: 2312283087741277473
+    second: cazador volador ataque 3_10
+  - first:
+      213: -3649423758795625775
+    second: cazador volador ataque 3_11
+  - first:
+      213: -2623845925632952267
+    second: cazador volador ataque 3_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cazador volador ataque 3_0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 11111
+        width: 135
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfdf542bbc0029c50800000000000000
+      internalID: 6670394872958418429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 3_1
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 11048
+        width: 1790
+        height: 1433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6bc54a6562b9a920800000000000000
+      internalID: 3002126775263546222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 3_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 9616
+        width: 215
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5921f77978abcfb60800000000000000
+      internalID: 7781299347714413205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 3_3
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 9424
+        width: 1790
+        height: 1433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70cf618828cb8df80800000000000000
+      internalID: -8081502262501377017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 3_4
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 8075
+        width: 165
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e39ca03fe7201dd0800000000000000
+      internalID: -2517468283432823839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 3_5
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 7835
+        width: 1790
+        height: 1433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 139b26bf9a7ebccb0800000000000000
+      internalID: -4842522257053796047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 3_6
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 6825
+        width: 119
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faecb084865ecbc30800000000000000
+      internalID: 4376625173945372335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 3_7
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 6370
+        width: 1790
+        height: 1433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b44246f51b1051f0800000000000000
+      internalID: -1058316131292265287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 3_8
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 5448
+        width: 113
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7e9533ceb6409700800000000000000
+      internalID: 545013340044631676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 3_9
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 4717
+        width: 1790
+        height: 1433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc0b2e57807b2cf0800000000000000
+      internalID: -276003225450378030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 3_10
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 3222
+        width: 1790
+        height: 1433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12556f0a731e61020800000000000000
+      internalID: 2312283087741277473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 3_11
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1702
+        width: 1790
+        height: 1433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1daad164d64aa5dc0800000000000000
+      internalID: -3649423758795625775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cazador volador ataque 3_12
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 115
+        width: 1790
+        height: 1433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 538ba49480a369bd0800000000000000
+      internalID: -2623845925632952267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      cazador volador ataque 3_0: 6670394872958418429
+      cazador volador ataque 3_1: 3002126775263546222
+      cazador volador ataque 3_10: 2312283087741277473
+      cazador volador ataque 3_11: -3649423758795625775
+      cazador volador ataque 3_12: -2623845925632952267
+      cazador volador ataque 3_2: 7781299347714413205
+      cazador volador ataque 3_3: -8081502262501377017
+      cazador volador ataque 3_4: -2517468283432823839
+      cazador volador ataque 3_5: -4842522257053796047
+      cazador volador ataque 3_6: 4376625173945372335
+      cazador volador ataque 3_7: -1058316131292265287
+      cazador volador ataque 3_8: 545013340044631676
+      cazador volador ataque 3_9: -276003225450378030
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -45,6 +45,21 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
         else
             return 1f; 
     }
+
+    public enum EstadoMutacion
+    {
+        Normal,
+        Primera,
+        Final
+    }
+
+    public EstadoMutacion ObtenerEstadoMutacion()
+    {
+        if (yaMutóFinal) return EstadoMutacion.Final;
+        if (yaMutóPrimera) return EstadoMutacion.Primera;
+        return EstadoMutacion.Normal;
+    }
+
     /////////////
     void Start()
     {
