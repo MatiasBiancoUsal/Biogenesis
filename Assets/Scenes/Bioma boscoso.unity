@@ -2482,6 +2482,7 @@ MonoBehaviour:
   hungerFill: {fileID: 17847836}
   hungerValue: 1
   hungerDecreaseRate: 0.01
+  creatureID: Cazador
 --- !u!1 &2085694507
 GameObject:
   m_ObjectHideFlags: 0

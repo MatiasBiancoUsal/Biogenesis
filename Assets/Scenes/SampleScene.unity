@@ -791,6 +791,7 @@ MonoBehaviour:
   hungerFill: {fileID: 84816999}
   hungerValue: 1
   hungerDecreaseRate: 0.01
+  creatureID: Experimento
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

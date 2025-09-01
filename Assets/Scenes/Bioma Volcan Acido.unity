@@ -1337,6 +1337,7 @@ MonoBehaviour:
   hungerFill: {fileID: 1776667905}
   hungerValue: 1
   hungerDecreaseRate: 0.01
+  creatureID: Mutante
 --- !u!1001 &1217623520
 PrefabInstance:
   m_ObjectHideFlags: 0
