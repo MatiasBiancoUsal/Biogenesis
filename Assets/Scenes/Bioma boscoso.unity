@@ -2567,6 +2567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rellenoBarraVida: {fileID: 865574186}
   personajeAsociado: {fileID: 614841328}
+  creatureID: Cazador
 --- !u!114 &2125215051
 MonoBehaviour:
   m_ObjectHideFlags: 0
