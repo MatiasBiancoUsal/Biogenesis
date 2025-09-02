@@ -1066,6 +1066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rellenoBarraVida: {fileID: 1682434035}
   personajeAsociado: {fileID: 1540938119}
+  creatureID: Mutante
 --- !u!114 &835576586
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -327,6 +327,7 @@ MonoBehaviour:
   hungerFill: {fileID: 579726449}
   hungerValue: 1
   hungerDecreaseRate: 0.01
+  creatureID: "Ara\xF1a"
 --- !u!4 &335943563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
@@ -1140,6 +1141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rellenoBarraVida: {fileID: 1888928523}
   personajeAsociado: {fileID: 1644563044}
+  creatureID: "Ara\xF1a"
 --- !u!114 &834393209
 MonoBehaviour:
   m_ObjectHideFlags: 0

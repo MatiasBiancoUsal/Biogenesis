@@ -166,6 +166,7 @@ MonoBehaviour:
   hungerFill: {fileID: 681314839}
   hungerValue: 1
   hungerDecreaseRate: 0.01
+  creatureID: "Alima\xF1a"
 --- !u!1 &50824565 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8815221515953262091, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
@@ -1002,6 +1003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rellenoBarraVida: {fileID: 614513017}
   personajeAsociado: {fileID: 1062034123}
+  creatureID: "Alima\xF1a"
 --- !u!114 &744441470
 MonoBehaviour:
   m_ObjectHideFlags: 0
