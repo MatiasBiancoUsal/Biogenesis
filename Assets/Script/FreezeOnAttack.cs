@@ -22,7 +22,7 @@ public class FreezeOnAttack : MonoBehaviour
             {
                 // Hay enemigo: la criatura se queda quieta y ataca
                 moveScript.quieto = true;
-                animator.ResetTrigger("Idle");    // Resetea el Idle
+                animator.ResetTrigger("idle");    // Resetea el Idle
                 animator.SetTrigger("ataque1");   // Dispara animación de ataque
             }
             else
@@ -30,7 +30,7 @@ public class FreezeOnAttack : MonoBehaviour
                 // No hay enemigo: vuelve a Idle y se puede mover
                 moveScript.quieto = false;
                 animator.ResetTrigger("ataque1"); // Resetea el ataque
-                animator.SetTrigger("Idle");      // Vuelve a Idle
+                animator.SetTrigger("idle");      // Vuelve a Idle
             }
         }
     }

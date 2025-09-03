@@ -2145,7 +2145,7 @@ MonoBehaviour:
   pocionesNecesariasMutacionFinal: 6
   pixelsPorUnidad: 100
   "tama\xF1oOriginalPixels": {x: 1678, y: 1356}
-  forzarReinicio: 0
+  forzarReinicio: 1
   pocionesRecibidas: 0
 --- !u!114 &1540938126
 MonoBehaviour:
