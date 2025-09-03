@@ -31,6 +31,10 @@ public class MutacionMutante : MonoBehaviour, IMutable
     private const string PREF_MUTA1 = "MutanteMutado1";
     private const string PREF_MUTAF = "MutanteMutadoFinal";
 
+    [Header("Efecto visual de mutación")]
+    public GameObject prefabHumo;
+    public float duracionHumo = 1.5f;
+
     void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -122,13 +126,28 @@ public class MutacionMutante : MonoBehaviour, IMutable
 
     void AplicarMutacionVisual(Sprite nuevoSprite)
     {
-        if (spriteRenderer != null && nuevoSprite != null)
+        if (spriteRenderer == null || nuevoSprite == null)
+            return;
+
+        // Instanciar humo en la posición de la criatura
+        if (prefabHumo != null)
         {
-            spriteRenderer.sprite = nuevoSprite;
-            AjustarEscalaPorTamañoSprite();
-            RehacerCollider();
-            DesactivarAnimator();
+            GameObject humo = Instantiate(prefabHumo, transform.position, Quaternion.identity);
+            Destroy(humo, duracionHumo); // se destruye solo
         }
+
+        // Esperar un poco antes de cambiar sprite
+        StartCoroutine(CambiarSpriteConDelay(nuevoSprite));
+    }
+
+    private System.Collections.IEnumerator CambiarSpriteConDelay(Sprite nuevoSprite)
+    {
+        yield return new WaitForSeconds(duracionHumo * 0.8f); // casi al final del humo
+
+        spriteRenderer.sprite = nuevoSprite;
+        AjustarEscalaPorTamañoSprite();
+        RehacerCollider();
+        DesactivarAnimator();
     }
 
     void AjustarEscalaPorTamañoSprite()

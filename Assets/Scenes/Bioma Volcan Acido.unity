@@ -2147,6 +2147,8 @@ MonoBehaviour:
   "tama\xF1oOriginalPixels": {x: 1678, y: 1356}
   forzarReinicio: 1
   pocionesRecibidas: 0
+  prefabHumo: {fileID: 5721998452359622573, guid: 5c143d4d93850f84799ff803af1198f6, type: 3}
+  duracionHumo: 1.5
 --- !u!114 &1540938126
 MonoBehaviour:
   m_ObjectHideFlags: 0
