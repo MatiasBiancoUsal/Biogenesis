@@ -94,11 +94,8 @@ public class CazadorDefensa : MonoBehaviour
     {
         while (true)
         {
-            anim.SetTrigger("Idle");
+            anim.SetTrigger("idle");
             yield return new WaitForSeconds(2f);
-
-            anim.SetTrigger("Disparar");
-            yield return new WaitForSeconds(1.5f);
         }
     }
 

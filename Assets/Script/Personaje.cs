@@ -22,12 +22,13 @@ public class Personaje : MonoBehaviour
 
         vida -= cantidad;
         Debug.Log("Personaje recibió daño. Vida actual: " + vida);
-        if (vida <= 0)
+        if (vida <= 0 && !estaMuerto)
         {
             vida = 0;
             Debug.Log("Personaje ha muerto");
-            Destroy(gameObject);
+            Morir();
         }
+
     }
 
     public void RestaurarVida(int cantidad)
@@ -43,7 +44,7 @@ public class Personaje : MonoBehaviour
             Debug.Log("Personaje se curó. Vida actual: " + vida);
         }
     }
-
+    
     private void Morir()
     {
         estaMuerto = true;
@@ -61,6 +62,10 @@ public class Personaje : MonoBehaviour
                 break;
         }
     }
+
+    public void DestruirObjeto()
+    {
+        Debug.LogWarning("!!! FUNCIÓN DESTRUIR OBJETO LLAMADA !!! La animación de muerte terminó o fue activada por error.");
+        Destroy(gameObject);
+    }
 }
-
-
