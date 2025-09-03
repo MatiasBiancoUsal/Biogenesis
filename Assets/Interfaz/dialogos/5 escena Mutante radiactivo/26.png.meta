@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 338518e6fad309643a009589445d4c06
+guid: 64f28295d9c43ce4db02ff467eb73d16
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7644795231949978286
-    second: HumoMutacion_0
+      213: -1045133410153605164
+    second: 26_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HumoMutacion_0
+      name: 26_0
       rect:
         serializedVersion: 2
-        x: 141
-        y: 194
-        width: 754
-        height: 716
+        x: 29
+        y: 21
+        width: 1861
+        height: 393
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 255850b8d3b38e590800000000000000
-      internalID: -7644795231949978286
+      spriteID: 4d7d6e863b0fe71f0800000000000000
+      internalID: -1045133410153605164
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      HumoMutacion_0: -7644795231949978286
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
