@@ -35,7 +35,7 @@ public class criaturadefensa : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, rangoDeteccion);
         foreach (var hit in hits)
         {
-            if (hit.CompareTag("CriaturaExperimento"))
+            if (hit.CompareTag("depredador"))
             {
                 return hit.gameObject;
             }
