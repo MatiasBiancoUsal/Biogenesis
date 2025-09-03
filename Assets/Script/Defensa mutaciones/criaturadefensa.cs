@@ -66,7 +66,8 @@ public class criaturadefensa : MonoBehaviour
         if (criatura != null)
         {
             criatura.RecibirDaño();
-            Debug.Log($"[Cazador] Infligió {daño} de daño a {objetivo.name}");
+            Debug.Log($"[criatura] Infligió {daño} de daño a {objetivo.name}");
+            anim.SetTrigger("ataque1");
         }
     }
 
