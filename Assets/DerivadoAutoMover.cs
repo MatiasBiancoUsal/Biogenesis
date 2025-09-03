@@ -6,7 +6,7 @@ public class DerivadoAutoMover : AutoMover
 {
     // Start is called before the first frame update
 
-    public bool quieto;
+    
 
     protected override void Start()
     {
