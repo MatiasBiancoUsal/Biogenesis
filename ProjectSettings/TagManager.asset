@@ -24,6 +24,7 @@ TagManager:
   - PocionMejora
   - MaletinCanvas
   - Parasito
+  - InventarioPanel
   layers:
   - Default
   - TransparentFX

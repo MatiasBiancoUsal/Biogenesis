@@ -130,7 +130,15 @@ public class InventarioManager : MonoBehaviour
                 Debug.Log($"Añadido {nombreADN}: cantidad ahora {slot.cantidad}");
 
                 slot.spriteActual = icono;
-                ActualizarSlotVisual(slot); // ESTA FUNCIÓN DEBE LLAMARSE AQUÍ
+                ActualizarSlotVisual(slot);
+
+                // =======================================================
+                // --- ¡AÑADE ESTA LÍNEA AQUÍ! ---
+                // Le avisa a tu UI persistente que debe actualizar los textos.
+                Debug.LogWarning(">>> PASO 1: Intentando avisar a UIGlobalManager que actualice los textos.");
+                UIGlobalManager.Instance.ActualizarTextosInventario();
+                // =======================================================
+
                 break;
             }
         }
@@ -156,7 +164,4 @@ public class InventarioManager : MonoBehaviour
             slot.cantidadTexto.text = slot.cantidad.ToString();
         }
     }
-
-
-
 }
