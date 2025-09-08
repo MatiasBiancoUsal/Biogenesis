@@ -5,7 +5,7 @@ using UnityEngine;
 public class cuchillo : MonoBehaviour
 {
     
-    public int daño = 1;
+    public int daño = 10;
 
     // Start is called before the first frame update
     void Start()
