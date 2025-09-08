@@ -1433,7 +1433,6 @@ GameObject:
   - component: {fileID: 1062034127}
   - component: {fileID: 1062034128}
   - component: {fileID: 1062034129}
-  - component: {fileID: 1062034130}
   - component: {fileID: 1062034131}
   - component: {fileID: 1062034132}
   m_Layer: 0
@@ -1678,32 +1677,10 @@ MonoBehaviour:
   pocionesNecesariasMutacionFinal: 6
   pixelsPorUnidad: 100
   "tama\xF1oOriginalPixels": {x: 1642, y: 1316}
-  forzarReinicio: 0
+  forzarReinicio: 1
   pocionesRecibidas: 0
   "multiplicadorDa\xF1oPrimera": 1.5
   "multiplicadorDa\xF1oFinal": 2.5
---- !u!114 &1062034130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1062034115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3262f02e3ac6a54193db1782473e751, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetRenderer: {fileID: 0}
-  frameRate: 0.1
-  idleFrames:
-  - {fileID: -1780886397, guid: f720b9ba76d2bd6448c541cf60714eaa, type: 3}
-  - {fileID: 312454280, guid: f720b9ba76d2bd6448c541cf60714eaa, type: 3}
-  - {fileID: -1528673782, guid: f720b9ba76d2bd6448c541cf60714eaa, type: 3}
-  runFrames:
-  - {fileID: -1098422877, guid: 3eb03a62919f97c498e49f5e36ed975e, type: 3}
-  - {fileID: 320111824, guid: 3eb03a62919f97c498e49f5e36ed975e, type: 3}
-  playIdleOnStart: 1
 --- !u!114 &1062034131
 MonoBehaviour:
   m_ObjectHideFlags: 0

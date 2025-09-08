@@ -11,10 +11,6 @@ public class MutacionMutante : MonoBehaviour, IMutable
     public int pocionesNecesariasPrimeraMutacion = 3;
     public int pocionesNecesariasMutacionFinal = 6;
 
-    [Header("Referencia")]
-    public float pixelsPorUnidad = 100f;
-    public Vector2 tamañoOriginalPixels = new Vector2(1678f, 1356f);
-
     [Header("Debug / Testing")]
     public bool forzarReinicio = false;
     [SerializeField]
@@ -60,11 +56,9 @@ public class MutacionMutante : MonoBehaviour, IMutable
             {
                 spriteRenderer.sprite = spriteOriginal;
                 transform.localScale = escalaOriginalGuardada;
-                AjustarEscalaPorTamañoSprite();
-                RehacerCollider();
             }
 
-            Debug.Log("🔄 Mutante reiniciado para testing.");
+            Debug.Log("Mutante reiniciado para testing.");
             return;
         }
 
@@ -90,7 +84,7 @@ public class MutacionMutante : MonoBehaviour, IMutable
         pocionesRecibidas++;
         GuardarEstado();
 
-        Debug.Log("☢️ Mutante recibió poción. Total: " + pocionesRecibidas);
+        Debug.Log("Mutante recibió poción. Total: " + pocionesRecibidas);
 
         if (pocionesRecibidas >= pocionesNecesariasMutacionFinal && !yaMutóFinal)
         {
@@ -109,7 +103,7 @@ public class MutacionMutante : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutado1);
-        Debug.Log("🧪 Mutante mutó por primera vez.");
+        Debug.Log("Mutante mutó por primera vez.");
     }
 
     void MutarFinal()
@@ -118,9 +112,9 @@ public class MutacionMutante : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutadoFinal);
-        Debug.Log("💥 Mutante alcanzó su mutación final.");
+        Debug.Log("Mutante alcanzó su mutación final.");
 
-        //para final del juego
+        // para final del juego
         GameManager.Instance.NotificarCriaturaMutadaFinal();
     }
 
@@ -145,69 +139,7 @@ public class MutacionMutante : MonoBehaviour, IMutable
         yield return new WaitForSeconds(duracionHumo * 0.8f); // casi al final del humo
 
         spriteRenderer.sprite = nuevoSprite;
-        AjustarEscalaPorTamañoSprite();
-        RehacerCollider();
         DesactivarAnimator();
-    }
-
-    void AjustarEscalaPorTamañoSprite()
-    {
-        if (spriteRenderer == null || spriteRenderer.sprite == null)
-            return;
-
-        Vector2 tamañoNuevo = spriteRenderer.sprite.bounds.size;
-        Vector2 tamañoOriginalUnidades = tamañoOriginalPixels / pixelsPorUnidad;
-
-        float factorX = tamañoOriginalUnidades.x / Mathf.Max(tamañoNuevo.x, 0.0001f);
-        float factorY = tamañoOriginalUnidades.y / Mathf.Max(tamañoNuevo.y, 0.0001f);
-
-        float escalaUniforme = Mathf.Min(factorX, factorY);
-        transform.localScale = escalaOriginalGuardada * escalaUniforme;
-
-        Debug.Log($"🔧 Escala ajustada para Mutante: {transform.localScale}");
-    }
-
-    void RehacerCollider()
-    {
-        // CircleCollider2D
-        CircleCollider2D circle = GetComponent<CircleCollider2D>();
-        if (circle != null)
-        {
-            bool trig = circle.isTrigger;
-            PhysicsMaterial2D mat = circle.sharedMaterial;
-            Destroy(circle);
-            circle = gameObject.AddComponent<CircleCollider2D>();
-            circle.isTrigger = trig;
-            circle.sharedMaterial = mat;
-            Vector2 size = spriteRenderer.sprite.bounds.size;
-            circle.radius = Mathf.Max(size.x, size.y) * 0.5f;
-        }
-
-        // BoxCollider2D
-        BoxCollider2D box = GetComponent<BoxCollider2D>();
-        if (box != null)
-        {
-            bool trig = box.isTrigger;
-            PhysicsMaterial2D mat = box.sharedMaterial;
-            Destroy(box);
-            box = gameObject.AddComponent<BoxCollider2D>();
-            box.isTrigger = trig;
-            box.sharedMaterial = mat;
-            box.size = spriteRenderer.sprite.bounds.size;
-            box.offset = Vector2.zero;
-        }
-
-        // PolygonCollider2D
-        PolygonCollider2D poly = GetComponent<PolygonCollider2D>();
-        if (poly != null)
-        {
-            bool trig = poly.isTrigger;
-            PhysicsMaterial2D mat = poly.sharedMaterial;
-            Destroy(poly);
-            poly = gameObject.AddComponent<PolygonCollider2D>();
-            poly.isTrigger = trig;
-            poly.sharedMaterial = mat;
-        }
     }
 
     void DesactivarAnimator()

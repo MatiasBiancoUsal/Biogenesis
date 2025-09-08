@@ -1013,7 +1013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1569838838015797352, guid: 648a74e870b837f46aa374fae0516bb8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.5999908
+      value: -3.5999756
       objectReference: {fileID: 0}
     - target: {fileID: 4222681508466809611, guid: 648a74e870b837f46aa374fae0516bb8, type: 3}
       propertyPath: m_Pivot.x
@@ -2206,7 +2206,6 @@ GameObject:
   - component: {fileID: 1540938123}
   - component: {fileID: 1540938124}
   - component: {fileID: 1540938125}
-  - component: {fileID: 1540938126}
   - component: {fileID: 1540938127}
   - component: {fileID: 1540938128}
   - component: {fileID: 1540938129}
@@ -2445,39 +2444,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteOriginal: {fileID: 5367674728223147671, guid: 3dd815f70f5757f4ba40ebb013a673eb, type: 3}
-  spriteMutado1: {fileID: 1488534826780693463, guid: c54068e5a6d6329488c3f31e70b1f053, type: 3}
-  spriteMutadoFinal: {fileID: 1852479368436112148, guid: ac3851f54bc0a4b4eade4cc1b8c258ab, type: 3}
+  spriteMutado1: {fileID: 5351466020072668525, guid: 0c4b1e57adb7e5d47bc3ad571d4f5dba, type: 3}
+  spriteMutadoFinal: {fileID: 2123531276, guid: 050c78debbe503a46b7f7a95897c8d4c, type: 3}
   pocionesNecesariasPrimeraMutacion: 3
   pocionesNecesariasMutacionFinal: 6
-  pixelsPorUnidad: 100
-  "tama\xF1oOriginalPixels": {x: 1678, y: 1356}
-  forzarReinicio: 0
+  forzarReinicio: 1
   pocionesRecibidas: 0
   prefabHumo: {fileID: 5721998452359622573, guid: 5c143d4d93850f84799ff803af1198f6, type: 3}
   duracionHumo: 0.5
---- !u!114 &1540938126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540938115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3262f02e3ac6a54193db1782473e751, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetRenderer: {fileID: 0}
-  frameRate: 0.1
-  idleFrames:
-  - {fileID: 1709475204, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
-  - {fileID: 2049884772, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
-  - {fileID: 656181147, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
-  runFrames:
-  - {fileID: 1709475204, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
-  - {fileID: -1550402147, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
-  - {fileID: 191978041, guid: 2ad44254180860544b4ab62e0edbd71b, type: 3}
-  playIdleOnStart: 1
 --- !u!114 &1540938127
 MonoBehaviour:
   m_ObjectHideFlags: 0

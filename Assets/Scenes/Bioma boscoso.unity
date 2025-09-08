@@ -981,29 +981,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6493893972074452375, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
   m_PrefabInstance: {fileID: 4669981400755512595}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1064086131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064086130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3262f02e3ac6a54193db1782473e751, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetRenderer: {fileID: 0}
-  frameRate: 0.1
-  idleFrames:
-  - {fileID: 923924397, guid: 5960ba78b36ca2c409b14f47bcce23f3, type: 3}
-  - {fileID: -760118716, guid: 5960ba78b36ca2c409b14f47bcce23f3, type: 3}
-  runFrames:
-  - {fileID: 1767312210, guid: 5960ba78b36ca2c409b14f47bcce23f3, type: 3}
-  - {fileID: 923924397, guid: 5960ba78b36ca2c409b14f47bcce23f3, type: 3}
-  - {fileID: -760118716, guid: 5960ba78b36ca2c409b14f47bcce23f3, type: 3}
-  - {fileID: -567074913, guid: 5960ba78b36ca2c409b14f47bcce23f3, type: 3}
-  playIdleOnStart: 1
 --- !u!114 &1064086132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3160,9 +3137,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6493893972074452375, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1064086131}
     - targetCorrespondingSourceObject: {fileID: 6493893972074452375, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1064086132}
