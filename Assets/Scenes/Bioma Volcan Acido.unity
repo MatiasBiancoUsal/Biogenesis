@@ -2455,7 +2455,7 @@ MonoBehaviour:
   prefabHumo: {fileID: 5721998452359622573, guid: 5c143d4d93850f84799ff803af1198f6, type: 3}
   duracionHumo: 0.5
   controladorMutacion1: {fileID: 22100000, guid: f1215e7e27b655540a4553a9e03d1692, type: 2}
-  controladorMutacion2: {fileID: 0}
+  controladorMutacion2: {fileID: 22100000, guid: 161a6d80fb0852945b61870e40807593, type: 2}
   anim: {fileID: 0}
 --- !u!114 &1540938127
 MonoBehaviour:

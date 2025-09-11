@@ -36,6 +36,12 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
     public float multiplicadorDañoPrimera = 1.5f;
     public float multiplicadorDañoFinal = 2.5f;
 
+    //sofitina
+    [Header("Efecto visual de mutación")]
+    public AnimatorOverrideController controladorMutacion1;
+    public AnimatorOverrideController controladorMutacion2;
+    public Animator anim;
+
     public float ObtenerMultiplicadorDaño()
     {
         if (yaMutóFinal)
@@ -110,6 +116,18 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
             }
         }
     }
+
+
+    /// sofitina
+    public void Update()
+    {
+        if (yaMutóPrimera && !yaMutóFinal)
+            anim.runtimeAnimatorController = controladorMutacion1;
+
+        else if (yaMutóFinal)
+            anim.runtimeAnimatorController = controladorMutacion2;
+    }
+
 
     public void RecibirPocion()
     {
