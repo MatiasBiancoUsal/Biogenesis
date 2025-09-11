@@ -2015,7 +2015,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 9073217672650211209, guid: 48c1dfa159a1b7d42a3b7e3647980c01, type: 3}
+  m_Sprite: {fileID: 5735544221615476869, guid: b6326c8aa389a4648b67f28ff31778f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2036,7 +2036,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.87, y: -1.84, z: 0}
-  m_LocalScale: {x: 0.20872709, y: 0.20872709, z: 0.20872709}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 555666703}
@@ -2134,7 +2134,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 8.2699995
+  m_Radius: 1.885
 --- !u!95 &1644563047
 Animator:
   serializedVersion: 7
@@ -2183,9 +2183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fa8f680e5b24346ab4766df82a3cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteOriginal: {fileID: 9073217672650211209, guid: 48c1dfa159a1b7d42a3b7e3647980c01, type: 3}
-  spriteMutado1: {fileID: 2228574760120653458, guid: a8e95b0da0277424b801b1114990c091, type: 3}
-  spriteMutadoFinal: {fileID: 7612902305591025769, guid: 677628dd667d10a46a180e6a43622a61, type: 3}
+  spriteOriginal: {fileID: 5735544221615476869, guid: b6326c8aa389a4648b67f28ff31778f8, type: 3}
+  spriteMutado1: {fileID: -4250709163976082681, guid: 2c0e90b81d3668a42bdb23f161701e38, type: 3}
+  spriteMutadoFinal: {fileID: -6116039302030563947, guid: 499d0d5feebe140439f3d1003428b2cd, type: 3}
   pocionesNecesariasPrimeraMutacion: 3
   pocionesNecesariasMutacionFinal: 6
   pixelsPorUnidad: 100
