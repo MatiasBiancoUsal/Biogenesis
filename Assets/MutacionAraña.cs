@@ -153,7 +153,7 @@ public class MutacionAraña : MonoBehaviour, IMutable
         float factorY = tamañoOriginal.y / Mathf.Max(tamañoNuevo.y, 0.0001f);
 
         float escalaUniforme = Mathf.Min(factorX, factorY);
-        transform.localScale = escalaOriginalGuardada * escalaUniforme;
+        //transform.localScale = escalaOriginalGuardada * escalaUniforme;
 
         Debug.Log($"🔧 Escala ajustada para Araña: {transform.localScale}");
     }

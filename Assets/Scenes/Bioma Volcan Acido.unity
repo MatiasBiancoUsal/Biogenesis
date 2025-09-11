@@ -222,7 +222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1831
+      value: 0.18892258
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalScale.z
@@ -230,11 +230,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.53
+      value: -3.02
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.63
+      value: 2.77
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.z
@@ -333,11 +333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.13
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.99
+      value: 3.39
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2276,7 +2276,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 5367674728223147671, guid: 3dd815f70f5757f4ba40ebb013a673eb, type: 3}
+  m_Sprite: {fileID: -9083550351330359791, guid: 43e1e5cbb2187d14a8200f6b1d711cbf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2296,8 +2296,8 @@ Transform:
   m_GameObject: {fileID: 1540938115}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.4164, y: -0.95, z: 0}
-  m_LocalScale: {x: -0.19392806, y: 0.1963, z: 0.1963}
+  m_LocalPosition: {x: 3.9488, y: -0.8065, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 121078917}
@@ -2379,8 +2379,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.5116762, y: 1.1118965}
-  m_Radius: 7.772282
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1.785
 --- !u!95 &1540938122
 Animator:
   serializedVersion: 7
@@ -2445,7 +2445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7042a7e558ff564d8c845bba5dc3a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteOriginal: {fileID: 5367674728223147671, guid: 3dd815f70f5757f4ba40ebb013a673eb, type: 3}
+  spriteOriginal: {fileID: -9083550351330359791, guid: 43e1e5cbb2187d14a8200f6b1d711cbf, type: 3}
   spriteMutado1: {fileID: 5351466020072668525, guid: 0c4b1e57adb7e5d47bc3ad571d4f5dba, type: 3}
   spriteMutadoFinal: {fileID: 2123531276, guid: 050c78debbe503a46b7f7a95897c8d4c, type: 3}
   pocionesNecesariasPrimeraMutacion: 3
@@ -2519,11 +2519,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.92
+      value: -2.16
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.95
+      value: 3.26
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3495,6 +3495,10 @@ PrefabInstance:
     - target: {fileID: 2327430119031382221, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
       propertyPath: m_Name
       value: depredador
+      objectReference: {fileID: 0}
+    - target: {fileID: 2327430119031382221, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

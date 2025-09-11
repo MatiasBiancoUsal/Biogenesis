@@ -55,7 +55,7 @@ public class MutacionMutante : MonoBehaviour, IMutable
             if (spriteRenderer != null && spriteOriginal != null)
             {
                 spriteRenderer.sprite = spriteOriginal;
-                transform.localScale = escalaOriginalGuardada;
+                //transform.localScale = escalaOriginalGuardada;
             }
 
             Debug.Log("Mutante reiniciado para testing.");

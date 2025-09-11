@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2118e06710f2afa44af3ff7bcaa60628
+guid: d20a5583f45eb08428225a6746aca99d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4547722163091875768
-    second: Bandeja2_0
+      213: 7542693807678925544
+    second: otraprueba_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bandeja2_0
+      name: otraprueba_0
       rect:
         serializedVersion: 2
-        x: 41
-        y: 156
-        width: 1439
-        height: 918
+        x: 105
+        y: 76
+        width: 375
+        height: 277
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b723446631cc1f30800000000000000
-      internalID: 4547722163091875768
+      spriteID: 8eaad302e080da860800000000000000
+      internalID: 7542693807678925544
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Bandeja2_0: 4547722163091875768
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
