@@ -31,9 +31,19 @@ public class MutacionMutante : MonoBehaviour, IMutable
     public GameObject prefabHumo;
     public float duracionHumo = 1.5f;
 
+
+
+    [Header("Efecto visual de mutación")]
+    public AnimatorOverrideController controladorMutacion1;
+    public AnimatorOverrideController controladorMutacion2;
+    public Animator anim;
+
+
     void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        anim = GetComponent<Animator>();
 
         if (!escalaInicialDefinida)
         {
@@ -77,6 +87,16 @@ public class MutacionMutante : MonoBehaviour, IMutable
                 AplicarMutacionVisual(spriteMutado1);
             }
         }
+    }
+
+
+    public void Update()
+    {
+        if (yaMutóPrimera && !yaMutóFinal)
+            anim.runtimeAnimatorController = controladorMutacion1;
+
+        else if(yaMutóFinal)
+            anim.runtimeAnimatorController = controladorMutacion2;
     }
 
     public void RecibirPocion()
@@ -139,7 +159,7 @@ public class MutacionMutante : MonoBehaviour, IMutable
         yield return new WaitForSeconds(duracionHumo * 0.8f); // casi al final del humo
 
         spriteRenderer.sprite = nuevoSprite;
-        DesactivarAnimator();
+        //DesactivarAnimator();
     }
 
     void DesactivarAnimator()
