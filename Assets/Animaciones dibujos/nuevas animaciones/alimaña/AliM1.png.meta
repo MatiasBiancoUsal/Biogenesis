@@ -250,7 +250,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AliM1_0: 3561905807275008884
+      AliM1_1: -7971651541488227034
+      AliM1_2: -6184390295882472190
+      AliM1_3: 6384782086474714367
+      AliM1_4: 3637169474678256752
+      AliM1_5: 6774504997514359437
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

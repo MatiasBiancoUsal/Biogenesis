@@ -885,11 +885,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8
+      value: -6.35
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.51
+      value: -2.32
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1487,7 +1487,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 295044924511345422, guid: 539dd083327fd934393e10edd49f45a5, type: 3}
+  m_Sprite: {fileID: 7213146177320860234, guid: b086ab3d22a807d429b2c5513205f2b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1508,7 +1508,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.4, y: -1.56, z: 0}
-  m_LocalScale: {x: 0.2671651, y: 0.2671651, z: 0.2671651}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 371748190}
@@ -1578,8 +1578,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.81, y: 1.39}
-  m_Size: {x: 7.40472, y: 12.48}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 3.86, y: 3.87}
   m_Direction: 0
 --- !u!50 &1062034125
 Rigidbody2D:
@@ -1672,9 +1672,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c982d5cd4a7d02c4eba10acd8bcf9e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteOriginal: {fileID: 295044924511345422, guid: 539dd083327fd934393e10edd49f45a5, type: 3}
-  spriteMutado1: {fileID: -1828133790444089473, guid: a5a5a0f7269e5e84c8d2009d6d3a387c, type: 3}
-  spriteMutadoFinal: {fileID: 6454079490188594633, guid: dc1a6c85b653a7c4183d315adfc57dd0, type: 3}
+  spriteOriginal: {fileID: 7213146177320860234, guid: b086ab3d22a807d429b2c5513205f2b0, type: 3}
+  spriteMutado1: {fileID: 3561905807275008884, guid: 34e9f5cd32b543441a0aca839e3d06b5, type: 3}
+  spriteMutadoFinal: {fileID: -4549015195588740240, guid: 061e4b48b12615e48ab2e7d8e20fc6ac, type: 3}
   pocionesNecesariasPrimeraMutacion: 3
   pocionesNecesariasMutacionFinal: 6
   pixelsPorUnidad: 100
@@ -1901,7 +1901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.53
+      value: -4.61
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1977,11 +1977,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: -6.33
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.11
+      value: -1.26
       objectReference: {fileID: 0}
     - target: {fileID: 4289106007045770689, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
       propertyPath: m_LocalPosition.z

@@ -370,7 +370,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AliBaseAnimacion_0: -4747617487382763685
+      AliBaseAnimacion_1: 5314813654255934261
+      AliBaseAnimacion_10: 987273233809271847
+      AliBaseAnimacion_2: 794023623128307167
+      AliBaseAnimacion_3: 5714579609113097392
+      AliBaseAnimacion_4: -4494373236121963095
+      AliBaseAnimacion_5: -8542772596767956131
+      AliBaseAnimacion_6: 4650700799616723309
+      AliBaseAnimacion_7: -1908147812688616418
+      AliBaseAnimacion_8: 3342463314609275260
+      AliBaseAnimacion_9: -145220420158383258
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

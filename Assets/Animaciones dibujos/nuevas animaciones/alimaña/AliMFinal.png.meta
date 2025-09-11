@@ -346,7 +346,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AliMFinal_0: -4549015195588740240
+      AliMFinal_1: 2456674599665415776
+      AliMFinal_2: 4924702070642111867
+      AliMFinal_3: -4087833370580109317
+      AliMFinal_4: 184330286927179031
+      AliMFinal_5: 8898857867012355088
+      AliMFinal_6: -6775046892873669401
+      AliMFinal_7: 7197346624122966714
+      AliMFinal_8: 590232635349039011
+      AliMFinal_9: -7820877910324651831
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
