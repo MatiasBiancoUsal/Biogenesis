@@ -202,7 +202,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CazMFinalAnim_0: 3872152724845482322
+      CazMFinalAnim_1: -1494886790763193698
+      CazMFinalAnim_2: 3599575564469186876
+      CazMFinalAnim_3: -3582253353392402633
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
