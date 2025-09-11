@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mutante base prueba_0: -9083550351330359791
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

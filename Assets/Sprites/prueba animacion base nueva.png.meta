@@ -250,7 +250,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      prueba animacion base nueva_0: -9148967840355770470
+      prueba animacion base nueva_1: -8692249117934161575
+      prueba animacion base nueva_2: -5469484752564061029
+      prueba animacion base nueva_3: 1585021618434199640
+      prueba animacion base nueva_4: -4619009225418280000
+      prueba animacion base nueva_5: -1575397883250421965
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
