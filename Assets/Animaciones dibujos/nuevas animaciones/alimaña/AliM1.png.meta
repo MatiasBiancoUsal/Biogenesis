@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 3a070882a2f6ee146a6b051e5135ffb2
+guid: 34e9f5cd32b543441a0aca839e3d06b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9148967840355770470
-    second: prueba animacion base nueva_0
+      213: 3561905807275008884
+    second: AliM1_0
   - first:
-      213: -8692249117934161575
-    second: prueba animacion base nueva_1
+      213: -7971651541488227034
+    second: AliM1_1
   - first:
-      213: -5469484752564061029
-    second: prueba animacion base nueva_2
+      213: -6184390295882472190
+    second: AliM1_2
   - first:
-      213: 1585021618434199640
-    second: prueba animacion base nueva_3
+      213: 6384782086474714367
+    second: AliM1_3
   - first:
-      213: -4619009225418280000
-    second: prueba animacion base nueva_4
+      213: 3637169474678256752
+    second: AliM1_4
   - first:
-      213: -1575397883250421965
-    second: prueba animacion base nueva_5
+      213: 6774504997514359437
+    second: AliM1_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: prueba animacion base nueva_0
+      name: AliM1_0
       rect:
         serializedVersion: 2
-        x: 80
-        y: 587
-        width: 374
-        height: 275
+        x: 95
+        y: 457
+        width: 480
+        height: 386
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,20 +129,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9f1f16f836580180800000000000000
-      internalID: -9148967840355770470
+      spriteID: 473270eb57e6e6130800000000000000
+      internalID: 3561905807275008884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prueba animacion base nueva_1
+      name: AliM1_1
       rect:
         serializedVersion: 2
-        x: 524
-        y: 577
-        width: 364
-        height: 286
+        x: 602
+        y: 451
+        width: 476
+        height: 379
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 951f4521b7dee5780800000000000000
-      internalID: -8692249117934161575
+      spriteID: 62d266c98210f5190800000000000000
+      internalID: -7971651541488227034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prueba animacion base nueva_2
+      name: AliM1_2
       rect:
         serializedVersion: 2
-        x: 963
-        y: 573
-        width: 358
-        height: 289
+        x: 1113
+        y: 463
+        width: 479
+        height: 374
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9cf00b989c7814b0800000000000000
-      internalID: -5469484752564061029
+      spriteID: 2056d8dcac1ac2aa0800000000000000
+      internalID: -6184390295882472190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prueba animacion base nueva_3
+      name: AliM1_3
       rect:
         serializedVersion: 2
-        x: 23
-        y: 60
-        width: 359
-        height: 290
+        x: 233
+        y: 78
+        width: 524
+        height: 309
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 850d510a3c02ff510800000000000000
-      internalID: 1585021618434199640
+      spriteID: ffc4a98ca7d4b9850800000000000000
+      internalID: 6384782086474714367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prueba animacion base nueva_4
+      name: AliM1_4
       rect:
         serializedVersion: 2
-        x: 464
-        y: 60
-        width: 358
-        height: 291
+        x: 764
+        y: 120
+        width: 11
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0c3f0b0059bf5efb0800000000000000
-      internalID: -4619009225418280000
+      spriteID: 074771edd52d97230800000000000000
+      internalID: 3637169474678256752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prueba animacion base nueva_5
+      name: AliM1_5
       rect:
         serializedVersion: 2
-        x: 904
-        y: 60
-        width: 358
-        height: 290
+        x: 845
+        y: 59
+        width: 542
+        height: 321
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33fc4f4d8ff032ae0800000000000000
-      internalID: -1575397883250421965
+      spriteID: d82b3f10760e30e50800000000000000
+      internalID: 6774504997514359437
       vertices: []
       indices: 
       edges: []
@@ -250,13 +250,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      prueba animacion base nueva_0: -9148967840355770470
-      prueba animacion base nueva_1: -8692249117934161575
-      prueba animacion base nueva_2: -5469484752564061029
-      prueba animacion base nueva_3: 1585021618434199640
-      prueba animacion base nueva_4: -4619009225418280000
-      prueba animacion base nueva_5: -1575397883250421965
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
