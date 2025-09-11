@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BolaParásito : MonoBehaviour
 {
-    public int daño = 1;
+    public int daño = 20;
     public float tiempoVida = 10f;
 
     void Start()

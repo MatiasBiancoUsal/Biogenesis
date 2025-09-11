@@ -1443,6 +1443,8 @@ MonoBehaviour:
   hungerValue: 1
   hungerDecreaseRate: 0.01
   creatureID: Mutante
+  personajeAsociado: {fileID: 1540938119}
+  damagePerSecond: 5
 --- !u!1001 &1217623520
 PrefabInstance:
   m_ObjectHideFlags: 0

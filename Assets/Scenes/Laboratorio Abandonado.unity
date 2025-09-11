@@ -269,6 +269,8 @@ MonoBehaviour:
   hungerValue: 1
   hungerDecreaseRate: 0.01
   creatureID: "Alima\xF1a"
+  personajeAsociado: {fileID: 1062034123}
+  damagePerSecond: 5
 --- !u!1 &50824565 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8815221515953262091, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
