@@ -250,7 +250,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Ara\xF1aBaseAnim_0": -1690875389188486954
+      "Ara\xF1aBaseAnim_1": -144841186616202559
+      "Ara\xF1aBaseAnim_2": 1985576733535621419
+      "Ara\xF1aBaseAnim_3": 812994322783152458
+      "Ara\xF1aBaseAnim_4": 2975849003364305133
+      "Ara\xF1aBaseAnim_5": -5531124964655363307
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
