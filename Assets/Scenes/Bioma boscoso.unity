@@ -3037,6 +3037,14 @@ PrefabInstance:
       propertyPath: spriteMutadoFinal
       value: 
       objectReference: {fileID: 3872152724845482322, guid: 285b9552c60944c438ac479f80ab56db, type: 3}
+    - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: controladorMutacion1
+      value: 
+      objectReference: {fileID: 22100000, guid: ff37e87aac8c42743af0b29590ac650a, type: 2}
+    - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: controladorMutacion2
+      value: 
+      objectReference: {fileID: 22100000, guid: 3056f454c1da3c24ea712721aa5387f0, type: 2}
     - target: {fileID: 6493893972074452375, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: m_Name
       value: cazador volador base_0

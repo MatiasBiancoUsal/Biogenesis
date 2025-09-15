@@ -36,6 +36,13 @@ public class MutacionCazador : MonoBehaviour, IMutable
     public float multiplicadorDañoPrimera = 1.5f;
     public float multiplicadorDañoFinal = 2.5f;
 
+    //sofitina
+    [Header("Efecto visual de mutación")]
+    public AnimatorOverrideController controladorMutacion1;
+    public AnimatorOverrideController controladorMutacion2;
+    public Animator anim;
+    //
+
     public float ObtenerMultiplicadorDaño()
     {
         if (yaMutoFinal)
@@ -67,6 +74,8 @@ public class MutacionCazador : MonoBehaviour, IMutable
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
+        anim = GetComponent<Animator>();
+
         // Guardar escala inicial solo una vez
         if (!escalaInicialDefinida)
         {
@@ -97,7 +106,7 @@ public class MutacionCazador : MonoBehaviour, IMutable
             return;
         }
 
-        // 🧩 Cargar datos guardados
+        // Cargar datos guardados
         if (PlayerPrefs.HasKey(PREF_POCIONES))
         {
             pocionesRecibidas = PlayerPrefs.GetInt(PREF_POCIONES, 0);
@@ -115,6 +124,17 @@ public class MutacionCazador : MonoBehaviour, IMutable
             }
         }
     }
+
+    /// sofitina
+    public void Update()
+    {
+        if (yaMutoPrimera && !yaMutoFinal)
+            anim.runtimeAnimatorController = controladorMutacion1;
+
+        else if (yaMutoFinal)
+            anim.runtimeAnimatorController = controladorMutacion2;
+    }
+    //
 
     public void RecibirPocion()
     {
@@ -140,7 +160,7 @@ public class MutacionCazador : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutado1);
-        Debug.Log("🐛 Mutación 1 activada.");
+        Debug.Log("Mutación 1 activada.");
     }
 
     void MutarFinal()
@@ -149,7 +169,7 @@ public class MutacionCazador : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutadoFinal);
-        Debug.Log("🧬 Mutación final activada.");
+        Debug.Log("Mutación final activada.");
 
         //para final del juego
         GameManager.Instance.NotificarCriaturaMutadaFinal();
@@ -160,11 +180,11 @@ public class MutacionCazador : MonoBehaviour, IMutable
         if (spriteRenderer != null && nuevoSprite != null)
         {
             spriteRenderer.sprite = nuevoSprite;
-            AjustarEscalaPorTamañoSprite();
-            RehacerCollider();
+            //AjustarEscalaPorTamañoSprite();
+            //RehacerCollider();
 
-            Animator anim = GetComponent<Animator>();
-            if (anim != null) anim.enabled = false;
+            //Animator anim = GetComponent<Animator>();
+            //if (anim != null) anim.enabled = false;
         }
     }
 

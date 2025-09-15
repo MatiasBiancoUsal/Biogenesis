@@ -6,10 +6,10 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "Alima\xF1aMutacion1"
+  m_Name: "Alima\xF1aBase"
   m_Controller: {fileID: 9100000, guid: f88aa6d6d495df845bf9b09b5c034f4c, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 91d8ca0715f67184888a870acf8bc8ed, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 7af4504f3f909a04b9f662a066ed61ee, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 91d8ca0715f67184888a870acf8bc8ed, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 0245a7fb9c014ac49bf894169c625e25, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 1271aae0ccd4ef5498d7c02c7279d027, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0245a7fb9c014ac49bf894169c625e25, type: 2}

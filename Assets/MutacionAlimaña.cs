@@ -71,6 +71,8 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
+        anim = GetComponent<Animator>();
+
         if (!escalaInicialDefinida)
         {
             escalaOriginalGuardada = transform.localScale;
@@ -91,9 +93,9 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
             if (spriteRenderer != null && spriteOriginal != null)
             {
                 spriteRenderer.sprite = spriteOriginal;
-                transform.localScale = escalaOriginalGuardada;
-                AjustarEscalaPorTamañoSprite();
-                RehacerCollider();
+                //transform.localScale = escalaOriginalGuardada;
+                //AjustarEscalaPorTamañoSprite();
+                //RehacerCollider();
             }
 
             Debug.Log("🔄 Alimaña reiniciada para testing.");
@@ -173,9 +175,9 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
         if (spriteRenderer != null && nuevoSprite != null)
         {
             spriteRenderer.sprite = nuevoSprite;
-            AjustarEscalaPorTamañoSprite();
-            RehacerCollider();
-            DesactivarAnimator();
+            //AjustarEscalaPorTamañoSprite();
+            //RehacerCollider();
+            //DesactivarAnimator();
         }
     }
 
