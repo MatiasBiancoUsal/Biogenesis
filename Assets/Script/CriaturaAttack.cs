@@ -3,7 +3,12 @@ using UnityEngine;
 public class CriaturaAttack : MonoBehaviour
 {
     [Header("Ataque")]
-    public GameObject proyectilPrefab;
+    //tina
+    public GameObject proyectilNormal;
+    public GameObject proyectilMutado1;
+    public GameObject proyectilMutadoFinal;
+    //
+    //public GameObject proyectilPrefab;
     public Transform firePoint;
     public float attackCooldown = 1f;
     public float rango = 6f;             // Rango configurable
@@ -13,7 +18,18 @@ public class CriaturaAttack : MonoBehaviour
 
     [HideInInspector] public Transform currentTarget;
 
-    private float cooldownTimer = 0f;
+    public float cooldownTimer = 0f;
+    //tina
+    private MutacionMutante mutacion; // referencia al script de mutación
+
+
+
+    void Start()
+    {
+        mutacion = GetComponent<MutacionMutante>();
+    }
+
+    //
 
     void Update()
     {
@@ -32,23 +48,16 @@ public class CriaturaAttack : MonoBehaviour
             }
         }
 
-        if (currentTarget != null)
+        //tina
+        if (currentTarget != null && cooldownTimer <= 0f)
         {
-            // Atacar si el cooldown terminó
-            if (cooldownTimer <= 0f)
-            {
-                Attack();
-                cooldownTimer = attackCooldown;
-            }
+            Attack();
+            cooldownTimer = attackCooldown;
         }
-        else
+        else if (currentTarget == null && animator != null)
         {
-            // Si no hay enemigos  Idle
-            if (animator != null)
-            {
-                animator.ResetTrigger("ataque1");
-                animator.SetTrigger("Idle");
-            }
+            animator.ResetTrigger("ataque1");
+            animator.SetTrigger("Idle");
         }
     }
 
@@ -66,15 +75,26 @@ public class CriaturaAttack : MonoBehaviour
 
     void Shoot()
     {
-        if (proyectilPrefab == null || firePoint == null || currentTarget == null) return;
+        if (firePoint == null || currentTarget == null) return;
 
-        GameObject proj = Instantiate(proyectilPrefab, firePoint.position, Quaternion.identity);
+        // Elegir proyectil según la mutación
+        GameObject prefab = proyectilNormal;
+
+        if (mutacion != null)
+        {
+            if (mutacion.estaEnMutacionFinal()) prefab = proyectilMutadoFinal;
+            else if (mutacion.estaEnMutacion1()) prefab = proyectilMutado1;
+        }
+
+        if (prefab == null) return;
+
+        GameObject proj = Instantiate(prefab, firePoint.position, Quaternion.identity);
         ProyectilCriatura p = proj.GetComponent<ProyectilCriatura>();
+
         if (p != null)
         {
             Vector2 dir = (currentTarget.position - firePoint.position).normalized;
             p.SetDirection(dir);
-
         }
     }
 

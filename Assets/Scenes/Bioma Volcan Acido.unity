@@ -938,6 +938,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1378433192}
   m_SourcePrefab: {fileID: 100100000, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
+--- !u!1001 &604736001
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.3101892
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.739028
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2327430119031382221, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
+      propertyPath: m_Name
+      value: depredador (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
 --- !u!1 &712164391 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8815221515953262091, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
@@ -2391,7 +2448,7 @@ Animator:
   m_GameObject: {fileID: 1540938115}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: f1215e7e27b655540a4553a9e03d1692, type: 2}
+  m_Controller: {fileID: 22100000, guid: e3e99b08d7deb6644bbd46dbf63730c4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2482,12 +2539,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e48e355023363074581cad71dae7d4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  proyectilPrefab: {fileID: 4127051914290201841, guid: cb9d5c6c08789614592f70e0dbb958de, type: 3}
+  proyectilNormal: {fileID: 7081330676238928371, guid: 658f7512804ab0d43ae754aaba358d90, type: 3}
+  proyectilMutado1: {fileID: 8685136122683892336, guid: 297d8b439c7e6fd4f98a49e37f1c1ae9, type: 3}
+  proyectilMutadoFinal: {fileID: 1258951346862100679, guid: 344f8eff3e3650e4f821aa7fe346158f, type: 3}
   firePoint: {fileID: 121078917}
   attackCooldown: 1
   rango: 12.67
-  animator: {fileID: 0}
+  animator: {fileID: 1540938122}
   currentTarget: {fileID: 0}
+  cooldownTimer: 0
 --- !u!114 &1540938129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3541,3 +3601,4 @@ SceneRoots:
   - {fileID: 1838500046}
   - {fileID: 435951362}
   - {fileID: 1702397096}
+  - {fileID: 604736001}

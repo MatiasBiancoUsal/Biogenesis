@@ -176,4 +176,14 @@ public class MutacionMutante : MonoBehaviour, IMutable
         PlayerPrefs.SetInt(PREF_MUTAF, yaMutóFinal ? 1 : 0);
         PlayerPrefs.Save();
     }
+
+    public bool estaEnMutacion1()
+    {
+        return yaMutóPrimera && !yaMutóFinal;
+    }
+
+    public bool estaEnMutacionFinal()
+    {
+        return yaMutóFinal;
+    }
 }

@@ -6,10 +6,12 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: controlador animacion mutante rad
+  m_Name: mutanteAnim1
   m_Controller: {fileID: 9100000, guid: 3adde6c41134a23478a68b26a96137bf, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: ecc0cb53ed7242943afb303a9a5eab75, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 878f5863bfd8441468eb8ae8ba40ba1e, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 2484c1b19355e8e4daad68180df39cdb, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 79be980243531504097a980278d50754, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d1f46b762c472724f8e5c1a7a9470942, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cc2dc4e9bc29ebb4085dffb094740687, type: 2}

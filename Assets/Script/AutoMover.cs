@@ -35,6 +35,9 @@ public class AutoMover : MonoBehaviour
             return;
         }
 
+        else
+        {
+
         if (isWaiting)
         {
             timer -= Time.deltaTime;
@@ -71,6 +74,7 @@ public class AutoMover : MonoBehaviour
                 //SpriteAnimator spa = GetComponent<SpriteAnimator>();
                 //spa.currentState = "Idle";
             }
+        }
         }
     }
 
