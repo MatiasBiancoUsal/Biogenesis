@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 211289201}
   - component: {fileID: 211289200}
   - component: {fileID: 211289199}
+  - component: {fileID: 211289202}
   m_Layer: 5
   m_Name: "Bot\xF3n Volver"
   m_TagString: Untagged
@@ -252,6 +253,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211289197}
   m_CullTransparentMesh: 1
+--- !u!114 &211289202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211289197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf55bda97e8ea45881b019b0d9028e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &283304798
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +899,7 @@ GameObject:
   - component: {fileID: 1958034564}
   - component: {fileID: 1958034563}
   - component: {fileID: 1958034562}
+  - component: {fileID: 1958034565}
   m_Layer: 5
   m_Name: "Bot\xF3n Salir"
   m_TagString: Untagged
@@ -1007,6 +1021,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958034560}
   m_CullTransparentMesh: 1
+--- !u!114 &1958034565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958034560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1bf55bda97e8ea45881b019b0d9028e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2039717032
 GameObject:
   m_ObjectHideFlags: 0
