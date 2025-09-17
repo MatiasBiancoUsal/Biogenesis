@@ -1,13 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-//using static UnityEditor.Progress;
 
 public class RecolectarADN : MonoBehaviour
 {
     public string itemName;
     public Sprite icon;
     public int quantity = 1;
+
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void OnMouseDown()
     {
@@ -20,8 +24,12 @@ public class RecolectarADN : MonoBehaviour
             Debug.LogWarning("InventarioGlobal no encontrado.");
         }
 
-        Destroy(gameObject);
+        if (audioSource != null && audioSource.clip != null)
+        {
+            // Reproducir sonido independiente del prefab
+            AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position);
+        }
+
+        Destroy(gameObject); // ya se puede destruir de inmediato
     }
-
-
 }
