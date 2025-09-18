@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GlobalParasiteSpawner : MonoBehaviour
 {
+    [Header("Parásitos")]
     public GameObject parasitePrefab;
     public string[] sceneNames;
     public UIWarningMessage uiWarning;
+
+    [Header("Audio")] // 🔊 NUEVO
+    public AudioSource audioSource;   // 🔊 Componente de audio
+    public AudioClip alarmaClip;      // 🔊 Sonido de alarma
 
     public static GlobalParasiteSpawner instance;
     private GameObject currentParasite;
@@ -30,7 +35,7 @@ public class GlobalParasiteSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(180); // 3 minutos
+            yield return new WaitForSeconds(180); // 180 para 3 minutos
 
             randomScene = sceneNames[Random.Range(0, sceneNames.Length)];
             Debug.Log("🌿 Ataque parasitario en " + randomScene);
@@ -40,12 +45,14 @@ public class GlobalParasiteSpawner : MonoBehaviour
                 uiWarning.ShowWarning("Un hongo parasitario está atacando en " + randomScene);
             }
 
-            // Guardar escena actual si querés hacer teleport (opcional)
-            // originalScene = SceneManager.GetActiveScene().name;
+            // 🔊 Reproducir sonido de alarma
+            if (audioSource != null && alarmaClip != null)
+            {
+                audioSource.PlayOneShot(alarmaClip);
+            }
 
-            yield return null; // pequeño delay
+            yield return null;
 
-            // Espera hasta que desaparezca
             float tiempoPresencia = 30f;
             float t = 0;
             while (currentParasite != null && t < tiempoPresencia)

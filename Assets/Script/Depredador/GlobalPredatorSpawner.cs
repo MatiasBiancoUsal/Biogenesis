@@ -5,17 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class GlobalPredatorSpawner : MonoBehaviour
 {
+    [Header("General")]
     public GameObject predatorPrefab;
     public string[] sceneNames;
-    public UIWarningMessage uiWarning; // Referencia al UI que muestra la alerta
+    public UIWarningMessage uiWarning;
+
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip alarmaClip;
 
     public static GlobalPredatorSpawner instance;
     private GameObject currentPredator;
     private string originalSceneName;
     public string randomScene;
 
-
-    // Start is called before the first frame update
     void Awake()
     {
         if (instance != null)
@@ -28,16 +31,10 @@ public class GlobalPredatorSpawner : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         StartCoroutine(PredatorLoop());
     }
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Start() { }
+
+    void Update() { }
 
     public void SpawnearBicho()
     {
@@ -48,12 +45,11 @@ public class GlobalPredatorSpawner : MonoBehaviour
         }
     }
 
-
     IEnumerator PredatorLoop()
     {
         while (true)
         {
-            yield return new WaitForSeconds(30); // Cambiar a 300 para 5 min reales
+            yield return new WaitForSeconds(300); // Cambiar a 300 para 5 min reales
 
             randomScene = sceneNames[Random.Range(0, sceneNames.Length)];
             Debug.Log("Tu criatura está siendo atacada en " + randomScene);
@@ -63,30 +59,20 @@ public class GlobalPredatorSpawner : MonoBehaviour
                 uiWarning.ShowWarning("Tu criatura está siendo atacada en " + randomScene);
             }
 
-            // Guardar escena actual
-            originalSceneName = SceneManager.GetActiveScene().name;
+            // 🔊 Reproducir sonido de alarma
+            if (audioSource != null && alarmaClip != null)
+            {
+                audioSource.PlayOneShot(alarmaClip);
+            }
 
-            // Cargar escena de ataque (sustituyendo la actual)
-           // AsyncOperation load = SceneManager.LoadSceneAsync(randomScene, LoadSceneMode.Single);
-            //while (!load.isDone) yield return null;
+            originalSceneName = SceneManager.GetActiveScene().name;
 
             yield return null;
 
-            //GameObject spawnPoint = GameObject.FindGameObjectWithTag("PredatorSpawn");
-            //if (spawnPoint != null)
-            //{
-            //    currentPredator = Instantiate(predatorPrefab, spawnPoint.transform.position, Quaternion.identity);
-            //}
-
-            // Esperar a que el depredador muera
             while (currentPredator != null)
             {
                 yield return null;
             }
-
-            // Volver a la escena original
-            //AsyncOperation back = SceneManager.LoadSceneAsync(originalSceneName, LoadSceneMode.Single);
-            //while (!back.isDone) yield return null;
         }
     }
 
