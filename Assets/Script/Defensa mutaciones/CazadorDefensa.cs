@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,12 +7,15 @@ public class CazadorDefensa : MonoBehaviour
     [Header("Ataque")]
     public float intervaloAtaque = 1.5f;
     public float rangoDeteccion = 2f; // Rango cuerpo a cuerpo
-    public int daño = 10;
+    public int daÃ±o = 10;
 
     private bool atacando = false;
     private Animator anim;
 
-    
+    [Header("Audio")]
+    public AudioSource audioSource;    // El componente de audio
+    public AudioClip attackClip;       // Sonido del ataque/poder
+
     public enum EstadoMutacion { Normal, Primera, Final }
     public EstadoMutacion estado = EstadoMutacion.Normal;
 
@@ -34,7 +37,7 @@ public class CazadorDefensa : MonoBehaviour
     }
 
     // --------------------
-    // Detección de enemigos
+    // DetecciÃ³n de enemigos
     // --------------------
     GameObject DetectarEnemigo()
     {
@@ -62,15 +65,15 @@ public class CazadorDefensa : MonoBehaviour
             yield return new WaitForSeconds(intervaloAtaque);
         }
         atacando = false;
-        Debug.Log("[Cazador] Dejó de atacar (objetivo perdido).");
+        Debug.Log("[Cazador] DejÃ³ de atacar (objetivo perdido).");
     }
 
     // --------------------
-    // Método de ataque
+    // MÃ©todo de ataque
     // --------------------
     void Atacar(Transform objetivo)
     {
-        // Animación según mutación
+        // AnimaciÃ³n segÃºn mutaciÃ³n
         switch (estado)
         {
             case EstadoMutacion.Normal: anim.SetTrigger("Atacar1"); break;
@@ -78,17 +81,20 @@ public class CazadorDefensa : MonoBehaviour
             case EstadoMutacion.Final: anim.SetTrigger("Atacar3"); break;
         }
 
-        // Aplicar daño al objetivo si tiene script de vida
+        // ðŸ”Š Reproducir sonido de ataque
+        PlayAttackSound();
+
+        // Aplicar daÃ±o al objetivo si tiene script de vida
         var criatura = objetivo.GetComponent<DepredadorAnimTest>();
         if (criatura != null)
         {
-            criatura.RecibirDaño();
-            Debug.Log($"[Cazador] Infligió {daño} de daño a {objetivo.name}");
+            criatura.RecibirDaÃ±o();
+            Debug.Log($"[Cazador] InfligiÃ³ {daÃ±o} de daÃ±o a {objetivo.name}");
         }
     }
 
     // --------------------
-    // Ciclo de animaciones básicas (Idle/Disparar)
+    // Ciclo de animaciones bÃ¡sicas (Idle/Disparar)
     // --------------------
     IEnumerator CicloAnimaciones()
     {
@@ -100,7 +106,18 @@ public class CazadorDefensa : MonoBehaviour
     }
 
     // --------------------
-    // Visualizar rango de detección en el editor
+    // Audio
+    // --------------------
+    void PlayAttackSound()
+    {
+        if (audioSource != null && attackClip != null)
+        {
+            audioSource.PlayOneShot(attackClip); // sonido puntual
+        }
+    }
+
+    // --------------------
+    // Visualizar rango de detecciÃ³n en el editor
     // --------------------
     void OnDrawGizmosSelected()
     {
