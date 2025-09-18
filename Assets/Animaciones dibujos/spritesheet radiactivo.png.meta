@@ -538,7 +538,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spritesheet radiactivo_0: 5964109103134299522
+      spritesheet radiactivo_1: -3733587304531671522
+      spritesheet radiactivo_10: -1538329200312316060
+      spritesheet radiactivo_11: 7258625791063898585
+      spritesheet radiactivo_12: 7554380435338449836
+      spritesheet radiactivo_13: -9088692540821448648
+      spritesheet radiactivo_14: -4681080388377872554
+      spritesheet radiactivo_15: -7603567099665152286
+      spritesheet radiactivo_16: -5840304207210558854
+      spritesheet radiactivo_17: -7435327808163214093
+      spritesheet radiactivo_2: -7306042288234004950
+      spritesheet radiactivo_3: 130319848793145474
+      spritesheet radiactivo_4: 2659673097223362935
+      spritesheet radiactivo_5: 8500491617584045853
+      spritesheet radiactivo_6: 3634585770954728661
+      spritesheet radiactivo_7: 6212488303209533481
+      spritesheet radiactivo_8: -1201843702065883761
+      spritesheet radiactivo_9: -6918939798863989781
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

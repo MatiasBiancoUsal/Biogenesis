@@ -250,7 +250,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mutante spritesheets_0: 4331722181044141955
+      mutante spritesheets_1: 3586077014855288627
+      mutante spritesheets_2: -3737291253693368559
+      mutante spritesheets_3: -2375491958490094000
+      mutante spritesheets_4: -380521257162750984
+      mutante spritesheets_5: -2483721906049791082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

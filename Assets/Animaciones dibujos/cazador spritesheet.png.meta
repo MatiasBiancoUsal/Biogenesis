@@ -538,7 +538,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cazador spritesheet_0: 8619111222491440242
+      cazador spritesheet_1: -3325447561372011510
+      cazador spritesheet_10: -1997328129909262184
+      cazador spritesheet_11: -7504092410368554701
+      cazador spritesheet_12: 1079135861894157689
+      cazador spritesheet_13: -3387894745472125200
+      cazador spritesheet_14: -358780855566795147
+      cazador spritesheet_15: -8506050650925630289
+      cazador spritesheet_16: 3608732168732205861
+      cazador spritesheet_17: 5347395701463003759
+      cazador spritesheet_2: -5583408528851217688
+      cazador spritesheet_3: 5127019958360955967
+      cazador spritesheet_4: -5037176959644727553
+      cazador spritesheet_5: -2982834817814251263
+      cazador spritesheet_6: 1272803075657327143
+      cazador spritesheet_7: 2476440062846758651
+      cazador spritesheet_8: 6792547139605723940
+      cazador spritesheet_9: 6409554307097213698
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
