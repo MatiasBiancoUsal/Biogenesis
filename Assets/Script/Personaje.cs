@@ -2,33 +2,51 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
+    [Header("Vida")]
     public int vida = 100;
     public int vidaMaxima = 100;
 
-    // Script lucy
+    [Header("Audio")]
+    public AudioClip sonidoHerida;
+    public AudioClip sonidoMuerte;
+
+    private AudioSource audioSource;
     private Animator animator;
     private bool estaMuerto = false;
+
     public enum TipoMutacion { Mutacion1, Mutacion2, Mutacion3 }
     public TipoMutacion mutacionActual;
 
     void Start()
     {
-        animator = GetComponent<Animator>(); // buscamos el Animator en el personaje
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+
+        if (audioSource == null)
+        {
+            Debug.LogWarning("No se encontró un AudioSource en el objeto. Agregalo para que suenen los efectos.");
+        }
     }
-//
+
     public void TomarDaño(int cantidad)
     {
-        if (estaMuerto) return; // si ya murió, no recibe más daño
+        if (estaMuerto) return;
 
         vida -= cantidad;
-        Debug.Log("Personaje recibió daño. Vida actual: " + vida);
-        if (vida <= 0 && !estaMuerto)
+
+        // Reproducir sonido de herida
+        if (sonidoHerida != null && audioSource != null)
         {
-            vida = 0;
-            Debug.Log("Personaje ha muerto");
-            Morir();
+            audioSource.PlayOneShot(sonidoHerida);
         }
 
+        Debug.Log("Personaje recibió daño. Vida actual: " + vida);
+
+        if (vida <= 0)
+        {
+            vida = 0;
+            Morir();
+        }
     }
 
     public void RestaurarVida(int cantidad)
@@ -44,11 +62,20 @@ public class Personaje : MonoBehaviour
             Debug.Log("Personaje se curó. Vida actual: " + vida);
         }
     }
-    
+
     private void Morir()
     {
         estaMuerto = true;
+
         Debug.Log("Personaje ha muerto");
+
+        // Reproducir sonido de muerte
+        if (sonidoMuerte != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(sonidoMuerte);
+        }
+
+        // Disparar animación según mutación
         switch (mutacionActual)
         {
             case TipoMutacion.Mutacion1:
