@@ -3,17 +3,25 @@ using System.Collections;
 
 public class ParasitoHongo : MonoBehaviour
 {
+    [Header("Ataque")]
     public GameObject bolaPrefab;
     public Transform puntoDisparo;
     public float intervaloDisparo = 1.5f;
     private Animator animator;
     private GameObject objetivo;
 
+    [Header("Vida")]
     public int vida = 3;
     public Color colorDaño = Color.red;
     private Color colorOriginal;
     private SpriteRenderer spriteRenderer;
     public float tiempoDaño = 0.2f;
+
+    [Header("Audio")]
+    public AudioSource audioSource;   // Componente de audio
+    public AudioClip spawnClip;       // Sonido al aparecer
+    public AudioClip attackClip;      // Sonido al disparar
+    public AudioClip deathClip;       // Sonido al morir
 
     void Awake()
     {
@@ -26,6 +34,12 @@ public class ParasitoHongo : MonoBehaviour
         animator = GetComponent<Animator>();
         DetectarObjetivo();
         StartCoroutine(Comportamiento());
+
+        // 🔊 Reproducir sonido al aparecer
+        if (audioSource != null && spawnClip != null)
+        {
+            audioSource.PlayOneShot(spawnClip);
+        }
 
         // Destruye el hongo a los 30 segundos
         Destroy(gameObject, 30f);
@@ -61,6 +75,12 @@ public class ParasitoHongo : MonoBehaviour
 
         float escala = Random.Range(0.15f, 0.31f);
         bola.transform.localScale = new Vector3(escala, escala, 1f);
+
+        // 🔊 Sonido al disparar
+        if (audioSource != null && attackClip != null)
+        {
+            audioSource.PlayOneShot(attackClip);
+        }
     }
 
     void DetectarObjetivo()
@@ -93,7 +113,12 @@ public class ParasitoHongo : MonoBehaviour
 
     void Morir()
     {
-        // Podés poner animación, partículas, sonido, etc.
-        Destroy(gameObject);
+        // 🔊 Sonido al morir
+        if (audioSource != null && deathClip != null)
+        {
+            audioSource.PlayOneShot(deathClip);
+        }
+
+        Destroy(gameObject, 0.3f); // un pequeño delay para que suene
     }
 }
