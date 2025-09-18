@@ -1,21 +1,21 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
-    [Header("Vida")]
     public int vida = 100;
     public int vidaMaxima = 100;
 
-    [Header("Audio")]
-    public AudioClip sonidoHerida;
-    public AudioClip sonidoMuerte;
-
-    private AudioSource audioSource;
     private Animator animator;
     private bool estaMuerto = false;
 
     public enum TipoMutacion { Mutacion1, Mutacion2, Mutacion3 }
     public TipoMutacion mutacionActual;
+
+    [Header("Sonidos")]
+    public AudioClip sonidoDerrota;
+    public AudioClip sonidoDa√±o;
+
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -24,27 +24,28 @@ public class Personaje : MonoBehaviour
 
         if (audioSource == null)
         {
-            Debug.LogWarning("No se encontrÛ un AudioSource en el objeto. Agregalo para que suenen los efectos.");
+            Debug.LogWarning("Falta AudioSource en el personaje.");
         }
     }
 
-    public void TomarDaÒo(int cantidad)
+    public void TomarDa√±o(int cantidad)
     {
         if (estaMuerto) return;
 
         vida -= cantidad;
 
-        // Reproducir sonido de herida
-        if (sonidoHerida != null && audioSource != null)
+        // ‚ñ∂Ô∏è Reproducir sonido de da√±o
+        if (sonidoDa√±o != null && audioSource != null)
         {
-            audioSource.PlayOneShot(sonidoHerida);
+            audioSource.PlayOneShot(sonidoDa√±o);
         }
 
-        Debug.Log("Personaje recibiÛ daÒo. Vida actual: " + vida);
+        Debug.Log("Personaje recibi√≥ da√±o. Vida actual: " + vida);
 
-        if (vida <= 0)
+        if (vida <= 0 && !estaMuerto)
         {
             vida = 0;
+            Debug.Log("Personaje ha muerto");
             Morir();
         }
     }
@@ -59,7 +60,7 @@ public class Personaje : MonoBehaviour
                 vida = vidaMaxima;
             }
 
-            Debug.Log("Personaje se curÛ. Vida actual: " + vida);
+            Debug.Log("Personaje se cur√≥. Vida actual: " + vida);
         }
     }
 
@@ -67,15 +68,12 @@ public class Personaje : MonoBehaviour
     {
         estaMuerto = true;
 
-        Debug.Log("Personaje ha muerto");
-
-        // Reproducir sonido de muerte
-        if (sonidoMuerte != null && audioSource != null)
+        // ‚ñ∂Ô∏è Reproducir sonido de muerte
+        if (sonidoDerrota != null && audioSource != null)
         {
-            audioSource.PlayOneShot(sonidoMuerte);
+            audioSource.PlayOneShot(sonidoDerrota);
         }
 
-        // Disparar animaciÛn seg˙n mutaciÛn
         switch (mutacionActual)
         {
             case TipoMutacion.Mutacion1:
@@ -92,7 +90,7 @@ public class Personaje : MonoBehaviour
 
     public void DestruirObjeto()
     {
-        Debug.LogWarning("!!! FUNCI”N DESTRUIR OBJETO LLAMADA !!! La animaciÛn de muerte terminÛ o fue activada por error.");
+        Debug.LogWarning("!!! FUNCI√ìN DESTRUIR OBJETO LLAMADA !!! La animaci√≥n de muerte termin√≥ o fue activada por error.");
         Destroy(gameObject);
     }
 }
