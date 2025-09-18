@@ -1,41 +1,37 @@
-using UnityEngine;
+锘縰sing UnityEngine;
 
 public class CriaturaAttack : MonoBehaviour
 {
     [Header("Ataque")]
-    //tina
     public GameObject proyectilNormal;
     public GameObject proyectilMutado1;
     public GameObject proyectilMutadoFinal;
-    //
-    //public GameObject proyectilPrefab;
     public Transform firePoint;
     public float attackCooldown = 1f;
     public float rango = 6f;             // Rango configurable
 
-    [Header("Animaci髇")]
+    [Header("Animaci贸n")]
     public Animator animator;            // referencia al Animator
+
+    [Header("Audio")]
+    public AudioSource audioSource;      // Componente de audio
+    public AudioClip disparoClip;        // Sonido del disparo
 
     [HideInInspector] public Transform currentTarget;
 
     public float cooldownTimer = 0f;
-    //tina
-    private MutacionMutante mutacion; // referencia al script de mutaci髇
-
-
+    private MutacionMutante mutacion;    // referencia al script de mutaci贸n
 
     void Start()
     {
         mutacion = GetComponent<MutacionMutante>();
     }
 
-    //
-
     void Update()
     {
         cooldownTimer -= Time.deltaTime;
 
-        // Detectar enemigo m醩 cercano dentro del rango
+        // Detectar enemigo m谩s cercano dentro del rango
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, rango);
         currentTarget = null;
 
@@ -48,7 +44,6 @@ public class CriaturaAttack : MonoBehaviour
             }
         }
 
-        //tina
         if (currentTarget != null && cooldownTimer <= 0f)
         {
             Attack();
@@ -66,18 +61,18 @@ public class CriaturaAttack : MonoBehaviour
         if (animator != null)
         {
             animator.ResetTrigger("Idle");
-            animator.SetTrigger("ataque1"); //  activa la animaci髇 de ataque
+            animator.SetTrigger("ataque1"); // activa la animaci贸n de ataque
         }
 
-        // Disparo sincronizado con la animaci髇
-        Invoke(nameof(Shoot), 0.3f); //  ajusta este delay al momento exacto del ataque
+        // Disparo sincronizado con la animaci贸n
+        Invoke(nameof(Shoot), 0.3f); // ajusta este delay al momento exacto del ataque
     }
 
     void Shoot()
     {
         if (firePoint == null || currentTarget == null) return;
 
-        // Elegir proyectil seg鷑 la mutaci髇
+        // Elegir proyectil seg煤n la mutaci贸n
         GameObject prefab = proyectilNormal;
 
         if (mutacion != null)
@@ -95,6 +90,20 @@ public class CriaturaAttack : MonoBehaviour
         {
             Vector2 dir = (currentTarget.position - firePoint.position).normalized;
             p.SetDirection(dir);
+        }
+
+        // 馃攰 Reproducir sonido de disparo
+        PlayShootSound();
+    }
+
+    // --------------------
+    // Audio
+    // --------------------
+    void PlayShootSound()
+    {
+        if (audioSource != null && disparoClip != null)
+        {
+            audioSource.PlayOneShot(disparoClip);
         }
     }
 

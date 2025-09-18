@@ -10,6 +10,10 @@ public class AlimañaDefensa : MonoBehaviour
     public float intervaloDisparo = 1.5f;
     public float rangoDeteccion = 6f;
 
+    [Header("Audio")]
+    public AudioSource audioSource;      // Componente de audio
+    public AudioClip disparoClip;        // Sonido del disparo
+
     private bool disparando = false;
 
     void Update()
@@ -71,10 +75,21 @@ public class AlimañaDefensa : MonoBehaviour
                 scriptProyectil.daño = Mathf.RoundToInt(scriptProyectil.daño * mutacion.ObtenerMultiplicadorDaño());
                 Debug.Log($"[Alimaña] Proyectil modificado por mutación, daño final: {scriptProyectil.daño}");
             }
+
+            // 🔊 Reproducir sonido de disparo
+            PlayShootSound();
         }
         else
         {
             Debug.LogWarning("[Alimaña] No hay prefab o punto de disparo asignado.");
+        }
+    }
+
+    void PlayShootSound()
+    {
+        if (audioSource != null && disparoClip != null)
+        {
+            audioSource.PlayOneShot(disparoClip);
         }
     }
 
@@ -84,5 +99,3 @@ public class AlimañaDefensa : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, rangoDeteccion);
     }
 }
-
-
