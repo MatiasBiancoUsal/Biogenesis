@@ -1,14 +1,17 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class criaturadefensa : MonoBehaviour
 {
-
     [Header("Ataque")]
     public float intervaloAtaque = 1.5f;
     public float rangoDeteccion = 2f; // Rango cuerpo a cuerpo
-    public int daño = 10;
+    public int daÃ±o = 10;
+
+    [Header("Audio")]
+    public AudioSource audioSource;   // Componente de audio
+    public AudioClip ataqueClip;      // Sonido del ataque cuerpo a cuerpo
 
     private bool atacando = false;
     private Animator anim;
@@ -27,9 +30,6 @@ public class criaturadefensa : MonoBehaviour
         }
     }
 
-    // --------------------
-    // Detección de la criatura experimento
-    // --------------------
     GameObject DetectarCriatura()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, rangoDeteccion);
@@ -43,9 +43,6 @@ public class criaturadefensa : MonoBehaviour
         return null;
     }
 
-    // --------------------
-    // Rutina de ataque
-    // --------------------
     IEnumerator AtacarRoutine(Transform objetivo)
     {
         atacando = true;
@@ -57,27 +54,33 @@ public class criaturadefensa : MonoBehaviour
         atacando = false;
     }
 
-    // --------------------
-    // Aplicar daño
-    // --------------------
     void Atacar(Transform objetivo)
     {
         var criatura = objetivo.GetComponent<DepredadorAnimTest>();
         if (criatura != null)
         {
-            criatura.RecibirDaño();
-            Debug.Log($"[criatura] Infligió {daño} de daño a {objetivo.name}");
-            anim.SetTrigger("ataque1");
+            criatura.RecibirDaÃ±o();
+            Debug.Log($"[criatura] InfligiÃ³ {daÃ±o} de daÃ±o a {objetivo.name}");
+
+            if (anim != null)
+                anim.SetTrigger("ataque1");
+
+            // ðŸ”Š Reproducir sonido de ataque
+            PlayAttackSound();
         }
     }
 
-    // --------------------
-    // Visualizar rango de detección
-    // --------------------
+    void PlayAttackSound()
+    {
+        if (audioSource != null && ataqueClip != null)
+        {
+            audioSource.PlayOneShot(ataqueClip);
+        }
+    }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, rangoDeteccion);
     }
 }
-

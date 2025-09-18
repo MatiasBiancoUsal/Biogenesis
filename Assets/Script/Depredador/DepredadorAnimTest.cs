@@ -4,30 +4,38 @@ using UnityEngine;
 
 public class DepredadorAnimTest : MonoBehaviour
 {
-
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    public GameObject cuchilloPrefab;        // Prefab del cuchillo
-    public Transform puntoDisparo;           // Desde dónde dispara
-    public float velocidadCuchillo = 7f;     // Velocidad del cuchillo
-    public GameObject objetivo;              // El objetivo (criatura)
+    public GameObject cuchilloPrefab;
+    public Transform puntoDisparo;
+    public float velocidadCuchillo = 7f;
+    public GameObject objetivo;
 
     public int vida = 3;
     public Color colorDaño = Color.red;
     private Color colorOriginal;
     public float tiempoDaño = 0.2f;
 
+    [Header("Audio")]
+    public AudioSource audioSource;   // Componente AudioSource
+    public AudioClip spawnClip;       // Sonido al aparecer
+    public AudioClip ataqueClip;      // Sonido al disparar cuchillo
+    public AudioClip muerteClip;      // (Opcional) Sonido al morir
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         colorOriginal = spriteRenderer.color;
 
-        // Detectar la criatura en la escena activa
         DetectarObjetivo();
+
+        // 🔊 Sonido al aparecer
+        if (audioSource != null && spawnClip != null)
+        {
+            audioSource.PlayOneShot(spawnClip);
+        }
 
         StartCoroutine(CicloAnimaciones());
     }
@@ -76,11 +84,14 @@ public class DepredadorAnimTest : MonoBehaviour
             }
 
             Destroy(cuchillo, 5f);
+
+            // 🔊 Sonido al disparar cuchillo
+            if (audioSource != null && ataqueClip != null)
+            {
+                audioSource.PlayOneShot(ataqueClip);
+            }
         }
     }
-
-    // 💥 Recibir daño al ser golpeado por proyectil enemigo
-    
 
     public void RecibirDaño()
     {
@@ -102,13 +113,18 @@ public class DepredadorAnimTest : MonoBehaviour
 
     void Morir()
     {
-        // Acá podés poner animación de muerte o partículas
-        Destroy(gameObject);
+        // 🔊 Sonido de muerte (opcional)
+        if (audioSource != null && muerteClip != null)
+        {
+            audioSource.PlayOneShot(muerteClip);
+        }
+
+        // ⚡ Podrías poner animación de muerte antes de destruirlo
+        Destroy(gameObject, 0.5f);
     }
 
     void DetectarObjetivo()
     {
-        // Busca un GameObject con uno de los posibles tags
         string[] posiblesTags = { "Criatura", "Criatura1", "Criatura2", "Criatura3" };
 
         foreach (string tag in posiblesTags)
@@ -117,7 +133,7 @@ public class DepredadorAnimTest : MonoBehaviour
             if (encontrado != null)
             {
                 objetivo = encontrado;
-                break; // Salir cuando encuentra uno
+                break;
             }
         }
 
