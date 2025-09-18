@@ -14,10 +14,19 @@ public class InventarioManager : MonoBehaviour
 
     void Awake()
     {
-        if (instancia == null)
-            instancia = this;
-        else
-            Destroy(gameObject);
+        // Si ya existe una instancia y no soy yo, me destruyo para evitar duplicados.
+        if (instancia != null && instancia != this)
+        {
+            Destroy(this.gameObject);
+            return; // Detenemos la ejecución aquí.
+        }
+
+        // Si no existe, me convierto en la instancia principal.
+        instancia = this;
+
+        // --- LA LÍNEA MÁGICA ---
+        // Le dice a Unity: "No destruyas este objeto al cambiar de escena".
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void Start()
