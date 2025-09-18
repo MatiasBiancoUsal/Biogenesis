@@ -2806,7 +2806,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: -7345108985591248353, guid: 1b9c21d7d3dcc8348aeeabe0638a0850, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3661,6 +3661,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2970968332899128304, guid: 3947f08885d76104ba18f9311182f055, type: 3}
+    - target: {fileID: 3497886911283860265, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497886911283860265, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.24
+      objectReference: {fileID: 0}
     - target: {fileID: 3685804006201741725, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: comidaEsp
       value: 
