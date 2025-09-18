@@ -11,7 +11,9 @@ public class ArañaDefensa : MonoBehaviour
 
     private bool disparando = false;
 
-
+    [Header("Audio")]
+    public AudioSource audioSource;   // Componente de audio
+    public AudioClip disparoClip;     // Sonido del disparo de telaraña
 
     void Update()
     {
@@ -30,7 +32,6 @@ public class ArañaDefensa : MonoBehaviour
         {
             if (hit.CompareTag("depredador") || hit.CompareTag("Parasito")) // ✅ Ahora detecta los dos
             {
-               
                 movimiento.quieto = true;
                 return hit.gameObject;
             }
@@ -60,7 +61,19 @@ public class ArañaDefensa : MonoBehaviour
             Vector2 direccion = (objetivo.position - puntoDisparo.position).normalized;
             proyectil.GetComponent<ProyectilTelaraña>().direccion = direccion;
 
-            
+            // 🔊 Reproducir sonido de disparo
+            PlayShootSound();
+        }
+    }
+
+    // --------------------
+    // Audio
+    // --------------------
+    void PlayShootSound()
+    {
+        if (audioSource != null && disparoClip != null)
+        {
+            audioSource.PlayOneShot(disparoClip);
         }
     }
 
@@ -70,5 +83,3 @@ public class ArañaDefensa : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, rangoDeteccion);
     }
 }
-
-
