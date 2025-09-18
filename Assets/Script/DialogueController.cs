@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
@@ -7,27 +7,25 @@ public class DialogueController : MonoBehaviour
     public GameObject dialoguePanel;
     public Image dialogueImage;
 
-    [Header("Contenido del Diálogo")]
+    [Header("Contenido del DiÃ¡logo")]
     public Sprite[] dialogueSprites;
 
-    [Header("Identificador Único de Escena")]
-    // IMPORTANTE: Este nombre debe ser único para cada escena con diálogos.
+    [Header("Sonido del diÃ¡logo")]
+    public AudioSource dialogueAudio; // arrastrÃ¡ acÃ¡ tu AudioSource en el Inspector
+
+    [Header("Identificador Ãšnico de Escena")]
     public string sceneIdentifier;
 
     private int currentIndex = 0;
 
     void Start()
     {
-        // Verificamos en PlayerPrefs si el diálogo para este identificador ya se vio.
-        // GetInt busca la clave. Si no la encuentra, devuelve el valor por defecto (0).
-        // Usamos 0 para "no visto" y 1 para "visto".
         if (PlayerPrefs.GetInt(sceneIdentifier, 0) == 1)
         {
-            dialoguePanel.SetActive(false); // Si ya se vio (valor es 1), ocultamos el panel y listo.
+            dialoguePanel.SetActive(false);
             return;
         }
 
-        // Si el valor es 0, significa que es la primera vez, así que iniciamos el diálogo.
         StartDialogue();
     }
 
@@ -36,6 +34,13 @@ public class DialogueController : MonoBehaviour
         currentIndex = 0;
         dialoguePanel.SetActive(true);
         dialogueImage.sprite = dialogueSprites[currentIndex];
+
+        //  Arrancar sonido
+        if (dialogueAudio != null && !dialogueAudio.isPlaying)
+        {
+            dialogueAudio.loop = true;
+            dialogueAudio.Play();
+        }
     }
 
     public void NextDialogue()
@@ -55,8 +60,13 @@ public class DialogueController : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
 
-        // ¡Paso clave! Guardamos en la memoria que el diálogo de esta escena ya se completó.
+        //  Apagar sonido
+        if (dialogueAudio != null && dialogueAudio.isPlaying)
+        {
+            dialogueAudio.Stop();
+        }
+
         PlayerPrefs.SetInt(sceneIdentifier, 1);
-        PlayerPrefs.Save(); // Asegura que el dato se guarde en disco.
+        PlayerPrefs.Save();
     }
 }
