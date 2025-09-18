@@ -7,7 +7,6 @@ public class ParasitoHongo : MonoBehaviour
     public GameObject bolaPrefab;
     public Transform puntoDisparo;
     public float intervaloDisparo = 1.5f;
-    private Animator animator;
     private GameObject objetivo;
 
     [Header("Vida")]
@@ -18,10 +17,10 @@ public class ParasitoHongo : MonoBehaviour
     public float tiempoDaño = 0.2f;
 
     [Header("Audio")]
-    public AudioSource audioSource;   // Componente de audio
-    public AudioClip spawnClip;       // Sonido al aparecer
-    public AudioClip attackClip;      // Sonido al disparar
-    public AudioClip deathClip;       // Sonido al morir
+    public AudioSource audioSource;
+    public AudioClip spawnClip;
+    public AudioClip attackClip;
+    public AudioClip deathClip;
 
     void Awake()
     {
@@ -31,17 +30,15 @@ public class ParasitoHongo : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        // No necesitas el Animator si solo tienes una animación Idle
         DetectarObjetivo();
         StartCoroutine(Comportamiento());
 
-        // 🔊 Reproducir sonido al aparecer
         if (audioSource != null && spawnClip != null)
         {
             audioSource.PlayOneShot(spawnClip);
         }
 
-        // Destruye el hongo a los 30 segundos
         Destroy(gameObject, 30f);
     }
 
@@ -49,10 +46,8 @@ public class ParasitoHongo : MonoBehaviour
     {
         while (true)
         {
-            animator.SetTrigger("Idle");
+            // Solo espera antes de atacar
             yield return new WaitForSeconds(2f);
-
-            animator.SetTrigger("Atacar");
 
             float tiempo = 5f;
             float t = 0f;
@@ -76,7 +71,6 @@ public class ParasitoHongo : MonoBehaviour
         float escala = Random.Range(0.15f, 0.31f);
         bola.transform.localScale = new Vector3(escala, escala, 1f);
 
-        // 🔊 Sonido al disparar
         if (audioSource != null && attackClip != null)
         {
             audioSource.PlayOneShot(attackClip);
@@ -113,12 +107,11 @@ public class ParasitoHongo : MonoBehaviour
 
     void Morir()
     {
-        // 🔊 Sonido al morir
         if (audioSource != null && deathClip != null)
         {
             audioSource.PlayOneShot(deathClip);
         }
 
-        Destroy(gameObject, 0.3f); // un pequeño delay para que suene
+        Destroy(gameObject, 0.3f);
     }
 }
