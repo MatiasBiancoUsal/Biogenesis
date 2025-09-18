@@ -6,13 +6,16 @@ public class AutoMover : MonoBehaviour
     public float waitTime = 2f;
     public float moveDistance = 3f; // Distancia que se mueve a la izquierda
 
+    [Header("Audio")]
+    public AudioSource audioSource;   // Componente de audio
+    public AudioClip walkClip;        // Sonido de caminar/volar
+
     protected Animator animator;
     protected Vector3 startPos;
     protected Vector3 targetPos;
     protected bool isWaiting = true;
     protected bool goingLeft = true;
     protected float timer;
-
 
     [HideInInspector] public bool quieto = false; //  Nueva variable, prueba ataque alimaña
 
@@ -27,16 +30,12 @@ public class AutoMover : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (quieto) //  Si está quieto, no se mueve, prueba ataque alimaña
+        if (quieto) //  Si está quieto, no se mueve
         {
             animator.Play("idle");
-            SpriteAnimator spa = GetComponent<SpriteAnimator>();
-            //spa.currentState = "Idle";
+            StopWalkingSound();
             return;
         }
-
-        else
-        {
 
         if (isWaiting)
         {
@@ -45,9 +44,7 @@ public class AutoMover : MonoBehaviour
             {
                 isWaiting = false;
                 animator.Play("run");
-                SpriteAnimator spa = GetComponent<SpriteAnimator>();
-                //spa.currentState = "Run";
-                // Voltear en la dirección correcta
+                PlayWalkingSound();
                 FaceDirection(goingLeft ? Vector2.left : Vector2.right);
             }
         }
@@ -62,8 +59,7 @@ public class AutoMover : MonoBehaviour
                 isWaiting = true;
                 timer = waitTime;
                 animator.Play("idle");
-                //SpriteAnimator spa = GetComponent<SpriteAnimator>();
-                //spa.currentState = "Idle";
+                StopWalkingSound();
             }
             else if (!goingLeft && transform.position.x >= startPos.x)
             {
@@ -71,10 +67,8 @@ public class AutoMover : MonoBehaviour
                 isWaiting = true;
                 timer = waitTime;
                 animator.Play("idle");
-                //SpriteAnimator spa = GetComponent<SpriteAnimator>();
-                //spa.currentState = "Idle";
+                StopWalkingSound();
             }
-        }
         }
     }
 
@@ -86,5 +80,26 @@ public class AutoMover : MonoBehaviour
         else
             scale.x = -Mathf.Abs(scale.x); // Mira a la derecha
         transform.localScale = scale;
+    }
+
+    private void PlayWalkingSound()
+    {
+        if (audioSource != null && walkClip != null)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = walkClip;
+                audioSource.loop = true; // Repite mientras camina
+                audioSource.Play();
+            }
+        }
+    }
+
+    private void StopWalkingSound()
+    {
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
     }
 }
