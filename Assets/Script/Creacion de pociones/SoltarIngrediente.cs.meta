@@ -4,8 +4,13 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - pocionVidaPrefab: {instanceID: 0}
-  - pocionMejoraPrefab: {instanceID: 0}
+  - pocionVidaPrefab: {fileID: 3577975577442756757, guid: 94eff3aa20c0efd42919a48b581c49ee, type: 3}
+  - pocionMejoraPrefab: {fileID: 8815221515953262091, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
+  - prefabPocionVida: {fileID: 3577975577442756757, guid: 94eff3aa20c0efd42919a48b581c49ee, type: 3}
+  - prefabPocionMejora: {fileID: 8815221515953262091, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
+  - audioSource: {instanceID: 0}
+  - sonidoCreacionPocion: {fileID: 8300000, guid: 2429e01de3a0a924cbbcd95cd5d2abb0, type: 3}
+  - panelIngredientes: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
