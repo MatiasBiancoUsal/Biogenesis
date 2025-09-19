@@ -107,7 +107,7 @@ public class InventarioManagerPrueba : MonoBehaviour
     {
         foreach (Slot slot in slots)
         {
-            if (slot.cantidad <= 0)
+            if (slot.cantidad < 4)
                 return false;
         }
         return true;
