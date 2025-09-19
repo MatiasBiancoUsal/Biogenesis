@@ -19,7 +19,7 @@ public class BandejaManager : MonoBehaviour
     void Start()
     {
         // Al inicio, la bandeja está cerrada
-        bandejaPanel.SetActive(false);
+        //bandejaPanel.SetActive(false);
     }
 
     public void ToggleBandeja()

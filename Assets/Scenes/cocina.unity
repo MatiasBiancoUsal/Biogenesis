@@ -1001,7 +1001,9 @@ MonoBehaviour:
   - Laboratorio
   - Laboratorio Abandonado
   - SampleScene
+  escenaDerecha: cocina
   canvasGroup: {fileID: 585449453}
+  bandejaPanel: {fileID: 1922214104}
 --- !u!225 &585449453
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1181,6 +1183,10 @@ PrefabInstance:
     - target: {fileID: 6881952462438188439, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_Name
       value: DialoguePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881952462438188439, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7309739901124955807, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2219,10 +2225,10 @@ RectTransform:
   - {fileID: 2030283288}
   m_Father: {fileID: 585449451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 165, y: 0}
-  m_SizeDelta: {x: -537.2513, y: -302.1328}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 193, y: 0}
+  m_SizeDelta: {x: 262.74872, y: 147.86719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1922214105
 MonoBehaviour:

@@ -10,8 +10,24 @@ public class BandejaPersistente : MonoBehaviour
     [Header("Escenas donde la bandeja está permitida")]
     public string[] escenasPermitidas;
 
+    //Nuevo Sofi
+    [Header("Escena donde la bandeja va a la derecha")]
+    public string escenaDerecha;
+    //
+
     [Header("Canvas Group de la bandeja")]
     public CanvasGroup canvasGroup; // arrastralo en el inspector
+
+    //Nuevo Sofi
+    [Header("Panel de la bandeja")]
+    public RectTransform bandejaPanel;
+
+    private Vector2 posIzquierda = new Vector2(0f, 0.5f); // Ancla en el medio izquierdo
+    private Vector2 posDerecha = new Vector2(1f, 0.5f); // Ancla en el medio derecho
+
+    private Vector2 pivotIzquierda = new Vector2(0f, 0.5f); // Pivot a la izquierda
+    private Vector2 pivotDerecha = new Vector2(1f, 0.5f); // Pivot a la derecha
+    //
 
     void Awake()
     {
@@ -40,6 +56,7 @@ public class BandejaPersistente : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         bool habilitada = false;
+        bool enEscenaDerecha = (scene.name == escenaDerecha); //Nuevo Sofi
 
         foreach (string nombre in escenasPermitidas)
         {
@@ -51,23 +68,40 @@ public class BandejaPersistente : MonoBehaviour
         }
 
         MostrarBandeja(habilitada);
+        CambiarPosicion(enEscenaDerecha); //Nuevo Sofi
+
+        //Nuevo sofi, para que no aparezca abierta al cambiar de escena
+        if (bandejaPanel != null)
+        {
+            bandejaPanel.gameObject.SetActive(false);
+        }
     }
 
+    //Cambio script sofi
     void MostrarBandeja(bool mostrar)
     {
         if (canvasGroup == null) return;
+        canvasGroup.alpha = mostrar ? 1f : 0f;
+        canvasGroup.interactable = mostrar;
+        canvasGroup.blocksRaycasts = mostrar;
+    }
 
-        if (mostrar)
+    void CambiarPosicion(bool enDerecha)
+    {
+        if (bandejaPanel == null) return;
+
+        if (enDerecha)
         {
-            canvasGroup.alpha = 1f;           // visible
-            canvasGroup.interactable = true; // permite clicks
-            canvasGroup.blocksRaycasts = true; // bloquea raycasts detrás
+            // Coloca la bandeja a la derecha
+            // Asume que los anclajes están en el lado derecho del canvas
+            bandejaPanel.anchoredPosition = new Vector2(200, 0); // Ajusta este valor
         }
         else
         {
-            canvasGroup.alpha = 0f;           // invisible
-            canvasGroup.interactable = false; // no clickeable
-            canvasGroup.blocksRaycasts = false; // no bloquea
+            // Coloca la bandeja a la izquierda
+            // Asume que los anclajes están en el lado izquierdo del canvas
+            bandejaPanel.anchoredPosition = new Vector2(-200, 0); // Ajusta este valor
         }
     }
+    //
 }
