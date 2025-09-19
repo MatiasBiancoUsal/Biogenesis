@@ -618,6 +618,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hungerBar: {fileID: 418388669}
   comidaEsp: {fileID: 0}
+  sonidoComer: {fileID: 0}
+  audioSourceComida: {fileID: 0}
 --- !u!114 &319003657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,7 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d6f239cb5a90548ad73443abbbaa91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventarioManager: {fileID: 0}
+  objetoCriatura: {fileID: 319003650}
 --- !u!114 &319003658
 MonoBehaviour:
   m_ObjectHideFlags: 0
