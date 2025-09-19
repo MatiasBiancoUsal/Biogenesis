@@ -3,7 +3,7 @@ using UnityEngine;
 public class RecolectarADN : MonoBehaviour
 {
     public string itemName;
-    public Sprite icon;
+   
     public int quantity = 1;
 
     private AudioSource audioSource;
@@ -15,21 +15,20 @@ public class RecolectarADN : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (InventarioGlobal.Instance != null)
+        if (InventarioManagerPrueba.instancia != null)
         {
-            InventarioGlobal.Instance.AgregarADN(itemName, quantity);
+            InventarioManagerPrueba.instancia.AñadirADN(itemName);
         }
         else
         {
-            Debug.LogWarning("InventarioGlobal no encontrado.");
+            Debug.LogError("ERROR CRÍTICO: No se encuentra la instancia de InventarioManagerPrueba. Asegúrate de que el objeto con este script esté en tu primera escena (Laboratorio).");
         }
 
         if (audioSource != null && audioSource.clip != null)
         {
-            // Reproducir sonido independiente del prefab
             AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position);
         }
 
-        Destroy(gameObject); // ya se puede destruir de inmediato
+        Destroy(gameObject);
     }
 }

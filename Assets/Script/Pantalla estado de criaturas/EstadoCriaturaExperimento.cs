@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EstadoCriaturaExperimento : MonoBehaviour
 {
-    public InventarioManager InventarioManager; // Lo arrastrás desde el inspector
+    public InventarioManagerPrueba InventarioManagerPrueba; // Lo arrastrás desde el inspector
 
     private SpriteRenderer sr;
 

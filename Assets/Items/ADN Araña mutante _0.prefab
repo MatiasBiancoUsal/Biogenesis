@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: "ADN Ara\xF1a Mutante"
-  icon: {fileID: 0}
+  icon: {fileID: -862749893198049629, guid: cb7c55b82c174c741a9dabb6c210a278, type: 3}
   quantity: 1
 --- !u!82 &-9005881895662745034
 AudioSource:

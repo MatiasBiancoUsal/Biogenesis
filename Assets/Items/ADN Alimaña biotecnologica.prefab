@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: "ADN Alima\xF1a Biotecnologica"
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 8cf10e94737b80c47935122812175faf, type: 3}
   quantity: 1
 --- !u!82 &3172033186801282117
 AudioSource:

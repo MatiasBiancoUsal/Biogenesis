@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: ADN Mutante Radiactivo
-  icon: {fileID: 0}
+  icon: {fileID: -2197920147653139167, guid: ab4ba0978ab8b96469c80c5bdf2c6376, type: 3}
   quantity: 1
 --- !u!82 &5923766930707659807
 AudioSource:
