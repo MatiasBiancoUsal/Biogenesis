@@ -15,8 +15,9 @@ public class PantallazoCriatura : MonoBehaviour
 
     void Update()
     {
-        // Escuchar cuando se crea la criatura
-        if (!yaMostrado && CriaturaCreada.Instance != null && CriaturaCreada.Instance.criaturaCreada)
+        // --- LA LÍNEA CORREGIDA ---
+        // Ahora escuchamos al manager correcto, el que tiene la información persistente.
+        if (!yaMostrado && InventarioManagerPrueba.instancia != null && InventarioManagerPrueba.instancia.criaturaCreada)
         {
             StartCoroutine(MostrarPantallazoRutina());
         }
@@ -24,9 +25,10 @@ public class PantallazoCriatura : MonoBehaviour
 
     private IEnumerator MostrarPantallazoRutina()
     {
-        pantallazoUI.SetActive(true);
+        // Esta parte ya estaba perfecta.
+        if (pantallazoUI != null) pantallazoUI.SetActive(true);
         yaMostrado = true;
         yield return new WaitForSeconds(duracion);
-        pantallazoUI.SetActive(false);
+        if (pantallazoUI != null) pantallazoUI.SetActive(false);
     }
 }
