@@ -33,7 +33,8 @@ public class InventarioManagerPrueba : MonoBehaviour
     public GameObject criaturaExperimentoPrefab;
     public Transform spawnPoint;
     public bool criaturaCreada = false;
-
+    [Tooltip("Arrastra aquí el botón de la UI para crear la criatura.")]
+    public GameObject botonCrearCriatura;
     // Evento para notificar a la UI de los cambios
     public static event Action OnInventarioChanged;
 
