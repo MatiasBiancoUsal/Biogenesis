@@ -118,6 +118,16 @@ public class InventarioManagerPrueba : MonoBehaviour
         Debug.Log("¡Lógica de Criatura Creada completada!");
         criaturaCreada = true;
         // GameManager.Instance.NotificarExperimentoCreado(); // Si usas un GameManager
+
+        //Script Sofi para bloquear y desbloquear la escena de la criatura experimento
+        BotonCriaturaExperimento botonExp = FindAnyObjectByType<BotonCriaturaExperimento>();
+
+        if (botonExp != null)
+        {
+            botonExp.ActualizarEstadoBoton();
+            Debug.Log("Botón de criatura Experimento actualizado.");
+        }
+        //
     }
 
     private void InstanciarCriatura()
