@@ -45,6 +45,8 @@ public class DragItemComidaUI : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         // Raycast hacia la escena 2D
         RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos2D, Vector2.zero);
 
+        bool comidaConsumida = false; //NUEVO SOFI
+
         if (hit.collider != null)
         {
             CriaturaComidaEsp criatura = hit.collider.GetComponent<CriaturaComidaEsp>();
@@ -54,8 +56,8 @@ public class DragItemComidaUI : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                 if (criatura.comidaAceptada == comida2DPrefab)
                 {
                     // Instancia rápida del prefab (opcional: sirve para animaciones visuales)
-                    GameObject comida = Instantiate(comida2DPrefab, mouseWorldPos2D, Quaternion.identity);
-                    Destroy(comida, 0.1f); // lo destruimos enseguida
+                    //GameObject comida = Instantiate(comida2DPrefab, mouseWorldPos2D, Quaternion.identity);
+                    //Destroy(comida, 0.1f); // lo destruimos enseguida
 
                     // Buscar la barra de hambre en la criatura y alimentarla
                     HungerBar hungerBar = criatura.GetComponent<CreatureEat>()?.hungerBar;
@@ -65,26 +67,29 @@ public class DragItemComidaUI : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                         Debug.Log($"{criatura.name} comió y se alimentó!");
                     }
 
-                    // Eliminar el icono de la bandeja (consumir comida)
-                    Destroy(gameObject);
-
-                    // Avisar al BandejaManager que se liberó un espacio
-                    BandejaManager bandejaManager = FindFirstObjectByType<BandejaManager>();
-                    if (bandejaManager != null)
-                    {
-                        bandejaManager.QuitarComida();
-                    }
-                }
-                else
-                {
-                    Debug.Log(criatura.name + " no acepta esta comida.");
-                    rectTransform.position = startPos; // vuelve a la bandeja
+                    comidaConsumida = true;
                 }
             }
         }
+
+
+        // Si la comida no fue consumida por una criatura, la devolvemos a la bandeja
+        if (!comidaConsumida)
+        {
+            rectTransform.position = startPos; // El ícono vuelve a su posición original en la bandeja
+        }
         else
         {
-            rectTransform.position = startPos;
+            // Si la comida fue consumida, la eliminamos del UI
+            // Avisar al BandejaManager que se liberó un espacio
+            BandejaManager bandejaManager = FindFirstObjectByType<BandejaManager>();
+            if (bandejaManager != null)
+            {
+                bandejaManager.QuitarComida();
+            }
+
+            // Destruir el icono de la bandeja
+            Destroy(gameObject);
         }
 
         canvasGroup.blocksRaycasts = true;
