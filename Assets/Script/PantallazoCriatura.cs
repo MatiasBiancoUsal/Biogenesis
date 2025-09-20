@@ -3,32 +3,50 @@ using UnityEngine;
 
 public class PantallazoCriatura : MonoBehaviour
 {
-    public GameObject pantallazoUI; // La imagen dentro del Canvas
-    public float duracion = 3f;     // Tiempo que dura el pantallazo
+    [Tooltip("Arrastra aquí la imagen o panel de la UI que quieres mostrar.")]
+    public GameObject pantallazoUI;
+
+    [Tooltip("Tiempo en segundos que la imagen permanecerá en pantalla.")]
+    public float duracion = 3f;
+
+    // Variable estática para asegurar que solo se muestre una vez por sesión de juego.
     private static bool yaMostrado = false;
 
-    void Start()
+    // Al activarse el objeto, nos suscribimos para recibir noticias del manager.
+    private void OnEnable()
     {
-        if (pantallazoUI != null)
-            pantallazoUI.SetActive(false); // Oculto al inicio
+        InventarioManagerPrueba.OnCriaturaCreada += DispararPantallazo;
     }
 
-    void Update()
+    // Al desactivarse, nos damos de baja para evitar errores.
+    private void OnDisable()
     {
-        // --- LA LÍNEA CORREGIDA ---
-        // Ahora escuchamos al manager correcto, el que tiene la información persistente.
-        if (!yaMostrado && InventarioManagerPrueba.instancia != null && InventarioManagerPrueba.instancia.criaturaCreada)
+        InventarioManagerPrueba.OnCriaturaCreada -= DispararPantallazo;
+    }
+
+    // Este método es llamado por el evento 'OnCriaturaCreada' desde el manager.
+    public void DispararPantallazo()
+    {
+        // Solo procedemos si no se ha mostrado antes y si la UI está asignada.
+        if (!yaMostrado && pantallazoUI != null)
         {
             StartCoroutine(MostrarPantallazoRutina());
         }
     }
 
+    // La corutina que muestra y oculta la UI.
     private IEnumerator MostrarPantallazoRutina()
     {
-        // Esta parte ya estaba perfecta.
-        if (pantallazoUI != null) pantallazoUI.SetActive(true);
+        // Pre-activamos el objeto por si estaba desactivado
+        pantallazoUI.SetActive(true);
+
+        // Marcamos como mostrado para que no se repita
         yaMostrado = true;
+
+        // Esperamos el tiempo definido
         yield return new WaitForSeconds(duracion);
-        if (pantallazoUI != null) pantallazoUI.SetActive(false);
+
+        // Ocultamos la UI
+        pantallazoUI.SetActive(false);
     }
 }

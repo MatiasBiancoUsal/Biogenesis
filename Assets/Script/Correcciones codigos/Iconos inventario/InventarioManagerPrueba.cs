@@ -19,7 +19,10 @@ public class Slot
 
 public class InventarioManagerPrueba : MonoBehaviour
 {
+    // --- SINGLETON Y EVENTOS ---
     public static InventarioManagerPrueba instancia;
+    public static event Action OnInventarioChanged;
+    public static event Action OnCriaturaCreada;
 
     [Header("Base de Datos de Items")]
     [Tooltip("Configura aquí todos los tipos de ADN que existen en el juego.")]
@@ -30,13 +33,8 @@ public class InventarioManagerPrueba : MonoBehaviour
     public Slot[] slots;
 
     [Header("Lógica de la Criatura")]
-    public GameObject criaturaExperimentoPrefab;
-    public Transform spawnPoint;
+    [Tooltip("Esta bandera se vuelve 'true' cuando la criatura ha sido creada.")]
     public bool criaturaCreada = false;
-    [Tooltip("Arrastra aquí el botón de la UI para crear la criatura.")]
-    public GameObject botonCrearCriatura;
-    // Evento para notificar a la UI de los cambios
-    public static event Action OnInventarioChanged;
 
     void Awake()
     {
@@ -49,94 +47,87 @@ public class InventarioManagerPrueba : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // --- MÉTODO MODIFICADO ---
-    // Ahora solo necesita el nombre, es más simple y robusto.
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Debug.Log("--- PRUEBA DE TECLADO: Forzando creación de criatura... ---");
+            CrearCriatura();
+        }
+    }
+    /// <summary>
+    /// Añade un ADN al inventario y notifica a la UI.
+    /// </summary>
     public void AñadirADN(string nombreADN)
     {
-        bool adnEncontrado = false;
         foreach (Slot slot in slots)
         {
             if (slot.nombreADN == nombreADN)
             {
                 slot.cantidad++;
-                adnEncontrado = true;
-                Debug.Log($"DATO AÑADIDO: {nombreADN}, cantidad ahora {slot.cantidad}");
-
-                // Avisamos que el inventario cambió
-                OnInventarioChanged?.Invoke();
-                break;
+                OnInventarioChanged?.Invoke(); // Avisa a la UI que se actualice.
+                return; // Sale de la función una vez que encuentra y actualiza el item.
             }
         }
-
-        if (!adnEncontrado)
-        {
-            Debug.LogWarning($"AVISO: Se intentó añadir '{nombreADN}', pero no se encontró un slot con ese nombre en 'Datos del Inventario'.");
-        }
-
-        RevisarADNCompletos();
     }
 
-    // --- NUEVA FUNCIÓN ---
-    // Permite que la UI (y otros scripts) pregunten por el ícono correcto.
-    public Sprite GetIconoPorNombre(string nombreADN)
+    /// <summary>
+    /// Este método es llamado por el botón de la UI.
+    /// </summary>
+    public void BotonPresionadoCrearCriatura()
     {
-        foreach (DefinicionADN definicion in databaseADN)
+        if (TodosLosADNRecolectados() && !criaturaCreada)
         {
-            if (definicion.nombre == nombreADN)
-            {
-                return definicion.icono;
-            }
-        }
-        Debug.LogWarning($"No se encontró un ícono para '{nombreADN}' en la base de datos.");
-        return null;
-    }
-
-    // --- LÓGICA DE JUEGO (sin cambios) ---
-    private void RevisarADNCompletos()
-    {
-        if (TodosLosADNRecolectados())
-        {
-            if (!criaturaCreada)
-            {
-                InstanciarCriatura();
-                CrearCriatura();
-            }
+            Debug.Log("Botón presionado. Marcando criatura como 'creada'.");
+            CrearCriatura();
         }
     }
 
-    bool TodosLosADNRecolectados()
+    /// <summary>
+    /// Pone a cero todas las cantidades del inventario y resetea el estado de la criatura.
+    /// </summary>
+    public void ReiniciarInventario()
     {
         foreach (Slot slot in slots)
         {
-            if (slot.cantidad < 4)
-                return false;
+            slot.cantidad = 0;
+        }
+        criaturaCreada = false;
+        OnInventarioChanged?.Invoke(); // Avisa a la UI para que se actualice a ceros.
+        Debug.Log("¡Inventario Reiniciado!");
+    }
+
+    /// <summary>
+    /// Revisa si el jugador ha recolectado 4 o más de cada tipo de ADN.
+    /// </summary>
+    public bool TodosLosADNRecolectados()
+    {
+        foreach (Slot slot in slots)
+        {
+            if (slot.cantidad < 4) return false;
         }
         return true;
     }
 
-    void CrearCriatura()
+    /// <summary>
+    /// Devuelve el Sprite de un ADN buscándolo por su nombre en la base de datos.
+    /// </summary>
+    public Sprite GetIconoPorNombre(string nombreADN)
     {
-        Debug.Log("¡Lógica de Criatura Creada completada!");
-        criaturaCreada = true;
-        // GameManager.Instance.NotificarExperimentoCreado(); // Si usas un GameManager
-
-        //Script Sofi para bloquear y desbloquear la escena de la criatura experimento
-        BotonCriaturaExperimento botonExp = FindAnyObjectByType<BotonCriaturaExperimento>();
-
-        if (botonExp != null)
+        foreach (DefinicionADN definicion in databaseADN)
         {
-            botonExp.ActualizarEstadoBoton();
-            Debug.Log("Botón de criatura Experimento actualizado.");
+            if (definicion.nombre == nombreADN) return definicion.icono;
         }
-        //
+        return null;
     }
 
-    private void InstanciarCriatura()
+    /// <summary>
+    /// Contiene la lógica a ejecutar una vez que se crea la criatura.
+    /// </summary>
+    private void CrearCriatura()
     {
-        if (criaturaExperimentoPrefab != null && spawnPoint != null)
-        {
-            Instantiate(criaturaExperimentoPrefab, spawnPoint.position, Quaternion.identity);
-            Debug.Log("¡Criatura Experimento instanciada en la escena!");
-        }
+        criaturaCreada = true;
+        OnCriaturaCreada?.Invoke(); // Avisa al "pantallazo" que debe mostrarse.
+        Debug.Log("La bandera 'criaturaCreada' es ahora true.");
     }
 }

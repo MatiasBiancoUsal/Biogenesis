@@ -2,12 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// --- CLASE AUXILIAR PARA REFERENCIAS DE UI ---
+// --- CLASE AUXILIAR ---
 [System.Serializable]
 public class SlotUI
 {
     public string nombreADN;
-    public Image imagenSlot;
+    public Image imagenFondoSlot;
+    public Image imagenIconoItem;
     public TextMeshProUGUI cantidadTexto;
 }
 
@@ -16,58 +17,53 @@ public class InventarioUI : MonoBehaviour
     public GameObject panelInventario;
     public SlotUI[] slotsVisuales;
 
-    // Al activarse, nos suscribimos al evento
+    [Header("Componentes Adicionales")]
+    public GameObject botonCrearCriatura;
+
     private void OnEnable()
     {
-        Debug.Log("<color=yellow>SUSCRIPCIÓN:</color> InventarioUI se ha activado y suscrito al evento OnInventarioChanged.");
         InventarioManagerPrueba.OnInventarioChanged += ActualizarUI;
-        // Actualizamos una vez por si ya había datos
-        ActualizarUI();
+        ActualizarUI(); // Actualiza al abrir el inventario
     }
 
-    // Al desactivarse, nos damos de baja
     private void OnDisable()
     {
-        Debug.Log("<color=orange>DESUSCRIPCIÓN:</color> InventarioUI se ha desactivado y quitado la suscripción.");
         InventarioManagerPrueba.OnInventarioChanged -= ActualizarUI;
     }
-
-    // --- DENTRO DE InventarioUI.cs ---
 
     void ActualizarUI()
     {
         if (InventarioManagerPrueba.instancia == null) return;
 
+        // Actualiza cada slot visual
         foreach (SlotUI slotV in slotsVisuales)
         {
-            // 1. Buscamos el ícono en la nueva base de datos del manager
             Sprite iconoCorrecto = InventarioManagerPrueba.instancia.GetIconoPorNombre(slotV.nombreADN);
-            slotV.imagenSlot.sprite = iconoCorrecto; // Asignamos el ícono SIEMPRE
+            Slot slotDato = System.Array.Find(InventarioManagerPrueba.instancia.slots, s => s.nombreADN == slotV.nombreADN);
 
-            // 2. Buscamos los datos de la partida (cantidad)
-            Slot slotDato = null;
-            foreach (Slot s in InventarioManagerPrueba.instancia.slots)
-            {
-                if (s.nombreADN == slotV.nombreADN)
-                {
-                    slotDato = s;
-                    break;
-                }
-            }
-
-            // 3. Actualizamos la cantidad y el color
             if (slotDato != null && slotDato.cantidad > 0)
             {
-                // Si tenemos el item, mostramos su cantidad y color normal
+                slotV.imagenIconoItem.sprite = iconoCorrecto;
+                slotV.imagenIconoItem.enabled = true;
                 slotV.cantidadTexto.text = slotDato.cantidad.ToString();
-                slotV.imagenSlot.color = Color.white;
+                slotV.imagenFondoSlot.color = Color.white;
             }
             else
             {
-                // Si no tenemos el item, mostramos "0" y oscurecemos el ícono
+                slotV.imagenIconoItem.enabled = false;
                 slotV.cantidadTexto.text = "0";
-                slotV.imagenSlot.color = new Color(0.2f, 0.2f, 0.2f, 0.8f);
+                slotV.imagenFondoSlot.color = new Color(0.2f, 0.2f, 0.2f, 0.8f);
             }
+        }
+
+        // Lógica para mostrar/ocultar el botón de crear criatura
+        if (InventarioManagerPrueba.instancia.TodosLosADNRecolectados() && !InventarioManagerPrueba.instancia.criaturaCreada)
+        {
+            if (botonCrearCriatura != null) botonCrearCriatura.SetActive(true);
+        }
+        else
+        {
+            if (botonCrearCriatura != null) botonCrearCriatura.SetActive(false);
         }
     }
 }

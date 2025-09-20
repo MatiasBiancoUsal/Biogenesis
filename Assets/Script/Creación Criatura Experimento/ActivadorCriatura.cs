@@ -1,35 +1,51 @@
 using UnityEngine;
 
+
 public class ActivadorCriatura : MonoBehaviour
 {
     // Arrastra aquí desde el Inspector el GameObject de la criatura que quieres activar.
     public GameObject objetoCriatura;
 
+    // --- CICLO DE VIDA DE UNITY ---
+
+    void OnEnable()
+    {
+        // 1. Nos suscribimos al evento. Ahora este script será notificado.
+        InventarioManagerPrueba.OnCriaturaCreada += ActivarLaCriatura;
+    }
+
+    void OnDisable()
+    {
+        // 2. Nos desuscribimos para evitar errores. ¡Buena práctica!
+        InventarioManagerPrueba.OnCriaturaCreada -= ActivarLaCriatura;
+    }
+
     void Start()
     {
-        // 1. Busca la instancia global del manager al iniciar la escena.
-        //    Esta es la "magia" del Singleton que funciona entre escenas.
-        InventarioManagerPrueba manager = InventarioManagerPrueba.instancia;
-
-        // 2. Verificamos que encontramos el manager.
-        if (manager == null)
+        // 3. Revisamos el estado inicial al cargar la escena.
+        //    Esto sirve si el jugador ya creó la criatura y vuelve a cargar esta escena.
+        if (InventarioManagerPrueba.instancia != null && InventarioManagerPrueba.instancia.criaturaCreada)
         {
-            Debug.LogError("No se pudo encontrar la instancia de InventarioManagerPrueba. Asegúrate de que tu escena inicial (donde está el manager) se cargó primero.");
-            // Desactivamos la criatura por seguridad si no encontramos el manager.
-            if (objetoCriatura != null) objetoCriatura.SetActive(false);
-            return;
-        }
-
-        // 3. Usamos la referencia 'manager' para decidir si activar o no la criatura.
-        if (manager.criaturaCreada)
-        {
-            Debug.Log("La criatura ya fue creada anteriormente. Activando el objeto de la criatura.");
-            if (objetoCriatura != null) objetoCriatura.SetActive(true);
+            ActivarLaCriatura();
         }
         else
         {
-            Debug.Log("La criatura aún no ha sido creada. El objeto de la criatura permanecerá desactivado.");
+            // Nos aseguramos de que esté desactivada al empezar.
             if (objetoCriatura != null) objetoCriatura.SetActive(false);
+        }
+    }
+
+    // --- MÉTODOS ---
+
+    /// <summary>
+    /// Este método es llamado por el evento OnCriaturaCreada.
+    /// </summary>
+    private void ActivarLaCriatura()
+    {
+        Debug.Log("¡Evento OnCriaturaCreada recibido! Activando la criatura.");
+        if (objetoCriatura != null)
+        {
+            objetoCriatura.SetActive(true);
         }
     }
 }
