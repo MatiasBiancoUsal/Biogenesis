@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b00910b3008dd4ab32630aa524d867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventarioManager: {fileID: 0}
+  InventarioManagerPrueba: {fileID: 0}
   imgNombre: {fileID: 691441738}
   barraHP: {fileID: 359381494}
   barraComida: {fileID: 1076537329}
@@ -870,8 +870,10 @@ MonoBehaviour:
   hungerValue: 1
   hungerDecreaseRate: 0.01
   creatureID: "Alima\xF1a"
+  soloMostrar: 1
   personajeAsociado: {fileID: 0}
   damagePerSecond: 5
+  saveInterval: 1
 --- !u!1 &635790018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,9 +1268,11 @@ MonoBehaviour:
   hungerFill: {fileID: 1394275752}
   hungerValue: 1
   hungerDecreaseRate: 0.01
-  creatureID: "Alima\xF1a"
+  creatureID: "Ara\xF1a"
+  soloMostrar: 1
   personajeAsociado: {fileID: 0}
   damagePerSecond: 5
+  saveInterval: 1
 --- !u!1 &1037170907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,9 +1457,11 @@ MonoBehaviour:
   hungerFill: {fileID: 1131749020}
   hungerValue: 1
   hungerDecreaseRate: 0.01
-  creatureID: "Alima\xF1a"
+  creatureID: Experimento
+  soloMostrar: 1
   personajeAsociado: {fileID: 0}
   damagePerSecond: 5
+  saveInterval: 1
 --- !u!1 &1054785211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,9 +1886,11 @@ MonoBehaviour:
   hungerFill: {fileID: 673938732}
   hungerValue: 1
   hungerDecreaseRate: 0.01
-  creatureID: "Alima\xF1a"
+  creatureID: Mutante
+  soloMostrar: 1
   personajeAsociado: {fileID: 0}
   damagePerSecond: 5
+  saveInterval: 1
 --- !u!1 &1460748311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,9 +2580,11 @@ MonoBehaviour:
   hungerFill: {fileID: 205420224}
   hungerValue: 1
   hungerDecreaseRate: 0.01
-  creatureID: "Alima\xF1a"
+  creatureID: Cazador
+  soloMostrar: 1
   personajeAsociado: {fileID: 0}
   damagePerSecond: 5
+  saveInterval: 1
 --- !u!1 &2055858335
 GameObject:
   m_ObjectHideFlags: 0

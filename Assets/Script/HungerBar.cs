@@ -3,78 +3,105 @@ using UnityEngine.UI;
 
 public class HungerBar : MonoBehaviour
 {
-    public Image hungerFill; // Asigna aquí la Image de la barra
-    public float hungerValue = 1f; // Entre 0 y 1
-    public float hungerDecreaseRate = 0.01f; // Cuánto baja por segundo
+    public Image hungerFill;
+    [Range(0f, 1f)] public float hungerValue = 1f;
+    public float hungerDecreaseRate = 0.01f;
+
     [Header("Identificador único de la criatura")]
     public string creatureID = "Alimaña";
-    //  Cambiás este valor en el Inspector: "Alimaña", "Mutante", "Araña" o "Experimento"
 
-    //codigo sofi
+    [Header("Opciones")]
+    public bool soloMostrar = false; // --> marcar true en la escena resumen
+
+    // codigo sofi
     public Personaje personajeAsociado;
-
     public int damagePerSecond = 5;
     private float damageTimer = 0f;
-    private float damageInterval = 1f; // Daño cada 1 segundo
-    //
+    private float damageInterval = 1f;
+    // --
 
-    private void Start()
-    {
-        // Cargar hambre guardada
-        hungerValue = PlayerPrefs.GetFloat("Hambre_" + creatureID, 1f);
-        UpdateHungerUI();
+    // Guardado optimizado
+    public float saveInterval = 1f; // guardar como máximo cada 1s
+    private float saveTimer = 0f;
+    private float lastSavedValue = -1f;
 
-        //codigo sofi
-        if (personajeAsociado == null)
-        {
-            Debug.LogError("No se asignó un personaje al script HungerBar");
-        }
-        //
-    }
-    void Update()
+    void Start()
     {
-        hungerValue -= hungerDecreaseRate * Time.deltaTime;
+        hungerValue = PlayerPrefs.GetFloat(GetKey(), 1f);
         hungerValue = Mathf.Clamp01(hungerValue);
         UpdateHungerUI();
 
-        //codigo sofi
-        if (hungerValue <= 0)
+        if (personajeAsociado == null && !soloMostrar)
+            Debug.LogWarning($"HungerBar ({creatureID}): personjeAsociado no asignado.");
+    }
+
+    void Update()
+    {
+        if (!soloMostrar)
         {
-            damageTimer += Time.deltaTime;
-            if (damageTimer >= damageInterval)
+            // bajar hambre
+            hungerValue -= hungerDecreaseRate * Time.deltaTime;
+            hungerValue = Mathf.Clamp01(hungerValue);
+            UpdateHungerUI();
+
+            // daño por hambre
+            if (hungerValue <= 0f)
             {
-                if (personajeAsociado != null)
+                damageTimer += Time.deltaTime;
+                if (damageTimer >= damageInterval)
                 {
-                    // Llama a la función TomarDaño del script Personaje
-                    personajeAsociado.TomarDaño(damagePerSecond);
-                    Debug.Log("La criatura está muriendo de hambre. Vida actual: " + personajeAsociado.vida);
+                    if (personajeAsociado != null)
+                        personajeAsociado.TomarDaño(damagePerSecond);
+
+                    damageTimer = 0f;
                 }
-                damageTimer = 0f; // Reinicia el temporizador
+            }
+            else damageTimer = 0f;
+
+            // guardado periódico (no cada frame)
+            saveTimer += Time.deltaTime;
+            if (saveTimer >= saveInterval)
+            {
+                if (!Mathf.Approximately(hungerValue, lastSavedValue))
+                {
+                    PlayerPrefs.SetFloat(GetKey(), hungerValue);
+                    PlayerPrefs.Save();
+                    lastSavedValue = hungerValue;
+                }
+                saveTimer = 0f;
             }
         }
         else
         {
-            damageTimer = 0f; // Reinicia el temporizador si no tiene hambre
+            // modo solo visual: leer lo guardado y mostrar
+            hungerValue = PlayerPrefs.GetFloat(GetKey(), 1f);
+            hungerValue = Mathf.Clamp01(hungerValue);
+            UpdateHungerUI();
         }
-        //
-
-        //Guardar automáticamente
-        PlayerPrefs.SetFloat("Hambre_" + creatureID, hungerValue);
-        PlayerPrefs.Save();
     }
 
     public void Feed(float amount)
     {
-        hungerValue += amount;
-        //hungerValue = Mathf.Clamp01(hungerValue);
+        hungerValue = Mathf.Clamp01(hungerValue + amount);
         UpdateHungerUI();
 
-        PlayerPrefs.SetFloat("Hambre_" + creatureID, hungerValue);
+        PlayerPrefs.SetFloat(GetKey(), hungerValue);
         PlayerPrefs.Save();
+        lastSavedValue = hungerValue;
     }
 
     void UpdateHungerUI()
     {
-        hungerFill.fillAmount = hungerValue/1;
+        if (hungerFill != null)
+            hungerFill.fillAmount = hungerValue;
+    }
+
+    private string GetKey() => "Hambre_" + creatureID;
+
+    void OnDisable()
+    {
+        // Guardado final al cambiar de escena / desactivar
+        PlayerPrefs.SetFloat(GetKey(), hungerValue);
+        PlayerPrefs.Save();
     }
 }
