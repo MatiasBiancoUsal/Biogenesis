@@ -31,18 +31,19 @@ public class MutacionMutante : MonoBehaviour, IMutable
     public GameObject prefabHumo;
     public float duracionHumo = 1.5f;
 
-
-
-    [Header("Efecto visual de mutación")]
+    [Header("Animaciones de mutación")]
     public AnimatorOverrideController controladorMutacion1;
     public AnimatorOverrideController controladorMutacion2;
     public Animator anim;
 
+    [Header("Sonidos de mutación")]
+    public AudioClip sonidoMutacion1;
+    public AudioClip sonidoMutacionFinal;
+    public AudioSource audioSource;
 
     void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-
         anim = GetComponent<Animator>();
 
         if (!escalaInicialDefinida)
@@ -65,13 +66,13 @@ public class MutacionMutante : MonoBehaviour, IMutable
             if (spriteRenderer != null && spriteOriginal != null)
             {
                 spriteRenderer.sprite = spriteOriginal;
-                //transform.localScale = escalaOriginalGuardada;
             }
 
             Debug.Log("Mutante reiniciado para testing.");
             return;
         }
 
+        // Restaurar estado si existía
         if (PlayerPrefs.HasKey(PREF_POCIONES))
         {
             pocionesRecibidas = PlayerPrefs.GetInt(PREF_POCIONES, 0);
@@ -89,14 +90,16 @@ public class MutacionMutante : MonoBehaviour, IMutable
         }
     }
 
-
-    public void Update()
+    void Update()
     {
         if (yaMutóPrimera && !yaMutóFinal)
+        {
             anim.runtimeAnimatorController = controladorMutacion1;
-
-        else if(yaMutóFinal)
+        }
+        else if (yaMutóFinal)
+        {
             anim.runtimeAnimatorController = controladorMutacion2;
+        }
     }
 
     public void RecibirPocion()
@@ -123,6 +126,11 @@ public class MutacionMutante : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutado1);
+
+        // ▶️ Reproducir sonido de primera mutación
+        if (audioSource != null && sonidoMutacion1 != null)
+            audioSource.PlayOneShot(sonidoMutacion1);
+
         Debug.Log("Mutante mutó por primera vez.");
     }
 
@@ -132,9 +140,14 @@ public class MutacionMutante : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutadoFinal);
+
+        // ▶️ Reproducir sonido de mutación final
+        if (audioSource != null && sonidoMutacionFinal != null)
+            audioSource.PlayOneShot(sonidoMutacionFinal);
+
         Debug.Log("Mutante alcanzó su mutación final.");
 
-        // para final del juego
+        // Notificar al GameManager
         GameManager.Instance.NotificarCriaturaMutadaFinal();
     }
 
@@ -143,30 +156,21 @@ public class MutacionMutante : MonoBehaviour, IMutable
         if (spriteRenderer == null || nuevoSprite == null)
             return;
 
-        // Instanciar humo en la posición de la criatura
+        // Crear humo
         if (prefabHumo != null)
         {
             GameObject humo = Instantiate(prefabHumo, transform.position, Quaternion.identity);
-            Destroy(humo, duracionHumo); // se destruye solo
+            Destroy(humo, duracionHumo);
         }
 
-        // Esperar un poco antes de cambiar sprite
+        // Esperar y luego cambiar sprite
         StartCoroutine(CambiarSpriteConDelay(nuevoSprite));
     }
 
     private System.Collections.IEnumerator CambiarSpriteConDelay(Sprite nuevoSprite)
     {
-        yield return new WaitForSeconds(duracionHumo * 0.8f); // casi al final del humo
-
+        yield return new WaitForSeconds(duracionHumo * 0.8f);
         spriteRenderer.sprite = nuevoSprite;
-        //DesactivarAnimator();
-    }
-
-    void DesactivarAnimator()
-    {
-        Animator animator = GetComponent<Animator>() ?? GetComponentInChildren<Animator>() ?? GetComponentInParent<Animator>();
-        if (animator != null)
-            animator.enabled = false;
     }
 
     void GuardarEstado()
