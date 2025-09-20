@@ -1792,7 +1792,6 @@ MonoBehaviour:
   - Bioma rocoso
   - Bioma Volcan Acido
   - Laboratorio Abandonado
-  uiWarning: {fileID: 598013158}
   audioSource: {fileID: 1549148991}
   alarmaClip: {fileID: 8300000, guid: ff2c08eb24f99384f84bc8ccca1866dd, type: 3}
   randomScene: 
@@ -2373,7 +2372,6 @@ MonoBehaviour:
   - Bioma rocoso
   - Bioma Volcan Acido
   - Laboratorio Abandonado
-  uiWarning: {fileID: 598013158}
   audioSource: {fileID: 2113523873}
   alarmaClip: {fileID: 8300000, guid: ff2c08eb24f99384f84bc8ccca1866dd, type: 3}
   randomScene: 
