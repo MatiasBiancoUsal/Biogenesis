@@ -13,7 +13,7 @@ public class MutacionAraña : MonoBehaviour, IMutable
 
     [Header("Referencia")]
     public float pixelsPorUnidad = 100f;
-    public Vector2 tamañoOriginalPixels = new Vector2(1650, 1654); // Tamaño original de la araña
+    public Vector2 tamañoOriginalPixels = new Vector2(1650, 1654);
 
     [Header("Debug / Testing")]
     public bool forzarReinicio = false;
@@ -27,9 +27,14 @@ public class MutacionAraña : MonoBehaviour, IMutable
     public bool yaMutóPrimera = false;
     public bool yaMutóFinal = false;
 
+    [Header("Animación")]
     public AnimatorOverrideController controladorMutacion1;
     public Animator anim;
 
+    [Header("Sonidos de mutación")]
+    public AudioClip sonidoMutacion1;
+    public AudioClip sonidoMutacionFinal;
+    public AudioSource audioSource;
 
     private const string PREF_POCIONES = "PocionesAraña";
     private const string PREF_MUTA1 = "ArañaMutada1";
@@ -39,6 +44,7 @@ public class MutacionAraña : MonoBehaviour, IMutable
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponent<Animator>();
+
         if (!escalaInicialDefinida)
         {
             escalaOriginalGuardada = transform.localScale;
@@ -87,8 +93,9 @@ public class MutacionAraña : MonoBehaviour, IMutable
 
     public void Update()
     {
-        //if (yaMutóPrimera && !yaMutóFinal)
-        //    anim.runtimeAnimatorController = controladorMutacion1;
+        // Puedes activar la animación si lo deseas más adelante
+        // if (yaMutóPrimera && !yaMutóFinal)
+        //     anim.runtimeAnimatorController = controladorMutacion1;
     }
 
     public void RecibirPocion()
@@ -115,6 +122,11 @@ public class MutacionAraña : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutado1);
+
+        // ▶️ Sonido de mutación 1
+        if (audioSource != null && sonidoMutacion1 != null)
+            audioSource.PlayOneShot(sonidoMutacion1);
+
         Debug.Log("🐛 Araña mutó por primera vez.");
     }
 
@@ -124,9 +136,13 @@ public class MutacionAraña : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutadoFinal);
+
+        // ▶️ Sonido de mutación final
+        if (audioSource != null && sonidoMutacionFinal != null)
+            audioSource.PlayOneShot(sonidoMutacionFinal);
+
         Debug.Log("🧬 Araña alcanzó su mutación final.");
 
-        //para final del juego
         GameManager.Instance.NotificarCriaturaMutadaFinal();
     }
 
@@ -160,7 +176,6 @@ public class MutacionAraña : MonoBehaviour, IMutable
 
     void RehacerCollider()
     {
-        // CircleCollider2D
         CircleCollider2D circle = GetComponent<CircleCollider2D>();
         if (circle != null)
         {
@@ -174,7 +189,6 @@ public class MutacionAraña : MonoBehaviour, IMutable
             circle.radius = Mathf.Max(size.x, size.y) * 0.5f;
         }
 
-        // BoxCollider2D
         BoxCollider2D box = GetComponent<BoxCollider2D>();
         if (box != null)
         {
@@ -188,7 +202,6 @@ public class MutacionAraña : MonoBehaviour, IMutable
             box.offset = Vector2.zero;
         }
 
-        // PolygonCollider2D
         PolygonCollider2D poly = GetComponent<PolygonCollider2D>();
         if (poly != null)
         {

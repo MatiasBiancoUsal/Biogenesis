@@ -21,7 +21,7 @@ public class MutacionCazador : MonoBehaviour, IMutable
     private int pocionesRecibidas = 0;
 
     private SpriteRenderer spriteRenderer;
-    private static Vector3 escalaOriginalGuardada; // 🔹 Se mantiene entre escenas
+    private static Vector3 escalaOriginalGuardada;
     private static bool escalaInicialDefinida = false;
 
     private bool yaMutoPrimera = false;
@@ -31,17 +31,19 @@ public class MutacionCazador : MonoBehaviour, IMutable
     private const string PREF_MUTA1 = "MutoPrimera";
     private const string PREF_MUTAF = "MutoFinal";
 
-    //script lucy
     [Header("Daño por mutación")]
     public float multiplicadorDañoPrimera = 1.5f;
     public float multiplicadorDañoFinal = 2.5f;
 
-    //sofitina
     [Header("Efecto visual de mutación")]
     public AnimatorOverrideController controladorMutacion1;
     public AnimatorOverrideController controladorMutacion2;
     public Animator anim;
-    //
+
+    [Header("Sonidos de mutación")]
+    public AudioClip sonidoMutacion1;
+    public AudioClip sonidoMutacionFinal;
+    public AudioSource audioSource;
 
     public float ObtenerMultiplicadorDaño()
     {
@@ -67,23 +69,17 @@ public class MutacionCazador : MonoBehaviour, IMutable
         Final
     }
 
-   
-   //////////////
-  
     void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-
         anim = GetComponent<Animator>();
 
-        // Guardar escala inicial solo una vez
         if (!escalaInicialDefinida)
         {
             escalaOriginalGuardada = transform.localScale;
             escalaInicialDefinida = true;
         }
 
-        // 🔄 Si se activa desde el Inspector, reinicia estado
         if (forzarReinicio)
         {
             PlayerPrefs.DeleteKey(PREF_POCIONES);
@@ -106,14 +102,12 @@ public class MutacionCazador : MonoBehaviour, IMutable
             return;
         }
 
-        // Cargar datos guardados
         if (PlayerPrefs.HasKey(PREF_POCIONES))
         {
             pocionesRecibidas = PlayerPrefs.GetInt(PREF_POCIONES, 0);
             yaMutoPrimera = PlayerPrefs.GetInt(PREF_MUTA1, 0) == 1;
             yaMutoFinal = PlayerPrefs.GetInt(PREF_MUTAF, 0) == 1;
 
-            // Restaurar mutación visualmente
             if (yaMutoFinal)
             {
                 AplicarMutacionVisual(spriteMutadoFinal);
@@ -125,16 +119,13 @@ public class MutacionCazador : MonoBehaviour, IMutable
         }
     }
 
-    /// sofitina
     public void Update()
     {
         if (yaMutoPrimera && !yaMutoFinal)
             anim.runtimeAnimatorController = controladorMutacion1;
-
         else if (yaMutoFinal)
             anim.runtimeAnimatorController = controladorMutacion2;
     }
-    //
 
     public void RecibirPocion()
     {
@@ -156,10 +147,15 @@ public class MutacionCazador : MonoBehaviour, IMutable
     void MutarPrimera()
     {
         yaMutoPrimera = true;
-        pocionesRecibidas = 0; // Resetea para mutación final
+        pocionesRecibidas = 0;
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutado1);
+
+        // ▶️ Sonido mutación 1
+        if (audioSource != null && sonidoMutacion1 != null)
+            audioSource.PlayOneShot(sonidoMutacion1);
+
         Debug.Log("Mutación 1 activada.");
     }
 
@@ -169,9 +165,13 @@ public class MutacionCazador : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutadoFinal);
+
+        // ▶️ Sonido mutación final
+        if (audioSource != null && sonidoMutacionFinal != null)
+            audioSource.PlayOneShot(sonidoMutacionFinal);
+
         Debug.Log("Mutación final activada.");
 
-        //para final del juego
         GameManager.Instance.NotificarCriaturaMutadaFinal();
     }
 
@@ -182,9 +182,6 @@ public class MutacionCazador : MonoBehaviour, IMutable
             spriteRenderer.sprite = nuevoSprite;
             //AjustarEscalaPorTamañoSprite();
             //RehacerCollider();
-
-            //Animator anim = GetComponent<Animator>();
-            //if (anim != null) anim.enabled = false;
         }
     }
 
@@ -204,7 +201,6 @@ public class MutacionCazador : MonoBehaviour, IMutable
 
     void RehacerCollider()
     {
-        // CircleCollider2D
         CircleCollider2D circle = GetComponent<CircleCollider2D>();
         if (circle != null)
         {
@@ -218,7 +214,6 @@ public class MutacionCazador : MonoBehaviour, IMutable
             circle.radius = Mathf.Max(size.x, size.y) * 0.5f;
         }
 
-        // BoxCollider2D
         BoxCollider2D box = GetComponent<BoxCollider2D>();
         if (box != null)
         {
@@ -232,7 +227,6 @@ public class MutacionCazador : MonoBehaviour, IMutable
             box.offset = Vector2.zero;
         }
 
-        // PolygonCollider2D
         PolygonCollider2D poly = GetComponent<PolygonCollider2D>();
         if (poly != null)
         {
