@@ -8,7 +8,7 @@ public class GlobalPredatorSpawner : MonoBehaviour
     [Header("General")]
     public GameObject predatorPrefab;
     public string[] sceneNames;
-    public UIWarningMessage uiWarning;
+    private UIWarningMessage uiWarning; // Ahora es privada y se encuentra en tiempo de ejecución.
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -32,9 +32,24 @@ public class GlobalPredatorSpawner : MonoBehaviour
         StartCoroutine(PredatorLoop());
     }
 
-    void Start() { }
+    void OnEnable()
+    {
+        // Se suscribe a un evento que se activa cuando una escena se carga.
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
-    void Update() { }
+    void OnDisable()
+    {
+        // Se desuscribe del evento para evitar problemas.
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // Este método se llama cada vez que se carga una escena.
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Busca y asigna el componente UIWarningMessage de la nueva escena.
+        uiWarning = FindObjectOfType<UIWarningMessage>();
+    }
 
     public void SpawnearBicho()
     {
@@ -49,17 +64,21 @@ public class GlobalPredatorSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(300); // Cambiar a 300 para 5 min reales
+            yield return new WaitForSeconds(300); // 5 minutos
 
             randomScene = sceneNames[Random.Range(0, sceneNames.Length)];
             Debug.Log("Tu criatura está siendo atacada en " + randomScene);
 
+            // Verifica si la alerta UI está disponible antes de intentar usarla.
             if (uiWarning != null)
             {
                 uiWarning.ShowWarning("Tu criatura está siendo atacada en " + randomScene);
             }
+            else
+            {
+                Debug.LogError("UIWarningMessage no se encontró en la escena actual.");
+            }
 
-            // 🔊 Reproducir sonido de alarma
             if (audioSource != null && alarmaClip != null)
             {
                 audioSource.PlayOneShot(alarmaClip);
