@@ -31,16 +31,19 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
     private const string PREF_MUTA1 = "AlimañaMutada1";
     private const string PREF_MUTAF = "AlimañaMutadaFinal";
 
-    //script lucy
     [Header("Daño por mutación")]
     public float multiplicadorDañoPrimera = 1.5f;
     public float multiplicadorDañoFinal = 2.5f;
 
-    //sofitina
     [Header("Efecto visual de mutación")]
     public AnimatorOverrideController controladorMutacion1;
     public AnimatorOverrideController controladorMutacion2;
     public Animator anim;
+
+    [Header("Sonidos de mutación")]
+    public AudioClip sonidoMutacion1;
+    public AudioClip sonidoMutacionFinal;
+    public AudioSource audioSource;
 
     public float ObtenerMultiplicadorDaño()
     {
@@ -49,7 +52,7 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
         else if (yaMutóPrimera)
             return multiplicadorDañoPrimera;
         else
-            return 1f; 
+            return 1f;
     }
 
     public enum EstadoMutacion
@@ -66,11 +69,9 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
         return EstadoMutacion.Normal;
     }
 
-    /////////////
     void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-
         anim = GetComponent<Animator>();
 
         if (!escalaInicialDefinida)
@@ -119,17 +120,13 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
         }
     }
 
-
-    /// sofitina
     public void Update()
     {
         if (yaMutóPrimera && !yaMutóFinal)
             anim.runtimeAnimatorController = controladorMutacion1;
-
         else if (yaMutóFinal)
             anim.runtimeAnimatorController = controladorMutacion2;
     }
-
 
     public void RecibirPocion()
     {
@@ -155,6 +152,11 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutado1);
+
+        // ▶️ Sonido de mutación 1
+        if (audioSource != null && sonidoMutacion1 != null)
+            audioSource.PlayOneShot(sonidoMutacion1);
+
         Debug.Log("🪱 Alimaña mutó por primera vez.");
     }
 
@@ -164,9 +166,12 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutadoFinal);
-        Debug.Log("🧬 Alimaña alcanzó su mutación final.");
 
-        //para final del juego
+        // ▶️ Sonido de mutación final
+        if (audioSource != null && sonidoMutacionFinal != null)
+            audioSource.PlayOneShot(sonidoMutacionFinal);
+
+        Debug.Log("🧬 Alimaña alcanzó su mutación final.");
         GameManager.Instance.NotificarCriaturaMutadaFinal();
     }
 
@@ -200,7 +205,6 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
 
     void RehacerCollider()
     {
-        // CapsuleCollider2D
         CapsuleCollider2D capsule = GetComponent<CapsuleCollider2D>();
         if (capsule != null)
         {
@@ -218,8 +222,6 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
             capsule.size = size;
             capsule.offset = Vector2.zero;
         }
-
-        // También podés agregar soporte para otros tipos de collider si querés.
     }
 
     void DesactivarAnimator()
