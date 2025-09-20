@@ -778,63 +778,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   personaje: {fileID: 614841328}
---- !u!1001 &651514959
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.6721914
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.5843894
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2327430119031382221, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_Name
-      value: depredador
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
 --- !u!1001 &674214447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4001,6 +3944,10 @@ PrefabInstance:
       value: Comidacazador
       objectReference: {fileID: 0}
     - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 4669981400755512605}
+    - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: spriteMutado1
       value: 
       objectReference: {fileID: 7970430599318904870, guid: 363cf893616bd5a4889ec3c17c93976b, type: 3}
@@ -4013,9 +3960,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2970968332899128304, guid: 3947f08885d76104ba18f9311182f055, type: 3}
     - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: sonidoMutacion1
+      value: 
+      objectReference: {fileID: 8300000, guid: f6ff35384ee5e6e4d83d696bf5cd33e0, type: 3}
+    - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: spriteMutadoFinal
       value: 
       objectReference: {fileID: 3872152724845482322, guid: 285b9552c60944c438ac479f80ab56db, type: 3}
+    - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: sonidoMutacionFinal
+      value: 
+      objectReference: {fileID: 8300000, guid: f6ff35384ee5e6e4d83d696bf5cd33e0, type: 3}
     - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: controladorMutacion1
       value: 
@@ -4147,8 +4102,8 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b0dc93941641c6d4e8e8579f224bc34a, type: 3}
-  m_Resource: {fileID: 8300000, guid: b0dc93941641c6d4e8e8579f224bc34a, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -4460,6 +4415,5 @@ SceneRoots:
   - {fileID: 1604577966}
   - {fileID: 728731908}
   - {fileID: 1185462890}
-  - {fileID: 651514959}
   - {fileID: 1735748266}
   - {fileID: 1780876777}
