@@ -1,10 +1,12 @@
 using UnityEngine;
 
-
 public class ActivadorCriatura : MonoBehaviour
 {
     // Arrastra aquí desde el Inspector el GameObject de la criatura que quieres activar.
     public GameObject objetoCriatura;
+
+    // Constante para la clave de guardado en PlayerPrefs
+    private const string KEY_CRIATURA_CREADA = "CriaturaCreada";
 
     // --- CICLO DE VIDA DE UNITY ---
 
@@ -22,9 +24,10 @@ public class ActivadorCriatura : MonoBehaviour
 
     void Start()
     {
-        // 3. Revisamos el estado inicial al cargar la escena.
-        //    Esto sirve si el jugador ya creó la criatura y vuelve a cargar esta escena.
-        if (InventarioManagerPrueba.instancia != null && InventarioManagerPrueba.instancia.criaturaCreada)
+        //  PASO 1: Revisa el estado guardado al cargar la escena.
+        // Si la criatura ya estaba creada en una partida anterior, la activamos.
+        // Usamos PlayerPrefs para verificar si la clave existe y su valor es 1 (true).
+        if (PlayerPrefs.GetInt(KEY_CRIATURA_CREADA, 0) == 1)
         {
             ActivarLaCriatura();
         }

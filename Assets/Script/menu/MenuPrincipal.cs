@@ -5,14 +5,17 @@ using UnityEngine.UI;
 public class MenuPrincipal : MonoBehaviour
 {
     [Header("Nombre de la escena de juego")]
-    public string gameSceneName = "Juego"; // Cambiá por el nombre real de tu escena
+    public string gameSceneName = "Juego";
 
     [Header("UI")]
-    public Button continueButton;              // arrastrá el botón Continuar
-    public GameObject confirmNewGamePanel;     // panel de confirmación (opcional)
+    public Button continueButton;
+    public GameObject confirmNewGamePanel;
 
     [Header("IDs que usás en tus criaturas (deben coincidir con creatureID)")]
     public string[] creatureIDs = new string[] { "Alimaña", "Mutante", "Araña", "Experimento" };
+
+    // Constante para la clave de la criatura, para evitar errores de tipeo.
+    private const string KEY_CRIATURA_CREADA = "CriaturaCreada";
 
     void Awake()
     {
@@ -28,30 +31,25 @@ public class MenuPrincipal : MonoBehaviour
 
     public void ContinuarPartida()
     {
-        if (!HasSavedGame()) return; // por si queda deshabilitar/seguridad
-        // No borramos nada: tus scripts ya cargan de PlayerPrefs.
+        if (!HasSavedGame()) return;
         SceneManager.LoadScene(gameSceneName);
     }
 
     public void NuevaPartida()
     {
-        // Si tenés panel de confirmación, lo mostrás.
         if (confirmNewGamePanel != null)
             confirmNewGamePanel.SetActive(true);
         else
-            NuevaPartidaConfirmada(); // si no usás panel, va directo
+            NuevaPartidaConfirmada();
     }
 
     public void NuevaPartidaConfirmada()
     {
-        // 1) Borrar TODO lo guardado
+        // 1) Borrar TODO lo guardado, incluyendo el estado de la criatura nueva.
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
 
-        // 2) Cargar la escena. Tus scripts ya toman valores por defecto:
-        //    - Vida: vidaMaxima (por tu BarraVida/Personaje)
-        //    - Hambre: 1f (por tu HungerBar)
-        //    - Mutaciones: estado inicial (por no existir las keys)
+        // 2) Cargar la escena.
         SceneManager.LoadScene(gameSceneName);
     }
 
@@ -70,27 +68,24 @@ public class MenuPrincipal : MonoBehaviour
 
     private bool HasSavedGame()
     {
+        //  PASO 3: Verificamos si la clave de la criatura existe.
+        if (PlayerPrefs.HasKey(KEY_CRIATURA_CREADA)) return true;
+
         // Opción 1: si usás una bandera propia "HasSave"
         if (PlayerPrefs.HasKey("HasSave")) return true;
 
         // Opción 2: detectamos si hay alguna key de tus sistemas
-        // Vida / Hambre por ID
         foreach (var id in creatureIDs)
         {
             if (PlayerPrefs.HasKey("Vida_" + id)) return true;
             if (PlayerPrefs.HasKey("Hambre_" + id)) return true;
         }
 
-        // Mutaciones (tus claves actuales)
         string[] mutationKeys =
         {
-            // Araña
             "PocionesAraña","ArañaMutada1","ArañaMutadaFinal",
-            // Cazador
             "PocionesCazador","MutoPrimera","MutoFinal",
-            // Mutante
             "PocionesMutante","MutanteMutado1","MutanteMutadoFinal",
-            // Alimaña
             "PocionesAlimaña","AlimañaMutada1","AlimañaMutadaFinal"
         };
         foreach (var k in mutationKeys)

@@ -36,6 +36,9 @@ public class InventarioManagerPrueba : MonoBehaviour
     [Tooltip("Esta bandera se vuelve 'true' cuando la criatura ha sido creada.")]
     public bool criaturaCreada = false;
 
+    // Constante para la clave de guardado en PlayerPrefs
+    private const string KEY_CRIATURA_CREADA = "CriaturaCreada";
+
     void Awake()
     {
         if (instancia != null && instancia != this)
@@ -47,6 +50,19 @@ public class InventarioManagerPrueba : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    void Start()
+    {
+        //  PASO 1: Cargamos el estado de la criatura al iniciar la escena.
+        // Si existe la clave en PlayerPrefs, cargamos su valor (0 = false, 1 = true).
+        criaturaCreada = PlayerPrefs.GetInt(KEY_CRIATURA_CREADA, 0) == 1;
+
+        // Si la criatura ya estaba creada, la activamos.
+        if (criaturaCreada)
+        {
+            OnCriaturaCreada?.Invoke();
+        }
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
@@ -55,9 +71,7 @@ public class InventarioManagerPrueba : MonoBehaviour
             CrearCriatura();
         }
     }
-    /// <summary>
-    /// Añade un ADN al inventario y notifica a la UI.
-    /// </summary>
+
     public void AñadirADN(string nombreADN)
     {
         foreach (Slot slot in slots)
@@ -65,15 +79,12 @@ public class InventarioManagerPrueba : MonoBehaviour
             if (slot.nombreADN == nombreADN)
             {
                 slot.cantidad++;
-                OnInventarioChanged?.Invoke(); // Avisa a la UI que se actualice.
-                return; // Sale de la función una vez que encuentra y actualiza el item.
+                OnInventarioChanged?.Invoke();
+                return;
             }
         }
     }
 
-    /// <summary>
-    /// Este método es llamado por el botón de la UI.
-    /// </summary>
     public void BotonPresionadoCrearCriatura()
     {
         if (TodosLosADNRecolectados() && !criaturaCreada)
@@ -83,9 +94,6 @@ public class InventarioManagerPrueba : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Pone a cero todas las cantidades del inventario y resetea el estado de la criatura.
-    /// </summary>
     public void ReiniciarInventario()
     {
         foreach (Slot slot in slots)
@@ -93,13 +101,10 @@ public class InventarioManagerPrueba : MonoBehaviour
             slot.cantidad = 0;
         }
         criaturaCreada = false;
-        OnInventarioChanged?.Invoke(); // Avisa a la UI para que se actualice a ceros.
+        OnInventarioChanged?.Invoke();
         Debug.Log("¡Inventario Reiniciado!");
     }
 
-    /// <summary>
-    /// Revisa si el jugador ha recolectado 4 o más de cada tipo de ADN.
-    /// </summary>
     public bool TodosLosADNRecolectados()
     {
         foreach (Slot slot in slots)
@@ -109,9 +114,6 @@ public class InventarioManagerPrueba : MonoBehaviour
         return true;
     }
 
-    /// <summary>
-    /// Devuelve el Sprite de un ADN buscándolo por su nombre en la base de datos.
-    /// </summary>
     public Sprite GetIconoPorNombre(string nombreADN)
     {
         foreach (DefinicionADN definicion in databaseADN)
@@ -121,16 +123,16 @@ public class InventarioManagerPrueba : MonoBehaviour
         return null;
     }
 
-    /// <summary>
-    /// Contiene la lógica a ejecutar una vez que se crea la criatura.
-    /// </summary>
     private void CrearCriatura()
     {
         criaturaCreada = true;
-        OnCriaturaCreada?.Invoke(); // Avisa al "pantallazo" que debe mostrarse.
+        OnCriaturaCreada?.Invoke();
         Debug.Log("La bandera 'criaturaCreada' es ahora true.");
 
-        // AÑADE ESTA LÍNEA:
-        OnInventarioChanged?.Invoke(); // Notifica a la UI que debe re-evaluar su estado.
+        //  PASO 2: Guardamos el estado en PlayerPrefs. Usamos 1 para true.
+        PlayerPrefs.SetInt(KEY_CRIATURA_CREADA, 1);
+        PlayerPrefs.Save(); // Forzamos el guardado en el disco.
+
+        OnInventarioChanged?.Invoke();
     }
 }
