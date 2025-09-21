@@ -8,7 +8,12 @@ public class ADNCazadorVolador : MonoBehaviour
     public float intervalo = 5f; // cada cuánto tiempo genera ADN
     public Transform puntoGeneracion; // opcional: para definir un lugar específico
 
+    // --- VARIABLES NUEVAS ---
+    public int maximoADN = 9;
+    private int adnGenerados = 0;
+
     private float tiempoSiguiente = 5f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +24,15 @@ public class ADNCazadorVolador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tiempoSiguiente -= Time.deltaTime;
-
-        if (tiempoSiguiente <= 0f)
+        if (adnGenerados < maximoADN)
         {
-            GenerarADN();
-            tiempoSiguiente = intervalo;
+            tiempoSiguiente -= Time.deltaTime;
+
+            if (tiempoSiguiente <= 0f)
+            {
+                GenerarADN();
+                tiempoSiguiente = intervalo;
+            }
         }
     }
 
@@ -36,5 +44,9 @@ public class ADNCazadorVolador : MonoBehaviour
         Vector3 posicion = new Vector3(x, y, 0f);
 
         Instantiate(prefabADN, posicion, Quaternion.identity);
+
+        adnGenerados++;
+        Debug.Log($"ADN generados: {adnGenerados}/{maximoADN}");
+
     }
 }
