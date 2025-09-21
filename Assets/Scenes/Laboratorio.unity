@@ -1070,7 +1070,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_TargetDisplay: 0
 --- !u!224 &513967684
 RectTransform:
@@ -2318,69 +2318,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &819576975
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 819576977}
-  - component: {fileID: 819576976}
-  m_Layer: 0
-  m_Name: Sistema Inventario
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &819576976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819576975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 416cba53e990f9341b6e55d6c2b2e801, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  databaseADN:
-  - nombre: "ADN Alima\xF1a Biotecnologica"
-    icono: {fileID: 21300000, guid: 8cf10e94737b80c47935122812175faf, type: 3}
-  - nombre: "ADN Ara\xF1a Mutante"
-    icono: {fileID: -862749893198049629, guid: cb7c55b82c174c741a9dabb6c210a278, type: 3}
-  - nombre: ADN Cazador Volador
-    icono: {fileID: 3241061950800773838, guid: e074d3676bb4c6147b6bf8a8aac1282f, type: 3}
-  - nombre: ADN Mutante Radiactivo
-    icono: {fileID: -2197920147653139167, guid: ab4ba0978ab8b96469c80c5bdf2c6376, type: 3}
-  slots:
-  - nombreADN: "ADN Alima\xF1a Biotecnologica"
-    cantidad: 0
-  - nombreADN: "ADN Ara\xF1a Mutante"
-    cantidad: 0
-  - nombreADN: ADN Cazador Volador
-    cantidad: 0
-  - nombreADN: ADN Mutante Radiactivo
-    cantidad: 0
-  criaturaCreada: 0
---- !u!4 &819576977
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 819576975}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 112.095894, y: 315.3354, z: -7.9645844}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &872171978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2399,7 +2336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &872171979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2443,19 +2380,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 872171980}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 819576976}
-        m_TargetAssemblyTypeName: InventarioManagerPrueba, Assembly-CSharp
-        m_MethodName: BotonPresionadoCrearCriatura
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &872171980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6014,7 +5939,7 @@ PrefabInstance:
     - target: {fileID: 1224297228071379055, guid: e04fa0467e3f0174698fc8184469bee3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 819576976}
+      objectReference: {fileID: 0}
     - target: {fileID: 2378233806819384669, guid: e04fa0467e3f0174698fc8184469bee3, type: 3}
       propertyPath: m_Camera
       value: 
@@ -6188,7 +6113,6 @@ SceneRoots:
   - {fileID: 5621997166941258849}
   - {fileID: 2071282561}
   - {fileID: 6650492510891732995}
-  - {fileID: 819576977}
   - {fileID: 384368542}
   - {fileID: 2105438765}
   - {fileID: 513967684}

@@ -31,6 +31,26 @@ public class InventarioUI : MonoBehaviour
         InventarioManagerPrueba.OnInventarioChanged -= ActualizarUI;
     }
 
+    void Start()
+    {
+        // Verificamos que la referencia al botón no sea nula
+        if (botonCrearCriatura != null)
+        {
+            // 1. Buscamos el componente "Button" en nuestro GameObject
+            Button btn = botonCrearCriatura.GetComponent<Button>();
+
+            // 2. Si lo encuentra, le añadimos un "listener" (oyente) por código
+            if (btn != null)
+            {
+                // Limpiamos cualquier listener que pudiera tener configurado en el Inspector
+                btn.onClick.RemoveAllListeners();
+
+                // Añadimos nuestra función del manager para que se ejecute al hacer clic.
+                // ¡OJO! Se pone el nombre de la función SIN los paréntesis ().
+                btn.onClick.AddListener(InventarioManagerPrueba.instancia.BotonPresionadoCrearCriatura);
+            }
+        }
+    }
     void ActualizarUI()
     {
         if (InventarioManagerPrueba.instancia == null) return;
