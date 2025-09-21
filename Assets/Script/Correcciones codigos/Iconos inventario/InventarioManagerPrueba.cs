@@ -129,5 +129,8 @@ public class InventarioManagerPrueba : MonoBehaviour
         criaturaCreada = true;
         OnCriaturaCreada?.Invoke(); // Avisa al "pantallazo" que debe mostrarse.
         Debug.Log("La bandera 'criaturaCreada' es ahora true.");
+
+        // AÑADE ESTA LÍNEA:
+        OnInventarioChanged?.Invoke(); // Notifica a la UI que debe re-evaluar su estado.
     }
 }

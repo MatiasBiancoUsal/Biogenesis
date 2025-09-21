@@ -33,22 +33,23 @@ public class InventarioUI : MonoBehaviour
 
     void Start()
     {
-        // Verificamos que la referencia al botón no sea nula
-        if (botonCrearCriatura != null)
-        {
-            // 1. Buscamos el componente "Button" en nuestro GameObject
-            Button btn = botonCrearCriatura.GetComponent<Button>();
+        // Si la referencia al botón no existe, no hagas nada.
+        if (botonCrearCriatura == null) return;
 
-            // 2. Si lo encuentra, le añadimos un "listener" (oyente) por código
+        // COMPROBACIÓN IMPORTANTE: Asegúrate de que la instancia ya exista.
+        if (InventarioManagerPrueba.instancia != null)
+        {
+            Button btn = botonCrearCriatura.GetComponent<Button>();
             if (btn != null)
             {
-                // Limpiamos cualquier listener que pudiera tener configurado en el Inspector
                 btn.onClick.RemoveAllListeners();
-
-                // Añadimos nuestra función del manager para que se ejecute al hacer clic.
-                // ¡OJO! Se pone el nombre de la función SIN los paréntesis ().
                 btn.onClick.AddListener(InventarioManagerPrueba.instancia.BotonPresionadoCrearCriatura);
             }
+        }
+        else
+        {
+            // Este mensaje te ayudará a diagnosticar si el problema de tiempo persiste.
+            Debug.LogError("¡ERROR! InventarioManagerPrueba.instancia no fue encontrada en Start(). ¡Revisa el Orden de Ejecución de Scripts!");
         }
     }
     void ActualizarUI()
