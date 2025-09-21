@@ -1614,10 +1614,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6869422893978230812, guid: 8cdcb89a8322ac941accef2f6718eefc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 165.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7557903935827931409, guid: 8cdcb89a8322ac941accef2f6718eefc, type: 3}
       propertyPath: inventarioPanel
       value: 
       objectReference: {fileID: 596156658}
+    - target: {fileID: 8145401809771965062, guid: 8cdcb89a8322ac941accef2f6718eefc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 234.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145401809771965062, guid: 8cdcb89a8322ac941accef2f6718eefc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -635.8998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1905,6 +1917,7 @@ MonoBehaviour:
   - {fileID: 1870724441767016839, guid: 507b18ee53b90b345a5dce302f641697, type: 3}
   - {fileID: 2800631532191308054, guid: 205225e703d5779439dac125068ac02e, type: 3}
   - {fileID: 6249238680025303656, guid: ac00db5d08dd7a34d884890b32fbc84d, type: 3}
+  comidaFisicaPrefabs: []
   maxComidas: 3
 --- !u!1 &1330721154
 GameObject:
