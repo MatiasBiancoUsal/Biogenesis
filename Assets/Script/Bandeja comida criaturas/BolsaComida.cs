@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BolsaComida : MonoBehaviour
 {
-    public int comidaIndex; // Qué comida es (ej: 0 = araña, 1 = rata...)
+    public int comidaIndex; // Ej: 0 = araña, 1 = rata, etc.
     private BandejaManager bandejaManager;
 
     void Start()

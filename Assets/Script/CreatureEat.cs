@@ -2,43 +2,41 @@
 
 public class CreatureEat : MonoBehaviour
 {
-    public HungerBar hungerBar;         // Referencia a la barra de hambre
-    public CriaturaComidaEsp comidaEsp; // Script con la comida aceptada
+    [Header("Opcionales")]
+    public HungerBar hungerBar; // Opcional: para subir barra de hambre si querés
 
     [Header("Audio")]
-    public AudioClip sonidoComer;           // Clip de sonido que se va a reproducir
-    public AudioSource audioSourceComida;   // AudioSource asignado desde el Inspector
+    public AudioClip sonidoComer;         // Clip de sonido de comer (asignalo desde el Inspector)
+    public AudioSource audioSourceComida; // Fuente de audio que reproducirá el sonido
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(">>> Trigger detectado con: " + collision.name); // Verifica que se ejecute
+        Debug.Log(">>> Trigger detectado con: " + collision.name);
 
+        // Detecta si el objeto tiene el tag "Food"
         if (collision.CompareTag("Food"))
         {
             Debug.Log(">>> Tag 'Food' confirmado");
 
-            // Verifica que el nombre de la comida contenga el nombre base de la comida aceptada
-            if (collision.gameObject.name.Contains(comidaEsp.comidaAceptada.name))
+            // Reproducir sonido de comer
+            if (sonidoComer != null && audioSourceComida != null)
             {
-                // Alimentar al personaje
-                hungerBar.Feed(0.2f);
-
-                // Reproducir sonido de comer si está asignado
-                if (sonidoComer != null && audioSourceComida != null)
-                {
-                    Debug.Log(">>> Reproduciendo sonido de comida");
-                    audioSourceComida.PlayOneShot(sonidoComer);
-                }
-
-                Debug.Log($"{gameObject.name} comió {collision.name}!");
-
-                // Destruir comida
-                Destroy(collision.gameObject);
+                audioSourceComida.PlayOneShot(sonidoComer);
+                Debug.Log(">>> Sonido de comer reproducido");
             }
             else
             {
-                Debug.Log($"{gameObject.name} rechazó {collision.name}");
+                Debug.LogWarning(">>> FALTA asignar el AudioClip o el AudioSource en el Inspector");
             }
+
+            // OPCIONAL: Subir barra de hambre
+            if (hungerBar != null)
+            {
+                hungerBar.Feed(0.2f); // Cambiá el valor según lo que necesites
+            }
+
+            // OPCIONAL: Destruir la comida después de comer
+            Destroy(collision.gameObject);
         }
     }
 }

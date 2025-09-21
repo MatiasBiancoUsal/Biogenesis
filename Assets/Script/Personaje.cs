@@ -2,6 +2,7 @@
 
 public class Personaje : MonoBehaviour
 {
+    [Header("Vida")]
     public int vida = 100;
     public int vidaMaxima = 100;
 
@@ -24,7 +25,7 @@ public class Personaje : MonoBehaviour
 
         if (audioSource == null)
         {
-            Debug.LogWarning("Falta AudioSource en el personaje.");
+            Debug.LogWarning("⚠️ Falta AudioSource en el personaje.");
         }
     }
 
@@ -33,19 +34,23 @@ public class Personaje : MonoBehaviour
         if (estaMuerto) return;
 
         vida -= cantidad;
+        Debug.Log("💥 Personaje recibió daño. Vida actual: " + vida);
 
-        // ▶️ Reproducir sonido de daño
+        // 🔊 Reproducir sonido de daño CADA VEZ que recibe daño
         if (sonidoDaño != null && audioSource != null)
         {
+            Debug.Log("🔊 Reproduciendo sonido de daño");
             audioSource.PlayOneShot(sonidoDaño);
         }
-
-        Debug.Log("Personaje recibió daño. Vida actual: " + vida);
+        else
+        {
+            Debug.LogWarning("⚠️ Falta sonido de daño o AudioSource en el personaje.");
+        }
 
         if (vida <= 0 && !estaMuerto)
         {
             vida = 0;
-            Debug.Log("Personaje ha muerto");
+            Debug.Log("☠️ Personaje ha muerto");
             Morir();
         }
     }
@@ -60,7 +65,7 @@ public class Personaje : MonoBehaviour
                 vida = vidaMaxima;
             }
 
-            Debug.Log("Personaje se curó. Vida actual: " + vida);
+            Debug.Log("💚 Personaje se curó. Vida actual: " + vida);
         }
     }
 
@@ -68,12 +73,18 @@ public class Personaje : MonoBehaviour
     {
         estaMuerto = true;
 
-        // ▶️ Reproducir sonido de muerte
+        // 🔊 Reproducir sonido de derrota
         if (sonidoDerrota != null && audioSource != null)
         {
+            Debug.Log("🔊 Reproduciendo sonido de muerte");
             audioSource.PlayOneShot(sonidoDerrota);
         }
+        else
+        {
+            Debug.LogWarning("⚠️ Falta sonido de muerte o AudioSource.");
+        }
 
+        // Activar la animación correspondiente según la mutación
         switch (mutacionActual)
         {
             case TipoMutacion.Mutacion1:
@@ -90,7 +101,7 @@ public class Personaje : MonoBehaviour
 
     public void DestruirObjeto()
     {
-        Debug.LogWarning("!!! FUNCIÓN DESTRUIR OBJETO LLAMADA !!! La animación de muerte terminó o fue activada por error.");
+        Debug.LogWarning("🧨 FUNCIÓN DESTRUIR OBJETO LLAMADA: La animación de muerte terminó.");
         Destroy(gameObject);
     }
 }
