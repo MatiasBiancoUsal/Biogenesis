@@ -778,7 +778,7 @@ MonoBehaviour:
   inventoryPanel: {fileID: 6072451735838521215}
   buttonImage: {fileID: 1147822110784779612}
   buttonRectTransform: {fileID: 8052345136581247046}
-  openSprite: {fileID: 6983125184316444689, guid: 5bbce98a0afd4224a8ca9e3c29e95c00, type: 3}
+  openSprite: {fileID: -8006065255706095101, guid: ef1ede1d585c765418aa6db219289e27, type: 3}
   closeSprite: {fileID: 4968461203349477353, guid: 12b77f8e52898f148a913d16391fb59b, type: 3}
   openPosition: {x: 73.6, y: 0}
   closePosition: {x: 143.4, y: 35.70193}
