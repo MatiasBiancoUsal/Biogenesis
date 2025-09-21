@@ -6,6 +6,7 @@ public class InventoryUIAdvanced : MonoBehaviour
     [Header("Referencias UI")]
     public GameObject inventoryPanel;
     public Image buttonImage;
+    public RectTransform buttonRectTransform; // Referencia para saber a quién mover
     public Sprite openSprite;
     public Sprite closeSprite;
 
@@ -13,12 +14,12 @@ public class InventoryUIAdvanced : MonoBehaviour
     public Vector2 openPosition;
     public Vector2 closePosition;
 
-    private RectTransform buttonRectTransform;
     private bool isOpen = false;
 
     void Start()
     {
-        buttonRectTransform = GetComponent<RectTransform>();
+        // El script ahora usa la referencia pública 'buttonRectTransform', 
+        // por lo que ya no necesitamos la línea que estaba aquí.
         UpdateButtonUI();
         inventoryPanel.SetActive(false);
     }
