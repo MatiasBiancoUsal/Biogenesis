@@ -142,6 +142,7 @@ MonoBehaviour:
   prefabADN: {fileID: 9044602077351973406, guid: 97143d451127059458537f6d88a713f5, type: 3}
   intervalo: 5
   puntoGeneracion: {fileID: 0}
+  maximoADN: 9
 --- !u!114 &8959984014073746417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +157,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 100
   vidaMaxima: 100
+  mutacionActual: 0
+  sonidoDerrota: {fileID: 8300000, guid: b0dc93941641c6d4e8e8579f224bc34a, type: 3}
+  "sonidoDa\xF1o": {fileID: 8300000, guid: 862ac6075717e9747b972fb3ece76ec8, type: 3}
 --- !u!58 &8490350820329810683
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -273,6 +277,9 @@ MonoBehaviour:
   speed: 2
   waitTime: 2
   moveDistance: 3
+  audioSource: {fileID: 0}
+  walkClip: {fileID: 0}
+  quieto: 0
 --- !u!114 &3685804006201741725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hungerBar: {fileID: 0}
+  sonidoComer: {fileID: 0}
+  audioSourceComida: {fileID: 0}
 --- !u!114 &6037613160552637335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +307,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d207586e8c59ea744821f839a96cd651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteOriginal: {fileID: 0}
   spriteMutado1: {fileID: 1326294874, guid: 378762826183df142996c251a1cb1469, type: 3}
   spriteMutadoFinal: {fileID: 1038470393782912978, guid: c52531b191f0a9542a52530d8413b42b, type: 3}
   pocionesNecesariasPrimeraMutacion: 3
   pocionesNecesariasMutacionFinal: 6
+  pixelsPorUnidad: 100
+  "tama\xF1oOriginalPixels": {x: 1872, y: 1502}
+  forzarReinicio: 0
+  pocionesRecibidas: 0
+  "multiplicadorDa\xF1oPrimera": 1.5
+  "multiplicadorDa\xF1oFinal": 2.5
+  controladorMutacion1: {fileID: 0}
+  controladorMutacion2: {fileID: 0}
+  anim: {fileID: 0}
+  sonidoMutacion1: {fileID: 0}
+  sonidoMutacionFinal: {fileID: 0}
+  audioSource: {fileID: 0}
