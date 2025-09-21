@@ -6,20 +6,22 @@ public class BandejaManager : MonoBehaviour
 {
     [Header("UI de la Bandeja")]
     public GameObject bandejaPanel;   // El panel principal de la bandeja
-    public Transform content;         // Donde se ponen las comidas (Horizontal Layout Group)
+    public Transform content;         // Donde se ponen las comidas (UI)
 
     [Header("Prefabs de comida UI")]
-    public GameObject[] comidaPrefabs; // Prefabs de las 5 comidas en versión UI
+    public GameObject[] comidaPrefabs; // Prefabs visuales (UI) de comida
+
+    [Header("Prefabs físicos para la escena")]
+    public GameObject[] comidaFisicaPrefabs; // Prefabs reales con Collider2D y tag "Food"
 
     [Header("Configuración")]
-    public int maxComidas = 3;         // Máximo de comidas permitidas
+    public int maxComidas = 3;
 
     private int comidasActuales = 0;
 
     void Start()
     {
-        // Al inicio, la bandeja está cerrada
-        //bandejaPanel.SetActive(false);
+        // bandejaPanel.SetActive(false); // si querés ocultarla al inicio
     }
 
     public void ToggleBandeja()
@@ -29,14 +31,28 @@ public class BandejaManager : MonoBehaviour
 
     public void AgregarComida(int index)
     {
-        // No dejar meter más de 3
         if (comidasActuales >= maxComidas) return;
 
-        Debug.Log($"Instanciando prefab: {comidaPrefabs[index].name} (index {index})");
+        Debug.Log($"Instanciando prefab UI: {comidaPrefabs[index].name}");
 
-        // Instanciar la comida UI en el contenedor
-        Instantiate(comidaPrefabs[index], content);
+        Instantiate(comidaPrefabs[index], content); // solo visual
         comidasActuales++;
+
+        // Instanciar versión física también
+        SoltarComidaEnEscena(index);
+    }
+
+    public void SoltarComidaEnEscena(int index)
+    {
+        if (index < 0 || index >= comidaFisicaPrefabs.Length) return;
+
+        Vector3 posicion = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        posicion.z = 0f;
+
+        GameObject comida = Instantiate(comidaFisicaPrefabs[index], posicion, Quaternion.identity);
+        comida.tag = "Food"; // Asegurar el tag correcto
+
+        Debug.Log($"Instanciada comida física: {comida.name} en {posicion}");
     }
 
     public void QuitarComida()
