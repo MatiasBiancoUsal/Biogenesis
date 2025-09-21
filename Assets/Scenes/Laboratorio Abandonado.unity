@@ -751,8 +751,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas inventario
       objectReference: {fileID: 0}
+    - target: {fileID: 6072451735838521215, guid: e04fa0467e3f0174698fc8184469bee3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3913760872468704631, guid: e04fa0467e3f0174698fc8184469bee3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e04fa0467e3f0174698fc8184469bee3, type: 3}
@@ -1514,6 +1519,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744441467}
   m_CullTransparentMesh: 1
+--- !u!1 &795310615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6072451735838521215, guid: e04fa0467e3f0174698fc8184469bee3, type: 3}
+  m_PrefabInstance: {fileID: 441876330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &825582147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1821,6 +1831,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7557903935827931409, guid: 8cdcb89a8322ac941accef2f6718eefc, type: 3}
+      propertyPath: inventarioPanel
+      value: 
+      objectReference: {fileID: 795310615}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
