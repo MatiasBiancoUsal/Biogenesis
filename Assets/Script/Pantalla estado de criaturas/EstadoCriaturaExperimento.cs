@@ -1,37 +1,64 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EstadoCriaturaExperimento : MonoBehaviour
 {
-    public InventarioManagerPrueba InventarioManagerPrueba; // Lo arrastrás desde el inspector
+    // No necesitamos una referencia manual al manager, lo haremos de forma global.
+    // public InventarioManagerPrueba InventarioManagerPrueba; 
 
-    private SpriteRenderer sr;
-
+    public SpriteRenderer sr;
     public GameObject imgNombre;
-
     public GameObject barraHP;
-
     public GameObject barraComida;
-    void Start()
-    {
-        sr = GetComponent<SpriteRenderer>();
-        sr.enabled = false; // Oculta el sprite al principio
 
-        imgNombre.SetActive(false); // Oculta el nombre también al principio
-        barraHP.SetActive(false);   // Oculta barra de vida al principio
-        barraComida.SetActive(false); // Oculta barra de comida al principio
+    void Awake()
+    {
+        // Es buena práctica obtener componentes en Awake.
+        sr = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    void Start()
     {
-        if (CriaturaCreada.Instance != null && CriaturaCreada.Instance.criaturaCreada)
+        // 1. REVISA EL ESTADO AL INICIAR LA ESCENA.
+        // Esto soluciona el caso en que la criatura YA fue creada ANTES de cargar esta escena.
+        if (InventarioManagerPrueba.instancia != null && InventarioManagerPrueba.instancia.criaturaCreada)
         {
-            sr.enabled = true; // Muestra el sprite cuando la criatura fue creada
-
-            imgNombre.SetActive(true);
-            barraHP.SetActive(true);
-            barraComida.SetActive(true);
+            ActivarCriatura();
         }
+        else
+        {
+            // Si aún no ha sido creada, nos aseguramos de que todo esté oculto.
+            DesactivarCriatura();
+        }
+    }
+
+    void OnEnable()
+    {
+        // 2. NOS SUSCRIBIMOS al evento para que nos avisen si se crea MIENTRAS estamos en esta escena.
+        InventarioManagerPrueba.OnCriaturaCreada += ActivarCriatura;
+    }
+
+    void OnDisable()
+    {
+        // 3. NOS DESUSCRIBIMOS al salir de la escena para evitar errores.
+        InventarioManagerPrueba.OnCriaturaCreada -= ActivarCriatura;
+    }
+
+    // Un método que activa todos los componentes visuales.
+    void ActivarCriatura()
+    {
+        Debug.Log("Evento 'OnCriaturaCreada' recibido en la escena de la criatura. Activando sus componentes.");
+        if (sr != null) sr.enabled = true;
+        if (imgNombre != null) imgNombre.SetActive(true);
+        if (barraHP != null) barraHP.SetActive(true);
+        if (barraComida != null) barraComida.SetActive(true);
+    }
+
+    // Un método que desactiva todos los componentes visuales.
+    void DesactivarCriatura()
+    {
+        if (sr != null) sr.enabled = false;
+        if (imgNombre != null) imgNombre.SetActive(false);
+        if (barraHP != null) barraHP.SetActive(false);
+        if (barraComida != null) barraComida.SetActive(false);
     }
 }
