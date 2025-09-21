@@ -75,6 +75,7 @@ public class InventarioUI : MonoBehaviour
                 slotV.cantidadTexto.text = "0";
                 slotV.imagenFondoSlot.color = new Color(0.2f, 0.2f, 0.2f, 0.8f);
             }
+
         }
 
         // Lógica para mostrar/ocultar el botón de crear criatura
