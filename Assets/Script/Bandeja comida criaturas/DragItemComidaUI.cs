@@ -14,6 +14,8 @@ public class DragItemComidaUI : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     private Vector3 startPos;
 
+    private AudioSource audioSource; //Script lucy
+
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -21,6 +23,8 @@ public class DragItemComidaUI : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         canvasGroup = GetComponent<CanvasGroup>();
         if (canvasGroup == null)
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
+
+        audioSource = GetComponent<AudioSource>(); //Script lucy
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -67,6 +71,13 @@ public class DragItemComidaUI : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                         Debug.Log($"{criatura.name} comió y se alimentó!");
                     }
 
+                    //Script lucy
+                    if (audioSource != null && audioSource.clip != null)
+                    {
+                        audioSource.Play();
+                    }
+                    //
+
                     comidaConsumida = true;
                 }
             }
@@ -76,23 +87,28 @@ public class DragItemComidaUI : MonoBehaviour, IBeginDragHandler, IDragHandler, 
         // Si la comida no fue consumida por una criatura, la devolvemos a la bandeja
         if (!comidaConsumida)
         {
-            rectTransform.position = startPos; // El ícono vuelve a su posición original en la bandeja
+            // Lógica para DEVOLVER el ícono a la bandeja
+            rectTransform.position = startPos;
+            canvasGroup.blocksRaycasts = true; // Se restaura
+            canvasGroup.alpha = 1f; // Se restaura
         }
         else
         {
-            // Si la comida fue consumida, la eliminamos del UI
-            // Avisar al BandejaManager que se liberó un espacio
+            // Lógica para CONSUMIR el ícono
+            // 1. Avisar al BandejaManager que se liberó un espacio
             BandejaManager bandejaManager = FindFirstObjectByType<BandejaManager>();
             if (bandejaManager != null)
             {
                 bandejaManager.QuitarComida();
             }
 
-            // Destruir el icono de la bandeja
-            Destroy(gameObject);
-        }
+            // 2. Hacer el ícono invisible e in-clickeable mientras suena
+            canvasGroup.alpha = 0f;
+            canvasGroup.blocksRaycasts = false;
 
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.alpha = 1f;
+            // 3. Destruir el icono de la bandeja CON RETRASO
+            float duracionSonido = (audioSource != null && audioSource.clip != null) ? audioSource.clip.length : 0.1f;
+            Destroy(gameObject, duracionSonido);
+        }
     }
 }
