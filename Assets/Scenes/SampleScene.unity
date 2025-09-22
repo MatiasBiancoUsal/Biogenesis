@@ -1029,11 +1029,10 @@ MonoBehaviour:
   hungerValue: 1
   hungerDecreaseRate: 0.01
   creatureID: Experimento
-  soloMostrar: 0
+  soloMostrar: 1
   personajeAsociado: {fileID: 319003660}
   damagePerSecond: 5
   saveInterval: 1
-  activadorCriatura: {fileID: 319003657}
 --- !u!1001 &463178028
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -31,12 +31,6 @@ public class HungerBar : MonoBehaviour
     // daño por segundo
     private float damageTimer = 0f;
 
-    //NUEVO SOFI
-    private bool shouldUpdateHunger = false;
-
-    public ActivadorCriatura activadorCriatura;
-    //
-
     void Start()
     {
         if (string.IsNullOrWhiteSpace(creatureID))
@@ -58,28 +52,16 @@ public class HungerBar : MonoBehaviour
         long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         long elapsed = now - savedTime; // segundos transcurridos
 
-        //NUEVO SOFI
-        if (PlayerPrefs.GetInt("CriaturaCreada", 0) == 1)
-        {
-            shouldUpdateHunger = true;
-            // calcular hunger al 'now' basado en savedHunger and elapsed
-            float computed = Mathf.Clamp01(savedHunger - (float)(elapsed * hungerDecreaseRate));
+        //calcular hunger al 'now' basado en savedHunger and elapsed
+        float computed = Mathf.Clamp01(savedHunger - (float)(elapsed * hungerDecreaseRate));
 
-            // Base para cálculos posteriores (ahora corresponde a 'now')
-            baseHunger = computed;
-            lastSavedTimestamp = now;
-            hungerValue = computed;
+        // Base para cálculos posteriores (ahora corresponde a 'now')
+        baseHunger = computed;
+        lastSavedTimestamp = now;
+        hungerValue = computed;
 
-            // Marcar que no hay necesidad de guardar inmediatamente
-            lastSavedValue = hungerValue;
-        }
-        else
-        {
-            // Si la criatura no se ha creado, mantenemos el valor en 1
-            baseHunger = 1f;
-            lastSavedTimestamp = now;
-            hungerValue = 1f;
-        }
+        // Marcar que no hay necesidad de guardar inmediatamente
+        lastSavedValue = hungerValue;
 
         UpdateHungerUI();
 
@@ -92,9 +74,6 @@ public class HungerBar : MonoBehaviour
 
     void Update()
     {
-        //NUEVO SOFI
-        if (!shouldUpdateHunger) return;
-
         // Calcular hunger actual en base a baseHunger + lastSavedTimestamp (no usamos PlayerPrefs cada frame)
         long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         double elapsedSinceBase = (double)(now - lastSavedTimestamp);
@@ -129,9 +108,6 @@ public class HungerBar : MonoBehaviour
 
     public void Feed(float amount)
     {
-        //NUEVO SOFI
-        if (!shouldUpdateHunger) return;
-
         // recalculamos current hunger antes de aplicar el feed
         long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         double elapsedSinceBase = (double)(now - lastSavedTimestamp);
