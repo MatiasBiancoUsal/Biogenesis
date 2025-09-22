@@ -35,6 +35,16 @@ public class MenuPrincipal : MonoBehaviour
         SceneManager.LoadScene(gameSceneName);
     }
 
+    //nuevo que agregue TINA
+    public void EmpezarPartidaNueva()
+    {
+        // 1. Borrar TODO lo guardado antes de empezar.
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+
+        // 2. Cargar la escena, la cual ahora estará "limpia".
+        SceneManager.LoadScene(gameSceneName);
+    }
     public void NuevaPartida()
     {
         if (confirmNewGamePanel != null)
