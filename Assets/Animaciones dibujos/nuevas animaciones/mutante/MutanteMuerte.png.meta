@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 5c9f29912d2e4c3418d71fabfbd73f4c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1120578255011210892
+    second: MutanteMuerte_0
+  - first:
+      213: -3106425307710105436
+    second: MutanteMuerte_1
+  - first:
+      213: 871763005529646489
+    second: MutanteMuerte_2
+  - first:
+      213: -272051383445893495
+    second: MutanteMuerte_3
+  - first:
+      213: 1302849605782340308
+    second: MutanteMuerte_4
+  - first:
+      213: -1732678257691564066
+    second: MutanteMuerte_5
+  - first:
+      213: 1170799388420945974
+    second: MutanteMuerte_6
+  - first:
+      213: 5185509799278413569
+    second: MutanteMuerte_7
+  - first:
+      213: 7366736853778595680
+    second: MutanteMuerte_8
+  - first:
+      213: -8570586322669646467
+    second: MutanteMuerte_9
+  - first:
+      213: -8711519100592893506
+    second: MutanteMuerte_10
+  - first:
+      213: -8846455263961943715
+    second: MutanteMuerte_11
+  - first:
+      213: -6692566538506524422
+    second: MutanteMuerte_12
+  - first:
+      213: -6228746873418227593
+    second: MutanteMuerte_13
+  - first:
+      213: -3367750241298839207
+    second: MutanteMuerte_14
+  - first:
+      213: -5003878914105634891
+    second: MutanteMuerte_15
+  - first:
+      213: 5710653295066797106
+    second: MutanteMuerte_16
+  - first:
+      213: 205021816620455675
+    second: MutanteMuerte_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MutanteMuerte_0
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1338
+        width: 388
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8668f06cf71d8f00800000000000000
+      internalID: 1120578255011210892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_1
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1334
+        width: 387
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a8d7a424a2c3e4d0800000000000000
+      internalID: -3106425307710105436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_2
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 1339
+        width: 387
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 995ebe0b5df191c00800000000000000
+      internalID: 871763005529646489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_3
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 1338
+        width: 393
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ecd0945ba793cf0800000000000000
+      internalID: -272051383445893495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_4
+      rect:
+        serializedVersion: 2
+        x: 2334
+        y: 1337
+        width: 397
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d20a6c40d6a41210800000000000000
+      internalID: 1302849605782340308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_5
+      rect:
+        serializedVersion: 2
+        x: 2829
+        y: 1334
+        width: 397
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed760440e4a44f7e0800000000000000
+      internalID: -1732678257691564066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_6
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 761
+        width: 366
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638331237d38f3010800000000000000
+      internalID: 1170799388420945974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_7
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 756
+        width: 365
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1070c4d30b1a6f740800000000000000
+      internalID: 5185509799278413569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_8
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 762
+        width: 380
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f704b4328eb3660800000000000000
+      internalID: 7366736853778595680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_9
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 761
+        width: 393
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7d447006292f0980800000000000000
+      internalID: -8570586322669646467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_10
+      rect:
+        serializedVersion: 2
+        x: 2339
+        y: 751
+        width: 392
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb1512b98877a1780800000000000000
+      internalID: -8711519100592893506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_11
+      rect:
+        serializedVersion: 2
+        x: 2893
+        y: 761
+        width: 365
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d51f926dec31b3580800000000000000
+      internalID: -8846455263961943715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_12
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 192
+        width: 325
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af827a4213a3f13a0800000000000000
+      internalID: -6692566538506524422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_13
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 192
+        width: 393
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 770e41e48bb0f89a0800000000000000
+      internalID: -6228746873418227593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_14
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 197
+        width: 393
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9598527aff85341d0800000000000000
+      internalID: -3367750241298839207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_15
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 192
+        width: 433
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf8aa9a3a6ae8ab0800000000000000
+      internalID: -5003878914105634891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_16
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 197
+        width: 355
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 234dedf5ae0504f40800000000000000
+      internalID: 5710653295066797106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MutanteMuerte_17
+      rect:
+        serializedVersion: 2
+        x: 2898
+        y: 197
+        width: 355
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf61ed6814268d200800000000000000
+      internalID: 205021816620455675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
