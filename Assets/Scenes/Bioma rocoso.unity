@@ -332,6 +332,7 @@ MonoBehaviour:
   personajeAsociado: {fileID: 1644563044}
   damagePerSecond: 5
   saveInterval: 1
+  activadorCriatura: {fileID: 0}
 --- !u!4 &335943563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
