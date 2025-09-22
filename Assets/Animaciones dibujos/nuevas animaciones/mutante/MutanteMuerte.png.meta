@@ -538,7 +538,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MutanteMuerte_0: 1120578255011210892
+      MutanteMuerte_1: -3106425307710105436
+      MutanteMuerte_10: -8711519100592893506
+      MutanteMuerte_11: -8846455263961943715
+      MutanteMuerte_12: -6692566538506524422
+      MutanteMuerte_13: -6228746873418227593
+      MutanteMuerte_14: -3367750241298839207
+      MutanteMuerte_15: -5003878914105634891
+      MutanteMuerte_16: 5710653295066797106
+      MutanteMuerte_17: 205021816620455675
+      MutanteMuerte_2: 871763005529646489
+      MutanteMuerte_3: -272051383445893495
+      MutanteMuerte_4: 1302849605782340308
+      MutanteMuerte_5: -1732678257691564066
+      MutanteMuerte_6: 1170799388420945974
+      MutanteMuerte_7: 5185509799278413569
+      MutanteMuerte_8: 7366736853778595680
+      MutanteMuerte_9: -8570586322669646467
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -804,10 +804,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4274252004561793963}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3df680cd5c749e34695606f966e17ea5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d9186604b64d7f4a89134cea1172a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventarioPanel: {fileID: 0}
+  inventarioPanel: {fileID: 5304345389221051756, guid: e04fa0467e3f0174698fc8184469bee3, type: 3}
 --- !u!114 &554584602975857875
 MonoBehaviour:
   m_ObjectHideFlags: 0

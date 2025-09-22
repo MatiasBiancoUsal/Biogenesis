@@ -418,7 +418,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CazadorAtaque3_0: 2761341683536857150
+      CazadorAtaque3_1: -3217981283134904005
+      CazadorAtaque3_10: 6805047536470275109
+      CazadorAtaque3_11: 2769622609513974332
+      CazadorAtaque3_12: 4776196445875441436
+      CazadorAtaque3_2: -4923273044120186170
+      CazadorAtaque3_3: -1872738403066905214
+      CazadorAtaque3_4: -4241085339522013002
+      CazadorAtaque3_5: 1038631452654754836
+      CazadorAtaque3_6: 6217842042899476470
+      CazadorAtaque3_7: 3930947023197178403
+      CazadorAtaque3_8: 3737711161131457132
+      CazadorAtaque3_9: 4477949759476637049
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

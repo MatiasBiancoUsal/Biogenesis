@@ -538,7 +538,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Ara\xF1Muerte_0": -564882830679378877
+      "Ara\xF1Muerte_1": 4953675569020160579
+      "Ara\xF1Muerte_10": -2331024920742621936
+      "Ara\xF1Muerte_11": -3380793037619314210
+      "Ara\xF1Muerte_12": 851359291649862703
+      "Ara\xF1Muerte_13": 7675765844973948386
+      "Ara\xF1Muerte_14": -4473627767913446872
+      "Ara\xF1Muerte_15": -5353459929146335797
+      "Ara\xF1Muerte_16": -4612028632396807749
+      "Ara\xF1Muerte_17": -1670044285328289018
+      "Ara\xF1Muerte_2": 286984709421753112
+      "Ara\xF1Muerte_3": 2629443692158026700
+      "Ara\xF1Muerte_4": 6101145274927315874
+      "Ara\xF1Muerte_5": -6357253016277980321
+      "Ara\xF1Muerte_6": -7282118651350113745
+      "Ara\xF1Muerte_7": 6903614811023975392
+      "Ara\xF1Muerte_8": -2017929138214702327
+      "Ara\xF1Muerte_9": -2477555733541721575
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

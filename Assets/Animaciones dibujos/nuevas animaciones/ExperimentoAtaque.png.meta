@@ -418,7 +418,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ExperimentoAtaque_0: -4615256520924578551
+      ExperimentoAtaque_1: 1270834766650391360
+      ExperimentoAtaque_10: -7386950454805665222
+      ExperimentoAtaque_11: -5968117865410259176
+      ExperimentoAtaque_12: 412234658892569632
+      ExperimentoAtaque_2: -7568700896714475517
+      ExperimentoAtaque_3: -7593902474514407100
+      ExperimentoAtaque_4: 6959702382412565954
+      ExperimentoAtaque_5: 7391880758289598147
+      ExperimentoAtaque_6: 2188117359682249396
+      ExperimentoAtaque_7: -8323016783624917650
+      ExperimentoAtaque_8: -8340158478538600686
+      ExperimentoAtaque_9: 7088606696817080745
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

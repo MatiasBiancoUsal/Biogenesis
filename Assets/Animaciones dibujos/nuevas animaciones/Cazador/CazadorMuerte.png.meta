@@ -538,7 +538,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CazadorMuerte_0: 5280745322951573817
+      CazadorMuerte_1: 7499668243846941934
+      CazadorMuerte_10: 2268394067649544482
+      CazadorMuerte_11: 3871271798214406328
+      CazadorMuerte_12: -7271553810104429373
+      CazadorMuerte_13: -4087278575097533765
+      CazadorMuerte_14: 7104621597181054739
+      CazadorMuerte_15: -7207973485947303493
+      CazadorMuerte_16: -7563593876889249696
+      CazadorMuerte_17: 4497314509364566418
+      CazadorMuerte_2: -3061298489531742961
+      CazadorMuerte_3: 2622619646229847602
+      CazadorMuerte_4: 8266014345959851186
+      CazadorMuerte_5: 5544588099061969516
+      CazadorMuerte_6: 259314136722367450
+      CazadorMuerte_7: 5599084260660544124
+      CazadorMuerte_8: 5754404003502467479
+      CazadorMuerte_9: -6772875205700049885
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
