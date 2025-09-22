@@ -55,12 +55,18 @@ public class MenuPrincipal : MonoBehaviour
 
     public void NuevaPartidaConfirmada()
     {
+        if (InventarioManagerPrueba.instancia != null)
+        {
+            InventarioManagerPrueba.instancia.ReiniciarInventario();
+        }
+
         // 1) Borrar TODO lo guardado, incluyendo el estado de la criatura nueva.
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
 
         // 2) Cargar la escena.
         SceneManager.LoadScene(gameSceneName);
+
     }
 
     public void CancelarNuevaPartida()
