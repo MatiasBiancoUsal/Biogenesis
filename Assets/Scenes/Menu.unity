@@ -799,9 +799,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 719629213}
-        m_TargetAssemblyTypeName: BotonCargarEscena, Assembly-CSharp
-        m_MethodName: CargarEscena
+      - m_Target: {fileID: 195020746}
+        m_TargetAssemblyTypeName: MenuPrincipal, Assembly-CSharp
+        m_MethodName: EmpezarPartidaNueva
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
