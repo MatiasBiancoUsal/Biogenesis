@@ -5,6 +5,11 @@ public class ActivadorCriatura : MonoBehaviour
     // Arrastra aquí desde el Inspector el GameObject de la criatura que quieres activar.
     public GameObject objetoCriatura;
 
+    //Nuevo Sofi
+    public GameObject canvasBarraVida;
+    public GameObject canvasBarraHambre;
+    //
+
     // Constante para la clave de guardado en PlayerPrefs
     private const string KEY_CRIATURA_CREADA = "CriaturaCreada";
 
@@ -35,6 +40,11 @@ public class ActivadorCriatura : MonoBehaviour
         {
             // Nos aseguramos de que esté desactivada al empezar.
             if (objetoCriatura != null) objetoCriatura.SetActive(false);
+
+            //Nuevo Sofi
+            if (canvasBarraVida != null) canvasBarraVida.SetActive(false);
+            if (canvasBarraHambre != null) canvasBarraHambre.SetActive(false);
+            //
         }
     }
 
@@ -50,5 +60,16 @@ public class ActivadorCriatura : MonoBehaviour
         {
             objetoCriatura.SetActive(true);
         }
+
+        //Nuevo Sofi
+        if (canvasBarraVida != null)
+        {
+            canvasBarraVida.SetActive(true);
+        }
+        if (canvasBarraHambre != null)
+        {
+            canvasBarraHambre.SetActive(true);
+        }
+        //
     }
 }
