@@ -273,6 +273,7 @@ MonoBehaviour:
   personajeAsociado: {fileID: 1062034123}
   damagePerSecond: 5
   saveInterval: 1
+  activadorCriatura: {fileID: 0}
 --- !u!1 &50824565 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8815221515953262091, guid: 3bc584aaba7cdc94cb479037760ec796, type: 3}
