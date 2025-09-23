@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class CajonManager : MonoBehaviour
 {
-    public GameObject cajonRotoPrefab;
+    public GameObject cajonPrefab;        // sprite normal
+    public GameObject cajonRotoPrefab;    // sprite roto
     public Transform spawnPosition;
-    public float interval = 5f; // cada cuánto aparece el cajón
+    public float interval = 5f;
 
     private GameObject currentCajon;
     private float timer = 0f;
 
     [Header("Audio")]
-    public AudioClip spawnSound;   // sonido cuando aparece el cajón
-    [Range(0f, 2f)] public float spawnVolume = 1f; // volumen ajustable (0 = mute, 1 = normal, 2 = boost)
+    public AudioClip spawnSound;           // sonido cuando se rompe
+    [Range(0f, 2f)] public float spawnVolume = 1f;
 
     private AudioSource audioSource;
 
@@ -21,11 +22,11 @@ public class CajonManager : MonoBehaviour
     {
         timer = 0f;
 
-        // Creo y configuro un AudioSource para reproducir sonidos globales
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
-        audioSource.spatialBlend = 0f; // 0 = sonido global (2D)
-        audioSource.volume = 1f;       // volumen base
+        audioSource.spatialBlend = 0f;
+        audioSource.loop = false;
+        audioSource.volume = spawnVolume;
     }
 
     void Update()
@@ -36,26 +37,38 @@ public class CajonManager : MonoBehaviour
         {
             timer = 0f;
 
-            // Reiniciar estado del minijuego
-            PlayerPrefs.SetInt("MiniJuegoResuelto", 0);
-
-            // Instanciar cajón si no existe
+            // Si no hay cajón, instanciar el roto
             if (currentCajon == null)
             {
                 currentCajon = Instantiate(cajonRotoPrefab, spawnPosition.position, Quaternion.identity);
 
-                // Reproducir sonido global al aparecer con volumen ajustable
+                // Sonido en loop
                 if (spawnSound != null)
                 {
-                    audioSource.PlayOneShot(spawnSound, spawnVolume);
+                    audioSource.clip = spawnSound;
+                    audioSource.loop = true;
+                    audioSource.Play();
                 }
             }
         }
+    }
 
-        // Si ya resolviste el minijuego, destruir el cajón si está en escena
-        if (PlayerPrefs.GetInt("MiniJuegoResuelto", 0) == 1 && currentCajon != null)
+    // Método para "arreglar" el cajón
+    public void ArreglarCajon()
+    {
+        if (currentCajon != null)
         {
+            Vector3 pos = currentCajon.transform.position;
             Destroy(currentCajon);
+
+            // Instanciar el cajón normal en la misma posición
+            currentCajon = Instantiate(cajonPrefab, pos, Quaternion.identity);
+        }
+
+        // Detener el sonido
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
         }
     }
 }
