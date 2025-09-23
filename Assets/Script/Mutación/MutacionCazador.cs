@@ -36,6 +36,10 @@ public class MutacionCazador : MonoBehaviour, IMutable
     public float multiplicadorDañoFinal = 2.5f;
 
     [Header("Efecto visual de mutación")]
+    public GameObject prefabHumo;
+    public float duracionHumo = 1.5f;
+
+    [Header("Efecto visual de mutación")]
     public AnimatorOverrideController controladorMutacion1;
     public AnimatorOverrideController controladorMutacion2;
     public Animator anim;
@@ -179,10 +183,21 @@ public class MutacionCazador : MonoBehaviour, IMutable
     {
         if (spriteRenderer != null && nuevoSprite != null)
         {
+
             spriteRenderer.sprite = nuevoSprite;
             //AjustarEscalaPorTamañoSprite();
             //RehacerCollider();
         }
+        if (prefabHumo != null)
+        {
+            GameObject humo = Instantiate(prefabHumo, transform.position, Quaternion.identity);
+            Destroy(humo, duracionHumo);
+        }
+    }
+    private System.Collections.IEnumerator CambiarSpriteConDelay(Sprite nuevoSprite)
+    {
+        yield return new WaitForSeconds(duracionHumo * 0.8f);
+        spriteRenderer.sprite = nuevoSprite;
     }
 
     void AjustarEscalaPorTamañoSprite()

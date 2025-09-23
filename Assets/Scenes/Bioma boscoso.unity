@@ -4192,6 +4192,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4669981400755512605}
     - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
+      propertyPath: prefabHumo
+      value: 
+      objectReference: {fileID: 5721998452359622573, guid: 5c143d4d93850f84799ff803af1198f6, type: 3}
+    - target: {fileID: 6037613160552637335, guid: b2ff1246669bdcb4fab4836b6fa4c2b4, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 4669981400755512605}
