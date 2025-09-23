@@ -2248,6 +2248,8 @@ MonoBehaviour:
   pocionesRecibidas: 0
   "multiplicadorDa\xF1oPrimera": 1.5
   "multiplicadorDa\xF1oFinal": 2.5
+  prefabHumo: {fileID: 5721998452359622573, guid: 5c143d4d93850f84799ff803af1198f6, type: 3}
+  duracionHumo: 1.5
   controladorMutacion1: {fileID: 22100000, guid: 948d5442283342f4cb75f18311baee3f, type: 2}
   controladorMutacion2: {fileID: 22100000, guid: 2bfcc9863b66dcc4c84716e0f595dc9b, type: 2}
   anim: {fileID: 0}
