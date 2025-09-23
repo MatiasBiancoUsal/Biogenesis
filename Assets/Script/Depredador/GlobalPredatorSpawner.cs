@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +7,7 @@ public class GlobalPredatorSpawner : MonoBehaviour
     [Header("General")]
     public GameObject predatorPrefab;
     public string[] sceneNames;
-    private UIWarningMessage uiWarning; // Ahora es privada y se encuentra en tiempo de ejecución.
+    private UIWarningMessage uiWarning;
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -16,8 +15,7 @@ public class GlobalPredatorSpawner : MonoBehaviour
 
     public static GlobalPredatorSpawner instance;
     private GameObject currentPredator;
-    private string originalSceneName;
-    public string randomScene;
+    private string randomScene;   // Escena que va a ser atacada
 
     void Awake()
     {
@@ -34,29 +32,38 @@ public class GlobalPredatorSpawner : MonoBehaviour
 
     void OnEnable()
     {
-        // Se suscribe a un evento que se activa cuando una escena se carga.
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnDisable()
     {
-        // Se desuscribe del evento para evitar problemas.
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // Este método se llama cada vez que se carga una escena.
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Busca y asigna el componente UIWarningMessage de la nueva escena.
+        // Siempre reasigna el UIWarning cuando cambias de escena
         uiWarning = FindObjectOfType<UIWarningMessage>();
+
+        // 👇 Si entrás a la escena que fue marcada como atacada, spawnea al depredador
+        if (scene.name == randomScene && currentPredator == null)
+        {
+            SpawnearBicho();
+        }
     }
 
     public void SpawnearBicho()
     {
         GameObject spawnPoint = GameObject.FindGameObjectWithTag("PredatorSpawn");
+
         if (spawnPoint != null)
         {
             currentPredator = Instantiate(predatorPrefab, spawnPoint.transform.position, Quaternion.identity);
+            Debug.Log("⚡ Depredador spawneado en " + spawnPoint.transform.position);
+        }
+        else
+        {
+            Debug.LogWarning("❗ No se encontró un objeto con tag 'PredatorSpawn' en la escena.");
         }
     }
 
@@ -64,30 +71,29 @@ public class GlobalPredatorSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(10); // 300 son 5 minutos
+            yield return new WaitForSeconds(100f); // 180 es cada 3 minutos
 
+            // Escena random de la lista
             randomScene = sceneNames[Random.Range(0, sceneNames.Length)];
-            Debug.Log("Tu criatura está siendo atacada en " + randomScene);
+            Debug.Log("⚠️ Tu criatura está siendo atacada en " + randomScene);
 
-            // Verifica si la alerta UI está disponible antes de intentar usarla.
+            // Mostrar alerta UI
             if (uiWarning != null)
             {
                 uiWarning.ShowWarning("Tu criatura está siendo atacada en " + randomScene);
             }
             else
             {
-                Debug.LogError("UIWarningMessage no se encontró en la escena actual.");
+                Debug.LogWarning("UIWarningMessage no se encontró en la escena actual.");
             }
 
+            // Reproducir sonido de alarma
             if (audioSource != null && alarmaClip != null)
             {
                 audioSource.PlayOneShot(alarmaClip);
             }
 
-            originalSceneName = SceneManager.GetActiveScene().name;
-
-            yield return null;
-
+            // Esperar hasta que ese depredador muera antes de volver a lanzar otro ataque
             while (currentPredator != null)
             {
                 yield return null;
