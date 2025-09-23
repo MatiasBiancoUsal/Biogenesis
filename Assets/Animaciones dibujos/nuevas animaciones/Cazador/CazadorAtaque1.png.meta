@@ -70,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -108,7 +108,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -133,36 +133,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CazadorAtaque1_0
+      name: 8
       rect:
         serializedVersion: 2
-        x: 38
-        y: 2296
-        width: 30
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f69fac0895ee31ca0800000000000000
-      internalID: -6047227806448158353
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CazadorAtaque1_1
-      rect:
-        serializedVersion: 2
-        x: 41
+        x: 0
         y: 2259
-        width: 366
+        width: 407
         height: 293
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,15 +154,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CazadorAtaque1_2
+      name: 7
       rect:
         serializedVersion: 2
-        x: 31
+        x: 0
         y: 1927
-        width: 377
+        width: 408
         height: 293
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,36 +175,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CazadorAtaque1_3
+      name: 6
       rect:
         serializedVersion: 2
-        x: 10
-        y: 1675
-        width: 36
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 05054fa50bf400920800000000000000
-      internalID: 2954448974413844560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CazadorAtaque1_4
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 1603
-        width: 366
+        x: 0
+        y: 1602
+        width: 403
         height: 293
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,36 +196,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CazadorAtaque1_5
+      name: 5
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1419
-        width: 27
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 66b1c55043c042520800000000000000
-      internalID: 2676277496132672358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CazadorAtaque1_6
-      rect:
-        serializedVersion: 2
-        x: 34
+        x: 0
         y: 1298
-        width: 366
+        width: 400
         height: 294
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -280,36 +217,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CazadorAtaque1_7
+      name: 4
       rect:
         serializedVersion: 2
-        x: 15
-        y: 1138
-        width: 25
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 46373fc90e9729ff0800000000000000
-      internalID: -30828241825336476
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CazadorAtaque1_8
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 966
-        width: 370
+        x: 0
+        y: 968
+        width: 413
         height: 294
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -322,15 +238,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CazadorAtaque1_9
+      name: 3
       rect:
         serializedVersion: 2
-        x: 40
+        x: 0
         y: 658
-        width: 366
+        width: 408
         height: 294
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -343,15 +259,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CazadorAtaque1_10
+      name: 2
       rect:
         serializedVersion: 2
-        x: 35
+        x: 0
         y: 350
-        width: 366
+        width: 397
         height: 293
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -364,15 +280,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CazadorAtaque1_11
+      name: 1
       rect:
         serializedVersion: 2
-        x: 46
+        x: 0
         y: 56
-        width: 366
+        width: 412
         height: 294
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -387,7 +303,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 69eef535cf1b7e3438f4cf02e30b1583
     internalID: 0
     vertices: []
     indices: 
@@ -395,18 +311,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      1: 4612554718315041453
+      2: -8432476857880001329
+      3: -6306147597371040843
+      4: -1926675666509815308
+      5: -4754070927805598416
+      6: 5516970643647341684
+      7: 3385049631504727469
+      8: 337609471626979527
       CazadorAtaque1_0: -6047227806448158353
-      CazadorAtaque1_1: 337609471626979527
-      CazadorAtaque1_10: -8432476857880001329
-      CazadorAtaque1_11: 4612554718315041453
-      CazadorAtaque1_2: 3385049631504727469
       CazadorAtaque1_3: 2954448974413844560
-      CazadorAtaque1_4: 5516970643647341684
       CazadorAtaque1_5: 2676277496132672358
-      CazadorAtaque1_6: -4754070927805598416
       CazadorAtaque1_7: -30828241825336476
-      CazadorAtaque1_8: -1926675666509815308
-      CazadorAtaque1_9: -6306147597371040843
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
