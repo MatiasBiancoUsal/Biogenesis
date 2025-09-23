@@ -1525,12 +1525,29 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 33
       objectReference: {fileID: 0}
+    - target: {fileID: 5011326459287078682, guid: 2163b66c3bcc9a544a6486cfa56148a4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.999939
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241855764044383045, guid: 2163b66c3bcc9a544a6486cfa56148a4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241855764044383045, guid: 2163b66c3bcc9a544a6486cfa56148a4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.7380371
+      objectReference: {fileID: 0}
     - target: {fileID: 7600449183760141948, guid: 2163b66c3bcc9a544a6486cfa56148a4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -1.7380371
       objectReference: {fileID: 0}
+    - target: {fileID: 8878208989573693717, guid: 2163b66c3bcc9a544a6486cfa56148a4, type: 3}
+      propertyPath: 'scriptsBloqueables.Array.data[0]'
+      value: 
+      objectReference: {fileID: 373122257}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7160118328998588978, guid: 2163b66c3bcc9a544a6486cfa56148a4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5906137478463266908, guid: 2163b66c3bcc9a544a6486cfa56148a4, type: 3}
