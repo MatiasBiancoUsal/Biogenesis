@@ -332,7 +332,6 @@ MonoBehaviour:
   personajeAsociado: {fileID: 1644563044}
   damagePerSecond: 5
   saveInterval: 1
-  activadorCriatura: {fileID: 0}
 --- !u!4 &335943563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
@@ -3384,19 +3383,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 834763508784559761, guid: 4acf21debdc4ed040a06c4aff2f1492c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 80
+      value: 32.5738
       objectReference: {fileID: 0}
     - target: {fileID: 834763508784559761, guid: 4acf21debdc4ed040a06c4aff2f1492c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 80
+      value: 32.5738
       objectReference: {fileID: 0}
     - target: {fileID: 834763508784559761, guid: 4acf21debdc4ed040a06c4aff2f1492c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -797
+      value: -334.8
       objectReference: {fileID: 0}
     - target: {fileID: 834763508784559761, guid: 4acf21debdc4ed040a06c4aff2f1492c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 487.4
+      value: 203.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3383306554003842503, guid: 4acf21debdc4ed040a06c4aff2f1492c, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5491882793989592459, guid: 4acf21debdc4ed040a06c4aff2f1492c, type: 3}
       propertyPath: m_Name
