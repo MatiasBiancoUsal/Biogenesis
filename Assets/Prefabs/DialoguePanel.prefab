@@ -348,7 +348,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4719332289887329159, guid: 7ef73fe90f471eb40aa9d443a1b2b04b, type: 3}
+  m_Sprite: {fileID: 2639988597389293491, guid: 5ac83a803a2b0f44790328b4400356c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -402,9 +402,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4526890965787409704}
         m_TargetAssemblyTypeName: DialogueController, Assembly-CSharp
-        m_MethodName: EndDialogue
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
