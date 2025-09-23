@@ -1,8 +1,7 @@
-﻿using System;
+﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using UnityEngine.UI; // Asegúrate de tener esta línea para Image y CanvasGroup
 
 public class SoltarIngrediente : MonoBehaviour, IDropHandler
 {
@@ -12,75 +11,85 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
     public GameObject pocionVidaPrefab;
     public GameObject pocionMejoraPrefab;
 
-    [Header("Audio")]
-    public AudioSource audioSource;
-    public AudioClip sonidoCreacionPocion;
+    public GameObject prefabPocionVida;
+    public GameObject prefabPocionMejora;
 
-    [Header("Cooldown")]
+    // Cooldown
     public float cooldownVida = 10f;
     public float cooldownMejora = 10f;
+    private static float tiempoRestanteVida = 0f;
+    private static float tiempoRestanteMejora = 0f;
 
-    // Claves para guardar en PlayerPrefs
-    private const string CooldownEndTimeVidaKey = "CooldownEndTimeVida";
-    private const string CooldownEndTimeMejoraKey = "CooldownEndTimeMejora";
+    // Timers para el log de la consola
+    private float contadorLogVida = 0f;
+    private float contadorLogMejora = 0f;
 
-    [SerializeField] private Transform panelIngredientes;
+    [SerializeField] private Transform panelIngredientes; // Arrastra el panel en el inspector
 
-    // Variables para la cuenta atrás en el Log
-    private float logTimerVida = 0f;
-    private float logTimerMejora = 0f;
+    void Awake()
+    {
+        // Recuperar cooldowns guardados al iniciar la aplicación
+        tiempoRestanteVida = PlayerPrefs.GetFloat("CooldownVida", 0f);
+        tiempoRestanteMejora = PlayerPrefs.GetFloat("CooldownMejora", 0f);
+    }
+
+    void OnDestroy()
+    {
+        // Guardar cooldowns actuales al salir de la escena o cerrar el juego
+        PlayerPrefs.SetFloat("CooldownVida", tiempoRestanteVida);
+        PlayerPrefs.SetFloat("CooldownMejora", tiempoRestanteMejora);
+        PlayerPrefs.Save();
+    }
 
     void Start()
     {
-        // Al iniciar, revisa los cooldowns y bloquea los ingredientes si es necesario
-        ActualizarEstadoIngredientes();
+        // Si al entrar a la escena hay un cooldown activo, bloquear los ingredientes
+        if (tiempoRestanteVida > 0)
+        {
+            BloquearIngredientes(TipoPocion.Vida);
+        }
+
+        if (tiempoRestanteMejora > 0)
+        {
+            BloquearIngredientes(TipoPocion.Mejora);
+        }
     }
 
     void Update()
     {
-        // Actualiza constantemente el estado de los ingredientes y la cuenta atrás en la consola.
-        ActualizarEstadoIngredientes();
-    }
-
-    /// <summary>
-    /// Revisa si un tipo de poción está en cooldown y actualiza la UI y el log correspondientemente.
-    /// </summary>
-    private void ActualizarEstadoIngredientes()
-    {
-        if (EstaEnCooldown(TipoPocion.Vida))
+        // Reducir el tiempo restante de los cooldowns cada fotograma
+        if (tiempoRestanteVida > 0)
         {
-            BloquearIngredientes(TipoPocion.Vida);
-
-            // Lógica para la cuenta atrás en la consola
-            logTimerVida += Time.deltaTime;
-            if (logTimerVida >= 1f)
+            tiempoRestanteVida -= Time.deltaTime;
+            contadorLogVida += Time.deltaTime;
+            if (contadorLogVida >= 1f)
             {
-                logTimerVida = 0f; // Resetea el cronómetro
-                int tiempoRedondeado = Mathf.CeilToInt(GetTiempoRestante(TipoPocion.Vida));
-                Debug.Log("Tiempo restante para Poción de Vida: " + tiempoRedondeado + "s");
+                Debug.Log("Cooldown VIDA: " + Mathf.Ceil(tiempoRestanteVida) + "s");
+                contadorLogVida = 0f;
+            }
+
+            if (tiempoRestanteVida <= 0)
+            {
+                tiempoRestanteVida = 0; // Asegurarse de que no sea negativo
+                DesbloquearIngredientes(TipoPocion.Vida);
             }
         }
-        else
-        {
-            DesbloquearIngredientes(TipoPocion.Vida);
-        }
 
-        if (EstaEnCooldown(TipoPocion.Mejora))
+        if (tiempoRestanteMejora > 0)
         {
-            BloquearIngredientes(TipoPocion.Mejora);
-
-            // Lógica para la cuenta atrás en la consola
-            logTimerMejora += Time.deltaTime;
-            if (logTimerMejora >= 1f)
+            tiempoRestanteMejora -= Time.deltaTime;
+            contadorLogMejora += Time.deltaTime;
+            if (contadorLogMejora >= 1f)
             {
-                logTimerMejora = 0f; // Resetea el cronómetro
-                int tiempoRedondeado = Mathf.CeilToInt(GetTiempoRestante(TipoPocion.Mejora));
-                Debug.Log("Tiempo restante para Poción de Mejora: " + tiempoRedondeado + "s");
+                Debug.Log("Cooldown MEJORA: " + Mathf.Ceil(tiempoRestanteMejora) + "s");
+                contadorLogMejora = 0f;
             }
-        }
-        else
-        {
-            DesbloquearIngredientes(TipoPocion.Mejora);
+
+            if (tiempoRestanteMejora <= 0)
+            {
+                tiempoRestanteMejora = 0; // Asegurarse de que no sea negativo
+                DesbloquearIngredientes(TipoPocion.Mejora);
+            }
         }
     }
 
@@ -94,8 +103,8 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
 
         if ((esVida && EstaEnCooldown(TipoPocion.Vida)) || (esMejora && EstaEnCooldown(TipoPocion.Mejora)))
         {
-            Debug.Log("Ingrediente en cooldown, no se puede usar.");
-            return;
+            Debug.Log("No puedes usar este ingrediente, el cooldown está activo.");
+            return; // Bloquea el drop
         }
 
         ingredientesEnZona.Add(objetoArrastrado.name);
@@ -111,6 +120,7 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
 
         if (combinacionVida)
         {
+            Debug.Log("¡Combinación de VIDA detectada!");
             IniciarCooldown(TipoPocion.Vida);
             CrearPocion(pocionVidaPrefab);
             return;
@@ -118,35 +128,61 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
 
         if (combinacionMejora)
         {
+            Debug.Log("¡Combinación de MEJORA detectada!");
             IniciarCooldown(TipoPocion.Mejora);
             CrearPocion(pocionMejoraPrefab);
             return;
         }
 
+        // Si se sueltan dos ingredientes pero no son una combinación válida
         if (ingredientesEnZona.Count > 1)
         {
-            LimpiarMesa();
+            Debug.Log("Ingredientes no compatibles, eliminándolos.");
+            foreach (GameObject ingrediente in ingredientesUI)
+            {
+                // Esta es la línea importante que agregaste para gestionar los clones
+                IngredienteUIArrastrable.clonesActivos.Remove(
+                    ingrediente.name.Replace("(Clone)", "").Trim()
+                );
+                Destroy(ingrediente);
+            }
+            ingredientesUI.Clear();
+            ingredientesEnZona.Clear();
         }
     }
 
     void CrearPocion(GameObject prefab)
     {
-        Instantiate(prefab, transform.position, Quaternion.identity, transform);
-
-        if (audioSource != null && sonidoCreacionPocion != null)
+        // Instanciar la poción y configurarla en la UI
+        GameObject nuevaPocion = Instantiate(prefab, transform);
+        nuevaPocion.transform.SetParent(transform, false); // false para mantener escala/posición
+        if (nuevaPocion.GetComponent<RectTransform>() != null)
         {
-            audioSource.PlayOneShot(sonidoCreacionPocion);
+            nuevaPocion.GetComponent<RectTransform>().anchoredPosition = Vector2.zero; // Centrarla
         }
 
-        LimpiarMesa();
-    }
+        // Asignar el prefab correcto al script AgarrarPocion
+        var agarrarPocion = nuevaPocion.GetComponent<AgarrarPocion>();
+        if (agarrarPocion != null)
+        {
+            if (prefab == pocionVidaPrefab)
+                agarrarPocion.prefabParaMaletin = prefabPocionVida;
+            else if (prefab == pocionMejoraPrefab)
+                agarrarPocion.prefabParaMaletin = prefabPocionMejora;
+        }
 
-    void LimpiarMesa()
-    {
+        Debug.Log("Poción creada correctamente.");
+
+        // Eliminar los ingredientes usados
         foreach (GameObject ingrediente in ingredientesUI)
         {
+            IngredienteUIArrastrable.clonesActivos.Remove(
+                ingrediente.name.Replace("(Clone)", "").Trim()
+            );
             Destroy(ingrediente);
         }
+
+        // Limpiar las listas
         ingredientesUI.Clear();
         ingredientesEnZona.Clear();
     }
@@ -155,52 +191,37 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
 
     public bool EstaEnCooldown(TipoPocion tipo)
     {
-        return GetTiempoRestante(tipo) > 0;
-    }
-
-    public float GetTiempoRestante(TipoPocion tipo)
-    {
-        string key = tipo == TipoPocion.Vida ? CooldownEndTimeVidaKey : CooldownEndTimeMejoraKey;
-        string endTimeString = PlayerPrefs.GetString(key, "0");
-
-        if (long.TryParse(endTimeString, out long endTimeTicks))
+        if (tipo == TipoPocion.Vida)
         {
-            DateTime endTime = new DateTime(endTimeTicks);
-            TimeSpan restante = endTime - DateTime.UtcNow;
-
-            return restante.TotalSeconds > 0 ? (float)restante.TotalSeconds : 0;
+            return tiempoRestanteVida > 0;
         }
-        return 0;
+        else
+        {
+            return tiempoRestanteMejora > 0;
+        }
     }
 
     public void IniciarCooldown(TipoPocion tipo)
     {
-        float duracion = tipo == TipoPocion.Vida ? cooldownVida : cooldownMejora;
-        DateTime endTime = DateTime.UtcNow.AddSeconds(duracion);
-
-        string key = tipo == TipoPocion.Vida ? CooldownEndTimeVidaKey : CooldownEndTimeMejoraKey;
-        PlayerPrefs.SetString(key, endTime.Ticks.ToString());
-        PlayerPrefs.Save();
-
-        Debug.Log("Cooldown iniciado para " + tipo + " por " + duracion + " segundos. Termina a las: " + endTime.ToLocalTime());
-
-        BloquearIngredientes(tipo);
+        if (tipo == TipoPocion.Vida)
+        {
+            tiempoRestanteVida = cooldownVida;
+            BloquearIngredientes(TipoPocion.Vida);
+        }
+        else if (tipo == TipoPocion.Mejora)
+        {
+            tiempoRestanteMejora = cooldownMejora;
+            BloquearIngredientes(TipoPocion.Mejora);
+        }
     }
 
-    // Función opcional para limpiar los datos guardados desde el Inspector
-    [ContextMenu("Limpiar Cooldowns Guardados")]
-    public void LimpiarCooldownsGuardados()
-    {
-        PlayerPrefs.DeleteKey(CooldownEndTimeVidaKey);
-        PlayerPrefs.DeleteKey(CooldownEndTimeMejoraKey);
-        PlayerPrefs.Save();
-        Debug.Log("¡Cooldowns de Vida y Mejora limpiados de PlayerPrefs!");
-    }
-
-    #region Lógica de UI (Bloqueo/Desbloqueo)
     private void BloquearIngredientes(TipoPocion tipo)
     {
-        if (panelIngredientes == null) return;
+        if (panelIngredientes == null)
+        {
+            Debug.LogError("Panel de ingredientes no asignado en el inspector.");
+            return;
+        }
 
         foreach (Transform t in panelIngredientes)
         {
@@ -214,14 +235,21 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
                 cg.interactable = false;
 
                 var img = t.GetComponent<Image>();
-                if (img != null) img.color = new Color(0.5f, 0.5f, 0.5f, img.color.a);
+                if (img != null)
+                {
+                    img.color = new Color(0.5f, 0.5f, 0.5f, img.color.a); // Color gris
+                }
             }
         }
     }
 
     private void DesbloquearIngredientes(TipoPocion tipo)
     {
-        if (panelIngredientes == null) return;
+        if (panelIngredientes == null)
+        {
+            Debug.LogError("Panel de ingredientes no asignado en el inspector.");
+            return;
+        }
 
         foreach (Transform t in panelIngredientes)
         {
@@ -231,21 +259,18 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
             if (esVida || esMejora)
             {
                 var cg = t.GetComponent<CanvasGroup>();
-
-                // --- ESTA ES LA LÍNEA QUE CAMBIAMOS ---
-                // Simplemente nos aseguramos de que el CanvasGroup exista.
                 if (cg != null)
                 {
-                    // Al eliminar la condición "!cg.interactable", forzamos
-                    // a que siempre se ponga en estado "desbloqueado".
                     cg.blocksRaycasts = true;
                     cg.interactable = true;
+                }
 
-                    var img = t.GetComponent<Image>();
-                    if (img != null) img.color = new Color(1f, 1f, 1f, img.color.a);
+                var img = t.GetComponent<Image>();
+                if (img != null)
+                {
+                    img.color = new Color(1f, 1f, 1f, img.color.a); // Color original (blanco)
                 }
             }
         }
     }
-    #endregion
 }
