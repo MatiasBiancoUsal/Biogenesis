@@ -1749,6 +1749,8 @@ MonoBehaviour:
   cajonRotoPrefab: {fileID: 3437470063048184887, guid: 7e02db8c80e04014e99eeb3f538cdec1, type: 3}
   spawnPosition: {fileID: 1697160886}
   interval: 10
+  spawnSound: {fileID: 8300000, guid: ff2c08eb24f99384f84bc8ccca1866dd, type: 3}
+  spawnVolume: 2
 --- !u!4 &782107789
 Transform:
   m_ObjectHideFlags: 0
