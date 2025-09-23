@@ -2547,7 +2547,6 @@ MonoBehaviour:
   - Laboratorio Abandonado
   audioSource: {fileID: 2113523873}
   alarmaClip: {fileID: 8300000, guid: ff2c08eb24f99384f84bc8ccca1866dd, type: 3}
-  randomScene: 
 --- !u!4 &2113523872
 Transform:
   m_ObjectHideFlags: 0
@@ -2900,15 +2899,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5809825748555189729, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 34.8553
+      value: 141.037
       objectReference: {fileID: 0}
     - target: {fileID: 5809825748555189729, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 34.8553
+      value: 34.855
       objectReference: {fileID: 0}
     - target: {fileID: 5809825748555189729, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 491.1547
+      value: 418.052
       objectReference: {fileID: 0}
     - target: {fileID: 5809825748555189729, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_AnchoredPosition.y
