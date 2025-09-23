@@ -1515,7 +1515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1039644779267413362, guid: 2163b66c3bcc9a544a6486cfa56148a4, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1572161398412506252, guid: 2163b66c3bcc9a544a6486cfa56148a4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4454,6 +4454,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MaletinCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 975162953882576474, guid: 648a74e870b837f46aa374fae0516bb8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1569838838015797352, guid: 648a74e870b837f46aa374fae0516bb8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -186.99997
@@ -4544,7 +4548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6694549520192454807, guid: 648a74e870b837f46aa374fae0516bb8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4689,7 +4693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5304345389221051756, guid: e04fa0467e3f0174698fc8184469bee3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
