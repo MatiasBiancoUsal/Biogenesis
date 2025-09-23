@@ -27,6 +27,10 @@ public class MutacionAraña : MonoBehaviour, IMutable
     public bool yaMutóPrimera = false;
     public bool yaMutóFinal = false;
 
+    [Header("Efecto visual de mutación")]
+    public GameObject prefabHumo;
+    public float duracionHumo = 1.5f;
+
     [Header("Animación")]
     public AnimatorOverrideController controladorMutacion1;
     public Animator anim;
@@ -154,7 +158,19 @@ public class MutacionAraña : MonoBehaviour, IMutable
             AjustarEscalaPorTamañoSprite();
             RehacerCollider();
             DesactivarAnimator();
+
+            if (prefabHumo != null)
+            {
+                GameObject humo = Instantiate(prefabHumo, transform.position, Quaternion.identity);
+                Destroy(humo, duracionHumo);
+            }
         }
+    }
+
+    private System.Collections.IEnumerator CambiarSpriteConDelay(Sprite nuevoSprite)
+    {
+        yield return new WaitForSeconds(duracionHumo * 0.8f);
+        spriteRenderer.sprite = nuevoSprite;
     }
 
     void AjustarEscalaPorTamañoSprite()
