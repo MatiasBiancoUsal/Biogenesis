@@ -2,44 +2,55 @@ using UnityEngine;
 
 public class ADNCazadorVolador : MonoBehaviour
 {
+    [Header("Configuración del Spawner")]
     public GameObject prefabADN;
     public float intervalo = 5f;
 
     [Header("Límites de Generación")]
-    public int maximoADNTotal = 9; // El máximo que el jugador puede tener en su inventario.
-    public int minimoEnEscena = 4; // Intentará que siempre haya este número disponible.
+    public int maximoPorTipo = 4;
+    public int minimoEnEscena = 2;
 
     private float tiempoSiguiente;
+    private string nombreDeEsteADN;
 
     void Start()
     {
         tiempoSiguiente = intervalo;
+        if (prefabADN != null && prefabADN.GetComponent<RecolectarADN>() != null)
+        {
+            nombreDeEsteADN = prefabADN.GetComponent<RecolectarADN>().itemName;
+        }
+        else
+        {
+            Debug.LogError($"El prefab en '{gameObject.name}' no tiene el script 'RecolectarADN' o no tiene un itemName.", this);
+        }
     }
 
     void Update()
     {
-        if (InventarioManagerPrueba.instancia == null) return; // Esperar a que el inventario esté listo
+        if (string.IsNullOrEmpty(nombreDeEsteADN) || InventarioManagerPrueba.instancia == null) return;
 
-        // 1. Le preguntamos al inventario el total de ADN que ya tiene el jugador.
-        int adnDelJugador = InventarioManagerPrueba.instancia.GetTotalADNRecolectados();
+        // Pregunta por la cantidad de su tipo específico de ADN
+        int adnDelJugador = InventarioManagerPrueba.instancia.GetCantidadDeADN(nombreDeEsteADN);
 
-        // 2. Contamos cuántos ADNs físicos hay en la escena ahora mismo.
-        int adnEnEscena = FindObjectsByType<RecolectarADN>(FindObjectsSortMode.None).Length;
-
-        // 3. Si la suma de lo que tiene el jugador y lo que hay en escena ya es el máximo, no generamos más.
-        if (adnDelJugador + adnEnEscena >= maximoADNTotal)
+        // Cuenta solo los objetos en escena de su tipo específico
+        int adnEnEscena = 0;
+        RecolectarADN[] todosLosAdnEnEscena = FindObjectsByType<RecolectarADN>(FindObjectsSortMode.None);
+        foreach (var adn in todosLosAdnEnEscena)
         {
-            return;
+            if (adn.itemName == nombreDeEsteADN)
+            {
+                adnEnEscena++;
+            }
         }
 
-        // Si aún no hemos llegado al límite, continuamos con el temporizador.
+        if (adnDelJugador + adnEnEscena >= maximoPorTipo) return;
+
         tiempoSiguiente -= Time.deltaTime;
 
         if (tiempoSiguiente <= 0f)
         {
             tiempoSiguiente = intervalo;
-
-            // Generamos uno nuevo solo si hay pocos en la escena.
             if (adnEnEscena < minimoEnEscena)
             {
                 GenerarADN();

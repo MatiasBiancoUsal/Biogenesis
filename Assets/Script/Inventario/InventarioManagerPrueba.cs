@@ -126,13 +126,15 @@ public class InventarioManagerPrueba : MonoBehaviour
         OnInventarioChanged?.Invoke();
     }
 
-    public int GetTotalADNRecolectados()
+    public int GetCantidadDeADN(string nombreADN)
     {
-        int total = 0;
         foreach (Slot slot in slots)
         {
-            total += slot.cantidad;
+            if (slot.nombreADN == nombreADN)
+            {
+                return slot.cantidad;
+            }
         }
-        return total;
+        return 0;
     }
 }
