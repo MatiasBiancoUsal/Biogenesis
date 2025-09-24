@@ -31,8 +31,15 @@ public class MutacionAraña : MonoBehaviour, IMutable
     public GameObject prefabHumo;
     public float duracionHumo = 1.5f;
 
-    [Header("Animación")]
+
+    //[Header("Animación")]
+    //public AnimatorOverrideController controladorMutacion1;
+    //public Animator anim;
+
+    //Sofi
+    [Header("Efecto visual de mutación")]
     public AnimatorOverrideController controladorMutacion1;
+    public AnimatorOverrideController controladorMutacion2;
     public Animator anim;
 
     [Header("Sonidos de mutación")]
@@ -70,7 +77,7 @@ public class MutacionAraña : MonoBehaviour, IMutable
             {
                 spriteRenderer.sprite = spriteOriginal;
                 transform.localScale = escalaOriginalGuardada;
-                AjustarEscalaPorTamañoSprite();
+                //AjustarEscalaPorTamañoSprite();
                 RehacerCollider();
             }
 
@@ -100,6 +107,12 @@ public class MutacionAraña : MonoBehaviour, IMutable
         // Puedes activar la animación si lo deseas más adelante
         // if (yaMutóPrimera && !yaMutóFinal)
         //     anim.runtimeAnimatorController = controladorMutacion1;
+
+        //Sofi
+        if (yaMutóPrimera && !yaMutóFinal)
+            anim.runtimeAnimatorController = controladorMutacion1;
+        else if (yaMutóFinal)
+            anim.runtimeAnimatorController = controladorMutacion2;
     }
 
     public void RecibirPocion()
@@ -155,9 +168,9 @@ public class MutacionAraña : MonoBehaviour, IMutable
         if (spriteRenderer != null && nuevoSprite != null)
         {
             spriteRenderer.sprite = nuevoSprite;
-            AjustarEscalaPorTamañoSprite();
-            RehacerCollider();
-            DesactivarAnimator();
+            //AjustarEscalaPorTamañoSprite();
+            //RehacerCollider();
+            //DesactivarAnimator();
 
             if (prefabHumo != null)
             {

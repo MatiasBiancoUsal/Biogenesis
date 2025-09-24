@@ -2747,7 +2747,10 @@ MonoBehaviour:
   pocionesRecibidas: 0
   "yaMut\xF3Primera": 0
   "yaMut\xF3Final": 0
+  prefabHumo: {fileID: 0}
+  duracionHumo: 1.5
   controladorMutacion1: {fileID: 22100000, guid: 066c65824c6cfae41bbcfc1066b4af0b, type: 2}
+  controladorMutacion2: {fileID: 0}
   anim: {fileID: 0}
   sonidoMutacion1: {fileID: 8300000, guid: f6ff35384ee5e6e4d83d696bf5cd33e0, type: 3}
   sonidoMutacionFinal: {fileID: 8300000, guid: f6ff35384ee5e6e4d83d696bf5cd33e0, type: 3}
