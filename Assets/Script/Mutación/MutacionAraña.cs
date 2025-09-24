@@ -81,7 +81,7 @@ public class MutacionAraña : MonoBehaviour, IMutable
                 RehacerCollider();
             }
 
-            Debug.Log("🔄 Araña reiniciada para testing.");
+            Debug.Log("Araña reiniciada para testing.");
             return;
         }
 
