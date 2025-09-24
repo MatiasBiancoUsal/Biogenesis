@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Cantidad de criaturas a mutar")]
-    public int totalCriaturas = 4; // ajustalo según cuántas criaturas tengas
+    public int totalCriaturas = 4;
     private int criaturasMutadasFinal = 0;
 
     private bool experimentoCreado = false;
@@ -47,5 +47,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("¡Victoria cumplida! Cargando escena final...");
             SceneManager.LoadScene("EscenaFinalDelJuego"); // usa el nombre exacto de tu escena
         }
+    }
+
+    public void ReiniciarEstadoJuego()
+    {
+        criaturasMutadasFinal = 0;
+        experimentoCreado = false;
+        Debug.Log("GameManager reiniciado a sus valores iniciales.");
     }
 }

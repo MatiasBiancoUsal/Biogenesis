@@ -60,9 +60,15 @@ public class MenuPrincipal : MonoBehaviour
             InventarioManagerPrueba.instancia.ReiniciarInventario();
         }
 
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ReiniciarEstadoJuego();
+        }
+
         // 1) Borrar TODO lo guardado, incluyendo el estado de la criatura nueva.
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
+        Debug.Log("PlayerPrefs borrados.");
 
         // 2) Cargar la escena.
         SceneManager.LoadScene(gameSceneName);
