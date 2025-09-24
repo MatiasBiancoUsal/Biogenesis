@@ -1654,6 +1654,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1bf55bda97e8ea45881b019b0d9028e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1165703121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1165703123}
+  - component: {fileID: 1165703122}
+  m_Layer: 0
+  m_Name: Fin del juego
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1165703122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165703121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2f72316b60d4a4fb18649082bb30cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalCriaturas: 4
+--- !u!4 &1165703123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165703121}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.307185, y: 0.11223125, z: 0.0314241}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1302667010 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6881952462438188439, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
@@ -3075,13 +3120,14 @@ SceneRoots:
   - {fileID: 608590253}
   - {fileID: 377337731}
   - {fileID: 133575114}
-  - {fileID: 2113523872}
   - {fileID: 598013159}
   - {fileID: 1583227626}
   - {fileID: 1549148990}
+  - {fileID: 2113523872}
   - {fileID: 430152260244797721}
   - {fileID: 565111762}
   - {fileID: 237259701}
   - {fileID: 1151218434906180918}
   - {fileID: 1761067488}
   - {fileID: 2015580362}
+  - {fileID: 1165703123}
