@@ -125,4 +125,14 @@ public class InventarioManagerPrueba : MonoBehaviour
         PlayerPrefs.Save(); 
         OnInventarioChanged?.Invoke();
     }
+
+    public int GetTotalADNRecolectados()
+    {
+        int total = 0;
+        foreach (Slot slot in slots)
+        {
+            total += slot.cantidad;
+        }
+        return total;
+    }
 }
