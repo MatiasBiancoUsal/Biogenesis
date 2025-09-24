@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class EscenaPantalla : MonoBehaviour
@@ -21,6 +22,9 @@ public class EscenaPantalla : MonoBehaviour
 
    void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         SceneManager.LoadScene(IrAEscena);
     }
 }
