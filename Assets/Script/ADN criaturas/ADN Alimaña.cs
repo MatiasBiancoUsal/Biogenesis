@@ -5,45 +5,54 @@ using UnityEngine;
 public class ADNAlimaña : MonoBehaviour
 {
     public GameObject prefabADN;
-    public float intervalo = 5f; // cada cuánto tiempo genera ADN
-    public Transform puntoGeneracion; // opcional: para definir un lugar específico
+    public float intervalo = 5f;
 
-    public int maximoADN = 9;
-    private int adnGenerados = 0;
+    [Header("Límites de Generación")]
+    public int maximoADNTotal = 9; // El máximo que el jugador puede tener en su inventario.
+    public int minimoEnEscena = 4; // Intentará que siempre haya este número disponible.
 
-    private float tiempoSiguiente = 5f;
+    private float tiempoSiguiente;
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        tiempoSiguiente = intervalo;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (adnGenerados < maximoADN)
-        {
-            tiempoSiguiente -= Time.deltaTime;
+        if (InventarioManagerPrueba.instancia == null) return; // Esperar a que el inventario esté listo
 
-            if (tiempoSiguiente <= 0f)
+        // 1. Le preguntamos al inventario el total de ADN que ya tiene el jugador.
+        int adnDelJugador = InventarioManagerPrueba.instancia.GetTotalADNRecolectados();
+
+        // 2. Contamos cuántos ADNs físicos hay en la escena ahora mismo.
+        int adnEnEscena = FindObjectsByType<RecolectarADN>(FindObjectsSortMode.None).Length;
+
+        // 3. Si la suma de lo que tiene el jugador y lo que hay en escena ya es el máximo, no generamos más.
+        if (adnDelJugador + adnEnEscena >= maximoADNTotal)
+        {
+            return;
+        }
+
+        // Si aún no hemos llegado al límite, continuamos con el temporizador.
+        tiempoSiguiente -= Time.deltaTime;
+
+        if (tiempoSiguiente <= 0f)
+        {
+            tiempoSiguiente = intervalo;
+
+            // Generamos uno nuevo solo si hay pocos en la escena.
+            if (adnEnEscena < minimoEnEscena)
             {
                 GenerarADN();
-                tiempoSiguiente = intervalo;
             }
         }
     }
 
     void GenerarADN()
     {
-        // Definí los límites del área donde querés que aparezca el ADN
-        float x = Random.Range(-5f, 5f); // Cambiá estos valores según tu escena
+        float x = Random.Range(-5f, 5f);
         float y = Random.Range(-3f, 3f);
-        Vector3 posicion = new Vector3(x, y, 0f);
-
-        Instantiate(prefabADN, posicion, Quaternion.identity);
-
-        adnGenerados++;
-        Debug.Log($"ADN generados: {adnGenerados}/{maximoADN}");
+        Instantiate(prefabADN, new Vector3(x, y, 0f), Quaternion.identity);
     }
 }
