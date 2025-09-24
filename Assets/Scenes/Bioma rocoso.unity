@@ -2561,7 +2561,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 5735544221615476869, guid: b6326c8aa389a4648b67f28ff31778f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2747,7 +2747,7 @@ MonoBehaviour:
   pocionesRecibidas: 0
   "yaMut\xF3Primera": 0
   "yaMut\xF3Final": 0
-  prefabHumo: {fileID: 0}
+  prefabHumo: {fileID: 5721998452359622573, guid: 5c143d4d93850f84799ff803af1198f6, type: 3}
   duracionHumo: 1.5
   controladorMutacion1: {fileID: 22100000, guid: 066c65824c6cfae41bbcfc1066b4af0b, type: 2}
   controladorMutacion2: {fileID: 0}
