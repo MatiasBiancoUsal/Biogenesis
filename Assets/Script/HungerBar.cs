@@ -24,12 +24,30 @@ public class HungerBar : MonoBehaviour
     private float saveTimer = 0f;
     private float lastSavedValue = -1f;
 
+    //SOO
+    [Header("Control manual")]
+    public bool activo = true;
+
     // Base para cálculo en tiempo real
     private float baseHunger;         // hunger en el momento lastSavedTimestamp
     private long lastSavedTimestamp;  // unix seconds
 
     // daño por segundo
     private float damageTimer = 0f;
+
+    //SOO
+    private bool hasLoaded = false;
+
+    // debug (opcional)
+    private float dbgTimer = 0f;
+
+    //SOO también
+    void OnEnable()
+    {
+        LoadSavedState();
+        UpdateHungerUI();
+        Debug.Log($"HungerBar ({creatureID}) OnEnable: hunger={hungerValue:F3} activo={activo}");
+    }
 
     void Start()
     {
@@ -39,41 +57,24 @@ public class HungerBar : MonoBehaviour
             Debug.LogWarning($"HungerBar: creatureID vacío — uso name '{creatureID}'. Recomiendo asignar un ID único en el Inspector.");
         }
 
-        // Cargar valores guardados
-        float savedHunger = PlayerPrefs.GetFloat(GetKey(), 1f);
-        string timeStr = PlayerPrefs.GetString(GetTimeKey(), "0");
-        long savedTime;
-        if (!long.TryParse(timeStr, out savedTime) || savedTime <= 0)
-        {
-            // si no había timestamp, consideramos que lo guardamos ahora (evita restar un intervalo enorme)
-            savedTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-        }
-
-        long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-        long elapsed = now - savedTime; // segundos transcurridos
-
-        //calcular hunger al 'now' basado en savedHunger and elapsed
-        float computed = Mathf.Clamp01(savedHunger - (float)(elapsed * hungerDecreaseRate));
-
-        // Base para cálculos posteriores (ahora corresponde a 'now')
-        baseHunger = computed;
-        lastSavedTimestamp = now;
-        hungerValue = computed;
-
-        // Marcar que no hay necesidad de guardar inmediatamente
-        lastSavedValue = hungerValue;
-
-        UpdateHungerUI();
-
         if (personajeAsociado == null && !soloMostrar)
             Debug.LogWarning($"HungerBar ({creatureID}): personajeAsociado no asignado.");
 
-        Debug.Log($"HungerBar ({creatureID}) Start: loaded={savedHunger:F3} tSaved={savedTime} elapsed={elapsed}s computed={hungerValue:F3}");
+        // por si por alguna razón OnEnable no se ejecutó antes
+        if (!hasLoaded)
+            LoadSavedState();
     }
     //
 
     void Update()
     {
+        //SOO
+        if (!activo) // si no está activo, solo actualiza la UI pero no baja hambre ni guarda
+        {
+            UpdateHungerUI();
+            return;
+        }
+
         // Calcular hunger actual en base a baseHunger + lastSavedTimestamp (no usamos PlayerPrefs cada frame)
         long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
         double elapsedSinceBase = (double)(now - lastSavedTimestamp);
@@ -103,8 +104,62 @@ public class HungerBar : MonoBehaviour
                 saveTimer = 0f;
             }
         }
+
+        // debug cada 2s para ver que baja
+        dbgTimer += Time.deltaTime;
+        if (dbgTimer >= 2f)
+        {
+            dbgTimer = 0f;
+            Debug.Log($"HungerBar ({creatureID}) Update: activo={activo} hunger={hungerValue:F3} base={baseHunger:F3} lastSaved={lastSavedTimestamp}");
+        }
+
         // si soloMostrar == true: solo mostramos la bajada calculada (no guardamos ni aplicamos daño)
     }
+
+    //SOO NUEVO
+    private void LoadSavedState()
+    {
+        float savedHunger = PlayerPrefs.GetFloat(GetKey(), 1f);
+        string timeStr = PlayerPrefs.GetString(GetTimeKey(), "0");
+        long savedTime;
+        if (!long.TryParse(timeStr, out savedTime) || savedTime <= 0)
+        {
+            savedTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        }
+
+        long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        long elapsed = now - savedTime;
+
+        float computed = Mathf.Clamp01(savedHunger - (float)(elapsed * hungerDecreaseRate));
+
+        baseHunger = computed;
+        lastSavedTimestamp = now;
+        hungerValue = computed;
+
+        lastSavedValue = hungerValue;
+        hasLoaded = true;
+
+        UpdateHungerUI();
+        Debug.Log($"HungerBar ({creatureID}) LoadSavedState: saved={savedHunger:F3} savedTime={savedTime} elapsed={elapsed}s computed={hungerValue:F3}");
+    }
+
+    /// <summary>
+    /// Activa la pérdida de hambre a partir de ahora.
+    /// resetToFull = true -> fuerza hunger a 1.0 al activarse.
+    /// </summary>
+    public void ActivarHambre(bool resetToFull = false)
+    {
+        activo = true;
+        if (resetToFull) hungerValue = 1f;
+
+        // partir desde el valor actual, con timestamp 'ahora' para que empiece a decrecer.
+        baseHunger = hungerValue;
+        lastSavedTimestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        UpdateHungerUI();
+
+        Debug.Log($"HungerBar ({creatureID}) ActivarHambre reset={resetToFull} hunger={hungerValue:F3}");
+    } //HASTA ACÁ SOO
+
 
     public void Feed(float amount)
     {
@@ -169,6 +224,17 @@ public class HungerBar : MonoBehaviour
         if (!soloMostrar)
             SaveHungerImmediate();
     }
+
+    //SOO
+    //public void ActivarHambre()
+    //{
+        //activo = true;
+
+        // recalcular base y timestamp al momento de activarse
+        //long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+        //baseHunger = hungerValue;
+        //lastSavedTimestamp = now;
+    //}
 
     private string GetKey() => "Hambre_" + creatureID.Trim();
     private string GetTimeKey() => "HambreTime_" + creatureID.Trim();

@@ -2163,6 +2163,7 @@ MonoBehaviour:
   personajeAsociado: {fileID: 1540938119}
   damagePerSecond: 5
   saveInterval: 1
+  activo: 1
 --- !u!1001 &1217623520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3181,7 +3182,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -9083550351330359791, guid: 43e1e5cbb2187d14a8200f6b1d711cbf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

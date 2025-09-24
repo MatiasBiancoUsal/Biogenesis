@@ -148,7 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: ADN Cazador Volador
-  icon: {fileID: 3241061950800773838, guid: e074d3676bb4c6147b6bf8a8aac1282f, type: 3}
   quantity: 1
 --- !u!82 &-2049282208581932064
 AudioSource:

@@ -332,6 +332,7 @@ MonoBehaviour:
   personajeAsociado: {fileID: 1644563044}
   damagePerSecond: 5
   saveInterval: 1
+  activo: 1
 --- !u!4 &335943563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3012874979855124488, guid: 8ce55d93e0067974aa705b49a30f66bc, type: 3}
@@ -2561,7 +2562,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 5735544221615476869, guid: b6326c8aa389a4648b67f28ff31778f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -4,14 +4,15 @@ public class ActivadorCriatura : MonoBehaviour
 {
     // Arrastra aquí desde el Inspector el GameObject de la criatura que quieres activar.
     public GameObject objetoCriatura;
-
-    //Nuevo Sofi
     public GameObject canvasBarraVida;
     public GameObject canvasBarraHambre;
-    //
 
     // Constante para la clave de guardado en PlayerPrefs
     private const string KEY_CRIATURA_CREADA = "CriaturaCreada";
+
+    //SOO NUEVO
+    [Tooltip("Si true, la criatura arranca con hambre llena (1.0) al activarse.")]
+    public bool resetHungerOnSpawn = false;
 
     // --- CICLO DE VIDA DE UNITY ---
 
@@ -40,11 +41,8 @@ public class ActivadorCriatura : MonoBehaviour
         {
             // Nos aseguramos de que esté desactivada al empezar.
             if (objetoCriatura != null) objetoCriatura.SetActive(false);
-
-            //Nuevo Sofi
             if (canvasBarraVida != null) canvasBarraVida.SetActive(false);
             if (canvasBarraHambre != null) canvasBarraHambre.SetActive(false);
-            //
         }
     }
 
@@ -56,20 +54,26 @@ public class ActivadorCriatura : MonoBehaviour
     private void ActivarLaCriatura()
     {
         Debug.Log("¡Evento OnCriaturaCreada recibido! Activando la criatura.");
-        if (objetoCriatura != null)
-        {
-            objetoCriatura.SetActive(true);
-        }
 
-        //Nuevo Sofi
-        if (canvasBarraVida != null)
+        if (objetoCriatura != null) objetoCriatura.SetActive(true);
+        if (canvasBarraVida != null) canvasBarraVida.SetActive(true);
+        if (canvasBarraHambre != null) canvasBarraHambre.SetActive(true);
+
+        // Intentamos obtener el HungerBar del objeto o del canvas (incluyendo inactivos por seguridad)
+        HungerBar hb = null;
+        if (objetoCriatura != null)
+            hb = objetoCriatura.GetComponentInChildren<HungerBar>(true);
+
+        if (hb == null && canvasBarraHambre != null)
+            hb = canvasBarraHambre.GetComponentInChildren<HungerBar>(true);
+
+        if (hb != null)
         {
-            canvasBarraVida.SetActive(true);
+            hb.ActivarHambre(resetHungerOnSpawn);
         }
-        if (canvasBarraHambre != null)
+        else
         {
-            canvasBarraHambre.SetActive(true);
+            Debug.LogWarning("ActivadorCriatura: no encontré HungerBar en objetoCriatura ni en canvasBarraHambre.");
         }
-        //
     }
 }

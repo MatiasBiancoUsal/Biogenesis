@@ -636,6 +636,7 @@ MonoBehaviour:
   objetoCriatura: {fileID: 319003650}
   canvasBarraVida: {fileID: 394861635}
   canvasBarraHambre: {fileID: 271961256}
+  resetHungerOnSpawn: 0
 --- !u!114 &319003658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,7 +683,7 @@ MonoBehaviour:
   vidaMaxima: 100
   mutacionActual: 0
   sonidoDerrota: {fileID: 0}
-  "sonidoDa\xF1o": {fileID: 0}
+  "sonidoDa\xF1o": {fileID: 8300000, guid: 862ac6075717e9747b972fb3ece76ec8, type: 3}
 --- !u!82 &319003661
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1029,10 +1030,11 @@ MonoBehaviour:
   hungerValue: 1
   hungerDecreaseRate: 0.01
   creatureID: Experimento
-  soloMostrar: 1
+  soloMostrar: 0
   personajeAsociado: {fileID: 319003660}
   damagePerSecond: 5
   saveInterval: 1
+  activo: 0
 --- !u!1001 &463178028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2083,6 +2085,10 @@ PrefabInstance:
     - target: {fileID: 6881952462438188439, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_Name
       value: DialoguePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881952462438188439, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7309739901124955807, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
