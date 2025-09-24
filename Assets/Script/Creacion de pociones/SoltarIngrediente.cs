@@ -256,5 +256,15 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
     }
     #endregion
 
+    void OnDestroy()
+    {
+        // Si el jugador sale de la escena y queda algún ingrediente en la mesa...
+        if (ingredientesUI.Count > 0)
+        {
+            Debug.Log("Limpiando ingredientes de la mesa al salir de la escena para evitar bloqueos.");
 
+            // Usamos la misma función que ya tienes para limpiar todo correctamente.
+            LimpiarMesa();
+        }
+    }
 }
