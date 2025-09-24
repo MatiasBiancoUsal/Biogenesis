@@ -126,6 +126,7 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
 
     void CrearPocion(GameObject prefab)
     {
+        // 1. Instanciamos la poción en la mesa (como antes)
         GameObject nuevaPocion = Instantiate(prefab, transform);
         nuevaPocion.transform.SetParent(transform, false);
         if (nuevaPocion.GetComponent<RectTransform>() != null)
@@ -133,17 +134,30 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
             nuevaPocion.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         }
 
-        var agarrarPocion = nuevaPocion.GetComponent<AgarrarPocion>();
-        if (agarrarPocion != null)
+        // 2. Determinamos qué prefab de "datos" le corresponde (para el maletín)
+        GameObject prefabParaGuardar = null;
+        if (prefab == pocionVidaPrefab)
         {
-            if (prefab == pocionVidaPrefab)
-                agarrarPocion.prefabParaMaletin = prefabPocionVida;
-            else if (prefab == pocionMejoraPrefab)
-                agarrarPocion.prefabParaMaletin = prefabPocionMejora;
+            prefabParaGuardar = prefabPocionVida; // El prefab que guarda los datos, no la UI
+        }
+        else if (prefab == pocionMejoraPrefab)
+        {
+            prefabParaGuardar = prefabPocionMejora; // El prefab que guarda los datos, no la UI
         }
 
-        Debug.Log("Poción creada correctamente.");
+        // --- 3. LA PARTE MÁS IMPORTANTE: GUARDAMOS LA POCIÓN EN EL MALETÍN ---
+        if (prefabParaGuardar != null && MaletinManager.instancia != null)
+        {
+            MaletinManager.instancia.GuardarPocion(prefabParaGuardar);
+            Debug.Log($"¡Se ha guardado {prefabParaGuardar.name} en el maletín!");
+        }
+
+        // 4. Limpiamos los ingredientes de la mesa
+        Debug.Log("Poción creada y guardada correctamente.");
         LimpiarMesa();
+
+        // 5. Destruimos la poción visual de la mesa, porque ya está guardada en el maletín
+        
     }
 
     void LimpiarMesa()
@@ -267,4 +281,6 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
             LimpiarMesa();
         }
     }
+
+
 }
