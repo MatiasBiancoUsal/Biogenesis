@@ -124,6 +124,11 @@ public class InventarioManagerPrueba : MonoBehaviour
         PlayerPrefs.SetInt(KEY_CRIATURA_CREADA, 1);
         PlayerPrefs.Save(); 
         OnInventarioChanged?.Invoke();
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.NotificarExperimentoCreado();
+        }
     }
 
     public int GetCantidadDeADN(string nombreADN)
