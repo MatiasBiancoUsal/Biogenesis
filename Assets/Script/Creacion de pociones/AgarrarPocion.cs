@@ -140,7 +140,7 @@ public class AgarrarPocion : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             // Quitar del inventario / UI
             if (MaletinManager.instancia != null)
             {
-                MaletinManager.instancia.QuitarPocion(prefabParaMaletin);
+                MaletinManager.instancia.QuitarPocion(prefabParaMaletin.tag);
             }
 
             Destroy(gameObject); // eliminar el icono del maletín

@@ -5,17 +5,17 @@ public class MaletinManager : MonoBehaviour
 {
     public static MaletinManager instancia;
 
-    public GameObject pocionVida;
-    public GameObject pocionMejora;
+    public string pocionVidaID;
+    public string pocionMejoraID;
 
     public bool tienePocionVida()
     {
-        return pocionVida != null;
+        return !string.IsNullOrEmpty(pocionVidaID);
     }
 
     public bool tienePocionMejora()
     {
-        return pocionMejora != null;
+        return !string.IsNullOrEmpty(pocionMejoraID);
     }
 
     private void Awake()
@@ -30,10 +30,10 @@ public class MaletinManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // Solo la primera vez se inicializa vacío
-        if (pocionVida != null || pocionMejora != null)
+        if (!string.IsNullOrEmpty(pocionVidaID) || !string.IsNullOrEmpty(pocionMejoraID))
         {
-            pocionVida = null;
-            pocionMejora = null;
+            pocionVidaID = null;
+            pocionMejoraID = null;
         }
     }
 
@@ -41,33 +41,35 @@ public class MaletinManager : MonoBehaviour
     {
         if (prefabPocion.CompareTag("PocionVida"))
         {
-            pocionVida = prefabPocion;
+            pocionVidaID = prefabPocion.name;
+            Debug.Log("Guardado ID: " + pocionVidaID);
         }
         else if (prefabPocion.CompareTag("PocionMejora"))
         {
-            pocionMejora = prefabPocion;
+            pocionMejoraID = prefabPocion.name;
+            Debug.Log("Guardado ID: " + pocionMejoraID);
         }
     }
 
     // SOO
-    public void QuitarPocion(GameObject prefabPocion)
+    public void QuitarPocion(string tipoPocionTag)
     {
-        if (prefabPocion.CompareTag("PocionVida"))
+        if (tipoPocionTag == "PocionVida")
         {
-            pocionVida = null;
+            pocionVidaID = null;
         }
-        else if (prefabPocion.CompareTag("PocionMejora"))
+        else if (tipoPocionTag == "PocionMejora")
         {
-            pocionMejora = null;
+            pocionMejoraID = null;
         }
     }
     // SOO
 
-    public List<GameObject> ObtenerPociones()
+    public List<string> ObtenerPocionesID()
     {
-        var lista = new List<GameObject>();
-        if (pocionVida != null) lista.Add(pocionVida);
-        if (pocionMejora != null) lista.Add(pocionMejora);
+        var lista = new List<string>();
+        if (tienePocionVida()) lista.Add(pocionVidaID);
+        if (tienePocionMejora()) lista.Add(pocionMejoraID);
         return lista;
     }
 }

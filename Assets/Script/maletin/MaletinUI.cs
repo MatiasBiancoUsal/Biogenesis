@@ -30,6 +30,7 @@ public class MaletinUI : MonoBehaviour
         ActualizarUI();
     }
 
+   
     void ActualizarUI()
     {
         if (MaletinManager.instancia == null)
@@ -46,39 +47,14 @@ public class MaletinUI : MonoBehaviour
         }
 
         // Mostrar solo las pociones que realmente están en el maletín
-        foreach (var pocion in MaletinManager.instancia.ObtenerPociones())
+        if (MaletinManager.instancia.tienePocionVida())
         {
-            GameObject nuevaPocionUI = null;
+            Instantiate(prefabIconoVida, panelPocionesVida);
+        }
 
-            if (pocion.CompareTag("PocionVida"))
-            {
-                nuevaPocionUI = Instantiate(prefabIconoVida, panelPocionesVida);
-            }
-            else if (pocion.CompareTag("PocionMejora"))
-            {
-                nuevaPocionUI = Instantiate(prefabIconoMejora, panelPocionesMejora);
-            }
-
-            if (nuevaPocionUI != null)
-            {
-                Image img = nuevaPocionUI.GetComponent<Image>();
-
-                // Primero probamos si la poción original es UI
-                Image imgOriginal = pocion.GetComponent<Image>();
-                if (imgOriginal != null)
-                {
-                    img.sprite = imgOriginal.sprite;
-                }
-                else
-                {
-                    // Si no es UI, probamos si es un objeto del mundo con SpriteRenderer
-                    SpriteRenderer sr = pocion.GetComponent<SpriteRenderer>();
-                    if (sr != null)
-                    {
-                        img.sprite = sr.sprite;
-                    }
-                }
-            }
+        if (MaletinManager.instancia.tienePocionMejora())
+        {
+            Instantiate(prefabIconoMejora, panelPocionesMejora);
         }
     }
 }
