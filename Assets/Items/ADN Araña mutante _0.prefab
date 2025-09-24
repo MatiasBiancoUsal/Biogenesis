@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7700961334532688030}
   - component: {fileID: 4043650761289067220}
   - component: {fileID: -9005881895662745034}
+  - component: {fileID: 571755700901986429}
   m_Layer: 0
   m_Name: "ADN Ara\xF1a mutante _0"
   m_TagString: Untagged
@@ -246,3 +247,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &571755700901986429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395208717185439404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18a44752be94034695949f276b49edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

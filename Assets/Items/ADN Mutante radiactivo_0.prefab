@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4652934068465172552}
   - component: {fileID: 6050516239601843603}
   - component: {fileID: 5923766930707659807}
+  - component: {fileID: 7277881132624750563}
   m_Layer: 0
   m_Name: ADN Mutante radiactivo_0
   m_TagString: Untagged
@@ -246,3 +247,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7277881132624750563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7448859574841178860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18a44752be94034695949f276b49edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

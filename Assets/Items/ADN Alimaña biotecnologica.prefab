@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6917382989164496943}
   - component: {fileID: -2873905923312669659}
   - component: {fileID: 3172033186801282117}
+  - component: {fileID: 5292783516903264339}
   m_Layer: 0
   m_Name: "ADN Alima\xF1a biotecnologica"
   m_TagString: Untagged
@@ -246,3 +247,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5292783516903264339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206031163621183328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18a44752be94034695949f276b49edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
