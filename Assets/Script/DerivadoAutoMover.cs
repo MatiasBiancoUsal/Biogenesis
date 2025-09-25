@@ -4,31 +4,20 @@ using UnityEngine;
 
 public class DerivadoAutoMover : AutoMover
 {
-    // Start is called before the first frame update
-
-    
-
     protected override void Start()
     {
         base.Start();
     }
 
-    // Update is called once per frame
     protected override void Update()
     {
-        if(!quieto)
+        // El movimiento base solo se ejecuta si la criatura no está quieta.
+        if (!quieto)
         {
             base.Update();
-            SpriteRenderer img = GetComponent<SpriteRenderer>();
-            img.flipX = false;
-        }
-        else
-        {
-            SpriteRenderer img = GetComponent<SpriteRenderer>();
-            img.flipX = true;
         }
 
-
-            animator.SetBool("atacar", quieto);
+        // Controla la animación de ataque, que se activa cuando 'quieto' es true.
+        animator.SetBool("atacar", quieto);
     }
 }

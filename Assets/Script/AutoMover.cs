@@ -14,7 +14,7 @@ public class AutoMover : MonoBehaviour
     protected Vector3 startPos;
     protected Vector3 targetPos;
     protected bool isWaiting = true;
-    protected bool goingLeft = true;
+    [SerializeField]public bool goingLeft = true; //MATIAS
     protected float timer;
 
     [HideInInspector] public bool quieto = false; //  Nueva variable, prueba ataque alimaña
@@ -45,7 +45,7 @@ public class AutoMover : MonoBehaviour
                 isWaiting = false;
                 animator.Play("run");
                 PlayWalkingSound();
-                FaceDirection(goingLeft ? Vector2.left : Vector2.right);
+                FaceDirection(goingLeft ? Vector2.left : Vector2.right); //MATIAS
             }
         }
         else
@@ -72,7 +72,7 @@ public class AutoMover : MonoBehaviour
         }
     }
 
-    protected virtual void FaceDirection(Vector2 dir)
+    public virtual void FaceDirection(Vector2 dir)
     {
         Vector3 scale = transform.localScale;
         if (dir.x < 0)

@@ -22,8 +22,11 @@ public class FreezeOnAttack : MonoBehaviour
             {
                 // Hay enemigo: la criatura se queda quieta y ataca
                 moveScript.quieto = true;
-                SpriteRenderer img = GetComponent<SpriteRenderer>();
-                img.flipX = true;
+                //SpriteRenderer img = GetComponent<SpriteRenderer>();
+                //img.flipX = true;
+                moveScript.goingLeft = true; //MATIAS
+                moveScript.FaceDirection(moveScript.goingLeft ? Vector2.left : Vector2.right); //MATIAS
+
             }
             else
             {

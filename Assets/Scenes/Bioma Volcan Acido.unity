@@ -1009,63 +1009,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4acf21debdc4ed040a06c4aff2f1492c, type: 3}
---- !u!1001 &370560148
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.3575444
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.425264
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1780590450711351784, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2327430119031382221, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
-      propertyPath: m_Name
-      value: depredador (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8386a87314a4a4447b1a0818b27f626e, type: 3}
 --- !u!1 &422131598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3389,6 +3332,7 @@ MonoBehaviour:
   moveDistance: 3
   audioSource: {fileID: 1529948410}
   walkClip: {fileID: 8300000, guid: eb12d88b786a25e43b723b4d8c3b3813, type: 3}
+  goingLeft: 1
   quieto: 0
 --- !u!114 &1540938124
 MonoBehaviour:
@@ -4946,4 +4890,3 @@ SceneRoots:
   - {fileID: 1161924535}
   - {fileID: 342778418}
   - {fileID: 218536014}
-  - {fileID: 370560148}

@@ -12,8 +12,8 @@ public class ArañaDefensa : MonoBehaviour
     private bool disparando = false;
 
     [Header("Audio")]
-    public AudioSource audioSource;   // Componente de audio
-    public AudioClip disparoClip;     // Sonido del disparo de telaraña
+    public AudioSource audioSource;
+    public AudioClip disparoClip;
 
     void Update()
     {
@@ -28,15 +28,34 @@ public class ArañaDefensa : MonoBehaviour
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, rangoDeteccion);
         DerivadoAutoMover movimiento = GetComponent<DerivadoAutoMover>();
+        SpriteRenderer img = GetComponent<SpriteRenderer>();
+
         foreach (var hit in hits)
         {
-            if (hit.CompareTag("depredador") || hit.CompareTag("Parasito")) // ✅ Ahora detecta los dos
+            if (hit.CompareTag("depredador") || hit.CompareTag("Parasito"))
             {
                 movimiento.quieto = true;
+
+                // Voltea el sprite para mirar al enemigo.
+                if (hit.transform.position.x < transform.position.x)
+                {
+                    img.flipX = true;
+                }
+                else
+                {
+                    img.flipX = false;
+                }
+
                 return hit.gameObject;
             }
         }
+
+        // Si no se encuentra un enemigo, la criatura se mueve.
         movimiento.quieto = false;
+
+        // Se asegura de que el sprite regrese a su orientación por defecto.
+        img.flipX = false;
+
         return null;
     }
 
@@ -45,6 +64,16 @@ public class ArañaDefensa : MonoBehaviour
         disparando = true;
         while (objetivo != null)
         {
+            // Vuelve a verificar la dirección del objetivo antes de cada disparo, por si se mueve.
+            if (objetivo.position.x < transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+
             Disparar(objetivo);
             yield return new WaitForSeconds(intervaloDisparo);
         }
@@ -61,14 +90,10 @@ public class ArañaDefensa : MonoBehaviour
             Vector2 direccion = (objetivo.position - puntoDisparo.position).normalized;
             proyectil.GetComponent<ProyectilTelaraña>().direccion = direccion;
 
-            // 🔊 Reproducir sonido de disparo
             PlayShootSound();
         }
     }
 
-    // --------------------
-    // Audio
-    // --------------------
     void PlayShootSound()
     {
         if (audioSource != null && disparoClip != null)

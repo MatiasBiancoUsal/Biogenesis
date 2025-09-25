@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class MutacionMutante : MonoBehaviour, IMutable
 {
@@ -72,7 +73,7 @@ public class MutacionMutante : MonoBehaviour, IMutable
             return;
         }
 
-        // Restaurar estado si existía
+        // Restaurar estado y animador si existía
         if (PlayerPrefs.HasKey(PREF_POCIONES))
         {
             pocionesRecibidas = PlayerPrefs.GetInt(PREF_POCIONES, 0);
@@ -82,24 +83,19 @@ public class MutacionMutante : MonoBehaviour, IMutable
             if (yaMutóFinal)
             {
                 AplicarMutacionVisual(spriteMutadoFinal);
+                anim.runtimeAnimatorController = controladorMutacion2;
             }
             else if (yaMutóPrimera)
             {
                 AplicarMutacionVisual(spriteMutado1);
+                anim.runtimeAnimatorController = controladorMutacion1;
             }
         }
     }
 
     void Update()
     {
-        if (yaMutóPrimera && !yaMutóFinal)
-        {
-            anim.runtimeAnimatorController = controladorMutacion1;
-        }
-        else if (yaMutóFinal)
-        {
-            anim.runtimeAnimatorController = controladorMutacion2;
-        }
+        // La lógica de animación ya no va aquí para evitar conflictos.
     }
 
     public void RecibirPocion()
@@ -126,6 +122,7 @@ public class MutacionMutante : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutado1);
+        anim.runtimeAnimatorController = controladorMutacion1; // Asigna el controlador aquí.
 
         // ▶️ Reproducir sonido de primera mutación
         if (audioSource != null && sonidoMutacion1 != null)
@@ -140,6 +137,7 @@ public class MutacionMutante : MonoBehaviour, IMutable
         GuardarEstado();
 
         AplicarMutacionVisual(spriteMutadoFinal);
+        anim.runtimeAnimatorController = controladorMutacion2; // Asigna el controlador aquí.
 
         // ▶️ Reproducir sonido de mutación final
         if (audioSource != null && sonidoMutacionFinal != null)

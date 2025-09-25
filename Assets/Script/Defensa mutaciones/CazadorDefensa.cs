@@ -81,7 +81,7 @@ public class CazadorDefensa : MonoBehaviour
             case EstadoMutacion.Final: anim.SetTrigger("Atacar3"); break;
         }
 
-        // 🔊 Reproducir sonido de ataque
+        // Reproducir sonido de ataque
         PlayAttackSound();
 
         // Aplicar daño al objetivo si tiene script de vida
