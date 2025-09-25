@@ -44,16 +44,34 @@ public class CriaturaAttack : MonoBehaviour
             }
         }
 
-        if (currentTarget != null && cooldownTimer <= 0f)
+        //CAMBIO SOO
+        if (currentTarget != null)
         {
-            Attack();
-            cooldownTimer = attackCooldown;
+            FlipTowardsTarget(); // siempre mirar al objetivo
+
+            if (cooldownTimer <= 0f)
+            {
+                Attack();
+                cooldownTimer = attackCooldown;
+            }
         }
-        else if (currentTarget == null && animator != null)
+        else if (animator != null)
         {
             animator.ResetTrigger("ataque1");
             animator.SetTrigger("Idle");
         }
+    }
+
+    //NUEVO SOO
+    void FlipTowardsTarget()
+    {
+        if (currentTarget == null) return;
+
+        // si el enemigo está a la izquierda, el mutante mira a la izquierda
+        if (currentTarget.position.x < transform.position.x)
+            transform.localScale = new Vector3(-1, 1, 1);
+        else
+            transform.localScale = new Vector3(1, 1, 1);
     }
 
     void Attack()
@@ -89,8 +107,14 @@ public class CriaturaAttack : MonoBehaviour
         if (p != null)
         {
             Vector2 dir = (currentTarget.position - firePoint.position).normalized;
+            Debug.Log("Dirección proyectil: " + dir);  //ver en consola
             p.SetDirection(dir);
         }
+        else
+        {
+            Debug.LogError("El proyectil no tiene ProyectilCriatura!!!");
+        }
+
 
         // 🔊 Reproducir sonido de disparo
         PlayShootSound();
