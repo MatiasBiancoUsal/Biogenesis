@@ -44,7 +44,6 @@ public class CriaturaAttack : MonoBehaviour
             }
         }
 
-        //CAMBIO SOO
         if (currentTarget != null)
         {
             FlipTowardsTarget(); // siempre mirar al objetivo
@@ -62,16 +61,33 @@ public class CriaturaAttack : MonoBehaviour
         }
     }
 
-    //NUEVO SOO
+    // 🔄 Corregido para que el firePoint siempre quede en la boca
     void FlipTowardsTarget()
     {
         if (currentTarget == null) return;
 
-        // si el enemigo está a la izquierda, el mutante mira a la izquierda
         if (currentTarget.position.x < transform.position.x)
+        {
             transform.localScale = new Vector3(-1, 1, 1);
+
+            // Asegurar que el firePoint esté a la izquierda
+            firePoint.localPosition = new Vector3(
+                -Mathf.Abs(firePoint.localPosition.x),
+                firePoint.localPosition.y,
+                firePoint.localPosition.z
+            );
+        }
         else
+        {
             transform.localScale = new Vector3(1, 1, 1);
+
+            // Asegurar que el firePoint esté a la derecha
+            firePoint.localPosition = new Vector3(
+                Mathf.Abs(firePoint.localPosition.x),
+                firePoint.localPosition.y,
+                firePoint.localPosition.z
+            );
+        }
     }
 
     void Attack()
@@ -102,21 +118,19 @@ public class CriaturaAttack : MonoBehaviour
         if (prefab == null) return;
 
         GameObject proj = Instantiate(prefab, firePoint.position, Quaternion.identity);
-        ProyectilCriatura p = proj.GetComponent<ProyectilCriatura>();
+        ProyectilMutante p = proj.GetComponent<ProyectilMutante>(); // ✅ corregido nombre de script
 
         if (p != null)
         {
             Vector2 dir = (currentTarget.position - firePoint.position).normalized;
-            Debug.Log("Dirección proyectil: " + dir);  //ver en consola
+            Debug.Log("Dirección proyectil: " + dir);
             p.SetDirection(dir);
         }
         else
         {
-            Debug.LogError("El proyectil no tiene ProyectilCriatura!!!");
+            Debug.LogError("El proyectil no tiene ProyectilMutante!!!");
         }
 
-
-        // 🔊 Reproducir sonido de disparo
         PlayShootSound();
     }
 
