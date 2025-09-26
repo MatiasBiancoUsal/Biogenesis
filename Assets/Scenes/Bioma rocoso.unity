@@ -375,7 +375,7 @@ Transform:
   m_GameObject: {fileID: 555666702}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.3, y: 0.6, z: 0}
+  m_LocalPosition: {x: -2.29, y: 0.6, z: 0}
   m_LocalScale: {x: 0.5270039, y: 0.5270039, z: 0.5270039}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2767,6 +2767,7 @@ MonoBehaviour:
   puntoDisparo: {fileID: 555666703}
   intervaloDisparo: 2
   rangoDeteccion: 15
+  spriteFacesLeftByDefault: 1
   audioSource: {fileID: 1757707758}
   disparoClip: {fileID: 8300000, guid: 9b7823714673c4746a03c79f31033c64, type: 3}
 --- !u!114 &1644563052
@@ -2786,6 +2787,7 @@ MonoBehaviour:
   moveDistance: 3
   audioSource: {fileID: 1703710632}
   walkClip: {fileID: 8300000, guid: 2456fb1862c45b34bb68f9bc7f29ce94, type: 3}
+  goingLeft: 1
   quieto: 0
 --- !u!114 &1644563053
 MonoBehaviour:

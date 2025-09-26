@@ -10,101 +10,121 @@ public class ArañaDefensa : MonoBehaviour
     public float rangoDeteccion = 6f;
 
     private bool disparando = false;
+    private DerivadoAutoMover movimiento;
+
+    // Guardamos la escala/posición inicial para no asumir signos
+    float initialScaleX;
+    float leftScaleX;   // valor de scale.x que corresponda a "mirar izquierda"
+    float rightScaleX;  // contrario a leftScaleX
+    float initialFirePointLocalX;
+
+    [Header("Orientación")]
+    [Tooltip("Marca true si el sprite en el editor APUNTA A LA IZQUIERDA por defecto (según dijiste). Si al revés, marca false).")]
+    public bool spriteFacesLeftByDefault = true;
 
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip disparoClip;
 
+    void Start()
+    {
+        movimiento = GetComponent<DerivadoAutoMover>();
+
+        initialScaleX = transform.localScale.x;
+        // Calculamos qué valor de localScale.x corresponde a 'izquierda' y 'derecha'
+        leftScaleX = spriteFacesLeftByDefault ? Mathf.Abs(initialScaleX) : -Mathf.Abs(initialScaleX);
+        rightScaleX = -leftScaleX;
+
+        if (puntoDisparo != null)
+            initialFirePointLocalX = puntoDisparo.localPosition.x;
+    }
+
     void Update()
     {
         GameObject enemigo = DetectarEnemigo();
         if (enemigo != null && !disparando)
-        {
             StartCoroutine(DispararRoutine(enemigo.transform));
-        }
     }
 
     GameObject DetectarEnemigo()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, rangoDeteccion);
-        DerivadoAutoMover movimiento = GetComponent<DerivadoAutoMover>();
-        SpriteRenderer img = GetComponent<SpriteRenderer>();
 
         foreach (var hit in hits)
         {
+            if (hit == null) continue;
             if (hit.CompareTag("depredador") || hit.CompareTag("Parasito"))
             {
-                movimiento.quieto = true;
+                if (movimiento != null) movimiento.quieto = true;
 
-                // Voltea el sprite para mirar al enemigo.
-                if (hit.transform.position.x < transform.position.x)
-                {
-                    img.flipX = true;
-                }
-                else
-                {
-                    img.flipX = false;
-                }
+                // FORZAR mirar siempre a la izquierda (convención segura)
+                ForceFaceLeft();
 
                 return hit.gameObject;
             }
         }
 
-        // Si no se encuentra un enemigo, la criatura se mueve.
-        movimiento.quieto = false;
-
-        // Se asegura de que el sprite regrese a su orientación por defecto.
-        img.flipX = false;
-
+        // Si no hay enemigo, volver a permitir movimiento
+        if (movimiento != null) movimiento.quieto = false;
         return null;
     }
 
     IEnumerator DispararRoutine(Transform objetivo)
     {
         disparando = true;
+
         while (objetivo != null)
         {
-            // Vuelve a verificar la dirección del objetivo antes de cada disparo, por si se mueve.
-            if (objetivo.position.x < transform.position.x)
-            {
-                GetComponent<SpriteRenderer>().flipX = true;
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().flipX = false;
-            }
+            // aseguramos orientación y punto de disparo
+            ForceFaceLeft();
 
+            // NO tocamos el Animator aquí: DerivadoAutoMover ya setea "atacar" según "quieto"
             Disparar(objetivo);
             yield return new WaitForSeconds(intervaloDisparo);
         }
+
         disparando = false;
+    }
+
+    void ForceFaceLeft()
+    {
+        Vector3 s = transform.localScale;
+        s.x = leftScaleX;
+        transform.localScale = s;
+
+        if (puntoDisparo != null)
+            puntoDisparo.localPosition = new Vector3(initialFirePointLocalX, puntoDisparo.localPosition.y, puntoDisparo.localPosition.z);
+    }
+
+    // (por si después necesitás forzar derecha)
+    void ForceFaceRight()
+    {
+        Vector3 s = transform.localScale;
+        s.x = rightScaleX;
+        transform.localScale = s;
+
+        if (puntoDisparo != null)
+            puntoDisparo.localPosition = new Vector3(-initialFirePointLocalX, puntoDisparo.localPosition.y, puntoDisparo.localPosition.z);
     }
 
     void Disparar(Transform objetivo)
     {
-        if (proyectilPrefab != null && puntoDisparo != null)
-        {
-            GameObject proyectil = Instantiate(proyectilPrefab, puntoDisparo.position, Quaternion.identity);
-            proyectil.tag = "ProyectilEnemigo";
+        if (proyectilPrefab == null || puntoDisparo == null || objetivo == null) return;
 
-            Vector2 direccion = (objetivo.position - puntoDisparo.position).normalized;
-            proyectil.GetComponent<ProyectilTelaraña>().direccion = direccion;
+        GameObject proyectil = Instantiate(proyectilPrefab, puntoDisparo.position, Quaternion.identity);
+        proyectil.tag = "ProyectilEnemigo";
 
-            PlayShootSound();
-        }
-    }
+        Vector2 direccion = (objetivo.position - puntoDisparo.position).normalized;
+        ProyectilTelaraña p = proyectil.GetComponent<ProyectilTelaraña>();
+        if (p != null) p.direccion = direccion;
 
-    void PlayShootSound()
-    {
-        if (audioSource != null && disparoClip != null)
-        {
-            audioSource.PlayOneShot(disparoClip);
-        }
+        if (audioSource != null && disparoClip != null) audioSource.PlayOneShot(disparoClip);
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, rangoDeteccion);
+        if (puntoDisparo != null) Gizmos.DrawLine(transform.position, puntoDisparo.position);
     }
 }
