@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProyectilMutante : MonoBehaviour
 {
+    [Header("Configuración del proyectil")]
     public float velocidad = 6f;
+    public int daño = 1; // cuánto daño hace el proyectil
+
     private Vector2 direccion;
 
     public void SetDirection(Vector2 dir)
@@ -14,8 +15,8 @@ public class ProyectilMutante : MonoBehaviour
 
     void Update()
     {
+        // mover proyectil
         transform.Translate(direccion * velocidad * Time.deltaTime);
-        Debug.Log("Moviendo proyectil en dirección: " + direccion);
 
         // destruir si se va demasiado lejos (opcional)
         if (Mathf.Abs(transform.position.x) > 20 || Mathf.Abs(transform.position.y) > 20)
@@ -26,8 +27,18 @@ public class ProyectilMutante : MonoBehaviour
     {
         if (other.CompareTag("depredador"))
         {
-            // acá podés hacer daño al enemigo si tenés un script de vida
-            Destroy(gameObject);
+            // busca el script DepredadorAnimTest
+            DepredadorAnimTest enemigo = other.GetComponent<DepredadorAnimTest>();
+            if (enemigo != null)
+            {
+                // aplicar daño según cantidad
+                for (int i = 0; i < daño; i++)
+                {
+                    enemigo.RecibirDaño();
+                }
+            }
+
+            Destroy(gameObject); // destruir proyectil al impactar
         }
     }
 }
