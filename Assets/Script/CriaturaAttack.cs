@@ -8,19 +8,19 @@ public class CriaturaAttack : MonoBehaviour
     public GameObject proyectilMutadoFinal;
     public Transform firePoint;
     public float attackCooldown = 1f;
-    public float rango = 6f;             // Rango configurable
+    public float rango = 6f;
 
     [Header("Animación")]
-    public Animator animator;            // referencia al Animator
+    public Animator animator;
 
     [Header("Audio")]
-    public AudioSource audioSource;      // Componente de audio
-    public AudioClip disparoClip;        // Sonido del disparo
+    public AudioSource audioSource;
+    public AudioClip disparoClip;
 
     [HideInInspector] public Transform currentTarget;
 
     public float cooldownTimer = 0f;
-    private MutacionMutante mutacion;    // referencia al script de mutación
+    private MutacionMutante mutacion;
 
     void Start()
     {
@@ -31,7 +31,7 @@ public class CriaturaAttack : MonoBehaviour
     {
         cooldownTimer -= Time.deltaTime;
 
-        // Detectar enemigo más cercano dentro del rango
+        // detectar enemigos
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, rango);
         currentTarget = null;
 
@@ -46,7 +46,7 @@ public class CriaturaAttack : MonoBehaviour
 
         if (currentTarget != null)
         {
-            FlipTowardsTarget(); // siempre mirar al objetivo
+            FlipTowardsTarget();
 
             if (cooldownTimer <= 0f)
             {
@@ -57,11 +57,11 @@ public class CriaturaAttack : MonoBehaviour
         else if (animator != null)
         {
             animator.ResetTrigger("ataque1");
-            animator.SetTrigger("Idle");
+            animator.ResetTrigger("ataque2");
+            animator.ResetTrigger("ataque3");
         }
     }
 
-    // 🔄 Corregido para que el firePoint siempre quede en la boca
     void FlipTowardsTarget()
     {
         if (currentTarget == null) return;
@@ -69,46 +69,40 @@ public class CriaturaAttack : MonoBehaviour
         if (currentTarget.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-1, 1, 1);
-
-            // Asegurar que el firePoint esté a la izquierda
-            firePoint.localPosition = new Vector3(
-                -Mathf.Abs(firePoint.localPosition.x),
-                firePoint.localPosition.y,
-                firePoint.localPosition.z
-            );
+            firePoint.localPosition = new Vector3(-Mathf.Abs(firePoint.localPosition.x), firePoint.localPosition.y, firePoint.localPosition.z);
         }
         else
         {
             transform.localScale = new Vector3(1, 1, 1);
-
-            // Asegurar que el firePoint esté a la derecha
-            firePoint.localPosition = new Vector3(
-                Mathf.Abs(firePoint.localPosition.x),
-                firePoint.localPosition.y,
-                firePoint.localPosition.z
-            );
+            firePoint.localPosition = new Vector3(Mathf.Abs(firePoint.localPosition.x), firePoint.localPosition.y, firePoint.localPosition.z);
         }
     }
 
     void Attack()
     {
-        if (animator != null)
+        string trigger = "ataque1"; // por defecto
+        if (mutacion != null)
         {
-            animator.ResetTrigger("Idle");
-            animator.SetTrigger("ataque1"); // activa la animación de ataque
+            if (mutacion.estaEnMutacionFinal()) trigger = "ataque3";
+            else if (mutacion.estaEnMutacion1()) trigger = "ataque2";
         }
 
-        // Disparo sincronizado con la animación
-        Invoke(nameof(Shoot), 0.3f); // ajusta este delay al momento exacto del ataque
+        if (animator != null)
+        {
+            animator.ResetTrigger("ataque1");
+            animator.ResetTrigger("ataque2");
+            animator.ResetTrigger("ataque3");
+            animator.SetTrigger(trigger);
+        }
+
+        Invoke(nameof(Shoot), 0.3f);
     }
 
     void Shoot()
     {
         if (firePoint == null || currentTarget == null) return;
 
-        // Elegir proyectil según la mutación
         GameObject prefab = proyectilNormal;
-
         if (mutacion != null)
         {
             if (mutacion.estaEnMutacionFinal()) prefab = proyectilMutadoFinal;
@@ -118,7 +112,7 @@ public class CriaturaAttack : MonoBehaviour
         if (prefab == null) return;
 
         GameObject proj = Instantiate(prefab, firePoint.position, Quaternion.identity);
-        ProyectilMutante p = proj.GetComponent<ProyectilMutante>(); // ✅ corregido nombre de script
+        ProyectilMutante p = proj.GetComponent<ProyectilMutante>();
 
         if (p != null)
         {
@@ -134,9 +128,6 @@ public class CriaturaAttack : MonoBehaviour
         PlayShootSound();
     }
 
-    // --------------------
-    // Audio
-    // --------------------
     void PlayShootSound()
     {
         if (audioSource != null && disparoClip != null)
