@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class BarraVida : MonoBehaviour
 {
-    public Image rellenoBarraVida; // Asignás la imagen de la barra desde el Inspector
-    public Personaje personajeAsociado; // Asignás el personaje desde el Inspector
+    public Image rellenoBarraVida;          // La imagen de la barra desde el Inspector
+    public Personaje personajeAsociado;     // Script de la criatura (debe tener vida y vidaMaxima)
 
     [Header("ID de la criatura")]
-    public string creatureID; // Se completa en el Inspector
+    public string creatureID; // "Araña", "Alimaña", "Mutante", "Cazador"
 
     private int vidaMaxima;
     private bool personajeMurio = false;
@@ -24,31 +24,42 @@ public class BarraVida : MonoBehaviour
 
         vidaMaxima = personajeAsociado.vidaMaxima;
 
-        // ✅ Cargar vida guardada (float → int)
-        personajeAsociado.vida = (int)PlayerPrefs.GetFloat("Vida_" + creatureID, vidaMaxima);
+        // ✅ Cargar vida guardada desde PlayerPrefs
+        personajeAsociado.vida = PlayerPrefs.GetInt("Vida_" + creatureID, vidaMaxima);
 
         ActualizarUI();
     }
 
     void Update()
     {
-        if (!personajeMurio && personajeAsociado != null)
+        if (personajeMurio || personajeAsociado == null) return;
+
+        int vidaActual = Mathf.Clamp(personajeAsociado.vida, 0, vidaMaxima);
+
+        // ✅ Actualizar barra local
+        rellenoBarraVida.fillAmount = (float)vidaActual / vidaMaxima;
+
+        // ✅ Guardar en PlayerPrefs
+        PlayerPrefs.SetInt("Vida_" + creatureID, vidaActual);
+
+        // ✅ Actualizar estado global
+        if (EstadoCriaturasGlobal.instancia != null)
         {
-            int vidaActual = Mathf.Clamp(personajeAsociado.vida, 0, vidaMaxima);
-            rellenoBarraVida.fillAmount = (float)vidaActual / vidaMaxima;
-
-            // ✅ Guardar vida constantemente (se guarda como float, aunque vida sea int)
-            PlayerPrefs.SetFloat("Vida_" + creatureID, vidaActual);
-            PlayerPrefs.Save();
-
-            if (personajeAsociado.vida <= 0)
+            switch (creatureID)
             {
-                personajeMurio = true;
-                rellenoBarraVida.fillAmount = 0f;
+                case "Araña": EstadoCriaturasGlobal.instancia.vidaAraña = vidaActual; break;
+                case "Alimaña": EstadoCriaturasGlobal.instancia.vidaAlimaña = vidaActual; break;
+                case "Mutante": EstadoCriaturasGlobal.instancia.vidaMutante = vidaActual; break;
+                case "Cazador": EstadoCriaturasGlobal.instancia.vidaCazador = vidaActual; break;
             }
+
+            EstadoCriaturasGlobal.instancia.GuardarEstado();
         }
-        else if (personajeMurio)
+
+        // ✅ Revisar muerte
+        if (personajeAsociado.vida <= 0)
         {
+            personajeMurio = true;
             rellenoBarraVida.fillAmount = 0f;
         }
     }
