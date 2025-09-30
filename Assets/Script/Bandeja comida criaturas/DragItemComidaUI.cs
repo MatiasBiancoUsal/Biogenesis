@@ -37,7 +37,15 @@ public class DragItemComidaUI : MonoBehaviour, IBeginDragHandler, IDragHandler, 
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.position += (Vector3)eventData.delta / canvas.scaleFactor;
+        Vector3 globalMousePos;
+        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(
+            canvas.transform as RectTransform,
+            eventData.position,
+            eventData.pressEventCamera,
+            out globalMousePos))
+        {
+            rectTransform.position = globalMousePos;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
