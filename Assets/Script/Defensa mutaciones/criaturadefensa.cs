@@ -16,13 +16,28 @@ public class criaturadefensa : MonoBehaviour
     private bool atacando = false;
     private Animator anim;
 
+    // --- NUEVO ---
+    // Referencia al script del personaje para saber su estado.
+    private Personaje personaje;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+
+        // --- NUEVO ---
+        // Obtenemos el componente Personaje al iniciar.
+        personaje = GetComponent<Personaje>();
     }
 
     void Update()
     {
+        // --- NUEVO Y MUY IMPORTANTE ---
+        // Si el personaje está incapacitado (vida <= 0), detenemos toda la lógica de ataque.
+        if (personaje != null && personaje.vida <= 0)
+        {
+            return; // No se ejecuta nada más del Update.
+        }
+
         GameObject criatura = DetectarCriatura();
         if (criatura != null && !atacando)
         {
@@ -48,6 +63,13 @@ public class criaturadefensa : MonoBehaviour
         atacando = true;
         while (objetivo != null)
         {
+            // --- NUEVO ---
+            // Comprobamos la vida también dentro del bucle para detenerlo a mitad.
+            if (personaje != null && personaje.vida <= 0)
+            {
+                break; // Sale del bucle de ataque si muere.
+            }
+
             Atacar(objetivo);
             yield return new WaitForSeconds(intervaloAtaque);
         }
@@ -65,7 +87,6 @@ public class criaturadefensa : MonoBehaviour
             if (anim != null)
                 anim.SetTrigger("ataque1");
 
-            // 🔊 Reproducir sonido de ataque
             PlayAttackSound();
         }
     }
