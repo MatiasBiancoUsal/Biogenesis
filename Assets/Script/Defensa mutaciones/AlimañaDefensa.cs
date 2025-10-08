@@ -11,13 +11,31 @@ public class AlimañaDefensa : MonoBehaviour
     public float rangoDeteccion = 6f;
 
     [Header("Audio")]
-    public AudioSource audioSource;      // Componente de audio
-    public AudioClip disparoClip;        // Sonido del disparo
+    public AudioSource audioSource;
+    public AudioClip disparoClip;
 
     private bool disparando = false;
 
+    // --- NUEVO ---
+    // Referencia al script del personaje para saber su estado.
+    private Personaje personaje;
+
+    void Start()
+    {
+        // --- NUEVO ---
+        // Obtenemos el componente Personaje al iniciar.
+        personaje = GetComponent<Personaje>();
+    }
+
     void Update()
     {
+        // --- NUEVO Y MUY IMPORTANTE ---
+        // Si el personaje está incapacitado (vida <= 0), detenemos toda la lógica de ataque.
+        if (personaje != null && personaje.vida <= 0)
+        {
+            return; // No se ejecuta nada más del Update.
+        }
+
         GameObject enemigo = DetectarEnemigo();
         if (enemigo != null && !disparando)
         {
@@ -48,6 +66,13 @@ public class AlimañaDefensa : MonoBehaviour
         disparando = true;
         while (objetivo != null)
         {
+            // --- NUEVO ---
+            // Comprobamos la vida también dentro del bucle para detenerlo a mitad.
+            if (personaje != null && personaje.vida <= 0)
+            {
+                break; // Sale del bucle de disparo si muere.
+            }
+
             Debug.Log("[Alimaña] Disparando proyectil...");
             Disparar(objetivo);
             yield return new WaitForSeconds(intervaloDisparo);
@@ -55,6 +80,8 @@ public class AlimañaDefensa : MonoBehaviour
         disparando = false;
         Debug.Log("[Alimaña] Dejó de disparar (objetivo perdido).");
     }
+
+    // ... el resto de tu código (Disparar, PlayShootSound, etc.) se mantiene igual ...
 
     void Disparar(Transform objetivo)
     {
@@ -68,7 +95,6 @@ public class AlimañaDefensa : MonoBehaviour
 
             Debug.Log($"[Alimaña] Proyectil creado hacia {objetivo.name}");
 
-            // Si hay mutación, aumentamos daño
             MutacionAlimaña mutacion = GetComponent<MutacionAlimaña>();
             if (mutacion != null)
             {
@@ -76,7 +102,6 @@ public class AlimañaDefensa : MonoBehaviour
                 Debug.Log($"[Alimaña] Proyectil modificado por mutación, daño final: {scriptProyectil.daño}");
             }
 
-            // 🔊 Reproducir sonido de disparo
             PlayShootSound();
         }
         else
