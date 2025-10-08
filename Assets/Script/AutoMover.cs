@@ -18,7 +18,7 @@ public class AutoMover : MonoBehaviour
     protected float timer;
 
     [HideInInspector] public bool quieto = false; //  Nueva variable, prueba ataque alimaña
-
+    private Personaje personaje;
     protected virtual void Start()
     {
         animator = GetComponent<Animator>();
@@ -26,10 +26,16 @@ public class AutoMover : MonoBehaviour
         targetPos = startPos + Vector3.left * moveDistance;
         timer = waitTime;
         animator.Play("idle");
+        personaje = GetComponent<Personaje>();
     }
 
     protected virtual void Update()
     {
+        if (personaje != null && personaje.vida <= 0)
+        {
+            StopWalkingSound(); // Nos aseguramos de que el sonido se detenga.
+            return; // No se ejecuta nada más del Update.
+        }
         if (quieto) //  Si está quieto, no se mueve
         {
             animator.Play("idle");

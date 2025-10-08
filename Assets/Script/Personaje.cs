@@ -7,7 +7,7 @@ public class Personaje : MonoBehaviour
     public int vidaMaxima = 100;
 
     private Animator animator;
-    private bool estaMuerto = false;
+    private bool estaIncapacitado = false;
 
     public enum TipoMutacion { Mutacion1, Mutacion2, Mutacion3 }
     public TipoMutacion mutacionActual;
@@ -27,81 +27,70 @@ public class Personaje : MonoBehaviour
         {
             Debug.LogWarning("⚠️ Falta AudioSource en el personaje.");
         }
+
+        // --- NUEVO ---
+        // Al empezar, le decimos al Animator qué mutación tenemos.
+        // El (int) convierte el enum (Mutacion1, Mutacion2) a un número (0, 1).
+        animator.SetInteger("tipoMutacion", (int)mutacionActual);
+    }
+
+    void Update()
+    {
+        animator.SetBool("estaIncapacitado", vida <= 0);
+    }
+
+    // --- Opcional pero recomendado ---
+    // Si la mutación puede cambiar en medio del juego, llama a esta función
+    public void CambiarMutacion(TipoMutacion nuevaMutacion)
+    {
+        mutacionActual = nuevaMutacion;
+        animator.SetInteger("tipoMutacion", (int)mutacionActual);
+        Debug.Log("🧬 Mutación cambiada a: " + nuevaMutacion);
     }
 
     public void TomarDaño(int cantidad)
     {
-        if (estaMuerto) return;
+        // ... (el resto de la función TomarDaño se mantiene igual)
+        if (estaIncapacitado) return;
 
         vida -= cantidad;
         Debug.Log("💥 Personaje recibió daño. Vida actual: " + vida);
 
-        // 🔊 Reproducir sonido de daño CADA VEZ que recibe daño
         if (sonidoDaño != null && audioSource != null)
         {
-            Debug.Log("🔊 Reproduciendo sonido de daño");
             audioSource.PlayOneShot(sonidoDaño);
         }
-        else
-        {
-            Debug.LogWarning("⚠️ Falta sonido de daño o AudioSource en el personaje.");
-        }
 
-        if (vida <= 0 && !estaMuerto)
+        if (vida <= 0)
         {
             vida = 0;
-            Debug.Log("☠️ Personaje ha muerto");
-            Morir();
+            if (!estaIncapacitado)
+            {
+                estaIncapacitado = true;
+                Debug.Log("☠️ Personaje ha quedado incapacitado");
+
+                if (sonidoDerrota != null && audioSource != null)
+                {
+                    audioSource.PlayOneShot(sonidoDerrota);
+                }
+            }
         }
     }
 
     public void RestaurarVida(int cantidad)
     {
-        if (vida < vidaMaxima)
+        // ... (la función RestaurarVida se mantiene igual)
+        if (vida <= 0 && cantidad > 0)
         {
-            vida += cantidad;
-            if (vida > vidaMaxima)
-            {
-                vida = vidaMaxima;
-            }
-
-            Debug.Log("💚 Personaje se curó. Vida actual: " + vida);
-        }
-    }
-
-    private void Morir()
-    {
-        estaMuerto = true;
-
-        // 🔊 Reproducir sonido de derrota
-        if (sonidoDerrota != null && audioSource != null)
-        {
-            Debug.Log("🔊 Reproduciendo sonido de muerte");
-            audioSource.PlayOneShot(sonidoDerrota);
-        }
-        else
-        {
-            Debug.LogWarning("⚠️ Falta sonido de muerte o AudioSource.");
+            estaIncapacitado = false;
+            Debug.Log("💚 ¡Personaje recuperado!");
         }
 
-        // Activar la animación correspondiente según la mutación
-        switch (mutacionActual)
+        vida += cantidad;
+        if (vida > vidaMaxima)
         {
-            case TipoMutacion.Mutacion1:
-                animator.SetTrigger("muerte1");
-                break;
-            case TipoMutacion.Mutacion2:
-                animator.SetTrigger("muerte2");
-                break;
-            case TipoMutacion.Mutacion3:
-                animator.SetTrigger("muerte3");
-                break;
+            vida = vidaMaxima;
         }
-    }
-
-    public void DestruirObjeto()
-    {
-        Debug.LogWarning("🧨 FUNCIÓN DESTRUIR OBJETO LLAMADA: La animación de muerte terminó.");
-        Destroy(gameObject);
+        Debug.Log("Vida actual: " + vida);
     }
 }
