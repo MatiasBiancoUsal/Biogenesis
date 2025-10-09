@@ -122,6 +122,11 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
         if (ingredientesEnZona.Count > 1)
         {
             LimpiarMesa();
+
+            //evento crafteo incorrecto
+            AnalyticsService.Instance.RecordEvent("error_combinacion");
+            AnalyticsService.Instance.Flush();
+            //
         }
     }
 
