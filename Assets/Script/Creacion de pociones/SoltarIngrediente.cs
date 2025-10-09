@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Unity.Services.Analytics;
 
 public class SoltarIngrediente : MonoBehaviour, IDropHandler
 {
@@ -156,8 +157,14 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
         Debug.Log("Poción creada y guardada correctamente.");
         LimpiarMesa();
 
-        // 5. Destruimos la poción visual de la mesa, porque ya está guardada en el maletín
-        
+        //evemto crear pocion
+        CustomEvent pocion = new CustomEvent("pocion_creada")
+        {
+            { "tipo_pocion", prefabParaGuardar.name }
+        };
+        AnalyticsService.Instance.RecordEvent(pocion);
+        AnalyticsService.Instance.Flush();
+        //
     }
 
     void LimpiarMesa()
