@@ -157,7 +157,7 @@ public class SoltarIngrediente : MonoBehaviour, IDropHandler
         Debug.Log("Poción creada y guardada correctamente.");
         LimpiarMesa();
 
-        //evemto crear pocion
+        //evento crear pocion
         CustomEvent pocion = new CustomEvent("pocion_creada")
         {
             { "tipo_pocion", prefabParaGuardar.name }
