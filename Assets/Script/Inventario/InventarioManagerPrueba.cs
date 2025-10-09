@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Unity.Services.Analytics;
 
 [System.Serializable]
 public class DefinicionADN
@@ -129,6 +130,16 @@ public class InventarioManagerPrueba : MonoBehaviour
         {
             GameManager.Instance.NotificarExperimentoCreado();
         }
+
+        //evento crear pocion
+        CustomEvent adn = new CustomEvent("adn_combinado")
+{
+        { "adn_experimento", criaturaCreada }
+};
+        AnalyticsService.Instance.RecordEvent(adn);
+        AnalyticsService.Instance.Flush();
+        //
+
     }
 
     public int GetCantidadDeADN(string nombreADN)
