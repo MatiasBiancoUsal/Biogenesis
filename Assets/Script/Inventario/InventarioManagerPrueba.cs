@@ -131,10 +131,10 @@ public class InventarioManagerPrueba : MonoBehaviour
             GameManager.Instance.NotificarExperimentoCreado();
         }
 
-        //evento crear pocion
+        //evento crear pocion/crear criatura
         CustomEvent adn = new CustomEvent("adn_combinado")
 {
-        { "adn_experimento", criaturaCreada }
+        { "adn_experimento", criaturaCreada }, { "crear_criatura", criaturaCreada }
 };
         AnalyticsService.Instance.RecordEvent(adn);
         AnalyticsService.Instance.Flush();
