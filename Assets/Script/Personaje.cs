@@ -92,5 +92,9 @@ public class Personaje : MonoBehaviour
             vida = vidaMaxima;
         }
         Debug.Log("Vida actual: " + vida);
+
+        //evento criatura curada
+
+        //
     }
 }

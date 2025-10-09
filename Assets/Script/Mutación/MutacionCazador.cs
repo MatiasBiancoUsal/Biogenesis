@@ -161,6 +161,8 @@ public class MutacionCazador : MonoBehaviour, IMutable
             audioSource.PlayOneShot(sonidoMutacion1);
 
         Debug.Log("Mutación 1 activada.");
+
+
     }
 
     void MutarFinal()
