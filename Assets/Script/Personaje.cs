@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Services.Analytics;
+using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
@@ -79,6 +80,16 @@ public class Personaje : MonoBehaviour
 
     public void RestaurarVida(int cantidad)
     {
+        //evento vida
+        CustomEvent curacion = new CustomEvent("criatura_curada")
+        {
+        { "cura_criatura", gameObject.tag },
+                { "esta_muerto", estaIncapacitado }
+
+     };
+        AnalyticsService.Instance.RecordEvent(curacion);
+        AnalyticsService.Instance.Flush();
+        //
         // ... (la función RestaurarVida se mantiene igual)
         if (vida <= 0 && cantidad > 0)
         {
@@ -93,7 +104,6 @@ public class Personaje : MonoBehaviour
         }
         Debug.Log("Vida actual: " + vida);
 
-        //evento criatura curada
 
         //
     }
