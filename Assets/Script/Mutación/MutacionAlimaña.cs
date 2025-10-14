@@ -189,6 +189,17 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
 
         Debug.Log("🧬 Alimaña alcanzó su mutación final.");
         GameManager.Instance.NotificarCriaturaMutadaFinal();
+
+        //evento criatura mutada
+        CustomEvent mutacion = new CustomEvent("criatura_mutada")
+        {
+        { "mutacion_criatura", "alimaña" },
+        { "tipo_mutacion", 2 }
+
+     };
+        AnalyticsService.Instance.RecordEvent(mutacion);
+        AnalyticsService.Instance.Flush();
+        //
     }
 
     void AplicarMutacionVisual(Sprite nuevoSprite)
