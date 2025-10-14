@@ -173,6 +173,17 @@ public class MutacionAraña : MonoBehaviour, IMutable
         Debug.Log("🧬 Araña alcanzó su mutación final.");
 
         GameManager.Instance.NotificarCriaturaMutadaFinal();
+
+        //evento criatura mutada
+        CustomEvent mutacion = new CustomEvent("criatura_mutada")
+        {
+        { "mutacion_criatura", "araña" },
+        { "tipo_mutacion", 2 }
+
+     };
+        AnalyticsService.Instance.RecordEvent(mutacion);
+        AnalyticsService.Instance.Flush();
+        //
     }
 
     void AplicarMutacionVisual(Sprite nuevoSprite)
