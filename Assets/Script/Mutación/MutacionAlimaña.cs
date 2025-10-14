@@ -1,3 +1,4 @@
+using Unity.Services.Analytics;
 using UnityEngine;
 
 public class MutacionAlimaña : MonoBehaviour, IMutable
@@ -162,6 +163,17 @@ public class MutacionAlimaña : MonoBehaviour, IMutable
             audioSource.PlayOneShot(sonidoMutacion1);
 
         Debug.Log("🪱 Alimaña mutó por primera vez.");
+
+        //evento criatura mutada
+        CustomEvent mutacion = new CustomEvent("criatura_mutada")
+        {
+        { "mutacion_criatura", "alimaña" },
+        { "tipo_mutacion", 1 }
+
+     };
+        AnalyticsService.Instance.RecordEvent(mutacion);
+        AnalyticsService.Instance.Flush();
+        //
     }
 
     void MutarFinal()
