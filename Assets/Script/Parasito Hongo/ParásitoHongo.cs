@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Unity.Services.Analytics;
 
 public class ParasitoHongo : MonoBehaviour
 {
@@ -96,6 +97,15 @@ public class ParasitoHongo : MonoBehaviour
         {
             Morir();
         }
+
+        CustomEvent derrota = new CustomEvent("enemigo_derrotado")
+                {
+                    { "derrota_enemigo", gameObject.tag}
+                };
+        //AnalyticsService.Instance.RecordEvent(derrota);
+        print("evento " + "enemigo_derrotado " + gameObject.tag);
+        AnalyticsService.Instance.Flush();
+        //
     }
 
     IEnumerator FlashRojo()
