@@ -49,7 +49,7 @@ public class Personaje : MonoBehaviour
         Debug.Log("🧬 Mutación cambiada a: " + nuevaMutacion);
     }
 
-    public void TomarDaño(int cantidad)
+    public void TomarDaño(int cantidad, string quien)
     {
         // ... (el resto de la función TomarDaño se mantiene igual)
         if (estaIncapacitado) return;
@@ -77,10 +77,11 @@ public class Personaje : MonoBehaviour
 
                 CustomEvent incapacitada = new CustomEvent("criatura_muerta")
                 {
+                    { "tipo_asesino", quien},
                     { "mutacion_criatura", gameObject.tag}
                 };
-             //AnalyticsService.Instance.RecordEvent(incapacitada);
-             print("evento "+"criatura muerta "+)
+                //AnalyticsService.Instance.RecordEvent(incapacitada);
+                print("evento " + "criatura muerta " + gameObject.tag + " asesinado por "+quien);
                 AnalyticsService.Instance.Flush();
                 //
             }

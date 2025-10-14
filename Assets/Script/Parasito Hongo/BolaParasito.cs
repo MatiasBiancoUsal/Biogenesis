@@ -25,7 +25,7 @@ public class BolaParásito : MonoBehaviour
         Personaje personaje = other.GetComponent<Personaje>();
         if (personaje != null)
         {
-            personaje.TomarDaño(daño);
+            personaje.TomarDaño(daño, "hongo");
             Destroy(gameObject);
         }
     }
