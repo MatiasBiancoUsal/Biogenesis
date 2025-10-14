@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
 using UnityEngine;
 
 public class DepredadorAnimTest : MonoBehaviour
@@ -102,6 +103,14 @@ public class DepredadorAnimTest : MonoBehaviour
         {
             Morir();
         }
+        CustomEvent derrota = new CustomEvent("enemigo_derrotado")
+                {
+                    { "derrota_enemigo", gameObject.tag}
+                };
+        //AnalyticsService.Instance.RecordEvent(derrota);
+        print("evento " + "enemigo_derrotado " + gameObject.tag);
+        AnalyticsService.Instance.Flush();
+        //
     }
 
     IEnumerator FlashRojo()
