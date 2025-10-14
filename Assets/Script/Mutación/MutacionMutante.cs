@@ -159,6 +159,17 @@ public class MutacionMutante : MonoBehaviour, IMutable
 
         // Notificar al GameManager
         GameManager.Instance.NotificarCriaturaMutadaFinal();
+
+        //evento criatura mutada
+        CustomEvent mutacion = new CustomEvent("criatura_mutada")
+        {
+        { "mutacion_criatura", "mutante" },
+        { "tipo_mutacion", 2 }
+
+     };
+        AnalyticsService.Instance.RecordEvent(mutacion);
+        AnalyticsService.Instance.Flush();
+        //
     }
 
     void AplicarMutacionVisual(Sprite nuevoSprite)
