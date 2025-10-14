@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -77,6 +78,16 @@ public class DragItemComidaUI : MonoBehaviour, IBeginDragHandler, IDragHandler, 
                     {
                         hungerBar.Feed(0.2f); // Ajustá el valor según cuánto debe llenar
                         Debug.Log($"{criatura.name} comió y se alimentó!");
+
+                        //evento crear pocion
+                        CustomEvent criatura_aliemntada = new CustomEvent("criatura_alimentada")
+                        {
+                            { "alimentar_criatura", criatura.gameObject.tag }
+                        };
+                        AnalyticsService.Instance.RecordEvent(criatura_aliemntada);
+                        AnalyticsService.Instance.Flush();
+                        //
+
                     }
 
                     //Script lucy
