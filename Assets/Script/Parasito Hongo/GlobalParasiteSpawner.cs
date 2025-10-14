@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -98,6 +99,16 @@ public class GlobalParasiteSpawner : MonoBehaviour
         if (spawnPoint != null)
         {
             currentParasite = Instantiate(parasitePrefab, spawnPoint.transform.position, Quaternion.identity);
+
+            //evento depredador
+            CustomEvent enemigo = new CustomEvent("enemigo_aparecio")
+        {
+        { "tipo_enemigo", "parasito" }
+
+     };
+            AnalyticsService.Instance.RecordEvent(enemigo);
+            AnalyticsService.Instance.Flush();
+            //
         }
     }
 }
