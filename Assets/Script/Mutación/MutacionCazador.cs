@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Services.Analytics;
+using UnityEngine;
 
 public class MutacionCazador : MonoBehaviour, IMutable
 {
@@ -161,6 +162,18 @@ public class MutacionCazador : MonoBehaviour, IMutable
             audioSource.PlayOneShot(sonidoMutacion1);
 
         Debug.Log("Mutación 1 activada.");
+
+        //evento criatura mutada
+        CustomEvent mutacion = new CustomEvent("criatura_mutada")
+    {
+    { "mutacion_criatura", "cazador" },
+        { "tipo_mutacion", 1 }
+
+     };
+        AnalyticsService.Instance.RecordEvent(mutacion);
+        AnalyticsService.Instance.Flush();
+        //
+
 
 
     }
