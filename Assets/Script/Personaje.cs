@@ -74,6 +74,14 @@ public class Personaje : MonoBehaviour
                 {
                     audioSource.PlayOneShot(sonidoDerrota);
                 }
+
+                CustomEvent incapacitada = new CustomEvent("criatura_muerta")
+                {
+                    { "muere_criatura", estaIncapacitado}
+                };
+                AnalyticsService.Instance.RecordEvent(incapacitada);
+                AnalyticsService.Instance.Flush();
+                //
             }
         }
     }
