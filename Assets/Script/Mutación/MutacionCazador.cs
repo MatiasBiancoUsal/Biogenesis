@@ -165,8 +165,8 @@ public class MutacionCazador : MonoBehaviour, IMutable
 
         //evento criatura mutada
         CustomEvent mutacion = new CustomEvent("criatura_mutada")
-    {
-    { "mutacion_criatura", "cazador" },
+        {
+        { "mutacion_criatura", "cazador" },
         { "tipo_mutacion", 1 }
 
      };
@@ -192,6 +192,18 @@ public class MutacionCazador : MonoBehaviour, IMutable
         Debug.Log("Mutación final activada.");
 
         GameManager.Instance.NotificarCriaturaMutadaFinal();
+
+        //evento criatura mutada
+        CustomEvent mutacion = new CustomEvent("criatura_mutada")
+        {
+        { "mutacion_criatura", "cazador" },
+        { "tipo_mutacion", 2 }
+
+     };
+        AnalyticsService.Instance.RecordEvent(mutacion);
+        AnalyticsService.Instance.Flush();
+        //
+
     }
 
     void AplicarMutacionVisual(Sprite nuevoSprite)
