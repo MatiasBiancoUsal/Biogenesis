@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -65,6 +66,17 @@ public class GlobalPredatorSpawner : MonoBehaviour
         {
             Debug.LogWarning("❗ No se encontró un objeto con tag 'PredatorSpawn' en la escena.");
         }
+
+
+        //evento depredador
+        CustomEvent enemigo = new CustomEvent("enemigo_aparecio")
+        {
+        { "tipo_enemigo", "depredador" }
+
+     };
+        AnalyticsService.Instance.RecordEvent(enemigo);
+        AnalyticsService.Instance.Flush();
+        //
     }
 
     IEnumerator PredatorLoop()
