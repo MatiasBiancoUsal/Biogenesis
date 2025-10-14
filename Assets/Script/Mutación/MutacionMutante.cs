@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Unity.Services.Analytics;
 
 public class MutacionMutante : MonoBehaviour, IMutable
 {
@@ -129,6 +130,17 @@ public class MutacionMutante : MonoBehaviour, IMutable
             audioSource.PlayOneShot(sonidoMutacion1);
 
         Debug.Log("Mutante mutó por primera vez.");
+
+        //evento criatura mutada
+        CustomEvent mutacion = new CustomEvent("criatura_mutada")
+        {
+        { "mutacion_criatura", "mutante" },
+        { "tipo_mutacion", 1 }
+
+     };
+        AnalyticsService.Instance.RecordEvent(mutacion);
+        AnalyticsService.Instance.Flush();
+        //
     }
 
     void MutarFinal()
