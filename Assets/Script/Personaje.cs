@@ -77,9 +77,10 @@ public class Personaje : MonoBehaviour
 
                 CustomEvent incapacitada = new CustomEvent("criatura_muerta")
                 {
-                    { "muere_criatura", estaIncapacitado}
+                    { "mutacion_criatura", gameObject.tag}
                 };
-                AnalyticsService.Instance.RecordEvent(incapacitada);
+             //AnalyticsService.Instance.RecordEvent(incapacitada);
+             print("evento "+"criatura muerta "+)
                 AnalyticsService.Instance.Flush();
                 //
             }
