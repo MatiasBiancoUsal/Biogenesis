@@ -11,8 +11,8 @@ public class Enemigo : MonoBehaviour
         Personaje personaje = other.GetComponent<Personaje>();
         if (personaje != null && Time.time >= tiempoSiguienteDaño)
         {
-            personaje.TomarDaño(daño);
-            tiempoSiguienteDaño = Time.time + intervaloDaño;
+            //personaje.TomarDaño(daño);
+            //tiempoSiguienteDaño = Time.time + intervaloDaño;
         }
     }
 }

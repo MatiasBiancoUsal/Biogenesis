@@ -31,7 +31,7 @@ public class CriaturaDispara : MonoBehaviour
             if (objetivo != null)
             {
                 Vector2 direccion = (objetivo.transform.position - puntoDisparo.position).normalized;
-                proyectil.GetComponent<proyectilcazador>().direccion = direccion;
+               // proyectil.GetComponent<proyectilcazador>().direccion = direccion;
             }
         }
     }

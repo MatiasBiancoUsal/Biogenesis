@@ -141,8 +141,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabADN: {fileID: 9044602077351973406, guid: 97143d451127059458537f6d88a713f5, type: 3}
   intervalo: 5
-  puntoGeneracion: {fileID: 0}
-  maximoADN: 9
+  maximoPorTipo: 4
+  minimoEnEscena: 2
 --- !u!114 &8959984014073746417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6493893972074452375}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2a961133e502624eb6fa1f2938518d3, type: 3}
   m_Name: 
@@ -279,6 +279,7 @@ MonoBehaviour:
   moveDistance: 3
   audioSource: {fileID: 0}
   walkClip: {fileID: 0}
+  goingLeft: 1
   quieto: 0
 --- !u!114 &3685804006201741725
 MonoBehaviour:
@@ -318,6 +319,8 @@ MonoBehaviour:
   pocionesRecibidas: 0
   "multiplicadorDa\xF1oPrimera": 1.5
   "multiplicadorDa\xF1oFinal": 2.5
+  prefabHumo: {fileID: 0}
+  duracionHumo: 1.5
   controladorMutacion1: {fileID: 0}
   controladorMutacion2: {fileID: 0}
   anim: {fileID: 0}
