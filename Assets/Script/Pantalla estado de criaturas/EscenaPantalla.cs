@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -24,6 +25,10 @@ public class EscenaPantalla : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
+
+        //AnalyticsService.Instance.RecordEvent("ingresarcocina");
+        print("evento " + "ingresarcocina ");
+        AnalyticsService.Instance.Flush();
 
         SceneManager.LoadScene(IrAEscena);
     }
