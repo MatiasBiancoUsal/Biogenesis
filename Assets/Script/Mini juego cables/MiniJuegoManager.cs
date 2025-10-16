@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using System;
+using Unity.Services.Analytics;
 
 public class MiniJuegoManager : MonoBehaviour
 {
@@ -54,6 +56,15 @@ public class MiniJuegoManager : MonoBehaviour
             PlayerPrefs.SetInt("MiniJuegoResuelto", 1);
             SceneManager.LoadScene("Laboratorio");
         }
+
+        CustomEvent verificarcompleto = new CustomEvent("minijuego_completado")
+                {
+                    { "minijuego_completo", true}
+                };
+        //AnalyticsService.Instance.RecordEvent(verificarcompleto);
+        print("evento " + "minijuego_completado " + true);
+        AnalyticsService.Instance.Flush();
+        //
     }
 
     public void ResetearConexiones()
