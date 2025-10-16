@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -45,6 +46,17 @@ public class GameManager : MonoBehaviour
         if (criaturasMutadasFinal >= totalCriaturas && experimentoCreado)
         {
             Debug.Log("¡Victoria cumplida! Cargando escena final...");
+           
+
+            CustomEvent juegoganado = new CustomEvent("juego_ganado")
+        {
+            { "victoria_juego", tiempojuego.instance.tiempo}
+        };
+            //AnalyticsService.Instance.RecordEvent(juegoganado);
+            print("evento " + "enemigo_derrotado " + tiempojuego.instance.tiempo);
+            AnalyticsService.Instance.Flush();
+            //
+
             SceneManager.LoadScene("EscenaFinalDelJuego"); // usa el nombre exacto de tu escena
         }
     }

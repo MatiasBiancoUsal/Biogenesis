@@ -59,7 +59,7 @@ public class MiniJuegoManager : MonoBehaviour
 
         CustomEvent verificarcompleto = new CustomEvent("minijuego_completado")
                 {
-                    { "minijuego_completo", true}
+                    { "minijuego_complet", true}
                 };
         //AnalyticsService.Instance.RecordEvent(verificarcompleto);
         print("evento " + "minijuego_completado " + true);
