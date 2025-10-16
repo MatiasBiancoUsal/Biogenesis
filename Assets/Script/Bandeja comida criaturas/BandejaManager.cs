@@ -43,10 +43,8 @@ public class BandejaManager : MonoBehaviour
         SoltarComidaEnEscena(index);
 
         CustomEvent comidas = new CustomEvent("comida_transportada")
-                {
-                    { "comida_escenas", index}
-                };
-        //AnalyticsService.Instance.RecordEvent(comida_transportada);
+                {};
+        //AnalyticsService.Instance.RecordEvent("comida_transportada");
         print("evento " + "comida_escenas " + index);
         AnalyticsService.Instance.Flush();
     }
