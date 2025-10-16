@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using System.Reflection;
+using Unity.Services.Analytics;
 using UnityEngine;
 
 public class MaletinManager : MonoBehaviour
@@ -49,6 +52,12 @@ public class MaletinManager : MonoBehaviour
             pocionMejoraID = prefabPocion.name;
             Debug.Log("Guardado ID: " + pocionMejoraID);
         }
+
+        CustomEvent pociones = new CustomEvent("pociones_transportadas")
+        { };
+        //AnalyticsService.Instance.RecordEvent("transporte_pociones");
+        print("evento " + "pociones_transportadas ");
+        AnalyticsService.Instance.Flush();
     }
 
     // SOO
@@ -62,6 +71,8 @@ public class MaletinManager : MonoBehaviour
         {
             pocionMejoraID = null;
         }
+
+       
     }
     // SOO
 
