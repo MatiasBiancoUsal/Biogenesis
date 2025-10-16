@@ -1,3 +1,4 @@
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -32,6 +33,12 @@ public class MenuPrincipal : MonoBehaviour
     public void ContinuarPartida()
     {
         if (!HasSavedGame()) return;
+
+      
+        //AnalyticsService.Instance.RecordEvent("continuarpartida");
+        print("evento " + "continuarpartida ");
+        AnalyticsService.Instance.Flush();
+
         SceneManager.LoadScene(gameSceneName);
     }
 
