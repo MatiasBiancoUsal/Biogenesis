@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
 using UnityEngine;
 
 public class BandejaManager : MonoBehaviour
@@ -40,6 +41,14 @@ public class BandejaManager : MonoBehaviour
 
         // Instanciar versión física también
         SoltarComidaEnEscena(index);
+
+        CustomEvent comidas = new CustomEvent("comida_transportada")
+                {
+                    { "comida_escenas", index}
+                };
+        //AnalyticsService.Instance.RecordEvent(comida_transportada);
+        print("evento " + "comida_escenas " + index);
+        AnalyticsService.Instance.Flush();
     }
 
     public void SoltarComidaEnEscena(int index)
