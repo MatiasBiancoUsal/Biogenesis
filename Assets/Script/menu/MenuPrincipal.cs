@@ -49,6 +49,10 @@ public class MenuPrincipal : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
 
+        //AnalyticsService.Instance.RecordEvent("nuevapartida");
+        print("evento " + "nuevapartida ");
+        AnalyticsService.Instance.Flush();
+
         // 2. Cargar la escena, la cual ahora estará "limpia".
         SceneManager.LoadScene(gameSceneName);
     }
