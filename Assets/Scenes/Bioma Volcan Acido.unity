@@ -3097,7 +3097,7 @@ MonoBehaviour:
   duracionHumo: 0.5
   controladorMutacion1: {fileID: 22100000, guid: f1215e7e27b655540a4553a9e03d1692, type: 2}
   controladorMutacion2: {fileID: 22100000, guid: 161a6d80fb0852945b61870e40807593, type: 2}
-  anim: {fileID: 0}
+  anim: {fileID: 1540938122}
   sonidoMutacion1: {fileID: 8300000, guid: f6ff35384ee5e6e4d83d696bf5cd33e0, type: 3}
   sonidoMutacionFinal: {fileID: 8300000, guid: f6ff35384ee5e6e4d83d696bf5cd33e0, type: 3}
   audioSource: {fileID: 1540938130}

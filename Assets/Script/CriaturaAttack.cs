@@ -115,8 +115,16 @@ public class CriaturaAttack : MonoBehaviour
             animator.ResetTrigger("ataque2");
             animator.ResetTrigger("ataque3");
             animator.SetTrigger(trigger);
+
+            //debug
+            Debug.Log("Mutante atacando con trigger: " + trigger +
+                  " | Controlador: " + animator.runtimeAnimatorController.name);
+
+            animator.SetTrigger(trigger);
         }
         Invoke(nameof(Shoot), 0.3f);
+
+
     }
 
     void Shoot()
