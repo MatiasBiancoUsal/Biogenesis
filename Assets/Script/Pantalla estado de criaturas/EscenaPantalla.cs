@@ -26,7 +26,7 @@ public class EscenaPantalla : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        //AnalyticsService.Instance.RecordEvent("ingresarcocina");
+        AnalyticsService.Instance.RecordEvent("ingresarcocina");
         print("evento " + "ingresarcocina ");
         AnalyticsService.Instance.Flush();
 

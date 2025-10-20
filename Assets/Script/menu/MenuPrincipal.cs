@@ -35,7 +35,7 @@ public class MenuPrincipal : MonoBehaviour
         if (!HasSavedGame()) return;
 
       
-        //AnalyticsService.Instance.RecordEvent("continuarpartida");
+        AnalyticsService.Instance.RecordEvent("continuarpartida");
         print("evento " + "continuarpartida ");
         AnalyticsService.Instance.Flush();
 
@@ -49,7 +49,7 @@ public class MenuPrincipal : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
 
-        //AnalyticsService.Instance.RecordEvent("nuevapartida");
+        AnalyticsService.Instance.RecordEvent("nuevapartida");
         print("evento " + "nuevapartida ");
         AnalyticsService.Instance.Flush();
 

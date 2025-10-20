@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         {
             { "victoria_juego", tiempojuego.instance.tiempo}
         };
-            //AnalyticsService.Instance.RecordEvent(juegoganado);
+            AnalyticsService.Instance.RecordEvent(juegoganado);
             print("evento " + "enemigo_derrotado " + tiempojuego.instance.tiempo);
             AnalyticsService.Instance.Flush();
             //

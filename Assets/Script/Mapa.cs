@@ -14,7 +14,7 @@ public class Mapa : MonoBehaviour
         {
             { "ingreso_escena", numeroDeEscena}
         };
-        //AnalyticsService.Instance.RecordEvent(derrota);
+        AnalyticsService.Instance.RecordEvent(derrota);
         print("evento " + "escena_ingresada " + numeroDeEscena);
 
 

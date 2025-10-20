@@ -107,7 +107,7 @@ public class DepredadorAnimTest : MonoBehaviour
                 {
                     { "derrota_enemigo", gameObject.tag}
                 };
-        //AnalyticsService.Instance.RecordEvent(derrota);
+        AnalyticsService.Instance.RecordEvent(derrota);
         print("evento " + "enemigo_derrotado " + gameObject.tag);
         AnalyticsService.Instance.Flush();
         //

@@ -80,7 +80,7 @@ public class Personaje : MonoBehaviour
                     { "tipo_asesino", quien},
                     { "mutacion_criatura", gameObject.tag}
                 };
-                //AnalyticsService.Instance.RecordEvent(incapacitada);
+                AnalyticsService.Instance.RecordEvent(incapacitada);
                 print("evento " + "criatura muerta " + gameObject.tag + " asesinado por "+quien);
                 AnalyticsService.Instance.Flush();
                 //

@@ -61,7 +61,7 @@ public class MiniJuegoManager : MonoBehaviour
                 {
                     { "minijuego_complet", true}
                 };
-        //AnalyticsService.Instance.RecordEvent(verificarcompleto);
+        AnalyticsService.Instance.RecordEvent(verificarcompleto);
         print("evento " + "minijuego_completado " + true);
         AnalyticsService.Instance.Flush();
         //

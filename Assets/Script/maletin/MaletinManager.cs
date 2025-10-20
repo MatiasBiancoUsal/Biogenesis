@@ -55,7 +55,7 @@ public class MaletinManager : MonoBehaviour
 
         CustomEvent pociones = new CustomEvent("pociones_transportadas")
         { };
-        //AnalyticsService.Instance.RecordEvent("transporte_pociones");
+        AnalyticsService.Instance.RecordEvent("transporte_pociones");
         print("evento " + "pociones_transportadas ");
         AnalyticsService.Instance.Flush();
     }
