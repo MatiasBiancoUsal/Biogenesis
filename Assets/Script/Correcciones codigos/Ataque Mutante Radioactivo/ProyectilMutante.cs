@@ -1,10 +1,10 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class ProyectilMutante : MonoBehaviour
 {
-    [Header("Configuración del proyectil")]
+    [Header("ConfiguraciÃ³n del proyectil")]
     public float velocidad = 6f;
-    public int daño = 1; // cuánto daño hace el proyectil
+    public int daÃ±o = 1; // cuÃ¡nto daÃ±o hace el proyectil
 
     private Vector2 direccion;
 
@@ -25,20 +25,28 @@ public class ProyectilMutante : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("depredador"))
+        if (other.CompareTag("depredador") || other.CompareTag("Parasito"))
         {
-            // busca el script DepredadorAnimTest
-            DepredadorAnimTest enemigo = other.GetComponent<DepredadorAnimTest>();
-            if (enemigo != null)
+            // Intenta encontrar un script de daÃ±o en cualquiera de los dos tipos
+            DepredadorAnimTest depredador = other.GetComponent<DepredadorAnimTest>();
+            ParasitoHongo hongo = other.GetComponent<ParasitoHongo>(); // o el nombre que uses para tu script
+
+            if (depredador != null)
             {
-                // aplicar daño según cantidad
-                for (int i = 0; i < daño; i++)
-                {
-                    enemigo.RecibirDaño();
-                }
+                for (int i = 0; i < daÃ±o; i++)
+                    depredador.RecibirDaÃ±o();
+            }
+            else if (hongo != null)
+            {
+                for (int i = 0; i < daÃ±o; i++)
+                    hongo.RecibirDaÃ±o();
+            }
+            else
+            {
+                Debug.LogWarning("No se encontrÃ³ script de daÃ±o en el objetivo con tag: " + other.tag);
             }
 
-            Destroy(gameObject); // destruir proyectil al impactar
+            Destroy(gameObject);
         }
     }
 }

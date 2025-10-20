@@ -59,7 +59,7 @@ public class CriaturaAttack : MonoBehaviour
 
         foreach (var hit in hits)
         {
-            if (hit.CompareTag("depredador"))
+            if (hit.CompareTag("depredador") || hit.CompareTag("Parasito"))
             {
                 currentTarget = hit.transform;
                 break;

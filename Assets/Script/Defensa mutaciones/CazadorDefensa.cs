@@ -84,12 +84,23 @@ public class CazadorDefensa : MonoBehaviour
         // Reproducir sonido de ataque
         PlayAttackSound();
 
-        // Aplicar daño al objetivo si tiene script de vida
-        var criatura = objetivo.GetComponent<DepredadorAnimTest>();
-        if (criatura != null)
+        // Aplicar daño al objetivo
+        DepredadorAnimTest depredador = objetivo.GetComponent<DepredadorAnimTest>();
+        ParasitoHongo hongo = objetivo.GetComponent<ParasitoHongo>();
+
+        if (depredador != null)
         {
-            criatura.RecibirDaño();
-            Debug.Log($"[Cazador] Infligió {daño} de daño a {objetivo.name}");
+            depredador.RecibirDaño();
+            Debug.Log($"[Cazador] Infligió 1 de daño a depredador {objetivo.name}");
+        }
+        else if (hongo != null)
+        {
+            hongo.RecibirDaño();
+            Debug.Log($"[Cazador] Infligió 1 de daño a parásito {objetivo.name}");
+        }
+        else
+        {
+            Debug.LogWarning($"[Cazador] No se encontró script de vida en el objetivo: {objetivo.name}");
         }
     }
 
