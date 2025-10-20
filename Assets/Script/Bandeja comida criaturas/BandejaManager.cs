@@ -44,7 +44,7 @@ public class BandejaManager : MonoBehaviour
 
         CustomEvent comidas = new CustomEvent("comida_transportada")
                 {};
-        //AnalyticsService.Instance.RecordEvent("comida_transportada");
+        AnalyticsService.Instance.RecordEvent("comida_transportada");
         print("evento " + "comida_escenas " + index);
         AnalyticsService.Instance.Flush();
     }
