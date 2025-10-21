@@ -100,7 +100,7 @@ public class ParasitoHongo : MonoBehaviour
 
         CustomEvent derrota = new CustomEvent("enemigo_derrotado")
                 {
-                    { "derrota_enemigo", gameObject.tag}
+                    { "derrotado_enemigo", gameObject.tag}
                 };
         AnalyticsService.Instance.RecordEvent(derrota);
         print("evento " + "enemigo_derrotado " + gameObject.tag);
