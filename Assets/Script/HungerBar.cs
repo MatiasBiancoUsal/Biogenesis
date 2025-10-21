@@ -90,7 +90,7 @@ public class HungerBar : MonoBehaviour
                 if (damageTimer >= 1f)
                 {
                     if (personajeAsociado != null)
-                        personajeAsociado.TomarDaño(damagePerSecond, "hambre");
+                        personajeAsociado.RecibirDaño(damagePerSecond);
                     damageTimer = 0f;
                 }
             }

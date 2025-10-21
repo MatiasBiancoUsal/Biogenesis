@@ -1,72 +1,58 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class BarraVida : MonoBehaviour
 {
-    public Image rellenoBarraVida;          // La imagen de la barra desde el Inspector
-    public Personaje personajeAsociado;     // Script de la criatura (debe tener vida y vidaMaxima)
-
-    [Header("ID de la criatura")]
-    public string creatureID; // "Araña", "Alimaña", "Mutante", "Cazador"
+    public Image rellenoBarraVida;
+    public Personaje personajeAsociado; // Lo mantenemos para saber la vida MAX
+    public string creatureID;
 
     private int vidaMaxima;
-    private bool personajeMurio = false;
+    private int vidaActual;
 
     void Start()
     {
-        if (personajeAsociado == null)
+        // Obtenemos la vida máxima
+        switch (creatureID)
         {
-            Debug.LogError("No se asignó un personaje a esta barra de vida.");
-            return;
+            case "Araña": vidaMaxima = EstadoCriaturasGlobal.instancia.vidaMaxAraña; break;
+            case "Alimaña": vidaMaxima = EstadoCriaturasGlobal.instancia.vidaMaxAlimaña; break;
+            case "Mutante": vidaMaxima = EstadoCriaturasGlobal.instancia.vidaMaxMutante; break;
+            case "Cazador": vidaMaxima = EstadoCriaturasGlobal.instancia.vidaMaxCazador; break;
         }
 
-        vidaMaxima = personajeAsociado.vidaMaxima;
-
-        // ✅ Cargar vida guardada desde PlayerPrefs
-        personajeAsociado.vida = PlayerPrefs.GetInt("Vida_" + creatureID, vidaMaxima);
-
-        ActualizarUI();
+        // Si tu script 'Personaje' necesita saber su vida máxima, asígnala aquí
+        if (personajeAsociado != null)
+        {
+            // personajeAsociado.vidaMaxima = vidaMaxima; // (Si existe esa variable)
+        }
     }
 
     void Update()
     {
-        if (personajeMurio || personajeAsociado == null) return;
+        if (EstadoCriaturasGlobal.instancia == null) return;
 
-        int vidaActual = Mathf.Clamp(personajeAsociado.vida, 0, vidaMaxima);
-
-        // ✅ Actualizar barra local
-        rellenoBarraVida.fillAmount = (float)vidaActual / vidaMaxima;
-
-        // ✅ Guardar en PlayerPrefs
-        PlayerPrefs.SetInt("Vida_" + creatureID, vidaActual);
-
-        // ✅ Actualizar estado global
-        if (EstadoCriaturasGlobal.instancia != null)
+        // --- ¡CAMBIO CLAVE! ---
+        // 1. LEEMOS la vida actual desde el Singleton
+        switch (creatureID)
         {
-            switch (creatureID)
-            {
-                case "Araña": EstadoCriaturasGlobal.instancia.vidaAraña = vidaActual; break;
-                case "Alimaña": EstadoCriaturasGlobal.instancia.vidaAlimaña = vidaActual; break;
-                case "Mutante": EstadoCriaturasGlobal.instancia.vidaMutante = vidaActual; break;
-                case "Cazador": EstadoCriaturasGlobal.instancia.vidaCazador = vidaActual; break;
-            }
-
-            EstadoCriaturasGlobal.instancia.GuardarEstado();
+            case "Araña": vidaActual = EstadoCriaturasGlobal.instancia.vidaAraña; break;
+            case "Alimaña": vidaActual = EstadoCriaturasGlobal.instancia.vidaAlimaña; break;
+            case "Mutante": vidaActual = EstadoCriaturasGlobal.instancia.vidaMutante; break;
+            case "Cazador": vidaActual = EstadoCriaturasGlobal.instancia.vidaCazador; break;
         }
 
-        // ✅ Revisar muerte
-        if (personajeAsociado.vida <= 0)
-        {
-            personajeMurio = true;
-            rellenoBarraVida.fillAmount = 0f;
-        }
-    }
-
-    private void ActualizarUI()
-    {
-        int vidaActual = Mathf.Clamp(personajeAsociado.vida, 0, vidaMaxima);
+        // 2. Actualizamos la barra local
         rellenoBarraVida.fillAmount = (float)vidaActual / vidaMaxima;
+
+        // 3. (Opcional) Sincronizamos el script del personaje local
+        if (personajeAsociado != null)
+        {
+            personajeAsociado.vida = vidaActual;
+        }
+
+        // 4. ¡YA NO GUARDAMOS NADA AQUÍ!
+        // PlayerPrefs.SetInt(...) -> ELIMINADO
+        // EstadoCriaturasGlobal.instancia.GuardarEstado() -> ELIMINADO
     }
 }

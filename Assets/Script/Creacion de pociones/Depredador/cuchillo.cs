@@ -19,7 +19,7 @@ public class cuchillo : MonoBehaviour
         Personaje personaje = collision.GetComponent<Personaje>();
         if (personaje != null)
         {
-            personaje.TomarDaño(daño, "depredador"); // Llama a la función que reduce la vida
+            personaje.RecibirDaño(daño);
             Destroy(gameObject); // Destruye el cuchillo
         }
     }

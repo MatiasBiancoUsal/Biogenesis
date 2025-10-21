@@ -2950,11 +2950,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbbb69110572b0e4aa1ce35b9a816f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creatureID: Mutante
   vida: 100
   vidaMaxima: 100
-  mutacionActual: 0
-  sonidoDerrota: {fileID: 8300000, guid: b0dc93941641c6d4e8e8579f224bc34a, type: 3}
-  "sonidoDa\xF1o": {fileID: 8300000, guid: 862ac6075717e9747b972fb3ece76ec8, type: 3}
 --- !u!50 &1540938120
 Rigidbody2D:
   serializedVersion: 4

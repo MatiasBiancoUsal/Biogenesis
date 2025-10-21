@@ -9,7 +9,7 @@ public class VidaPickup : MonoBehaviour
         Personaje personaje = other.GetComponent<Personaje>();
         if (personaje != null)
         {
-            personaje.RestaurarVida(cantidadVida);
+            personaje.Curar(cantidadVida); 
             Destroy(gameObject); 
         }
     }
