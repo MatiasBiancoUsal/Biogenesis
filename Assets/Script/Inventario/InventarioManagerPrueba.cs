@@ -69,11 +69,23 @@ public class InventarioManagerPrueba : MonoBehaviour
     public void AñadirADN(string nombreADN)
     {
         foreach (Slot slot in slots)
-        {
+        {//MATIAS
             if (slot.nombreADN == nombreADN)
             {
                 slot.cantidad++;
                 OnInventarioChanged?.Invoke();
+
+                if(slot.cantidad == 4)
+                {
+                    CustomEvent adn = new CustomEvent("adn_recolectado")
+{
+        { "adn", nombreADN }, 
+};
+                    AnalyticsService.Instance.RecordEvent(adn);
+                    AnalyticsService.Instance.Flush();
+                }
+                //MATIAS
+
                 return;
             }
         }
