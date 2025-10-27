@@ -81,7 +81,7 @@ public class InventarioManagerPrueba : MonoBehaviour
 {
         { "adn", nombreADN }, 
 };
-                    AnalyticsService.Instance.RecordEvent(adn);
+                    AnalyticsService.Instance.RecordEvent("adn_recolectado");
                     AnalyticsService.Instance.Flush();
                 }
                 //MATIAS

@@ -83,7 +83,7 @@ public class GlobalPredatorSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(180f); // 180 es cada 3 minutos
+            yield return new WaitForSeconds(100f); // 180 es cada 3 minutos
 
             // Escena random de la lista
             randomScene = sceneNames[Random.Range(0, sceneNames.Length)];
