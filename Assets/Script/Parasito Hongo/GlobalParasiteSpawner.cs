@@ -55,7 +55,7 @@ public class GlobalParasiteSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(50f); // poner en 300
+            yield return new WaitForSeconds(300f); // 360 es cada 5 minutos
 
             randomScene = sceneNames[Random.Range(0, sceneNames.Length)];
             Debug.Log("🌿 Ataque parasitario en " + randomScene);
