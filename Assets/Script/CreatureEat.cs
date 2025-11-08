@@ -32,7 +32,7 @@ public class CreatureEat : MonoBehaviour
             // OPCIONAL: Subir barra de hambre
             if (hungerBar != null)
             {
-                hungerBar.Feed(0.2f); // Cambiá el valor según lo que necesites
+                hungerBar.Feed(0.5f); // Cambiá el valor según lo que necesites
             }
 
             // OPCIONAL: Destruir la comida después de comer

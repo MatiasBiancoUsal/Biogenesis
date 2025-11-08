@@ -699,7 +699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -25.9, y: 13.200012}
+  m_AnchoredPosition: {x: -25.900024, y: 13.200012}
   m_SizeDelta: {x: 162.2658, y: 24.4861}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &307051682
@@ -2156,13 +2156,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hungerFill: {fileID: 1776667905}
   hungerValue: 1
-  hungerDecreaseRate: 0.01
+  hungerDecreaseRate: 0.005
   creatureID: Mutante
   soloMostrar: 0
   personajeAsociado: {fileID: 1540938119}
   damagePerSecond: 5
   saveInterval: 1
   activo: 1
+  startDelay: 5
 --- !u!1 &1275845056
 GameObject:
   m_ObjectHideFlags: 0

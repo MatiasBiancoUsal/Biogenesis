@@ -3550,13 +3550,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hungerFill: {fileID: 17847836}
   hungerValue: 1
-  hungerDecreaseRate: 0.01
+  hungerDecreaseRate: 0.005
   creatureID: Cazador
   soloMostrar: 0
   personajeAsociado: {fileID: 614841328}
   damagePerSecond: 5
   saveInterval: 1
   activo: 1
+  startDelay: 5
 --- !u!1001 &2033191600
 PrefabInstance:
   m_ObjectHideFlags: 0

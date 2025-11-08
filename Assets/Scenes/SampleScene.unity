@@ -1110,13 +1110,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hungerFill: {fileID: 84816999}
   hungerValue: 1
-  hungerDecreaseRate: 0.01
+  hungerDecreaseRate: 0.005
   creatureID: Experimento
   soloMostrar: 0
   personajeAsociado: {fileID: 319003660}
   damagePerSecond: 5
   saveInterval: 1
   activo: 0
+  startDelay: 5
 --- !u!1001 &463178028
 PrefabInstance:
   m_ObjectHideFlags: 0

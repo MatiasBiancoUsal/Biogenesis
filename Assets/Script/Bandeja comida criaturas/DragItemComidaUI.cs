@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class DragItemComidaUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -26,6 +27,28 @@ public class DragItemComidaUI : MonoBehaviour, IBeginDragHandler, IDragHandler, 
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
         audioSource = GetComponent<AudioSource>(); //Script lucy
+    }
+
+    //SOO
+    void Update()
+    {
+        // Click derecho para devolver comida, solo en la Cocina
+        if (SceneManager.GetActiveScene().name == "cocina" && Input.GetMouseButtonDown(1))
+        {
+            // Verificamos si el mouse está sobre este ítem
+            Vector2 mousePos = Input.mousePosition;
+            if (RectTransformUtility.RectangleContainsScreenPoint(rectTransform, mousePos, canvas.worldCamera))
+            {
+                // Avisar al bandejaManager
+                BandejaManager bandejaManager = FindFirstObjectByType<BandejaManager>();
+                if (bandejaManager != null)
+                    bandejaManager.QuitarComida();
+
+                // Destruir el ítem visual
+                Destroy(gameObject);
+                Debug.Log($"{gameObject.name} devuelto con click derecho.");
+            }
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)

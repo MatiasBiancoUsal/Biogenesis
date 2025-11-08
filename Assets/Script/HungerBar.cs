@@ -28,6 +28,11 @@ public class HungerBar : MonoBehaviour
     [Header("Control manual")]
     public bool activo = true;
 
+    //SOO
+    [Header("Retraso antes de comenzar a bajar el hambre")]
+    public float startDelay = 5f; // segundos antes de empezar
+    private float startTimer = 0f;
+
     // Base para cálculo en tiempo real
     private float baseHunger;         // hunger en el momento lastSavedTimestamp
     private long lastSavedTimestamp;  // unix seconds
@@ -63,6 +68,10 @@ public class HungerBar : MonoBehaviour
         // por si por alguna razón OnEnable no se ejecutó antes
         if (!hasLoaded)
             LoadSavedState();
+
+        //SOO
+        hungerDecreaseRate *= UnityEngine.Random.Range(0.8f, 1.2f);
+        startDelay += UnityEngine.Random.Range(0f, 5f);
     }
     //
 
@@ -71,6 +80,14 @@ public class HungerBar : MonoBehaviour
         //SOO
         if (!activo) // si no está activo, solo actualiza la UI pero no baja hambre ni guarda
         {
+            UpdateHungerUI();
+            return;
+        }
+
+        //SOO Esperar antes de comenzar a bajar hambre
+        if (startTimer < startDelay)
+        {
+            startTimer += Time.deltaTime;
             UpdateHungerUI();
             return;
         }
