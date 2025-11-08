@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BIOGENESISI-02 1_0: -3723605952929760340
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

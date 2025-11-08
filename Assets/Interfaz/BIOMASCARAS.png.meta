@@ -274,7 +274,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BIOMASCARAS_0: -4358320371957428978
+      BIOMASCARAS_1: 6719225169331132431
+      BIOMASCARAS_2: -7587686727139129719
+      BIOMASCARAS_3: 772225743082132870
+      BIOMASCARAS_4: 5686064600067064722
+      BIOMASCARAS_5: 7525955444752891943
+      BIOMASCARAS_6: -7527891610259428692
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

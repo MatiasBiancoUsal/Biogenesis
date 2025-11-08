@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class VidaPickup : MonoBehaviour
 {
-    public int cantidadVida = 20;
+    public int cantidadVida = 50;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
