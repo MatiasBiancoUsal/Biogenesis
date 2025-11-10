@@ -1184,7 +1184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warningText: {fileID: 842085008}
   warningIcon: {fileID: 1927035408}
-  messageDuration: 5
+  messageDuration: 10
 --- !u!4 &598013159
 Transform:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class UIWarningMessage : MonoBehaviour
 {
     public Text warningText;
     public Image warningIcon;
-    public float messageDuration = 5f;
+    public float messageDuration = 10f;
 
     Coroutine messageRoutine;
     Coroutine iconFlashRoutine;
