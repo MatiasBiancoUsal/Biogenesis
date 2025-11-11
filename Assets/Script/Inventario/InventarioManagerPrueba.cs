@@ -135,7 +135,14 @@ public class InventarioManagerPrueba : MonoBehaviour
         OnCriaturaCreada?.Invoke();
         Debug.Log("La bandera 'criaturaCreada' es ahora true.");
         PlayerPrefs.SetInt(KEY_CRIATURA_CREADA, 1);
-        PlayerPrefs.Save(); 
+        PlayerPrefs.Save();
+
+        Debug.Log("Vaciando el inventario de ADN...");
+        foreach (Slot slot in slots)
+        {
+            slot.cantidad = 0;
+        }
+
         OnInventarioChanged?.Invoke();
 
         if (GameManager.Instance != null)
