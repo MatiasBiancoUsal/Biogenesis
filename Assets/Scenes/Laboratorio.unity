@@ -130,22 +130,22 @@ PrefabInstance:
     - target: {fileID: 498092359255035380, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5181654206020448988, guid: 9442941e67f28a74eaf719e0bfb6cec3, type: 3}
+      objectReference: {fileID: 21300000, guid: 9b6538eb3e5c7f84eac0478419a2c8a9, type: 3}
     - target: {fileID: 4397913056319362866, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 775.7086
+      value: 793.3647
       objectReference: {fileID: 0}
     - target: {fileID: 4397913056319362866, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 169.6191
+      value: 454.6401
       objectReference: {fileID: 0}
     - target: {fileID: 4397913056319362866, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.0946
+      value: 9.7773
       objectReference: {fileID: 0}
     - target: {fileID: 4397913056319362866, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -199.1813
+      value: -2.9534
       objectReference: {fileID: 0}
     - target: {fileID: 4630030864701465149, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2517,20 +2517,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
       propertyPath: dialogueSprites.Array.size
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
       propertyPath: 'dialogueSprites.Array.data[0]'
       value: 
-      objectReference: {fileID: 5181654206020448988, guid: 9442941e67f28a74eaf719e0bfb6cec3, type: 3}
+      objectReference: {fileID: 21300000, guid: b1cc790dc799f50459ae50db03ae6ebd, type: 3}
     - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
       propertyPath: 'dialogueSprites.Array.data[1]'
       value: 
-      objectReference: {fileID: -8038976213705442086, guid: f27faf0b97e2d8a47a7ff6277f7afeaf, type: 3}
+      objectReference: {fileID: 21300000, guid: af87e753bd1ceed4b87b31f7c846e17f, type: 3}
     - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
       propertyPath: 'dialogueSprites.Array.data[2]'
       value: 
-      objectReference: {fileID: -30749221642623036, guid: 48ccc3ba2cae9264d8d0a6f703f3890d, type: 3}
+      objectReference: {fileID: 21300000, guid: fae97f54ac5f3ad4eb0563ee0e6c420c, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: f8f3a929af74e5247880c4408a38455d, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: be24e5b239bba4e44a91e5d81656bf01, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[5]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 7714e9b86ed249440b9b6cbcb0d1a3cf, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[6]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 95f494af46a027f459bd56fb9b4fbf96, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[7]'
+      value: 
+      objectReference: {fileID: 21300000, guid: e1f3f136a024eb3418b47071d2c50e3f, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[8]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a86096108495dd44b8245c99f6dfffd, type: 3}
     - target: {fileID: 2900326872643448881, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
       propertyPath: m_Name
       value: DialogueManager

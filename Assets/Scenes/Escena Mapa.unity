@@ -2769,6 +2769,78 @@ PrefabInstance:
       propertyPath: dialoguePanel
       value: 
       objectReference: {fileID: 1302667010}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: dialogueSprites.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b6538eb3e5c7f84eac0478419a2c8a9, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d75cf993dcc5c446895d7259c6c3570, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 98f2a0b1dd8d12d4caf2387db51ed6a9, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 38ede732a9a0a5a44be33e01ff4edd80, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: b14a5c0ed6b322840923396ee9d1c7aa, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[5]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 6202d1cd2bc535d4b99def96bf8724f4, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[6]'
+      value: 
+      objectReference: {fileID: 21300000, guid: b1f2f96aabc138c46bad840a74ff50c7, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[7]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 9da6ddc2352751449a1ceb69994e8f0e, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[8]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a02389ce0de8bb419008781009216db, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[9]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ec32c010d519384fba956cef0333f1a, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[10]'
+      value: 
+      objectReference: {fileID: 21300000, guid: e332933724ddfda458ec82632a2ead80, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[11]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 88b1cc64d431b2a42900d8cbc287b6ac, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[12]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 0003168d22f56254fad75968ecd08337, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[13]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 9c29bfa5f618d19409b4a15f4ed4404e, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[14]'
+      value: 
+      objectReference: {fileID: 21300000, guid: f2e470c952635b444bf4eabc4cd74fab, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[15]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 309566757f236df4f858f654fcbc2b7c, type: 3}
+    - target: {fileID: 2595353306038427549, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
+      propertyPath: 'dialogueSprites.Array.data[16]'
+      value: 
+      objectReference: {fileID: 21300000, guid: b7600b96246197046bdc9af804d21400, type: 3}
     - target: {fileID: 2900326872643448881, guid: f3e70ab5e31753f41a122f95a1eacbb4, type: 3}
       propertyPath: m_Name
       value: DialogueManager
@@ -2943,21 +3015,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 26009522}
     m_Modifications:
+    - target: {fileID: 498092359255035380, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b6538eb3e5c7f84eac0478419a2c8a9, type: 3}
     - target: {fileID: 4397913056319362866, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 788.6055
+      value: 802.055
       objectReference: {fileID: 0}
     - target: {fileID: 4397913056319362866, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 174.1666
+      value: 449.605
       objectReference: {fileID: 0}
     - target: {fileID: 4397913056319362866, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 6.1533
+      value: 8.269
       objectReference: {fileID: 0}
     - target: {fileID: 4397913056319362866, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -191.9469
+      value: -6.777
       objectReference: {fileID: 0}
     - target: {fileID: 4630030864701465149, guid: ea1bb0ac76b66214eb523640a18a0c55, type: 3}
       propertyPath: m_SizeDelta.x
