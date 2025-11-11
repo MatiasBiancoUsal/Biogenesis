@@ -68,6 +68,12 @@ public class InventarioManagerPrueba : MonoBehaviour
 
     public void AñadirADN(string nombreADN)
     {
+        if (criaturaCreada)
+        {
+            Debug.Log("La criatura ya fue creada, no se puede añadir más ADN.");
+            return;
+        }
+
         foreach (Slot slot in slots)
         {//MATIAS
             if (slot.nombreADN == nombreADN)
